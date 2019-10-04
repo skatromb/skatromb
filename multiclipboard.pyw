@@ -12,8 +12,7 @@ mcbFile = shelve.open('mcb')
 if len(sys.argv) == 3 and sys.argv[1].lower() == 'delete':
     del mcbFile[sys.argv[2]]
 elif len(sys.argv) == 2 and sys.argv[1].lower() == 'delete':
-    # TODO: Нужно удалять из db файла все. Понять, как это сделать
-    del mcbFile.
+    mcbFile.clear()
 # Save clipboard content.
 elif len(sys.argv) == 3 and sys.argv[1].lower() == 'save':
     mcbFile[sys.argv[2]] = pyperclip.paste()
