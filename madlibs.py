@@ -2,11 +2,6 @@
 import os, re
 
 
-# TODO: write a function that replaces words (if it needs)
-def replaceOccurrences(text: str, wordstoreplace: tuple) -> str:
-    return replacedString
-
-
 # prompt the user for replacing words
 wordsToReplace = ('ADJECTIVE', 'NOUN', 'ADVERB', 'VERB')
 replaceDict = dict()
@@ -14,20 +9,20 @@ for word in wordsToReplace:
     replaceDict[word] = input('Enter an ' + word.lower() + ':\n')
 
 # creating the list of all .txt files in directory
-allFiles = os.listdir()
+allFilenames = os.listdir()
 txtRegex = re.compile(r'.*\.txt$')
-txtFiles = list()
-for filename in allFiles:
+txtFilenames = list()
+for filename in allFilenames:
     matcher = txtRegex.search(filename)
     if matcher is not None:
-        txtFiles.append(matcher.group())
+        txtFilenames.append(matcher.group())
 
-# TODO: read all the .txt files in folder
+# read all the .txt files in folder
+for txtFilename in txtFilenames:
+    print('File ' + txtFilename + ':\n')
+    # open the content of file and translate it to print
+    text = open(txtFilename).read()
+    for replacedWord, replaceWith in replaceDict.items():
+        text = text.replace(replacedWord, replaceWith)
 
-# TODO: find the occurrences of words
-for textFile in allFiles:
-
-    replacedString = replaceOccurrences(textFile, wordsToReplace)
-    # and replace them with words from user prompt
-
-    print(replacedString)
+    print(text + '\n\n')
