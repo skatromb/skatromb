@@ -2,6 +2,7 @@ import openpyxl
 import numpy
 from openpyxl.utils import get_column_letter
 
+# Filenames consts
 input_excel_filename = 'input_table.xlsx'
 output_excel_filename = 'output_table.xlsx'
 
