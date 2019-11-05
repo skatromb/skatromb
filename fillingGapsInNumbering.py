@@ -33,7 +33,7 @@ class OldNewFilename(TypedDict):
 
 # TODO: order the files list by numbering and reassign a right numbering to the files
 #   Return the old-new naming of the files
-def files_renamer(parsed_filenames: List[ParsedFilename]) -> List[OldNewFilename]:  # TODO: add typing. Ret
+def files_renamer(parsed_filenames: List[ParsedFilename]) -> List[OldNewFilename]:
     return
 
 
