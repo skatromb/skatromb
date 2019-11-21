@@ -6,34 +6,43 @@ import os, re
 from typing import TypedDict, List
 
 
-class ParsedFilename(TypedDict):
+class ParsedFilenameDict(TypedDict):
     filename: str
     prefix: str
     numbering: int
     postfix: str
+    sort
+
+class ParsedFilenameDicts(List):
+
 
 
 # TODO: find all the files with a given prefix and return list of [(filename + prefix + numbering + postfix)]
-def find_and_parse_files_with_prefix(prefix: str, folder='.') -> List[ParsedFilename]:
-    # TODO: обходим папку в поисках файлов с префиксом и нумерацией
+def find_and_parse_files_with_prefix(prefix: str, folder='.') -> List[ParsedFilenameDict]:
+    FILENAME, PREFIX, NUMBERING, POSTFIX = 0, 1, 2, 3
+    # DONE: обходим папку в поисках файлов с префиксом и нумерацией
     #   Формируем лист файлов внутри которого будут наименования и части наименований (лист диктов)
+    parsed_filenames = List[ParsedFilenameDict]
     for root, dirnames, filenames in os.walk(folder):
         for filename in filenames:
-            continue
+            matches = re.search(r'((^' + prefix + r')(\d+)(\..{,4}$))', filename)
+            if matches:
+                parsed_filenames.append({'filename': matches.group(FILENAME), 'prefix': matches.group(PREFIX),
+                                         'numbering': matches.group(NUMBERING), 'postfix': matches.group(POSTFIX)})
 
-    # files_list = [re.search(r'((^' + prefix + r')(\d+)(\..{,4}$))', filename).groups()]
-
-    # print(regexp.findall('spam001.txt').groups())
-    return list
-
-
-class OldNewFilename(TypedDict):
-    new_filename_for_old: str
+    return parsed_filenames
 
 
 # TODO: order the files list by numbering and reassign a right numbering to the files
 #   Return the old-new naming of the files
-def files_renamer(parsed_filenames: List[ParsedFilename]) -> List[OldNewFilename]:
+class OldNewFilename(TypedDict):
+    old_filename: str
+    new_filename: str
+
+
+def files_renamer(parsed_filenames: List[ParsedFilenameDict]) -> List[OldNewFilename]:
+    # Эта штука сортирует лист диктов по значению дикта 'numbering'
+    sorted(parsed_filenames, key=lambda filename: filename['numbering'])
     return
 
 
