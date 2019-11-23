@@ -2,7 +2,8 @@
 # with a given prefix (spam001.txt, span002.txt for example)
 # and renames it to the numbering with no gaps
 
-import os, re
+import os
+import re
 from typing import TypedDict, List
 
 
@@ -18,7 +19,7 @@ def find_and_parse_files_with_prefix(prefix: str, folder='.') -> List[ParsedFile
     FILENAME, PREFIX, NUMBERING, POSTFIX = 0, 1, 2, 3
     # DONE: обходим папку в поисках файлов с префиксом и нумерацией
     #   Формируем лист файлов внутри которого будут наименования и части наименований (лист диктов)
-    parsed_filenames: List[ParsedFilenameDict] = list()
+    parsed_filenames = list()
     for root, dirnames, filenames in os.walk(folder):
         for filename in filenames:
             matches = re.search(r'(^' + prefix + r')(\d+)(\..{,4}$)', filename)
@@ -36,7 +37,7 @@ class OldNewFilename(TypedDict):
 def files_renamer(parsed_filenames: List[ParsedFilenameDict]) -> List[OldNewFilename]:
     # Order the files list by numbering
     parsed_filenames.sort(key=lambda filename: filename['numbering'])
-    old_new_filenames: List[OldNewFilename] = list()
+    old_new_filenames = list()
     longest_num_len = len(
         max(parsed_filenames, key=lambda filename: len(filename['numbering']))['numbering'])
 
@@ -51,5 +52,5 @@ def files_renamer(parsed_filenames: List[ParsedFilenameDict]) -> List[OldNewFile
 
 
 #  Main program
-parsed_filenames = find_and_parse_files_with_prefix(prefix='spam', folder='.')
-print(files_renamer(parsed_filenames))
+parsed_filenames_list = find_and_parse_files_with_prefix(prefix='spam', folder='.')
+print(files_renamer(parsed_filenames_list))
