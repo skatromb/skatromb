@@ -4,6 +4,7 @@
 
 import os
 import re
+import shutil
 from typing import TypedDict, List
 
 
@@ -34,7 +35,7 @@ class OldNewFilename(TypedDict):
     new_filename: str
 
 
-def files_renamer(parsed_filenames: List[ParsedFilenameDict]) -> List[OldNewFilename]:
+def get_new_names(parsed_filenames: List[ParsedFilenameDict]) -> List[OldNewFilename]:
     # Order the files list by numbering
     parsed_filenames.sort(key=lambda filename: filename['numbering'])
     old_new_filenames = list()
@@ -46,11 +47,18 @@ def files_renamer(parsed_filenames: List[ParsedFilenameDict]) -> List[OldNewFile
         new_numbering_str = str(i).rjust(longest_num_len, '0')
         new_filename = parsed_filename['prefix'] + new_numbering_str + parsed_filename['postfix']
         old_new_filenames.append({'old_filename': parsed_filename['filename'], 'new_filename': new_filename})
-    # TODO: rename itself!
-    # TODO: Return the old-new naming of the files
+    return old_new_filenames
+
+
+# Rename itself!
+def rename_files(old_new_filenames: List[OldNewFilename], folder='.') -> List[OldNewFilename]:
+    for file_to_rename in old_new_filenames:
+        old_file = os.path.join(folder, file_to_rename['old_filename'])
+        new_file = os.path.join(folder, file_to_rename['new_filename'])
+        shutil.move(old_file, new_file)
     return old_new_filenames
 
 
 #  Main program
 parsed_filenames_list = find_and_parse_files_with_prefix(prefix='spam', folder='.')
-print(files_renamer(parsed_filenames_list))
+print(rename_files(get_new_names(parsed_filenames_list)))
