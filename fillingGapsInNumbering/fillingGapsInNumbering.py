@@ -43,7 +43,7 @@ def get_new_names(parsed_filenames: List[ParsedFilenameDict]) -> List[OldNewFile
         max(parsed_filenames, key=lambda filename: len(filename['numbering']))['numbering'])
 
     # Map a right numbering for the files
-    for parsed_filename, i in zip(parsed_filenames, range(1, len(parsed_filenames))):
+    for parsed_filename, i in zip(parsed_filenames, range(1, len(parsed_filenames) + 1)):
         new_numbering_str = str(i).rjust(longest_num_len, '0')
         new_filename = parsed_filename['prefix'] + new_numbering_str + parsed_filename['postfix']
         old_new_filenames.append({'old_filename': parsed_filename['filename'], 'new_filename': new_filename})
