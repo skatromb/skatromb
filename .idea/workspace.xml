@@ -24,7 +24,7 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="preferences.customizations" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -89,7 +89,14 @@
       <option name="project" value="LOCAL" />
       <updated>1575204870181</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="хз">
+      <created>1575204964622</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1575204964622</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -110,6 +117,7 @@
     <MESSAGE value="Перенёс весь код в подпапку" />
     <MESSAGE value="Ещё немного кода в подпапку" />
     <MESSAGE value="Опять делаю херь, уношу все в подпапку" />
-    <option name="LAST_COMMIT_MESSAGE" value="Опять делаю херь, уношу все в подпапку" />
+    <MESSAGE value="хз" />
+    <option name="LAST_COMMIT_MESSAGE" value="хз" />
   </component>
 </project>
