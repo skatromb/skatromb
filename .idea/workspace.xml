@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bfe8fd62-1fd3-4475-9bcd-7f160acb2e8d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/code/Tele2ForSQL/HistoricalDataScriptNEs.py" afterDir="false" />
+    <list default="true" id="bfe8fd62-1fd3-4475-9bcd-7f160acb2e8d" name="Default Changelist" comment="Пофиксил, что NE_SUBS... всегда в слое DDS">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/PycharmProjects.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/PycharmProjects.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -155,7 +156,35 @@
       <option name="project" value="LOCAL" />
       <updated>1575363912330</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Сделал кодогенерилку для процедур Витрины секторов">
+      <created>1575437583064</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1575437583064</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Сделал кодогенерилку для процедур Витрины секторов">
+      <created>1575437690701</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1575437690701</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Пофиксил, что NE_SUBS... всегда в слое DDS">
+      <created>1575438837170</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1575438837170</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Пофиксил, что NE_SUBS... всегда в слое DDS">
+      <created>1575438859120</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1575438859120</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -177,6 +206,8 @@
     <MESSAGE value="Ещё немного кода в подпапку" />
     <MESSAGE value="Опять делаю херь, уношу все в подпапку" />
     <MESSAGE value="Какие-то файлы конфигурации" />
-    <option name="LAST_COMMIT_MESSAGE" value="Какие-то файлы конфигурации" />
+    <MESSAGE value="Сделал кодогенерилку для процедур Витрины секторов" />
+    <MESSAGE value="Пофиксил, что NE_SUBS... всегда в слое DDS" />
+    <option name="LAST_COMMIT_MESSAGE" value="Пофиксил, что NE_SUBS... всегда в слое DDS" />
   </component>
 </project>
