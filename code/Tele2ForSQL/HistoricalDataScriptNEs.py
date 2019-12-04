@@ -17,12 +17,12 @@ def generate_sql_for_month(year: date.year, month: date.month):
         call_statement = 'CALL ' + env + '_' + layer + '.' + procedure_name + postfix
         return call_statement
 
-    print('-' * 120)
+    print('-' * 120 + '\n')
 
     # Блок генерации кода на каждый день месяца
     dates = Calendar()
     for day in [i for i in dates.itermonthdates(year, month) if i.month == month]:
-        print(call_procedure_without_params('LOAD_NE_SUBS_REVENUE') +
+        print(call_procedure_without_params('LOAD_NE_SUBS_REVENUE_DATE') +
               '(7273889, date\'' + day.isoformat() + '\');')
 
     # Блок месячных расчётов
@@ -33,7 +33,7 @@ def generate_sql_for_month(year: date.year, month: date.month):
     print()
     print(call_procedure_without_params('LOAD_SITE_MONTHLY_METRICS') + params)
 
-    print('-' * 120)
+    print('\n' + '-' * 120)
 
 
 generate_sql_for_month(year=2019, month=9)
