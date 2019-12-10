@@ -24,7 +24,7 @@ def generate_sql_for_month(year: date.year, month: date.month):
     # Блок генерации кода на каждый день месяца
     dates = Calendar()
     for day in [i for i in dates.itermonthdates(year, month) if i.month == month]:
-        print(call_procedure_without_params('LOAD_NE_SUBS_REVENUE_DATE', env='DDS') +
+        print(call_procedure_without_params('LOAD_NE_SUBS_REVENUE_DATE', layer='DDS') +
               "(7273889, date'" + day.isoformat() + "');")
 
     # Блок месячных расчётов
@@ -35,7 +35,7 @@ def generate_sql_for_month(year: date.year, month: date.month):
     print()
     print(call_procedure_without_params('LOAD_SITE_MONTHLY_METRICS') + params)
 
-    # Удаляем за рассчитанный месяц информацию
+    # Удаляем информацию за рассчитанный месяц
     print()
     date_str = "'" + date(year, month, 1).isoformat() + "'"
     print("DELETE " + ENV + "_DDS.NE_SUBS_REVENUE_DATE" + Postfix_tbl + " WHERE REPORT_DATE BETWEEN "

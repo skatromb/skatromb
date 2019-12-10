@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bfe8fd62-1fd3-4475-9bcd-7f160acb2e8d" name="Default Changelist" comment="Попытался настроить гитигнор">
+    <list default="true" id="bfe8fd62-1fd3-4475-9bcd-7f160acb2e8d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/Tele2ForSQL/HistoricalDataScriptNEs.py" beforeDir="false" afterPath="$PROJECT_DIR$/code/Tele2ForSQL/HistoricalDataScriptNEs.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -59,7 +60,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.HistoricalDataScriptNEs (1)">
+  <component name="RunManager" selected="Python.HistoricalDataScriptNEs">
     <configuration name="HistoricalDataScriptNEs (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="PycharmProjects" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -262,5 +263,11 @@
     <MESSAGE value="Попытался настроить гитигнор" />
     <MESSAGE value="Добавил Delete" />
     <option name="LAST_COMMIT_MESSAGE" value="Добавил Delete" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="793" y="420" key="com.intellij.ide.util.TipDialog" timestamp="1575949566926">
+      <screen x="0" y="0" width="2194" height="1194" />
+    </state>
+    <state x="793" y="420" key="com.intellij.ide.util.TipDialog/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1575949566926" />
   </component>
 </project>
