@@ -43,8 +43,8 @@ def generate_sql_for_month(year: date.year, month: date.month):
           "date" + date_str + " AND ADD_MONTHS(date" + date_str + ", 1) - 1;")
 
 
-# 2019 с октября
-for Month in range(10, 0, -1):
+# 2019 с декабря
+for Month in range(11, 0, -1):
     generate_sql_for_month(year=2019, month=Month)
 
 # 2018 до февраля
