@@ -27,12 +27,13 @@ def generate_sql_for_month(year: date.year, month: date.month):
         print(call_procedure_without_params('LOAD_NE_SUBS_REVENUE_DATE', layer='DDS') +
               "(7273889, date'" + day.isoformat() + "');")
 
+    print('COLLECT STATS ON ' + ENV + '_' + 'DDS.NE_SUBS_REVENUE_DATE' + Postfix_tbl + ';')
+
     # Блок месячных расчётов
     print()
     params = "(date'" + date(year, month, 1).isoformat() + "', 7273889);"
 
     print(call_procedure_without_params('LOAD_NETWORK_ELEMENT_MONTHLY_METRICS') + params)
-    print()
     print(call_procedure_without_params('LOAD_SITE_MONTHLY_METRICS') + params)
 
     # Удаляем информацию за рассчитанный месяц
