@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bfe8fd62-1fd3-4475-9bcd-7f160acb2e8d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/code/Tele2ForSQL/LinesCommenter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/ivan_livadnyy.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/ivan_livadnyy.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/Tele2ForSQL/HistoricalDataScriptNEs.py" beforeDir="false" afterPath="$PROJECT_DIR$/code/Tele2ForSQL/HistoricalDataScriptNEs.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,7 +45,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -251,7 +252,14 @@
       <option name="project" value="LOCAL" />
       <updated>1576040633778</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Поменял на ноябрь">
+      <created>1576074792874</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1576074792874</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -281,36 +289,49 @@
     <MESSAGE value="Добавил Delete" />
     <MESSAGE value="Поправил баг с неверным слоем NE_SUBS_REVENUE_DATE" />
     <MESSAGE value="Добавил сбор статистики по NE_SUBS_REVENUE_DATE" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавил сбор статистики по NE_SUBS_REVENUE_DATE" />
+    <MESSAGE value="Поменял на ноябрь" />
+    <option name="LAST_COMMIT_MESSAGE" value="Поменял на ноябрь" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="753" y="191" key="CommitChangelistDialog2" timestamp="1576074780549">
+    <state x="753" y="191" key="CommitChangelistDialog2" timestamp="1576220197191">
       <screen x="0" y="0" width="2194" height="1194" />
     </state>
-    <state x="753" y="191" key="CommitChangelistDialog2/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576074780549" />
-    <state width="2173" height="330" key="GridCell.Tab.0.bottom" timestamp="1576045455690">
+    <state x="753" y="191" key="CommitChangelistDialog2/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576220197191" />
+    <state width="2173" height="330" key="GridCell.Tab.0.bottom" timestamp="1576074804217">
       <screen x="0" y="0" width="2194" height="1194" />
     </state>
-    <state width="2173" height="330" key="GridCell.Tab.0.bottom/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576045455690" />
-    <state width="2173" height="330" key="GridCell.Tab.0.center" timestamp="1576045455690">
+    <state width="2173" height="330" key="GridCell.Tab.0.bottom/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576074804217" />
+    <state width="2173" height="330" key="GridCell.Tab.0.center" timestamp="1576074804217">
       <screen x="0" y="0" width="2194" height="1194" />
     </state>
-    <state width="2173" height="330" key="GridCell.Tab.0.center/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576045455690" />
-    <state width="2173" height="330" key="GridCell.Tab.0.left" timestamp="1576045455690">
+    <state width="2173" height="330" key="GridCell.Tab.0.center/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576074804217" />
+    <state width="2173" height="330" key="GridCell.Tab.0.left" timestamp="1576074804217">
       <screen x="0" y="0" width="2194" height="1194" />
     </state>
-    <state width="2173" height="330" key="GridCell.Tab.0.left/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576045455690" />
-    <state width="2173" height="330" key="GridCell.Tab.0.right" timestamp="1576045455690">
+    <state width="2173" height="330" key="GridCell.Tab.0.left/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576074804217" />
+    <state width="2173" height="330" key="GridCell.Tab.0.right" timestamp="1576074804217">
       <screen x="0" y="0" width="2194" height="1194" />
     </state>
-    <state width="2173" height="330" key="GridCell.Tab.0.right/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576045455690" />
-    <state x="690" y="329" key="Vcs.Push.Dialog.v2" timestamp="1576040636132">
+    <state width="2173" height="330" key="GridCell.Tab.0.right/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576074804217" />
+    <state x="606" y="239" key="SettingsEditor" timestamp="1576144894534">
       <screen x="0" y="0" width="2194" height="1194" />
     </state>
-    <state x="690" y="329" key="Vcs.Push.Dialog.v2/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576040636132" />
-    <state x="793" y="420" key="com.intellij.ide.util.TipDialog" timestamp="1576074529098">
+    <state x="606" y="239" key="SettingsEditor/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576144894534" />
+    <state x="690" y="329" key="Vcs.Push.Dialog.v2" timestamp="1576074795951">
       <screen x="0" y="0" width="2194" height="1194" />
     </state>
-    <state x="793" y="420" key="com.intellij.ide.util.TipDialog/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576074529098" />
+    <state x="690" y="329" key="Vcs.Push.Dialog.v2/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576074795951" />
+    <state x="793" y="420" key="com.intellij.ide.util.TipDialog" timestamp="1576135605410">
+      <screen x="0" y="0" width="2194" height="1194" />
+    </state>
+    <state x="793" y="420" key="com.intellij.ide.util.TipDialog/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576135605410" />
+    <state width="600" height="424" key="javadoc.popup" timestamp="1576144902957">
+      <screen x="0" y="0" width="2194" height="1194" />
+    </state>
+    <state width="600" height="424" key="javadoc.popup/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576144902957" />
+    <state x="760" y="264" width="672" height="678" key="search.everywhere.popup" timestamp="1576138574857">
+      <screen x="0" y="0" width="2194" height="1194" />
+    </state>
+    <state x="760" y="264" width="672" height="678" key="search.everywhere.popup/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576138574857" />
   </component>
 </project>
