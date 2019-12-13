@@ -1,67 +1,60 @@
 import os
 import re
-#file_lines_dict = [str(x) + '.sql'] = ['1\n', '2\n, 3'] * (x + 1) for x in range(3)
-# Нужно закомментировать в @sql-файлах @строки
-def lines_commenter(filenames: list, substrs_to_comment: list[str]):
-
-    # Для этого нужно получить @файлы[@номера_строк]
-    def file_lines_finder() -> dict[str: [list]]: # {filename: [line_number]}
-        # @Файлы нужны все, у которых есть искомые @строки
-        def
-
-            def line_numbers(filename: str) -> list[int]:
-                # Вернём line_number'ы из файлов с вхождениями substrs_to_comment
-                def line_contains_substrs(line: str) -> bool:
-                    # line содержит любую из substrs_to_comment?
-                    return True in [re.search(substr, line) is not None
-                                    for substr in substrs_to_comment]
-
-                code_lines = open(filename, encoding='UTF-8').readlines()
-                return [line_number for line_number, code_line in enumerate(code_lines)
-                                if line_contains_substrs(code_line)]
 
 
-                return None
-        return None
+# генератор files_dict = {str(i) + '.sql': ['1\n', '2\n, 3'] * (i + 1) for i in range(2)}
+# Нужно закомментировать в sql-файлах substrs_to_comment
+def comment_lines(filenames: list[str], substrs_to_comment: tuple[str]):
+    def get_files_w_line_numbers_to_comment() -> dict[str: [tuple[int]]]: # {filename: [line_number]}
+        def get_line_numbers(filename: str) -> tuple[int]:
+            def line_contains_substrs(line: str) -> bool:
+                # line содержит любую из substrs_to_comment?
+                # TODO: Попробовать переписать в map()
+                return True in [re.search('^[^\-]*' + substr, line) is not None # ^[^\-]* - не отдавать закомменченное
+                                for substr in substrs_to_comment]
 
+            # Вернём line_number'ы из файлов с вхождениями substrs_to_comment
+            code_lines = open(filename, encoding='UTF-8').readlines()
+            return tuple([line_number for line_number, code_line in enumerate(code_lines)
+                            if line_contains_substrs(code_line)])
 
-    def comment_lines(filename_line_numbers: dict[]):
-        return None
-    # Закомментировать их
+        # Возвращаем файлы с номерами строк, подлежащими закомментированию
+        # Пример формата {'1.sql', ['--\n', 'CREATE TABLE...;', ..., 'END;']
+        return {filename: get_line_numbers(filename)
+                for filename in filenames}
 
+    files_w_line_numbers_to_comment = get_files_w_line_numbers_to_comment(filenames, substrs_to_comment)
 
-def lines_commenter(filenames: list[str], substrs_to_comment: list[str]):
-    # TODO: Нужно найти в файлах @files, строки, содержащие @words_to_comment и собрать на них указатели
-    #   Например, как [имя файла[номер строки]]
-    for filename in filenames:
+    # Проверяем список путей на валидность
+    for filename in files_w_line_numbers_to_comment:
         if not os.path.exists(filename):
             raise Exception('Указанного пути к файлу не существует')
-        file = open(filename)
-        text_lines = file.readlines()
 
-        # Ищем строки в тексте
-        for i, text_line in enumerate(text_lines):
-            for substr in substrs_to_comment:
-                re.search(pattern=substr, string=text_line)
-
-    # TODO: Показываем эти строки на утверждение закоммента
-    print('Сейчас тебе закомменчу следующие строки:\n')
-    for filename in filenames:
+    # Теперь нужно открыть все найденные файлы и закомментить им строки
+    for filename, line_numbers in files_w_line_numbers_to_comment.items():
+        file = open(filename, mode='w', encoding='UTF-8')
+        code_lines = file.readlines()
         print(filename + ':\n')
-        for line in lines_to_comment:
-            print(line)
-    print()
 
-    # TODO: Если пользователь согласен, комментим строки
-    if input('Закомментить эти строки? (y/n)').lower() in ('y', 'yes'):
+        # Нужно показать все файлы в принте пользователю
+            # Нужно показать все строки в принте пользователю
+
+        # TODO: Если пользователь согласен, комментим строки
+        if input('Закомментить эти строки? (y/n)').lower() in ('y', 'yes'):
+
+            file.writelines(list(map(lambda line: '-- ' + line, code_lines)))
+        file.close()
 
 
-files_list = [
+    return None
+
+
+FILE_NAMES = [
     r'C:\Users\ivan.livadnyy\Documents\GitLab\teradata\SQL\TFS-60980. DMX_CHARGES\1. CREATE TABLES FEE_GROUP, FEE_TYPE.sql',
     r'C:\Users\ivan.livadnyy\Documents\GitLab\teradata\SQL\TFS-60980. DMX_CHARGES\2. DROP AND CREATE TABLES DMX_CHARGE, DMX_CHARGE_ARCHIVE.sql',
     r'C:\Users\ivan.livadnyy\Documents\GitLab\teradata\SQL\TFS-60980. DMX_CHARGES\3. REPLACE PROCEDURE LOAD_DMX_CHARGE_DATE.sql'
 ]
-words_list = [
+SUBSTRS_TO_COMMENT = [
     'SUM_CHARGE_COMPENSATION',
     'SUM_CHARGE_ADDS',
     'SUM_CHARGE_CONTRACT',
@@ -118,5 +111,5 @@ words_list = [
     'CNT_SERVICE_DISCOUNT',
     'CNT_UNIQUE_SERVICE_DISCOUNT'
 ]
-lines_commenter(files_list, words_list)
 
+comment_lines(FILE_NAMES, SUBSTRS_TO_COMMENT)

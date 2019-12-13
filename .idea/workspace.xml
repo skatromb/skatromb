@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bfe8fd62-1fd3-4475-9bcd-7f160acb2e8d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/code/Tele2ForSQL/LinesCommenter.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/ivan_livadnyy.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/ivan_livadnyy.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/Tele2ForSQL/LinesCommenter.py" beforeDir="false" afterPath="$PROJECT_DIR$/code/Tele2ForSQL/LinesCommenter.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +43,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last.edited.regexp" value=" gfsCREATE TABLE" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
@@ -259,7 +259,14 @@
       <option name="project" value="LOCAL" />
       <updated>1576074792874</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Нахожу строки, которые содержат искомое&#10;Нахожу их номер в файле">
+      <created>1576220211232</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1576220211232</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -290,13 +297,14 @@
     <MESSAGE value="Поправил баг с неверным слоем NE_SUBS_REVENUE_DATE" />
     <MESSAGE value="Добавил сбор статистики по NE_SUBS_REVENUE_DATE" />
     <MESSAGE value="Поменял на ноябрь" />
-    <option name="LAST_COMMIT_MESSAGE" value="Поменял на ноябрь" />
+    <MESSAGE value="Нахожу строки, которые содержат искомое&#10;Нахожу их номер в файле" />
+    <option name="LAST_COMMIT_MESSAGE" value="Нахожу строки, которые содержат искомое&#10;Нахожу их номер в файле" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="753" y="191" key="CommitChangelistDialog2" timestamp="1576220197191">
+    <state x="753" y="191" key="CommitChangelistDialog2" timestamp="1576241598046">
       <screen x="0" y="0" width="2194" height="1194" />
     </state>
-    <state x="753" y="191" key="CommitChangelistDialog2/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576220197191" />
+    <state x="753" y="191" key="CommitChangelistDialog2/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576241598046" />
     <state width="2173" height="330" key="GridCell.Tab.0.bottom" timestamp="1576074804217">
       <screen x="0" y="0" width="2194" height="1194" />
     </state>
