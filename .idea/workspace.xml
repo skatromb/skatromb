@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bfe8fd62-1fd3-4475-9bcd-7f160acb2e8d" name="Default Changelist" comment="">
+    <list default="true" id="bfe8fd62-1fd3-4475-9bcd-7f160acb2e8d" name="Default Changelist" comment="Убрал ретурны">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/code/Tele2ForSQL/LinesCommenter.py" beforeDir="false" afterPath="$PROJECT_DIR$/code/Tele2ForSQL/LinesCommenter.py" afterDir="false" />
     </list>
@@ -302,7 +303,14 @@
       <option name="project" value="LOCAL" />
       <updated>1576477272640</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Убрал ретурны">
+      <created>1576478725559</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1576478725559</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -336,61 +344,62 @@
     <MESSAGE value="Нахожу строки, которые содержат искомое&#10;Нахожу их номер в файле" />
     <MESSAGE value="Собрал находитель строк к комментированию&#10;Осталось собрать принтер строк к комментированию, чтобы показать их пользователю и подтверждать это" />
     <MESSAGE value="Код некрасивый, но работает!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Код некрасивый, но работает!" />
+    <MESSAGE value="Убрал ретурны" />
+    <option name="LAST_COMMIT_MESSAGE" value="Убрал ретурны" />
   </component>
   <component name="WindowStateProjectService">
     <state x="981" y="299" width="889" height="595" key="#xdebugger.evaluate" timestamp="1576476476735">
       <screen x="0" y="0" width="2194" height="1194" />
     </state>
     <state x="981" y="299" width="889" height="595" key="#xdebugger.evaluate/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576476476735" />
-    <state x="753" y="191" key="CommitChangelistDialog2" timestamp="1576477271625">
+    <state x="-23" y="382" width="1737" height="812" key="CommitChangelistDialog2" timestamp="1576486561902">
       <screen x="0" y="0" width="2194" height="1194" />
     </state>
-    <state x="753" y="191" key="CommitChangelistDialog2/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576477271625" />
-    <state width="2173" height="330" key="GridCell.Tab.0.bottom" timestamp="1576478689084">
+    <state x="-23" y="382" width="1737" height="812" key="CommitChangelistDialog2/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576486561902" />
+    <state width="2173" height="330" key="GridCell.Tab.0.bottom" timestamp="1576486665218">
       <screen x="0" y="0" width="2194" height="1194" />
     </state>
-    <state width="2173" height="330" key="GridCell.Tab.0.bottom/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576478689084" />
-    <state width="2173" height="330" key="GridCell.Tab.0.center" timestamp="1576478689084">
+    <state width="2173" height="330" key="GridCell.Tab.0.bottom/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576486665218" />
+    <state width="2173" height="330" key="GridCell.Tab.0.center" timestamp="1576486665218">
       <screen x="0" y="0" width="2194" height="1194" />
     </state>
-    <state width="2173" height="330" key="GridCell.Tab.0.center/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576478689084" />
-    <state width="2173" height="330" key="GridCell.Tab.0.left" timestamp="1576478689084">
+    <state width="2173" height="330" key="GridCell.Tab.0.center/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576486665218" />
+    <state width="2173" height="330" key="GridCell.Tab.0.left" timestamp="1576486665218">
       <screen x="0" y="0" width="2194" height="1194" />
     </state>
-    <state width="2173" height="330" key="GridCell.Tab.0.left/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576478689084" />
-    <state width="2173" height="330" key="GridCell.Tab.0.right" timestamp="1576478689084">
+    <state width="2173" height="330" key="GridCell.Tab.0.left/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576486665218" />
+    <state width="2173" height="330" key="GridCell.Tab.0.right" timestamp="1576486665218">
       <screen x="0" y="0" width="2194" height="1194" />
     </state>
-    <state width="2173" height="330" key="GridCell.Tab.0.right/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576478689084" />
-    <state width="2173" height="409" key="GridCell.Tab.1.bottom" timestamp="1576477740876">
+    <state width="2173" height="330" key="GridCell.Tab.0.right/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576486665218" />
+    <state width="2173" height="409" key="GridCell.Tab.1.bottom" timestamp="1576479185417">
       <screen x="0" y="0" width="2194" height="1194" />
     </state>
-    <state width="2173" height="409" key="GridCell.Tab.1.bottom/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576477740876" />
-    <state width="2173" height="409" key="GridCell.Tab.1.center" timestamp="1576477740876">
+    <state width="2173" height="409" key="GridCell.Tab.1.bottom/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576479185417" />
+    <state width="2173" height="409" key="GridCell.Tab.1.center" timestamp="1576479185417">
       <screen x="0" y="0" width="2194" height="1194" />
     </state>
-    <state width="2173" height="409" key="GridCell.Tab.1.center/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576477740876" />
-    <state width="2173" height="409" key="GridCell.Tab.1.left" timestamp="1576477740876">
+    <state width="2173" height="409" key="GridCell.Tab.1.center/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576479185417" />
+    <state width="2173" height="409" key="GridCell.Tab.1.left" timestamp="1576479185417">
       <screen x="0" y="0" width="2194" height="1194" />
     </state>
-    <state width="2173" height="409" key="GridCell.Tab.1.left/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576477740876" />
-    <state width="2173" height="409" key="GridCell.Tab.1.right" timestamp="1576477740876">
+    <state width="2173" height="409" key="GridCell.Tab.1.left/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576479185417" />
+    <state width="2173" height="409" key="GridCell.Tab.1.right" timestamp="1576479185417">
       <screen x="0" y="0" width="2194" height="1194" />
     </state>
-    <state width="2173" height="409" key="GridCell.Tab.1.right/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576477740876" />
+    <state width="2173" height="409" key="GridCell.Tab.1.right/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576479185417" />
     <state x="810" y="312" key="MultipleFileMergeDialog" timestamp="1576469435919">
       <screen x="0" y="0" width="2194" height="1194" />
     </state>
     <state x="810" y="312" key="MultipleFileMergeDialog/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576469435919" />
-    <state x="606" y="239" key="SettingsEditor" timestamp="1576469445998">
+    <state x="606" y="239" key="SettingsEditor" timestamp="1576479765148">
       <screen x="0" y="0" width="2194" height="1194" />
     </state>
-    <state x="606" y="239" key="SettingsEditor/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576469445998" />
-    <state x="690" y="329" key="Vcs.Push.Dialog.v2" timestamp="1576477275999">
+    <state x="606" y="239" key="SettingsEditor/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576479765148" />
+    <state x="690" y="329" key="Vcs.Push.Dialog.v2" timestamp="1576478728082">
       <screen x="0" y="0" width="2194" height="1194" />
     </state>
-    <state x="690" y="329" key="Vcs.Push.Dialog.v2/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576477275999" />
+    <state x="690" y="329" key="Vcs.Push.Dialog.v2/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576478728082" />
     <state x="793" y="420" key="com.intellij.ide.util.TipDialog" timestamp="1576477533080">
       <screen x="0" y="0" width="2194" height="1194" />
     </state>
@@ -417,8 +426,8 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/code/Tele2ForSQL/LinesCommenter.py</url>
-          <line>49</line>
-          <option name="timeStamp" value="27" />
+          <line>16</line>
+          <option name="timeStamp" value="28" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

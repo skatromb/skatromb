@@ -9,7 +9,7 @@ ENCODING = 'UTF-8'
 
 # генератор files_dict = {str(i) + '.sql': ['1\n', '2\n, 3'] * (i + 1) for i in range(2)}
 # Нужно закомментировать в sql-файлах substrs_to_comment
-def check_and_comment(filenames: List[str], substrs_to_comment: Tuple[str]):
+def check_and_comment(filenames: List[str], substrs_to_comment: List[str]):
 
     def files_existence_check():
         # Проверяем список путей на валидность
@@ -66,18 +66,23 @@ def check_and_comment(filenames: List[str], substrs_to_comment: Tuple[str]):
                 file.writelines(code_lines)
                 file.close()
                 # list(map(lambda line: '-- ' + line, code_lines)))
+            print('Ок, закомментил')
         else:
             print('Ладно, не буду комментить строки')
 
     comment_lines()
 
 
-DIR_NAME = r'C:\Users\ivan.livadnyy\Documents\GitLab\teradata\SQL\TFS-60980. DMX_CHARGES'
+# Где искать
+DIR_NAME = r'C:\Users\ivan.livadnyy\Documents\GitLab\teradata\MDS\Tables'
 FILE_NAMES = [
-    '2. DROP AND CREATE TABLES DMX_CHARGE, DMX_CHARGE_ARCHIVE.sql',
-    '3. REPLACE PROCEDURE LOAD_DMX_CHARGE_DATE.sql'
+    'DMX_CHARGE.sql',
+    'DMX_CHARGE_ARCHIVE.sql',
+    # '3. REPLACE PROCEDURE LOAD_DMX_CHARGE_DATE.sql'
 ]
 FILE_PATHS = [os.path.join(DIR_NAME, FILE_NAME) for FILE_NAME in FILE_NAMES]
+
+# Что искать
 SUBSTRS_TO_COMMENT = [
     # Столбцы
     'SUM_CHARGE_COMPENSATION',
