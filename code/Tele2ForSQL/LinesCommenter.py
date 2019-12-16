@@ -46,12 +46,11 @@ def check_and_comment(filenames: List[str], substrs_to_comment: Tuple[str]):
         # Показываем пользователю, какие строки в каких файлах мы собираемся закомментить
         for filename, line_numbers in files_w_line_numbers_to_comment.items():
             file = open(filename, mode='r', encoding=ENCODING)
-            code_lines = file.readlines()
             print('\n' + filename + ':\n')
+            code_lines = file.readlines()
 
             for i in line_numbers:
-                print(code_lines[i])
-            return
+                print(code_lines[i], end='')
 
     def comment_lines():
         show_lines_to_comment()
@@ -69,17 +68,13 @@ def check_and_comment(filenames: List[str], substrs_to_comment: Tuple[str]):
                 # list(map(lambda line: '-- ' + line, code_lines)))
         else:
             print('Ладно, не буду комментить строки')
-        return
 
     comment_lines()
-
-    return None
 
 
 DIR_NAME = r'C:\Users\ivan.livadnyy\Documents\GitLab\teradata\SQL\TFS-60980. DMX_CHARGES'
 FILE_NAMES = [
-    # '1. CREATE TABLES FEE_GROUP, FEE_TYPE.sql',
-    # '2. DROP AND CREATE TABLES DMX_CHARGE, DMX_CHARGE_ARCHIVE.sql',
+    '2. DROP AND CREATE TABLES DMX_CHARGE, DMX_CHARGE_ARCHIVE.sql',
     '3. REPLACE PROCEDURE LOAD_DMX_CHARGE_DATE.sql'
 ]
 FILE_PATHS = [os.path.join(DIR_NAME, FILE_NAME) for FILE_NAME in FILE_NAMES]
