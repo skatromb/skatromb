@@ -7,7 +7,7 @@
       <excludeFolder url="file://$MODULE_DIR$/codestyles" />
       <excludeFolder url="file://$MODULE_DIR$/inspection" />
     </content>
-    <orderEntry type="jdk" jdkName="Python 3.8" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="Python 3.8 (Python)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
 </module>

@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="bfe8fd62-1fd3-4475-9bcd-7f160acb2e8d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/PycharmProjects.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/PycharmProjects.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/ivan_livadnyy.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/ivan_livadnyy.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/code/Tele2ForSQL/LinesCommenter.py" beforeDir="false" afterPath="$PROJECT_DIR$/code/Tele2ForSQL/LinesCommenter.py" afterDir="false" />
@@ -12,9 +13,20 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="UPDATE_TYPE" value="MERGE" />
   </component>
   <component name="IgnoredFileRootStore">
     <option name="generatedRoots">
@@ -24,14 +36,17 @@
     </option>
   </component>
   <component name="ProjectId" id="1UNioRgDFXrlQJVFUiraW3M7vjZ" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <OptionsSetting value="false" id="Update" />
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="Python" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last.edited.regexp" value=" gfsCREATE TABLE" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
@@ -40,7 +55,49 @@
       <recent name="$PROJECT_DIR$/code" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.LinesCommenter">
+    <configuration name="HistoricalDataScriptNEs (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="PycharmProjects" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/code/Tele2ForSQL" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/code/Tele2ForSQL/HistoricalDataScriptNEs.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="HistoricalDataScriptNEs" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="PycharmProjects" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/code/Tele2" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/code/Tele2/HistoricalDataScriptNEs.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="LinesCommenter" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="PycharmProjects" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -62,9 +119,33 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="PycharmProjects" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/code/Tele2ForSQL" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/code/Tele2ForSQL/test" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Python.LinesCommenter" />
+        <item itemvalue="Python.HistoricalDataScriptNEs (1)" />
+        <item itemvalue="Python.test" />
+        <item itemvalue="Python.HistoricalDataScriptNEs" />
       </list>
     </recent_temporary>
   </component>
@@ -119,21 +200,105 @@
       <option name="project" value="LOCAL" />
       <updated>1575204779786</updated>
     </task>
-    <task id="LOCAL-00005" summary="Обозначил сурс код">
-      <created>1575205410464</created>
+    <task id="LOCAL-00005" summary="Какие-то файлы конфигурации">
+      <created>1575363912330</created>
       <option name="number" value="00005" />
       <option name="presentableId" value="LOCAL-00005" />
       <option name="project" value="LOCAL" />
-      <updated>1575205410464</updated>
+      <updated>1575363912330</updated>
     </task>
-    <task id="LOCAL-00006" summary="Обозначил сурс код">
-      <created>1575205445172</created>
+    <task id="LOCAL-00006" summary="Сделал кодогенерилку для процедур Витрины секторов">
+      <created>1575437583064</created>
       <option name="number" value="00006" />
       <option name="presentableId" value="LOCAL-00006" />
       <option name="project" value="LOCAL" />
-      <updated>1575205445172</updated>
+      <updated>1575437583064</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Сделал кодогенерилку для процедур Витрины секторов">
+      <created>1575437690701</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1575437690701</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Пофиксил, что NE_SUBS... всегда в слое DDS">
+      <created>1575438837170</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1575438837170</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Пофиксил, что NE_SUBS... всегда в слое DDS">
+      <created>1575438859120</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1575438859120</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Попытался настроить гитигнор">
+      <created>1575439141205</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1575439141205</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Поднастроил кавычки">
+      <created>1575440888918</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1575440888918</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Попытался настроить гитигнор">
+      <created>1575441012943</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1575441012943</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Добавил Delete">
+      <created>1575457544144</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1575457544144</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Поправил баг с неверным слоем NE_SUBS_REVENUE_DATE">
+      <created>1575949661751</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1575949661751</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Добавил сбор статистики по NE_SUBS_REVENUE_DATE">
+      <created>1576040633778</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1576040633778</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Поменял на ноябрь">
+      <created>1576074792874</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1576074792874</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Нахожу строки, которые содержат искомое&#10;Нахожу их номер в файле">
+      <created>1576220211232</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1576220211232</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Собрал находитель строк к комментированию&#10;Осталось собрать принтер строк к комментированию, чтобы показать их пользователю и подтверждать это">
+      <created>1576241611104</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1576241611104</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -150,57 +315,108 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="SHOW_UNVERSIONED_FILES_WHILE_COMMIT" value="false" />
     <MESSAGE value="Делаю какую-то херь, пытаюсь почистить папку" />
     <MESSAGE value="Перенёс весь код в подпапку" />
     <MESSAGE value="Ещё немного кода в подпапку" />
     <MESSAGE value="Опять делаю херь, уношу все в подпапку" />
-    <MESSAGE value="Обозначил сурс код" />
-    <option name="LAST_COMMIT_MESSAGE" value="Обозначил сурс код" />
+    <MESSAGE value="Какие-то файлы конфигурации" />
+    <MESSAGE value="Сделал кодогенерилку для процедур Витрины секторов" />
+    <MESSAGE value="Пофиксил, что NE_SUBS... всегда в слое DDS" />
+    <MESSAGE value="Поднастроил кавычки" />
+    <MESSAGE value="Попытался настроить гитигнор" />
+    <MESSAGE value="Добавил Delete" />
+    <MESSAGE value="Поправил баг с неверным слоем NE_SUBS_REVENUE_DATE" />
+    <MESSAGE value="Добавил сбор статистики по NE_SUBS_REVENUE_DATE" />
+    <MESSAGE value="Поменял на ноябрь" />
+    <MESSAGE value="Нахожу строки, которые содержат искомое&#10;Нахожу их номер в файле" />
+    <MESSAGE value="Собрал находитель строк к комментированию&#10;Осталось собрать принтер строк к комментированию, чтобы показать их пользователю и подтверждать это" />
+    <option name="LAST_COMMIT_MESSAGE" value="Собрал находитель строк к комментированию&#10;Осталось собрать принтер строк к комментированию, чтобы показать их пользователю и подтверждать это" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1659" height="251" key="GridCell.Tab.0.bottom" timestamp="1576440846908">
-      <screen x="0" y="23" width="1680" height="941" />
+    <state x="981" y="299" width="889" height="595" key="#xdebugger.evaluate" timestamp="1576476476735">
+      <screen x="0" y="0" width="2194" height="1194" />
     </state>
-    <state width="1659" height="251" key="GridCell.Tab.0.bottom/0.23.1680.941@0.23.1680.941" timestamp="1576440846908" />
-    <state width="1659" height="251" key="GridCell.Tab.0.center" timestamp="1576440846907">
-      <screen x="0" y="23" width="1680" height="941" />
+    <state x="981" y="299" width="889" height="595" key="#xdebugger.evaluate/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576476476735" />
+    <state x="753" y="191" key="CommitChangelistDialog2" timestamp="1576241610115">
+      <screen x="0" y="0" width="2194" height="1194" />
     </state>
-    <state width="1659" height="251" key="GridCell.Tab.0.center/0.23.1680.941@0.23.1680.941" timestamp="1576440846907" />
-    <state width="1659" height="251" key="GridCell.Tab.0.left" timestamp="1576440846906">
-      <screen x="0" y="23" width="1680" height="941" />
+    <state x="753" y="191" key="CommitChangelistDialog2/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576241610115" />
+    <state width="2173" height="330" key="GridCell.Tab.0.bottom" timestamp="1576476960136">
+      <screen x="0" y="0" width="2194" height="1194" />
     </state>
-    <state width="1659" height="251" key="GridCell.Tab.0.left/0.23.1680.941@0.23.1680.941" timestamp="1576440846906" />
-    <state width="1659" height="251" key="GridCell.Tab.0.right" timestamp="1576440846907">
-      <screen x="0" y="23" width="1680" height="941" />
+    <state width="2173" height="330" key="GridCell.Tab.0.bottom/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576476960136" />
+    <state width="2173" height="330" key="GridCell.Tab.0.center" timestamp="1576476960136">
+      <screen x="0" y="0" width="2194" height="1194" />
     </state>
-    <state width="1659" height="251" key="GridCell.Tab.0.right/0.23.1680.941@0.23.1680.941" timestamp="1576440846907" />
-    <state x="168" y="106" key="MergeDialog" timestamp="1576409387402">
-      <screen x="0" y="23" width="1680" height="941" />
+    <state width="2173" height="330" key="GridCell.Tab.0.center/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576476960136" />
+    <state width="2173" height="330" key="GridCell.Tab.0.left" timestamp="1576476960136">
+      <screen x="0" y="0" width="2194" height="1194" />
     </state>
-    <state x="168" y="106" key="MergeDialog/0.23.1680.941@0.23.1680.941" timestamp="1576409387402" />
-    <state x="551" y="216" key="MultipleFileMergeDialog" timestamp="1576409387453">
-      <screen x="0" y="23" width="1680" height="941" />
+    <state width="2173" height="330" key="GridCell.Tab.0.left/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576476960136" />
+    <state width="2173" height="330" key="GridCell.Tab.0.right" timestamp="1576476960136">
+      <screen x="0" y="0" width="2194" height="1194" />
     </state>
-    <state x="551" y="216" key="MultipleFileMergeDialog/0.23.1680.941@0.23.1680.941" timestamp="1576409387453" />
-    <state x="341" y="132" key="SettingsEditor" timestamp="1576409415273">
-      <screen x="0" y="23" width="1680" height="941" />
+    <state width="2173" height="330" key="GridCell.Tab.0.right/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576476960136" />
+    <state width="2173" height="409" key="GridCell.Tab.1.bottom" timestamp="1576476792926">
+      <screen x="0" y="0" width="2194" height="1194" />
     </state>
-    <state x="341" y="132" key="SettingsEditor/0.23.1680.941@0.23.1680.941" timestamp="1576409415273" />
-    <state x="517" y="326" key="com.intellij.ide.util.TipDialog" timestamp="1576410949115">
-      <screen x="0" y="23" width="1680" height="941" />
+    <state width="2173" height="409" key="GridCell.Tab.1.bottom/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576476792926" />
+    <state width="2173" height="409" key="GridCell.Tab.1.center" timestamp="1576476792926">
+      <screen x="0" y="0" width="2194" height="1194" />
     </state>
-    <state x="517" y="326" key="com.intellij.ide.util.TipDialog/0.23.1680.941@0.23.1680.941" timestamp="1576410949115" />
-    <state x="623" y="417" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1576438022631">
-      <screen x="0" y="23" width="1680" height="941" />
+    <state width="2173" height="409" key="GridCell.Tab.1.center/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576476792926" />
+    <state width="2173" height="409" key="GridCell.Tab.1.left" timestamp="1576476792926">
+      <screen x="0" y="0" width="2194" height="1194" />
     </state>
-    <state x="623" y="417" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1680.941@0.23.1680.941" timestamp="1576438022631" />
-    <state x="421" y="223" width="837" height="540" key="find.popup" timestamp="1576439977103">
-      <screen x="0" y="23" width="1680" height="941" />
+    <state width="2173" height="409" key="GridCell.Tab.1.left/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576476792926" />
+    <state width="2173" height="409" key="GridCell.Tab.1.right" timestamp="1576476792926">
+      <screen x="0" y="0" width="2194" height="1194" />
     </state>
-    <state x="421" y="223" width="837" height="540" key="find.popup/0.23.1680.941@0.23.1680.941" timestamp="1576439977103" />
-    <state x="505" y="229" width="670" height="676" key="search.everywhere.popup" timestamp="1576438571377">
-      <screen x="0" y="23" width="1680" height="941" />
+    <state width="2173" height="409" key="GridCell.Tab.1.right/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576476792926" />
+    <state x="810" y="312" key="MultipleFileMergeDialog" timestamp="1576469435919">
+      <screen x="0" y="0" width="2194" height="1194" />
     </state>
-    <state x="505" y="229" width="670" height="676" key="search.everywhere.popup/0.23.1680.941@0.23.1680.941" timestamp="1576438571377" />
+    <state x="810" y="312" key="MultipleFileMergeDialog/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576469435919" />
+    <state x="606" y="239" key="SettingsEditor" timestamp="1576469445998">
+      <screen x="0" y="0" width="2194" height="1194" />
+    </state>
+    <state x="606" y="239" key="SettingsEditor/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576469445998" />
+    <state x="690" y="329" key="Vcs.Push.Dialog.v2" timestamp="1576241613299">
+      <screen x="0" y="0" width="2194" height="1194" />
+    </state>
+    <state x="690" y="329" key="Vcs.Push.Dialog.v2/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576241613299" />
+    <state x="793" y="420" key="com.intellij.ide.util.TipDialog" timestamp="1576135605410">
+      <screen x="0" y="0" width="2194" height="1194" />
+    </state>
+    <state x="793" y="420" key="com.intellij.ide.util.TipDialog/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576135605410" />
+    <state x="749" y="211" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1576470115459">
+      <screen x="0" y="0" width="2194" height="1194" />
+    </state>
+    <state x="749" y="211" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576470115459" />
+    <state x="669" y="332" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1576473559902">
+      <screen x="0" y="0" width="2194" height="1194" />
+    </state>
+    <state x="669" y="332" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576473559902" />
+    <state width="600" height="424" key="javadoc.popup" timestamp="1576144902957">
+      <screen x="0" y="0" width="2194" height="1194" />
+    </state>
+    <state width="600" height="424" key="javadoc.popup/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576144902957" />
+    <state x="760" y="264" width="672" height="678" key="search.everywhere.popup" timestamp="1576470122118">
+      <screen x="0" y="0" width="2194" height="1194" />
+    </state>
+    <state x="760" y="264" width="672" height="678" key="search.everywhere.popup/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576470122118" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint suspend="THREAD" type="python-line">
+          <condition expression="'SUM_CHARGE_COMPENSATION' in line and '3. REPLACE PROCEDURE LOAD_DMX_CHARGE_DATE.sql' in filename" language="Python" mode="CODE_FRAGMENT" />
+          <url>file://$PROJECT_DIR$/code/Tele2ForSQL/LinesCommenter.py</url>
+          <line>28</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
