@@ -17,7 +17,6 @@ def check_and_comment(filenames: List[str], substrs_to_comment: List[str]):
             if not os.path.exists(filename):
                 raise Exception('Указанного пути к файлу не существует')
         return True
-    files_existence_check()
 
     def get_files_w_line_numbers_to_comment() -> dict:  # {filename: [line_number]}
         def get_line_numbers(filename: str) -> Tuple[int]:
@@ -25,7 +24,7 @@ def check_and_comment(filenames: List[str], substrs_to_comment: List[str]):
                 # line содержит любую из substrs_to_comment?
                 # TODO: Попробовать переписать в map()
                 if_line_contains_substr = \
-                    True in [re.search('^[^-]*' + substr, line) is not None  # ^[^\-]* - не отдавать закомменченное
+                    True in [re.search('^((?!--).)*' + substr, line) is not None  # ^[^\-]* - не отдавать закомменченное
                              for substr in substrs_to_comment]
                 return if_line_contains_substr
 
@@ -40,6 +39,7 @@ def check_and_comment(filenames: List[str], substrs_to_comment: List[str]):
                                         for filename in filenames}
         return files_with_line_numbers_dict
 
+    files_existence_check()
     files_w_line_numbers_to_comment = get_files_w_line_numbers_to_comment()
 
     def show_lines_to_comment():
@@ -51,6 +51,7 @@ def check_and_comment(filenames: List[str], substrs_to_comment: List[str]):
 
             for i in line_numbers:
                 print(code_lines[i], end='')
+            file.close()
 
     def comment_lines():
         show_lines_to_comment()
@@ -62,6 +63,8 @@ def check_and_comment(filenames: List[str], substrs_to_comment: List[str]):
 
                 for line_number in line_numbers:
                     code_lines[line_number] = '-- ' + code_lines[line_number]
+
+                # Перезаписываем файл
                 file.seek(0)
                 file.writelines(code_lines)
                 file.close()

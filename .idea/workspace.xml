@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bfe8fd62-1fd3-4475-9bcd-7f160acb2e8d" name="Default Changelist" comment="Убрал ретурны">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="bfe8fd62-1fd3-4475-9bcd-7f160acb2e8d" name="Default Changelist" comment="Чуть красоты">
+      <change afterPath="$PROJECT_DIR$/code/Tele2ForSQL/LinesCommenter2.0.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/code/Tele2ForSQL/LinesCommenter.py" beforeDir="false" afterPath="$PROJECT_DIR$/code/Tele2ForSQL/LinesCommenter.py" afterDir="false" />
     </list>
@@ -43,8 +43,10 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ChangesTree.GroupingKeys" value="directory" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last.edited.regexp" value=" gfsCREATE TABLE" />
+    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="Python" />
+    <property name="last.edited.regexp" value="CREATE TABLE --" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
@@ -310,7 +312,14 @@
       <option name="project" value="LOCAL" />
       <updated>1576478725559</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Чуть красоты">
+      <created>1576486781095</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1576486781095</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -345,17 +354,18 @@
     <MESSAGE value="Собрал находитель строк к комментированию&#10;Осталось собрать принтер строк к комментированию, чтобы показать их пользователю и подтверждать это" />
     <MESSAGE value="Код некрасивый, но работает!" />
     <MESSAGE value="Убрал ретурны" />
-    <option name="LAST_COMMIT_MESSAGE" value="Убрал ретурны" />
+    <MESSAGE value="Чуть красоты" />
+    <option name="LAST_COMMIT_MESSAGE" value="Чуть красоты" />
   </component>
   <component name="WindowStateProjectService">
     <state x="981" y="299" width="889" height="595" key="#xdebugger.evaluate" timestamp="1576476476735">
       <screen x="0" y="0" width="2194" height="1194" />
     </state>
     <state x="981" y="299" width="889" height="595" key="#xdebugger.evaluate/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576476476735" />
-    <state x="-23" y="382" width="1737" height="812" key="CommitChangelistDialog2" timestamp="1576486561902">
+    <state x="213" y="260" width="1737" height="812" key="CommitChangelistDialog2" timestamp="1576499532981">
       <screen x="0" y="0" width="2194" height="1194" />
     </state>
-    <state x="-23" y="382" width="1737" height="812" key="CommitChangelistDialog2/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576486561902" />
+    <state x="213" y="260" width="1737" height="812" key="CommitChangelistDialog2/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576499532981" />
     <state width="2173" height="330" key="GridCell.Tab.0.bottom" timestamp="1576486665218">
       <screen x="0" y="0" width="2194" height="1194" />
     </state>
@@ -392,14 +402,14 @@
       <screen x="0" y="0" width="2194" height="1194" />
     </state>
     <state x="810" y="312" key="MultipleFileMergeDialog/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576469435919" />
-    <state x="606" y="239" key="SettingsEditor" timestamp="1576479765148">
+    <state x="606" y="239" key="SettingsEditor" timestamp="1576493041708">
       <screen x="0" y="0" width="2194" height="1194" />
     </state>
-    <state x="606" y="239" key="SettingsEditor/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576479765148" />
-    <state x="690" y="329" key="Vcs.Push.Dialog.v2" timestamp="1576478728082">
+    <state x="606" y="239" key="SettingsEditor/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576493041708" />
+    <state x="690" y="329" key="Vcs.Push.Dialog.v2" timestamp="1576486798717">
       <screen x="0" y="0" width="2194" height="1194" />
     </state>
-    <state x="690" y="329" key="Vcs.Push.Dialog.v2/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576478728082" />
+    <state x="690" y="329" key="Vcs.Push.Dialog.v2/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576486798717" />
     <state x="793" y="420" key="com.intellij.ide.util.TipDialog" timestamp="1576477533080">
       <screen x="0" y="0" width="2194" height="1194" />
     </state>
@@ -416,20 +426,9 @@
       <screen x="0" y="0" width="2194" height="1194" />
     </state>
     <state width="600" height="424" key="javadoc.popup/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576144902957" />
-    <state x="760" y="264" width="672" height="678" key="search.everywhere.popup" timestamp="1576470122118">
+    <state x="760" y="264" width="672" height="678" key="search.everywhere.popup" timestamp="1576591691431">
       <screen x="0" y="0" width="2194" height="1194" />
     </state>
-    <state x="760" y="264" width="672" height="678" key="search.everywhere.popup/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576470122118" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/code/Tele2ForSQL/LinesCommenter.py</url>
-          <line>16</line>
-          <option name="timeStamp" value="28" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <state x="760" y="264" width="672" height="678" key="search.everywhere.popup/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576591691431" />
   </component>
 </project>
