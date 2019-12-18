@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bfe8fd62-1fd3-4475-9bcd-7f160acb2e8d" name="Default Changelist" comment="">
+    <list default="true" id="bfe8fd62-1fd3-4475-9bcd-7f160acb2e8d" name="Default Changelist" comment="Чуть красоты">
+      <change afterPath="$PROJECT_DIR$/code/Tele2ForSQL/LinesCommenter2.0.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/code/Tele2ForSQL/LinesCommenter.py" beforeDir="false" afterPath="$PROJECT_DIR$/code/Tele2ForSQL/LinesCommenter.py" afterDir="false" />
     </list>
@@ -42,17 +43,19 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ChangesTree.GroupingKeys" value="directory" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last.edited.regexp" value=" gfsCREATE TABLE" />
+    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="Python" />
+    <property name="last.edited.regexp" value="CREATE TABLE --" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/code" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.HistoricalDataScriptNEs (1)">
+  <component name="RunManager" selected="Python.LinesCommenter">
     <configuration name="HistoricalDataScriptNEs (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="PycharmProjects" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -95,6 +98,27 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="LinesCommenter" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="PycharmProjects" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/code/Tele2ForSQL" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/code/Tele2ForSQL/LinesCommenter.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="PycharmProjects" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -118,6 +142,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.LinesCommenter" />
         <item itemvalue="Python.HistoricalDataScriptNEs (1)" />
         <item itemvalue="Python.test" />
         <item itemvalue="Python.HistoricalDataScriptNEs" />
@@ -266,7 +291,35 @@
       <option name="project" value="LOCAL" />
       <updated>1576220211232</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Собрал находитель строк к комментированию&#10;Осталось собрать принтер строк к комментированию, чтобы показать их пользователю и подтверждать это">
+      <created>1576241611104</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1576241611104</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Код некрасивый, но работает!">
+      <created>1576477272640</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1576477272640</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Убрал ретурны">
+      <created>1576478725559</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1576478725559</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Чуть красоты">
+      <created>1576486781095</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1576486781095</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -298,48 +351,84 @@
     <MESSAGE value="Добавил сбор статистики по NE_SUBS_REVENUE_DATE" />
     <MESSAGE value="Поменял на ноябрь" />
     <MESSAGE value="Нахожу строки, которые содержат искомое&#10;Нахожу их номер в файле" />
-    <option name="LAST_COMMIT_MESSAGE" value="Нахожу строки, которые содержат искомое&#10;Нахожу их номер в файле" />
+    <MESSAGE value="Собрал находитель строк к комментированию&#10;Осталось собрать принтер строк к комментированию, чтобы показать их пользователю и подтверждать это" />
+    <MESSAGE value="Код некрасивый, но работает!" />
+    <MESSAGE value="Убрал ретурны" />
+    <MESSAGE value="Чуть красоты" />
+    <option name="LAST_COMMIT_MESSAGE" value="Чуть красоты" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="753" y="191" key="CommitChangelistDialog2" timestamp="1576241598046">
+    <state x="981" y="299" width="889" height="595" key="#xdebugger.evaluate" timestamp="1576476476735">
       <screen x="0" y="0" width="2194" height="1194" />
     </state>
-    <state x="753" y="191" key="CommitChangelistDialog2/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576241598046" />
-    <state width="2173" height="330" key="GridCell.Tab.0.bottom" timestamp="1576074804217">
+    <state x="981" y="299" width="889" height="595" key="#xdebugger.evaluate/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576476476735" />
+    <state x="213" y="260" width="1737" height="812" key="CommitChangelistDialog2" timestamp="1576499532981">
       <screen x="0" y="0" width="2194" height="1194" />
     </state>
-    <state width="2173" height="330" key="GridCell.Tab.0.bottom/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576074804217" />
-    <state width="2173" height="330" key="GridCell.Tab.0.center" timestamp="1576074804217">
+    <state x="213" y="260" width="1737" height="812" key="CommitChangelistDialog2/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576499532981" />
+    <state width="2173" height="330" key="GridCell.Tab.0.bottom" timestamp="1576486665218">
       <screen x="0" y="0" width="2194" height="1194" />
     </state>
-    <state width="2173" height="330" key="GridCell.Tab.0.center/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576074804217" />
-    <state width="2173" height="330" key="GridCell.Tab.0.left" timestamp="1576074804217">
+    <state width="2173" height="330" key="GridCell.Tab.0.bottom/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576486665218" />
+    <state width="2173" height="330" key="GridCell.Tab.0.center" timestamp="1576486665218">
       <screen x="0" y="0" width="2194" height="1194" />
     </state>
-    <state width="2173" height="330" key="GridCell.Tab.0.left/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576074804217" />
-    <state width="2173" height="330" key="GridCell.Tab.0.right" timestamp="1576074804217">
+    <state width="2173" height="330" key="GridCell.Tab.0.center/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576486665218" />
+    <state width="2173" height="330" key="GridCell.Tab.0.left" timestamp="1576486665218">
       <screen x="0" y="0" width="2194" height="1194" />
     </state>
-    <state width="2173" height="330" key="GridCell.Tab.0.right/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576074804217" />
-    <state x="606" y="239" key="SettingsEditor" timestamp="1576144894534">
+    <state width="2173" height="330" key="GridCell.Tab.0.left/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576486665218" />
+    <state width="2173" height="330" key="GridCell.Tab.0.right" timestamp="1576486665218">
       <screen x="0" y="0" width="2194" height="1194" />
     </state>
-    <state x="606" y="239" key="SettingsEditor/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576144894534" />
-    <state x="690" y="329" key="Vcs.Push.Dialog.v2" timestamp="1576074795951">
+    <state width="2173" height="330" key="GridCell.Tab.0.right/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576486665218" />
+    <state width="2173" height="409" key="GridCell.Tab.1.bottom" timestamp="1576479185417">
       <screen x="0" y="0" width="2194" height="1194" />
     </state>
-    <state x="690" y="329" key="Vcs.Push.Dialog.v2/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576074795951" />
-    <state x="793" y="420" key="com.intellij.ide.util.TipDialog" timestamp="1576135605410">
+    <state width="2173" height="409" key="GridCell.Tab.1.bottom/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576479185417" />
+    <state width="2173" height="409" key="GridCell.Tab.1.center" timestamp="1576479185417">
       <screen x="0" y="0" width="2194" height="1194" />
     </state>
-    <state x="793" y="420" key="com.intellij.ide.util.TipDialog/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576135605410" />
+    <state width="2173" height="409" key="GridCell.Tab.1.center/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576479185417" />
+    <state width="2173" height="409" key="GridCell.Tab.1.left" timestamp="1576479185417">
+      <screen x="0" y="0" width="2194" height="1194" />
+    </state>
+    <state width="2173" height="409" key="GridCell.Tab.1.left/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576479185417" />
+    <state width="2173" height="409" key="GridCell.Tab.1.right" timestamp="1576479185417">
+      <screen x="0" y="0" width="2194" height="1194" />
+    </state>
+    <state width="2173" height="409" key="GridCell.Tab.1.right/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576479185417" />
+    <state x="810" y="312" key="MultipleFileMergeDialog" timestamp="1576469435919">
+      <screen x="0" y="0" width="2194" height="1194" />
+    </state>
+    <state x="810" y="312" key="MultipleFileMergeDialog/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576469435919" />
+    <state x="606" y="239" key="SettingsEditor" timestamp="1576493041708">
+      <screen x="0" y="0" width="2194" height="1194" />
+    </state>
+    <state x="606" y="239" key="SettingsEditor/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576493041708" />
+    <state x="690" y="329" key="Vcs.Push.Dialog.v2" timestamp="1576486798717">
+      <screen x="0" y="0" width="2194" height="1194" />
+    </state>
+    <state x="690" y="329" key="Vcs.Push.Dialog.v2/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576486798717" />
+    <state x="793" y="420" key="com.intellij.ide.util.TipDialog" timestamp="1576477533080">
+      <screen x="0" y="0" width="2194" height="1194" />
+    </state>
+    <state x="793" y="420" key="com.intellij.ide.util.TipDialog/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576477533080" />
+    <state x="749" y="211" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1576470115459">
+      <screen x="0" y="0" width="2194" height="1194" />
+    </state>
+    <state x="749" y="211" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576470115459" />
+    <state x="669" y="332" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1576473559902">
+      <screen x="0" y="0" width="2194" height="1194" />
+    </state>
+    <state x="669" y="332" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576473559902" />
     <state width="600" height="424" key="javadoc.popup" timestamp="1576144902957">
       <screen x="0" y="0" width="2194" height="1194" />
     </state>
     <state width="600" height="424" key="javadoc.popup/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576144902957" />
-    <state x="760" y="264" width="672" height="678" key="search.everywhere.popup" timestamp="1576138574857">
+    <state x="760" y="264" width="672" height="678" key="search.everywhere.popup" timestamp="1576591691431">
       <screen x="0" y="0" width="2194" height="1194" />
     </state>
-    <state x="760" y="264" width="672" height="678" key="search.everywhere.popup/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576138574857" />
+    <state x="760" y="264" width="672" height="678" key="search.everywhere.popup/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576591691431" />
   </component>
 </project>
