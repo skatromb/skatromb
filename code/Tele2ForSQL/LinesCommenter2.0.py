@@ -108,15 +108,14 @@ SUBSTRS_TO_MATCH = [
 
 # Конфиг
 ENCODING = 'UTF-8'
-MATCHING_REGEXP = r'^((?!--).)*'
-
+IGNORE_COMMENTED = False
 
 class CodeWithMark(TypedDict):
     code_line: str
     is_marked: bool
 
 
-def check_and_modify(file_paths: List[str], substrs_to_match: List[str]):
+def check_and_modify(file_paths: List[str], substrs_to_match: List[str], ignore_commented=False):
 
     def check_files_exists():
         if reduce(lambda result, file_path: (result is True or not os.path.exists(file_path)), file_paths):
@@ -125,7 +124,10 @@ def check_and_modify(file_paths: List[str], substrs_to_match: List[str]):
     def mark_line(code_line: str) -> CodeWithMark:
         # example = {'CREATE TABLE COMMENT_ME': True}
         def match_code_line(substr: str) -> bool:
-            return re.search(r'^((?!--).)*(?#строка не закомменчена)' + code_line, substr) is not None
+            regexp = code_line
+            if ignore_commented:
+                regexp = r'^((?!--).)*' + regexp
+            return re.search(regexp, substr) is not None
 
         is_marked: bool = reduce(lambda result, substr_to_match: result is True or
                                  match_code_line(substr_to_match), substrs_to_match)
@@ -166,3 +168,6 @@ def check_and_modify(file_paths: List[str], substrs_to_match: List[str]):
         marked_lines = files_code[file.name]
         file.writelines([modify_or_pass_line(line) for line in marked_lines])
         file.close()
+
+
+check_and_modify(FILE_PATHS, SUBSTRS_TO_MATCH, IGNORE_COMMENTED)

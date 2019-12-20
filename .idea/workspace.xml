@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bfe8fd62-1fd3-4475-9bcd-7f160acb2e8d" name="Default Changelist" comment="Чуть красоты">
-      <change afterPath="$PROJECT_DIR$/code/Tele2ForSQL/LinesCommenter2.0.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/PycharmProjects.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/PycharmProjects.iml" afterDir="false" />
+    <list default="true" id="bfe8fd62-1fd3-4475-9bcd-7f160acb2e8d" name="Default Changelist" comment="Ну, написал, наконец, вторую версию. Приступаю к дебагу">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/Tele2ForSQL/LinesCommenter2.0.py" beforeDir="false" afterPath="$PROJECT_DIR$/code/Tele2ForSQL/LinesCommenter2.0.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -348,7 +347,14 @@
       <option name="project" value="LOCAL" />
       <updated>1576595836758</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Ну, написал, наконец, вторую версию. Приступаю к дебагу">
+      <created>1576850977970</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1576850977970</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -385,7 +391,8 @@
     <MESSAGE value="Убрал ретурны" />
     <MESSAGE value="Чуть красоты" />
     <MESSAGE value="Заменил регулярку на строгое нахождение комментов" />
-    <option name="LAST_COMMIT_MESSAGE" value="Заменил регулярку на строгое нахождение комментов" />
+    <MESSAGE value="Ну, написал, наконец, вторую версию. Приступаю к дебагу" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ну, написал, наконец, вторую версию. Приступаю к дебагу" />
   </component>
   <component name="WindowStateProjectService">
     <state x="940" y="505" key="#com.jetbrains.python.refactoring.move.PyMakeFunctionTopLevelDialog" timestamp="1576840875294">
@@ -404,10 +411,10 @@
       <screen x="0" y="0" width="2194" height="1194" />
     </state>
     <state x="981" y="299" width="889" height="595" key="#xdebugger.evaluate/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576476476735" />
-    <state x="213" y="260" width="1737" height="812" key="CommitChangelistDialog2" timestamp="1576595835540">
+    <state x="213" y="260" width="1737" height="812" key="CommitChangelistDialog2" timestamp="1576851413663">
       <screen x="0" y="0" width="2194" height="1194" />
     </state>
-    <state x="213" y="260" width="1737" height="812" key="CommitChangelistDialog2/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576595835540" />
+    <state x="213" y="260" width="1737" height="812" key="CommitChangelistDialog2/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576851413663" />
     <state width="2173" height="409" key="GridCell.Tab.0.bottom" timestamp="1576650866936">
       <screen x="0" y="0" width="2194" height="1194" />
     </state>
@@ -448,10 +455,10 @@
       <screen x="0" y="0" width="2194" height="1194" />
     </state>
     <state x="606" y="239" key="SettingsEditor/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576493041708" />
-    <state x="690" y="329" key="Vcs.Push.Dialog.v2" timestamp="1576595838430">
+    <state x="690" y="329" key="Vcs.Push.Dialog.v2" timestamp="1576851034005">
       <screen x="0" y="0" width="2194" height="1194" />
     </state>
-    <state x="690" y="329" key="Vcs.Push.Dialog.v2/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576595838430" />
+    <state x="690" y="329" key="Vcs.Push.Dialog.v2/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576851034005" />
     <state x="793" y="420" key="com.intellij.ide.util.TipDialog" timestamp="1576824870457">
       <screen x="0" y="0" width="2194" height="1194" />
     </state>
@@ -472,9 +479,9 @@
       <screen x="0" y="0" width="2194" height="1194" />
     </state>
     <state width="600" height="424" key="javadoc.popup/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576144902957" />
-    <state x="760" y="264" width="672" height="678" key="search.everywhere.popup" timestamp="1576591691431">
+    <state x="760" y="264" width="672" height="678" key="search.everywhere.popup" timestamp="1576851297747">
       <screen x="0" y="0" width="2194" height="1194" />
     </state>
-    <state x="760" y="264" width="672" height="678" key="search.everywhere.popup/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576591691431" />
+    <state x="760" y="264" width="672" height="678" key="search.everywhere.popup/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576851297747" />
   </component>
 </project>
