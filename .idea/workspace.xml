@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="bfe8fd62-1fd3-4475-9bcd-7f160acb2e8d" name="Default Changelist" comment="Чуть красоты">
       <change afterPath="$PROJECT_DIR$/code/Tele2ForSQL/LinesCommenter2.0.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/PycharmProjects.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/PycharmProjects.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/Tele2ForSQL/LinesCommenter.py" beforeDir="false" afterPath="$PROJECT_DIR$/code/Tele2ForSQL/LinesCommenter.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +55,7 @@
       <recent name="$PROJECT_DIR$/code" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.LinesCommenter">
+  <component name="RunManager" selected="Python.scratch_1">
     <configuration name="HistoricalDataScriptNEs (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="PycharmProjects" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -119,6 +119,27 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="scratch_1" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="PycharmProjects" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$APPLICATION_CONFIG_DIR$/scratches" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$APPLICATION_CONFIG_DIR$/scratches/scratch_1.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="PycharmProjects" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -142,6 +163,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.scratch_1" />
         <item itemvalue="Python.LinesCommenter" />
         <item itemvalue="Python.HistoricalDataScriptNEs (1)" />
         <item itemvalue="Python.test" />
@@ -319,7 +341,14 @@
       <option name="project" value="LOCAL" />
       <updated>1576486781095</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Заменил регулярку на строгое нахождение комментов">
+      <created>1576595836758</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1576595836758</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -355,49 +384,62 @@
     <MESSAGE value="Код некрасивый, но работает!" />
     <MESSAGE value="Убрал ретурны" />
     <MESSAGE value="Чуть красоты" />
-    <option name="LAST_COMMIT_MESSAGE" value="Чуть красоты" />
+    <MESSAGE value="Заменил регулярку на строгое нахождение комментов" />
+    <option name="LAST_COMMIT_MESSAGE" value="Заменил регулярку на строгое нахождение комментов" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="940" y="505" key="#com.jetbrains.python.refactoring.move.PyMakeFunctionTopLevelDialog" timestamp="1576840875294">
+      <screen x="0" y="0" width="2194" height="1194" />
+    </state>
+    <state x="940" y="505" key="#com.jetbrains.python.refactoring.move.PyMakeFunctionTopLevelDialog/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576840875294" />
+    <state x="940" y="488" key="#com.jetbrains.python.refactoring.move.PyMoveModuleMembersDialog" timestamp="1576836910694">
+      <screen x="0" y="0" width="2194" height="1194" />
+    </state>
+    <state x="940" y="488" key="#com.jetbrains.python.refactoring.move.PyMoveModuleMembersDialog/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576836910694" />
+    <state x="971" y="351" key="#xdebugger.XInspectDialog" timestamp="1576841466798">
+      <screen x="0" y="0" width="2194" height="1194" />
+    </state>
+    <state x="971" y="351" key="#xdebugger.XInspectDialog/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576841466798" />
     <state x="981" y="299" width="889" height="595" key="#xdebugger.evaluate" timestamp="1576476476735">
       <screen x="0" y="0" width="2194" height="1194" />
     </state>
     <state x="981" y="299" width="889" height="595" key="#xdebugger.evaluate/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576476476735" />
-    <state x="213" y="260" width="1737" height="812" key="CommitChangelistDialog2" timestamp="1576499532981">
+    <state x="213" y="260" width="1737" height="812" key="CommitChangelistDialog2" timestamp="1576595835540">
       <screen x="0" y="0" width="2194" height="1194" />
     </state>
-    <state x="213" y="260" width="1737" height="812" key="CommitChangelistDialog2/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576499532981" />
-    <state width="2173" height="330" key="GridCell.Tab.0.bottom" timestamp="1576486665218">
+    <state x="213" y="260" width="1737" height="812" key="CommitChangelistDialog2/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576595835540" />
+    <state width="2173" height="409" key="GridCell.Tab.0.bottom" timestamp="1576650866936">
       <screen x="0" y="0" width="2194" height="1194" />
     </state>
-    <state width="2173" height="330" key="GridCell.Tab.0.bottom/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576486665218" />
-    <state width="2173" height="330" key="GridCell.Tab.0.center" timestamp="1576486665218">
+    <state width="2173" height="409" key="GridCell.Tab.0.bottom/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576650866936" />
+    <state width="2173" height="409" key="GridCell.Tab.0.center" timestamp="1576650866936">
       <screen x="0" y="0" width="2194" height="1194" />
     </state>
-    <state width="2173" height="330" key="GridCell.Tab.0.center/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576486665218" />
-    <state width="2173" height="330" key="GridCell.Tab.0.left" timestamp="1576486665218">
+    <state width="2173" height="409" key="GridCell.Tab.0.center/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576650866936" />
+    <state width="2173" height="409" key="GridCell.Tab.0.left" timestamp="1576650866936">
       <screen x="0" y="0" width="2194" height="1194" />
     </state>
-    <state width="2173" height="330" key="GridCell.Tab.0.left/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576486665218" />
-    <state width="2173" height="330" key="GridCell.Tab.0.right" timestamp="1576486665218">
+    <state width="2173" height="409" key="GridCell.Tab.0.left/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576650866936" />
+    <state width="2173" height="409" key="GridCell.Tab.0.right" timestamp="1576650866936">
       <screen x="0" y="0" width="2194" height="1194" />
     </state>
-    <state width="2173" height="330" key="GridCell.Tab.0.right/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576486665218" />
-    <state width="2173" height="409" key="GridCell.Tab.1.bottom" timestamp="1576479185417">
+    <state width="2173" height="409" key="GridCell.Tab.0.right/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576650866936" />
+    <state width="2173" height="409" key="GridCell.Tab.1.bottom" timestamp="1576650866936">
       <screen x="0" y="0" width="2194" height="1194" />
     </state>
-    <state width="2173" height="409" key="GridCell.Tab.1.bottom/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576479185417" />
-    <state width="2173" height="409" key="GridCell.Tab.1.center" timestamp="1576479185417">
+    <state width="2173" height="409" key="GridCell.Tab.1.bottom/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576650866936" />
+    <state width="2173" height="409" key="GridCell.Tab.1.center" timestamp="1576650866936">
       <screen x="0" y="0" width="2194" height="1194" />
     </state>
-    <state width="2173" height="409" key="GridCell.Tab.1.center/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576479185417" />
-    <state width="2173" height="409" key="GridCell.Tab.1.left" timestamp="1576479185417">
+    <state width="2173" height="409" key="GridCell.Tab.1.center/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576650866936" />
+    <state width="2173" height="409" key="GridCell.Tab.1.left" timestamp="1576650866936">
       <screen x="0" y="0" width="2194" height="1194" />
     </state>
-    <state width="2173" height="409" key="GridCell.Tab.1.left/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576479185417" />
-    <state width="2173" height="409" key="GridCell.Tab.1.right" timestamp="1576479185417">
+    <state width="2173" height="409" key="GridCell.Tab.1.left/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576650866936" />
+    <state width="2173" height="409" key="GridCell.Tab.1.right" timestamp="1576650866936">
       <screen x="0" y="0" width="2194" height="1194" />
     </state>
-    <state width="2173" height="409" key="GridCell.Tab.1.right/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576479185417" />
+    <state width="2173" height="409" key="GridCell.Tab.1.right/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576650866936" />
     <state x="810" y="312" key="MultipleFileMergeDialog" timestamp="1576469435919">
       <screen x="0" y="0" width="2194" height="1194" />
     </state>
@@ -406,14 +448,14 @@
       <screen x="0" y="0" width="2194" height="1194" />
     </state>
     <state x="606" y="239" key="SettingsEditor/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576493041708" />
-    <state x="690" y="329" key="Vcs.Push.Dialog.v2" timestamp="1576486798717">
+    <state x="690" y="329" key="Vcs.Push.Dialog.v2" timestamp="1576595838430">
       <screen x="0" y="0" width="2194" height="1194" />
     </state>
-    <state x="690" y="329" key="Vcs.Push.Dialog.v2/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576486798717" />
-    <state x="793" y="420" key="com.intellij.ide.util.TipDialog" timestamp="1576477533080">
+    <state x="690" y="329" key="Vcs.Push.Dialog.v2/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576595838430" />
+    <state x="793" y="420" key="com.intellij.ide.util.TipDialog" timestamp="1576824870457">
       <screen x="0" y="0" width="2194" height="1194" />
     </state>
-    <state x="793" y="420" key="com.intellij.ide.util.TipDialog/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576477533080" />
+    <state x="793" y="420" key="com.intellij.ide.util.TipDialog/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576824870457" />
     <state x="749" y="211" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1576470115459">
       <screen x="0" y="0" width="2194" height="1194" />
     </state>
@@ -422,6 +464,10 @@
       <screen x="0" y="0" width="2194" height="1194" />
     </state>
     <state x="669" y="332" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576473559902" />
+    <state x="791" y="329" width="612" height="536" key="find.popup" timestamp="1576826052879">
+      <screen x="0" y="0" width="2194" height="1194" />
+    </state>
+    <state x="791" y="329" width="612" height="536" key="find.popup/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576826052879" />
     <state width="600" height="424" key="javadoc.popup" timestamp="1576144902957">
       <screen x="0" y="0" width="2194" height="1194" />
     </state>
