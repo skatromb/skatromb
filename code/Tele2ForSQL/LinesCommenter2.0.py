@@ -1,19 +1,3 @@
-"""
-def open_files(list(filename)) -> list(file)
-def parse_file(file) -> list(code_line)
-def parse_line(text) -> code_line
-
-files = open_files(files)
-
-def parse_file(file):
-    lines = str.split('\n',file)
-    text = []
-    text = [text.append(parse_line(line)) for line in lines]
-    for line in lines:
-        text.append(parse_line(line))
-    return  text
-"""
-
 import os
 import re
 from typing import List, TypedDict
@@ -21,13 +5,11 @@ from functools import reduce
 
 
 # Где искать
-DIR_NAME = r'C:\Users\ivan.livadnyy\Documents\GitLab\teradata\MDS\Tables'
-FILE_NAMES = [
-    'DMX_CHARGE.sql',
-    'DMX_CHARGE_ARCHIVE.sql',
-    # '3. REPLACE PROCEDURE LOAD_DMX_CHARGE_DATE.sql'
+FILE_PATHS = [
+    r'C:\Users\ivan.livadnyy\Documents\GitLab\teradata\MDS\Tables\DMX_CHARGE.sql',
+    r'C:\Users\ivan.livadnyy\Documents\GitLab\teradata\MDS\Tables\DMX_CHARGE_ARCHIVE.sql',
+    r'C:\Users\ivan.livadnyy\Documents\GitLab\teradata\SQL\TFS-60980. DMX_CHARGES\3. REPLACE PROCEDURE LOAD_DMX_CHARGE_DATE.sql'
 ]
-FILE_PATHS = [os.path.join(DIR_NAME, FILE_NAME) for FILE_NAME in FILE_NAMES]
 
 # Что искать
 SUBSTRS_TO_MATCH = [
@@ -90,76 +72,90 @@ SUBSTRS_TO_MATCH = [
 
 
     # Неймы
-    'абонплата_2',
-    'баланс_и_остатки_1',
-    'баланс_и_остатки_2',
-    'возврат',
-    'договор',
-    'доначисления',
-    'компенсация',
-    'скидка',
-    'списания_1',
-    'списания_2',
-    'списания_3',
-    'списания_4',
-    'списания_5',
-    'списания_6'
+    # 'абонплата_2',
+    # 'баланс_и_остатки_1',
+    # 'баланс_и_остатки_2',
+    # 'возврат',
+    # 'договор',
+    # 'доначисления',
+    # 'компенсация',
+    # 'скидка',
+    # 'списания_1',
+    # 'списания_2',
+    # 'списания_3',
+    # 'списания_4',
+    # 'списания_5',
+    # 'списания_6'
 ]
 
 # Конфиг
 ENCODING = 'UTF-8'
 IGNORE_COMMENTED = False
 
+
 class CodeWithMark(TypedDict):
     code_line: str
     is_marked: bool
 
 
-def check_and_modify(file_paths: List[str], substrs_to_match: List[str], ignore_commented=False):
+LINES_WILL_BE_DICT = {'commented': 'Комментим', 'deleted': 'Удаляем'}
+
+def check_and_modify(file_paths: List[str], substrs_to_match: List[str], lines_will_be='commented', ignore_commented_lines=False):
+    # lines_will_be: 'commented' or 'deleted'
 
     def check_files_exists():
-        if reduce(lambda result, file_path: (result is True or not os.path.exists(file_path)), file_paths):
-            raise Exception('Указанного пути к файлу не существует')
+        for file_path in file_paths:
+            if not os.path.exists(file_path):
+                raise Exception('Пути к файлу не существует: "' + file_path + '"')
 
     def mark_line(code_line: str) -> CodeWithMark:
         # example = {'CREATE TABLE COMMENT_ME': True}
-        def match_code_line(substr: str) -> bool:
-            regexp = code_line
+        def match_code_line(substr: str, ignore_commented=ignore_commented_lines) -> bool:
+            regexp = substr
             if ignore_commented:
                 regexp = r'^((?!--).)*' + regexp
-            return re.search(regexp, substr) is not None
+            return re.search(regexp, code_line) is not None
 
         is_marked: bool = reduce(lambda result, substr_to_match: result is True or
                                  match_code_line(substr_to_match), substrs_to_match)
         return {'code_line': code_line, 'is_marked': is_marked}
 
-    def modify_or_pass_line(code_line: CodeWithMark) -> str:
-        if code_line['is_marked']:
-            return '-- ' + code_line['code_line']
+    def modify_or_pass_line(code_line: CodeWithMark, action=lines_will_be) -> str:
+        new_line = code_line['code_line']
+        if action == 'commented':
+            if code_line['is_marked']:
+                new_line = '-- '
+            return new_line
+        elif action == 'deleted':
+            return ''
         else:
-            return code_line['code_line']
+            raise Exception('lines_will_be должен быть из ' + str(LINES_WILL_BE_DICT.keys()))
 
+    # Проверки
     check_files_exists()
-    print('ИЗМЕНЯЕМЫЕ СТРОКИ:')
+
+    print('\nИЗМЕНЯЕМЫЕ СТРОКИ:')
 
     # Открываем файлы
     files = [open(file_path, mode='r+', encoding=ENCODING) for file_path in file_paths]
     files_code = dict()
+
     for file in files:
-        print('\n\n' + file.name)
+        print('\n\n' + file.name + '\n')
         # [{'-- Начало файла': False}, {'CREATE TABLE COMMENT_ME': True}, ...]
         marked_lines = [mark_line(code_line) for code_line in file.readlines()]
 
         # Показываем пользователю, какие строки собираемся менять
         for i, marked_line in enumerate(marked_lines):
             if marked_line['is_marked']:
-                print(str(i) + '.\t' + marked_line['code_line'])
+                just = len(str(len(marked_lines)))
+                print(str(i).rjust(just) + '.\t' + marked_line['code_line'], end='')
 
         # {'1.sql': [{'--': False}, {'CREATE TABLE COMMENT_ME': True}, ...], '2.sql': ...}
         files_code[file.name] = marked_lines
 
     # Если пользователь согласен, прозводим изменения
-    if input('Комментим эти строки? (y/yes, n/no)').lower() not in ('y', 'yes'):
+    if input(LINES_WILL_BE_DICT[lines_will_be] + ' эти строки? (y/yes, n/no)').lower() not in ('y', 'yes'):
         exit()
 
     # Собственно, меняем строки и закрываем файлы
@@ -170,4 +166,4 @@ def check_and_modify(file_paths: List[str], substrs_to_match: List[str], ignore_
         file.close()
 
 
-check_and_modify(FILE_PATHS, SUBSTRS_TO_MATCH, IGNORE_COMMENTED)
+check_and_modify(FILE_PATHS, SUBSTRS_TO_MATCH, lines_will_be='deleted', ignore_commented_lines=False)
