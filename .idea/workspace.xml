@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bfe8fd62-1fd3-4475-9bcd-7f160acb2e8d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/code/Tele2ForSQL/HistoricalDataScript_DMX_CHARGE.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/Tele2ForSQL/LinesCommenter2.0.py" beforeDir="false" afterPath="$PROJECT_DIR$/code/Tele2ForSQL/LinesCommenter2.0.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/Tele2ForSQL/LinesCommenter.py" beforeDir="false" afterPath="$PROJECT_DIR$/code/Tele2ForSQL/LinesCommenter.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,18 +45,28 @@
   <component name="PropertiesComponent">
     <property name="ChangesTree.GroupingKeys" value="directory" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="Python" />
     <property name="last.edited.regexp" value="CREATE TABLE --" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/code/Tele2ForSQL" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\ivan.livadnyy\Documents\GitHub\Python\code\Tele2ForSQL" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/code" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.LinesCommenter2.0">
-    <configuration name="HistoricalDataScriptNEs (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.HistoricalDataScript_DMX_CHARGE">
+    <configuration name="HistoricalDataScript_DMX_CHARGE" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="PycharmProjects" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -67,7 +78,8 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/code/Tele2ForSQL/HistoricalDataScriptNEs.py" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/code/Tele2ForSQL/HistoricalDataScript_DMX_CHARGE.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -88,6 +100,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/code/Tele2ForSQL/LinesCommenter.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
@@ -109,7 +122,30 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/code/Tele2ForSQL/LinesCommenter2.0.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python Console" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="PycharmProjects" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="/Python Console" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -130,28 +166,8 @@
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$APPLICATION_CONFIG_DIR$/scratches/scratch_1.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="PycharmProjects" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/code/Tele2ForSQL" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/code/Tele2ForSQL/test" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -162,11 +178,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.HistoricalDataScript_DMX_CHARGE" />
+        <item itemvalue="Python.Python Console" />
+        <item itemvalue="Python.LinesCommenter" />
         <item itemvalue="Python.LinesCommenter2.0" />
         <item itemvalue="Python.scratch_1" />
-        <item itemvalue="Python.LinesCommenter" />
-        <item itemvalue="Python.HistoricalDataScriptNEs (1)" />
-        <item itemvalue="Python.test" />
       </list>
     </recent_temporary>
   </component>
@@ -192,6 +208,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1575203627343</updated>
+      <workItem from="1577094766792" duration="2181000" />
     </task>
     <task id="LOCAL-00001" summary="Делаю какую-то херь, пытаюсь почистить папку">
       <created>1575204120805</created>
@@ -364,6 +381,9 @@
     <option name="localTasksCounter" value="25" />
     <servers />
   </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
@@ -415,70 +435,70 @@
       <screen x="0" y="0" width="2194" height="1194" />
     </state>
     <state x="971" y="351" key="#xdebugger.XInspectDialog/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576841466798" />
-    <state x="981" y="299" width="889" height="595" key="#xdebugger.evaluate" timestamp="1576476476735">
+    <state x="1299" y="402" width="889" height="571" key="#xdebugger.evaluate" timestamp="1577082711069">
       <screen x="0" y="0" width="2194" height="1194" />
     </state>
-    <state x="981" y="299" width="889" height="595" key="#xdebugger.evaluate/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576476476735" />
-    <state x="213" y="260" width="1737" height="812" key="CommitChangelistDialog2" timestamp="1576851533743">
+    <state x="1299" y="402" width="889" height="571" key="#xdebugger.evaluate/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1577082711069" />
+    <state x="213" y="260" width="1737" height="812" key="CommitChangelistDialog2" timestamp="1576855092798">
       <screen x="0" y="0" width="2194" height="1194" />
     </state>
-    <state x="213" y="260" width="1737" height="812" key="CommitChangelistDialog2/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576851533743" />
-    <state width="2173" height="409" key="GridCell.Tab.0.bottom" timestamp="1576855006818">
+    <state x="213" y="260" width="1737" height="812" key="CommitChangelistDialog2/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576855092798" />
+    <state width="2151" height="330" key="GridCell.Tab.0.bottom" timestamp="1577096332472">
       <screen x="0" y="0" width="2194" height="1194" />
     </state>
-    <state width="2173" height="409" key="GridCell.Tab.0.bottom/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576855006818" />
-    <state width="2173" height="409" key="GridCell.Tab.0.center" timestamp="1576855006818">
+    <state width="2151" height="330" key="GridCell.Tab.0.bottom/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1577096332472" />
+    <state width="2151" height="330" key="GridCell.Tab.0.center" timestamp="1577096332472">
       <screen x="0" y="0" width="2194" height="1194" />
     </state>
-    <state width="2173" height="409" key="GridCell.Tab.0.center/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576855006818" />
-    <state width="2173" height="409" key="GridCell.Tab.0.left" timestamp="1576855006818">
+    <state width="2151" height="330" key="GridCell.Tab.0.center/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1577096332472" />
+    <state width="2151" height="330" key="GridCell.Tab.0.left" timestamp="1577096332472">
       <screen x="0" y="0" width="2194" height="1194" />
     </state>
-    <state width="2173" height="409" key="GridCell.Tab.0.left/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576855006818" />
-    <state width="2173" height="409" key="GridCell.Tab.0.right" timestamp="1576855006818">
+    <state width="2151" height="330" key="GridCell.Tab.0.left/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1577096332472" />
+    <state width="2151" height="330" key="GridCell.Tab.0.right" timestamp="1577096332472">
       <screen x="0" y="0" width="2194" height="1194" />
     </state>
-    <state width="2173" height="409" key="GridCell.Tab.0.right/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576855006818" />
-    <state width="2173" height="409" key="GridCell.Tab.1.bottom" timestamp="1576855010936">
+    <state width="2151" height="330" key="GridCell.Tab.0.right/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1577096332472" />
+    <state width="2173" height="409" key="GridCell.Tab.1.bottom" timestamp="1577094376459">
       <screen x="0" y="0" width="2194" height="1194" />
     </state>
-    <state width="2173" height="409" key="GridCell.Tab.1.bottom/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576855010936" />
-    <state width="2173" height="409" key="GridCell.Tab.1.center" timestamp="1576855010936">
+    <state width="2173" height="409" key="GridCell.Tab.1.bottom/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1577094376459" />
+    <state width="2173" height="409" key="GridCell.Tab.1.center" timestamp="1577094376459">
       <screen x="0" y="0" width="2194" height="1194" />
     </state>
-    <state width="2173" height="409" key="GridCell.Tab.1.center/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576855010936" />
-    <state width="2173" height="409" key="GridCell.Tab.1.left" timestamp="1576855010936">
+    <state width="2173" height="409" key="GridCell.Tab.1.center/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1577094376459" />
+    <state width="2173" height="409" key="GridCell.Tab.1.left" timestamp="1577094376459">
       <screen x="0" y="0" width="2194" height="1194" />
     </state>
-    <state width="2173" height="409" key="GridCell.Tab.1.left/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576855010936" />
-    <state width="2173" height="409" key="GridCell.Tab.1.right" timestamp="1576855010936">
+    <state width="2173" height="409" key="GridCell.Tab.1.left/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1577094376459" />
+    <state width="2173" height="409" key="GridCell.Tab.1.right" timestamp="1577094376459">
       <screen x="0" y="0" width="2194" height="1194" />
     </state>
-    <state width="2173" height="409" key="GridCell.Tab.1.right/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576855010936" />
+    <state width="2173" height="409" key="GridCell.Tab.1.right/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1577094376459" />
     <state x="810" y="312" key="MultipleFileMergeDialog" timestamp="1576469435919">
       <screen x="0" y="0" width="2194" height="1194" />
     </state>
     <state x="810" y="312" key="MultipleFileMergeDialog/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576469435919" />
-    <state x="606" y="239" key="SettingsEditor" timestamp="1576493041708">
+    <state x="1143" y="32" key="SettingsEditor" timestamp="1577095955322">
       <screen x="0" y="0" width="2194" height="1194" />
     </state>
-    <state x="606" y="239" key="SettingsEditor/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576493041708" />
-    <state x="690" y="329" key="Vcs.Push.Dialog.v2" timestamp="1576851538888">
+    <state x="1143" y="32" key="SettingsEditor/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1577095955322" />
+    <state x="690" y="329" key="Vcs.Push.Dialog.v2" timestamp="1576855095095">
       <screen x="0" y="0" width="2194" height="1194" />
     </state>
-    <state x="690" y="329" key="Vcs.Push.Dialog.v2/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576851538888" />
-    <state x="793" y="420" key="com.intellij.ide.util.TipDialog" timestamp="1576824870457">
+    <state x="690" y="329" key="Vcs.Push.Dialog.v2/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576855095095" />
+    <state x="793" y="420" key="com.intellij.ide.util.TipDialog" timestamp="1577094768945">
       <screen x="0" y="0" width="2194" height="1194" />
     </state>
-    <state x="793" y="420" key="com.intellij.ide.util.TipDialog/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576824870457" />
+    <state x="793" y="420" key="com.intellij.ide.util.TipDialog/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1577094768945" />
     <state x="749" y="211" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1576470115459">
       <screen x="0" y="0" width="2194" height="1194" />
     </state>
     <state x="749" y="211" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576470115459" />
-    <state x="669" y="332" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1576473559902">
+    <state x="669" y="332" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1577081240194">
       <screen x="0" y="0" width="2194" height="1194" />
     </state>
-    <state x="669" y="332" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576473559902" />
+    <state x="669" y="332" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1577081240194" />
     <state x="791" y="329" width="612" height="536" key="find.popup" timestamp="1576826052879">
       <screen x="0" y="0" width="2194" height="1194" />
     </state>
@@ -487,9 +507,37 @@
       <screen x="0" y="0" width="2194" height="1194" />
     </state>
     <state width="600" height="424" key="javadoc.popup/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576144902957" />
-    <state x="760" y="264" width="672" height="678" key="search.everywhere.popup" timestamp="1576851297747">
+    <state x="760" y="264" width="672" height="678" key="search.everywhere.popup" timestamp="1577079958170">
       <screen x="0" y="0" width="2194" height="1194" />
     </state>
-    <state x="760" y="264" width="672" height="678" key="search.everywhere.popup/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576851297747" />
+    <state x="760" y="264" width="672" height="678" key="search.everywhere.popup/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1577079958170" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint suspend="THREAD" type="python-line">
+          <condition expression="i in (45)" language="Python" />
+          <url>file://$PROJECT_DIR$/code/Tele2ForSQL/LinesCommenter.py</url>
+          <line>63</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint suspend="THREAD" type="python-line">
+          <condition expression="i in (45)" language="Python" />
+          <url>file://$PROJECT_DIR$/code/Tele2ForSQL/LinesCommenter.py</url>
+          <line>64</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <condition expression="i in (90,91)" language="Python" />
+          <url>file://$PROJECT_DIR$/code/Tele2ForSQL/LinesCommenter.py</url>
+          <line>68</line>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Python$Python_Console.coverage" NAME="Python Console Coverage Results" MODIFIED="1577095926290" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/Python$HistoricalDataScript_DMX_CHARGE.coverage" NAME="HistoricalDataScript_DMX_CHARGE Coverage Results" MODIFIED="1577096332459" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/code/Tele2ForSQL" />
   </component>
 </project>

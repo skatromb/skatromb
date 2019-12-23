@@ -24,7 +24,7 @@ def check_and_comment(filenames: List[str], substrs_to_comment: List[str]):
                 # line содержит любую из substrs_to_comment?
                 # TODO: Попробовать переписать в map()
                 if_line_contains_substr = \
-                    True in [re.search('^((?!--).)*' + substr, line) is not None  # ^[^\-]* - не отдавать закомменченное
+                    True in [re.search('' + substr, line) is not None  # ^((?!--).)* - вернуть
                              for substr in substrs_to_comment]
                 return if_line_contains_substr
 
@@ -59,13 +59,13 @@ def check_and_comment(filenames: List[str], substrs_to_comment: List[str]):
 
             for filename, line_numbers in files_w_line_numbers_to_comment.items():
                 file = open(filename, mode='r+', encoding=ENCODING)
-                code_lines = file.readlines()
-
-                for line_number in line_numbers:
-                    code_lines[line_number] = '-- ' + code_lines[line_number]
-
+                code_lines = list(str())
+                for i, line in enumerate(file):
+                    if not ((i in line_numbers) or (len(line.strip()) == 0 and (i - 1) in line_numbers)):
+                        code_lines.append(line)
+                file.close()
+                file = open(filename, mode='w', encoding=ENCODING)
                 # Перезаписываем файл
-                file.seek(0)
                 file.writelines(code_lines)
                 file.close()
                 # list(map(lambda line: '-- ' + line, code_lines)))
@@ -77,13 +77,14 @@ def check_and_comment(filenames: List[str], substrs_to_comment: List[str]):
 
 
 # Где искать
-DIR_NAME = r'C:\Users\ivan.livadnyy\Documents\GitLab\teradata\MDS\Tables'
-FILE_NAMES = [
-    'DMX_CHARGE.sql',
-    'DMX_CHARGE_ARCHIVE.sql',
-    # '3. REPLACE PROCEDURE LOAD_DMX_CHARGE_DATE.sql'
+FILE_PATHS = [
+    r'C:\Users\ivan.livadnyy\Documents\GitLab\teradata\MDS\Tables\DMX_CHARGE.sql',
+    r'C:\Users\ivan.livadnyy\Documents\GitLab\teradata\MDS\Tables\DMX_CHARGE_ARCHIVE.sql',
+    r'C:\Users\ivan.livadnyy\Documents\GitLab\teradata\MDS\Stored Procedures\LOAD_DMX_CHARGE_DATE.sql',
+    r'C:\Users\ivan.livadnyy\Documents\GitLab\teradata\SQL\TFS-60980. DMX_CHARGES\2. DROP AND CREATE TABLES DMX_CHARGE, DMX_CHARGE_ARCHIVE.sql',
+    r'C:\Users\ivan.livadnyy\Documents\GitLab\teradata\SQL\TFS-60980. DMX_CHARGES\3. REPLACE PROCEDURE LOAD_DMX_CHARGE_DATE.sql'
+
 ]
-FILE_PATHS = [os.path.join(DIR_NAME, FILE_NAME) for FILE_NAME in FILE_NAMES]
 
 # Что искать
 SUBSTRS_TO_COMMENT = [
