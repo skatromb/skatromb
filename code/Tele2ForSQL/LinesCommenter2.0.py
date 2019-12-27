@@ -6,69 +6,70 @@ from functools import reduce
 
 # Где искать
 FILE_PATHS = [
-    r'C:\Users\ivan.livadnyy\Documents\GitLab\teradata\MDS\Tables\DMX_CHARGE.sql',
-    r'C:\Users\ivan.livadnyy\Documents\GitLab\teradata\MDS\Tables\DMX_CHARGE_ARCHIVE.sql',
-    r'C:\Users\ivan.livadnyy\Documents\GitLab\teradata\SQL\TFS-60980. DMX_CHARGES\3. REPLACE PROCEDURE LOAD_DMX_CHARGE_DATE.sql'
+    # r'C:\Users\ivan.livadnyy\Documents\GitLab\teradata\MDS\Tables\DMX_CHARGE.sql',
+    # r'C:\Users\ivan.livadnyy\Documents\GitLab\teradata\MDS\Tables\DMX_CHARGE_ARCHIVE.sql',
+    # r'C:\Users\ivan.livadnyy\Documents\GitLab\teradata\SQL\TFS-60980. DMX_CHARGES\3. REPLACE PROCEDURE LOAD_DMX_CHARGE_DATE.sql',
+    r'/Users/skatromb/PycharmProjects/Python/code/allMyCats.py'
 ]
 
 # Что искать
 SUBSTRS_TO_MATCH = [
     # Столбцы
-    'SUM_CHARGE_COMPENSATION',
-    'SUM_CHARGE_ADDS',
-    'SUM_CHARGE_CONTRACT',
-    'SUM_CHARGE_SUBS_FEE_ROUM',
-    'SUM_CHARGE_RESERVE_BAL',
-    'SUM_CHARGE_BAL_CHANGE_TEST_SUBS',
-    'SUM_CHARGE_RECIPENT_ADD',
-    'SUM_CHARGE_MC',
-    'SUM_CHARGE_PACKAGE',
-    'SUM_CHARGE_SILENCE_FEE',
-    'SUM_CHARGE_PREMIUM_MSISDN',
-    'SUM_CHARGE_PROLONG',
-    'SUM_CHARGE_RETURN',
-    'SUM_CHARGE_DISCOUNT',
-
-    'CNT_SERVICE_COMPENSATIONS',
-    'CNT_UNIQUE_SERVICE_COMPENSATION',
-
-    'CNT_SERVICE_ADDS',
-    'CNT_UNIQUE_SERVICE_ADDS',
-
-    'CNT_SERVICE_CONTRACT',
-    'CNT_UNIQUE_SERVICE_CONTRACT',
-
-    'CNT_SERVICE_SUBS_FEE_ROUM',
-    'CNT_UNIQUE_SERVICE_SUBS_FEE_ROUM',
-
-    'CNT_SERVICE_RESERVE_BAL',
-    'CNT_UNIQUE_SERVICE_RESERVE_BAL',
-
-    'CNT_SERVICE_BAL_CHANGE_TEST_SUBS',
-    'CNT_UNIQUE_SERVICE_BAL_CHANGE_TEST_SUBS',
-
-    'CNT_SERVICE_RECIPENT_ADD',
-    'CNT_UNIQUE_SERVICE_RECIPENT_ADD',
-
-    'CNT_SERVICE_MC',
-    'CNT_UNIQUE_SERVICE_MC',
-
-    'CNT_SERVICE_PACKAGE',
-    'CNT_UNIQUE_SERVICE_PACKAGE',
-
-    'CNT_SERVICE_SILENCE_FEE',
-    'CNT_UNIQUE_SERVICE_SILENCE_FEE',
-
-    'CNT_SERVICE_PREMIUM_MSISDN',
-    'CNT_UNIQUE_SERVICE_PREMIUM_MSISDN',
-
-    'CNT_SERVICE_PROLONG',
-    'CNT_UNIQUE_SERVICE_PROLONG',
-
-    'CNT_SERVICE_RETURN',
-    'CNT_UNIQUE_SERVICE_RETURN',
-    'CNT_SERVICE_DISCOUNT',
-    'CNT_UNIQUE_SERVICE_DISCOUNT',
+    # 'SUM_CHARGE_COMPENSATION',
+    # 'SUM_CHARGE_ADDS',
+    # 'SUM_CHARGE_CONTRACT',
+    # 'SUM_CHARGE_SUBS_FEE_ROUM',
+    # 'SUM_CHARGE_RESERVE_BAL',
+    # 'SUM_CHARGE_BAL_CHANGE_TEST_SUBS',
+    # 'SUM_CHARGE_RECIPENT_ADD',
+    # 'SUM_CHARGE_MC',
+    # 'SUM_CHARGE_PACKAGE',
+    # 'SUM_CHARGE_SILENCE_FEE',
+    # 'SUM_CHARGE_PREMIUM_MSISDN',
+    # 'SUM_CHARGE_PROLONG',
+    # 'SUM_CHARGE_RETURN',
+    # 'SUM_CHARGE_DISCOUNT',
+    #
+    # 'CNT_SERVICE_COMPENSATIONS',
+    # 'CNT_UNIQUE_SERVICE_COMPENSATION',
+    #
+    # 'CNT_SERVICE_ADDS',
+    # 'CNT_UNIQUE_SERVICE_ADDS',
+    #
+    # 'CNT_SERVICE_CONTRACT',
+    # 'CNT_UNIQUE_SERVICE_CONTRACT',
+    #
+    # 'CNT_SERVICE_SUBS_FEE_ROUM',
+    # 'CNT_UNIQUE_SERVICE_SUBS_FEE_ROUM',
+    #
+    # 'CNT_SERVICE_RESERVE_BAL',
+    # 'CNT_UNIQUE_SERVICE_RESERVE_BAL',
+    #
+    # 'CNT_SERVICE_BAL_CHANGE_TEST_SUBS',
+    # 'CNT_UNIQUE_SERVICE_BAL_CHANGE_TEST_SUBS',
+    #
+    # 'CNT_SERVICE_RECIPENT_ADD',
+    # 'CNT_UNIQUE_SERVICE_RECIPENT_ADD',
+    #
+    # 'CNT_SERVICE_MC',
+    # 'CNT_UNIQUE_SERVICE_MC',
+    #
+    # 'CNT_SERVICE_PACKAGE',
+    # 'CNT_UNIQUE_SERVICE_PACKAGE',
+    #
+    # 'CNT_SERVICE_SILENCE_FEE',
+    # 'CNT_UNIQUE_SERVICE_SILENCE_FEE',
+    #
+    # 'CNT_SERVICE_PREMIUM_MSISDN',
+    # 'CNT_UNIQUE_SERVICE_PREMIUM_MSISDN',
+    #
+    # 'CNT_SERVICE_PROLONG',
+    # 'CNT_UNIQUE_SERVICE_PROLONG',
+    #
+    # 'CNT_SERVICE_RETURN',
+    # 'CNT_UNIQUE_SERVICE_RETURN',
+    # 'CNT_SERVICE_DISCOUNT',
+    # 'CNT_UNIQUE_SERVICE_DISCOUNT',
 
 
     # Неймы
@@ -85,7 +86,8 @@ SUBSTRS_TO_MATCH = [
     # 'списания_3',
     # 'списания_4',
     # 'списания_5',
-    # 'списания_6'
+    # 'списания_6'"""
+    'print'
 ]
 
 # Конфиг
@@ -100,9 +102,11 @@ class CodeWithMark(TypedDict):
 
 LINES_WILL_BE_DICT = {'commented': 'Комментим', 'deleted': 'Удаляем'}
 
-def check_and_modify(file_paths: List[str], substrs_to_match: List[str], lines_will_be='commented', ignore_commented_lines=False):
+
+def check_and_modify(file_paths: List[str], substrs_to_match: List[str], lines_will_be='commented', ignore_commented_lines=True):
     # lines_will_be: 'commented' or 'deleted'
 
+    # Проверка на существование всех путей
     def check_files_exists():
         for file_path in file_paths:
             if not os.path.exists(file_path):
@@ -110,26 +114,29 @@ def check_and_modify(file_paths: List[str], substrs_to_match: List[str], lines_w
 
     def mark_line(code_line: str) -> CodeWithMark:
         # example = {'CREATE TABLE COMMENT_ME': True}
+        # Проверить, матчится ли строка
         def match_code_line(substr: str, ignore_commented=ignore_commented_lines) -> bool:
             regexp = substr
             if ignore_commented:
                 regexp = r'^((?!--).)*' + regexp
             return re.search(regexp, code_line) is not None
 
+        # Вернуть строку с меткой, сматчилась ли она
         is_marked: bool = reduce(lambda result, substr_to_match: result is True or
-                                 match_code_line(substr_to_match), substrs_to_match)
+                                 match_code_line(substr_to_match), substrs_to_match, False)
         return {'code_line': code_line, 'is_marked': is_marked}
 
+    # Провести изменение строки: закомментить, или удалить
     def modify_or_pass_line(code_line: CodeWithMark, action=lines_will_be) -> str:
         new_line = code_line['code_line']
-        if action == 'commented':
-            if code_line['is_marked']:
-                new_line = '-- '
-            return new_line
-        elif action == 'deleted':
-            return ''
-        else:
-            raise Exception('lines_will_be должен быть из ' + str(LINES_WILL_BE_DICT.keys()))
+        if code_line['is_marked']:
+            if action == 'commented':
+                new_line = '-- ' + new_line
+            elif action == 'deleted':
+                new_line = ''
+            else:
+                raise Exception('lines_will_be должен быть из ' + str(LINES_WILL_BE_DICT.keys()))
+        return new_line
 
     # Проверки
     check_files_exists()
