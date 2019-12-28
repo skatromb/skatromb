@@ -162,12 +162,13 @@ def check_and_modify(file_paths: List[str], substrs_to_match: List[str], lines_w
         files_code[file.name] = marked_lines
 
     # Если пользователь согласен, прозводим изменения
-    if input(LINES_WILL_BE_DICT[lines_will_be] + ' эти строки? (y/yes, n/no)').lower() not in ('y', 'yes'):
+    if input(LINES_WILL_BE_DICT[lines_will_be] + ' эти строки? (y/yes, n/no)\n').lower() not in ('y', 'yes'):
         exit()
 
     # Собственно, меняем строки и закрываем файлы
     for file in files:
         file.seek(0)
+        file.truncate()
         marked_lines = files_code[file.name]
         file.writelines([modify_or_pass_line(line) for line in marked_lines])
         file.close()
