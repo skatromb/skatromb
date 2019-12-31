@@ -44,9 +44,9 @@ def generate_sql_for_month(year: date.year, month: date.month):
 
 
 # 2019 с декабря
-for Month in range(11, 0, -1):
+for Month in range(10, 7, -1):
     generate_sql_for_month(year=2019, month=Month)
 
 # 2018 до февраля
-for Month in range(12, 1, -1):
-    generate_sql_for_month(year=2018, month=Month)
+# for Month in range(12, 1, -1):
+#     generate_sql_for_month(year=2018, month=Month)
