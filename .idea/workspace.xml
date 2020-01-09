@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bfe8fd62-1fd3-4475-9bcd-7f160acb2e8d" name="Default Changelist" comment="">
+    <list default="true" id="bfe8fd62-1fd3-4475-9bcd-7f160acb2e8d" name="Default Changelist" comment="Рабочая версия">
+      <change afterPath="$PROJECT_DIR$/code/Tele2ForSQL/LinesCommenter3.0.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/Tele2ForSQL/LinesCommenter2.0.py" beforeDir="false" afterPath="$PROJECT_DIR$/code/Tele2ForSQL/LinesCommenter2.0.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/allMyCats.py" beforeDir="false" afterPath="$PROJECT_DIR$/code/allMyCats.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,15 +47,18 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="Python" />
     <property name="last.edited.regexp" value="CREATE TABLE --" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/code/Tele2ForSQL" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/code/Tele2ForSQL" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/code" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.LinesCommenter2.0">
+  <component name="RunManager" selected="Python.LinesCommenter3.0">
     <configuration name="HistoricalDataScriptNEs (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="PycharmProjects" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -123,6 +125,27 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="LinesCommenter3.0" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="PycharmProjects" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/code/Tele2ForSQL" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/code/Tele2ForSQL/LinesCommenter3.0.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="scratch_1" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="PycharmProjects" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -145,35 +168,13 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="PycharmProjects" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/code/Tele2ForSQL" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/code/Tele2ForSQL/test" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.LinesCommenter3.0" />
         <item itemvalue="Python.LinesCommenter2.0" />
         <item itemvalue="Python.scratch_1" />
         <item itemvalue="Python.LinesCommenter" />
         <item itemvalue="Python.HistoricalDataScriptNEs (1)" />
-        <item itemvalue="Python.test" />
       </list>
     </recent_temporary>
   </component>
@@ -375,7 +376,14 @@
       <option name="project" value="LOCAL" />
       <updated>1577473766854</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Рабочая версия">
+      <created>1577523557445</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1577523557445</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -415,7 +423,8 @@
     <MESSAGE value="Ну, написал, наконец, вторую версию. Приступаю к дебагу" />
     <MESSAGE value="Добавил возможность матчить закомменченное" />
     <MESSAGE value="Теперь строки меняются, но программа работает хуево" />
-    <option name="LAST_COMMIT_MESSAGE" value="Теперь строки меняются, но программа работает хуево" />
+    <MESSAGE value="Рабочая версия" />
+    <option name="LAST_COMMIT_MESSAGE" value="Рабочая версия" />
   </component>
   <component name="WindowStateProjectService">
     <state x="940" y="505" key="#com.jetbrains.python.refactoring.move.PyMakeFunctionTopLevelDialog" timestamp="1576840875294">
@@ -430,80 +439,113 @@
       <screen x="0" y="0" width="2194" height="1194" />
     </state>
     <state x="971" y="351" key="#xdebugger.XInspectDialog/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576841466798" />
-    <state x="981" y="299" width="889" height="595" key="#xdebugger.evaluate" timestamp="1576476476735">
-      <screen x="0" y="0" width="2194" height="1194" />
+    <state x="730" y="-810" width="889" height="595" key="#xdebugger.evaluate" timestamp="1578571130783">
+      <screen x="-128" y="-1080" width="1920" height="1080" />
     </state>
+    <state x="730" y="-810" key="#xdebugger.evaluate/0.0.1680.1050/-128.-1080.1920.1080@-128.-1080.1920.1080" timestamp="1578571130783" />
     <state x="981" y="299" width="889" height="595" key="#xdebugger.evaluate/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576476476735" />
-    <state x="163" y="169" width="1737" height="812" key="CommitChangelistDialog2" timestamp="1577523518614">
-      <screen x="0" y="23" width="1680" height="941" />
+    <state x="-128" y="-1080" width="1920" height="1080" key="CommitChangelistDialog2" timestamp="1578572152430">
+      <screen x="-128" y="-1080" width="1920" height="1080" />
     </state>
-    <state x="163" y="169" key="CommitChangelistDialog2/0.23.1680.941@0.23.1680.941" timestamp="1577523518614" />
+    <state x="-128" y="-1080" width="1920" height="1080" key="CommitChangelistDialog2/0.0.1680.1050/-128.-1080.1920.1080@-128.-1080.1920.1080" timestamp="1578572152430" />
+    <state x="163" y="169" key="CommitChangelistDialog2/0.23.1680.941@0.23.1680.941" timestamp="1577523557294" />
     <state x="213" y="260" width="1737" height="812" key="CommitChangelistDialog2/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576851533743" />
     <state width="1680" height="438" key="DebuggerActiveHint" timestamp="1577473170785">
       <screen x="0" y="23" width="1680" height="941" />
     </state>
     <state width="1680" height="438" key="DebuggerActiveHint/0.23.1680.941@0.23.1680.941" timestamp="1577473170785" />
-    <state width="1659" height="280" key="GridCell.Tab.0.bottom" timestamp="1577523479668">
-      <screen x="0" y="23" width="1680" height="941" />
+    <state x="130" y="-1013" key="DiffContextDialog" timestamp="1578572161224">
+      <screen x="-128" y="-1080" width="1920" height="1080" />
     </state>
-    <state width="1659" height="280" key="GridCell.Tab.0.bottom/0.23.1680.941@0.23.1680.941" timestamp="1577523479668" />
+    <state x="130" y="-1013" key="DiffContextDialog/0.0.1680.1050/-128.-1080.1920.1080@-128.-1080.1920.1080" timestamp="1578572161224" />
+    <state width="1899" height="303" key="GridCell.Tab.0.bottom" timestamp="1578572135420">
+      <screen x="-128" y="-1080" width="1920" height="1080" />
+    </state>
+    <state width="1899" height="303" key="GridCell.Tab.0.bottom/0.0.1680.1050/-128.-1080.1920.1080@-128.-1080.1920.1080" timestamp="1578572135420" />
+    <state width="1899" height="303" key="GridCell.Tab.0.bottom/0.23.1680.1027/-128.-1080.1920.1080@-128.-1080.1920.1080" timestamp="1578571798438" />
+    <state width="1899" height="338" key="GridCell.Tab.0.bottom/0.23.1680.941/-128.-1080.1920.1080@-128.-1080.1920.1080" timestamp="1578571425870" />
+    <state width="1659" height="251" key="GridCell.Tab.0.bottom/0.23.1680.941@0.23.1680.941" timestamp="1577524039520" />
     <state width="2173" height="409" key="GridCell.Tab.0.bottom/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576855006818" />
-    <state width="1659" height="280" key="GridCell.Tab.0.center" timestamp="1577523479667">
-      <screen x="0" y="23" width="1680" height="941" />
+    <state width="1899" height="303" key="GridCell.Tab.0.center" timestamp="1578572135419">
+      <screen x="-128" y="-1080" width="1920" height="1080" />
     </state>
-    <state width="1659" height="280" key="GridCell.Tab.0.center/0.23.1680.941@0.23.1680.941" timestamp="1577523479667" />
+    <state width="1899" height="303" key="GridCell.Tab.0.center/0.0.1680.1050/-128.-1080.1920.1080@-128.-1080.1920.1080" timestamp="1578572135419" />
+    <state width="1899" height="303" key="GridCell.Tab.0.center/0.23.1680.1027/-128.-1080.1920.1080@-128.-1080.1920.1080" timestamp="1578571798437" />
+    <state width="1899" height="338" key="GridCell.Tab.0.center/0.23.1680.941/-128.-1080.1920.1080@-128.-1080.1920.1080" timestamp="1578571425868" />
+    <state width="1659" height="251" key="GridCell.Tab.0.center/0.23.1680.941@0.23.1680.941" timestamp="1577524039520" />
     <state width="2173" height="409" key="GridCell.Tab.0.center/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576855006818" />
-    <state width="1659" height="280" key="GridCell.Tab.0.left" timestamp="1577523479666">
-      <screen x="0" y="23" width="1680" height="941" />
+    <state width="1899" height="303" key="GridCell.Tab.0.left" timestamp="1578572135418">
+      <screen x="-128" y="-1080" width="1920" height="1080" />
     </state>
-    <state width="1659" height="280" key="GridCell.Tab.0.left/0.23.1680.941@0.23.1680.941" timestamp="1577523479666" />
+    <state width="1899" height="303" key="GridCell.Tab.0.left/0.0.1680.1050/-128.-1080.1920.1080@-128.-1080.1920.1080" timestamp="1578572135418" />
+    <state width="1899" height="303" key="GridCell.Tab.0.left/0.23.1680.1027/-128.-1080.1920.1080@-128.-1080.1920.1080" timestamp="1578571798436" />
+    <state width="1899" height="338" key="GridCell.Tab.0.left/0.23.1680.941/-128.-1080.1920.1080@-128.-1080.1920.1080" timestamp="1578571425867" />
+    <state width="1659" height="251" key="GridCell.Tab.0.left/0.23.1680.941@0.23.1680.941" timestamp="1577524039520" />
     <state width="2173" height="409" key="GridCell.Tab.0.left/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576855006818" />
-    <state width="1659" height="280" key="GridCell.Tab.0.right" timestamp="1577523479668">
-      <screen x="0" y="23" width="1680" height="941" />
+    <state width="1899" height="303" key="GridCell.Tab.0.right" timestamp="1578572135419">
+      <screen x="-128" y="-1080" width="1920" height="1080" />
     </state>
-    <state width="1659" height="280" key="GridCell.Tab.0.right/0.23.1680.941@0.23.1680.941" timestamp="1577523479668" />
+    <state width="1899" height="303" key="GridCell.Tab.0.right/0.0.1680.1050/-128.-1080.1920.1080@-128.-1080.1920.1080" timestamp="1578572135419" />
+    <state width="1899" height="303" key="GridCell.Tab.0.right/0.23.1680.1027/-128.-1080.1920.1080@-128.-1080.1920.1080" timestamp="1578571798438" />
+    <state width="1899" height="338" key="GridCell.Tab.0.right/0.23.1680.941/-128.-1080.1920.1080@-128.-1080.1920.1080" timestamp="1578571425869" />
+    <state width="1659" height="251" key="GridCell.Tab.0.right/0.23.1680.941@0.23.1680.941" timestamp="1577524039520" />
     <state width="2173" height="409" key="GridCell.Tab.0.right/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576855006818" />
-    <state width="1659" height="280" key="GridCell.Tab.1.bottom" timestamp="1577523479669">
-      <screen x="0" y="23" width="1680" height="941" />
+    <state width="1899" height="338" key="GridCell.Tab.1.bottom" timestamp="1578571772116">
+      <screen x="-128" y="-1080" width="1920" height="1080" />
     </state>
-    <state width="1659" height="280" key="GridCell.Tab.1.bottom/0.23.1680.941@0.23.1680.941" timestamp="1577523479669" />
+    <state width="1899" height="338" key="GridCell.Tab.1.bottom/0.0.1680.1050/-128.-1080.1920.1080@-128.-1080.1920.1080" timestamp="1578571654178" />
+    <state width="1899" height="338" key="GridCell.Tab.1.bottom/0.23.1680.1027/-128.-1080.1920.1080@-128.-1080.1920.1080" timestamp="1578571772116" />
+    <state width="1899" height="338" key="GridCell.Tab.1.bottom/0.23.1680.941/-128.-1080.1920.1080@-128.-1080.1920.1080" timestamp="1578571426306" />
+    <state width="1659" height="280" key="GridCell.Tab.1.bottom/0.23.1680.941@0.23.1680.941" timestamp="1577524039516" />
     <state width="2173" height="409" key="GridCell.Tab.1.bottom/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576855010936" />
-    <state width="1659" height="280" key="GridCell.Tab.1.center" timestamp="1577523479669">
-      <screen x="0" y="23" width="1680" height="941" />
+    <state width="1899" height="338" key="GridCell.Tab.1.center" timestamp="1578571772115">
+      <screen x="-128" y="-1080" width="1920" height="1080" />
     </state>
-    <state width="1659" height="280" key="GridCell.Tab.1.center/0.23.1680.941@0.23.1680.941" timestamp="1577523479669" />
+    <state width="1899" height="338" key="GridCell.Tab.1.center/0.0.1680.1050/-128.-1080.1920.1080@-128.-1080.1920.1080" timestamp="1578571654176" />
+    <state width="1899" height="338" key="GridCell.Tab.1.center/0.23.1680.1027/-128.-1080.1920.1080@-128.-1080.1920.1080" timestamp="1578571772115" />
+    <state width="1899" height="338" key="GridCell.Tab.1.center/0.23.1680.941/-128.-1080.1920.1080@-128.-1080.1920.1080" timestamp="1578571426305" />
+    <state width="1659" height="280" key="GridCell.Tab.1.center/0.23.1680.941@0.23.1680.941" timestamp="1577524039515" />
     <state width="2173" height="409" key="GridCell.Tab.1.center/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576855010936" />
-    <state width="1659" height="280" key="GridCell.Tab.1.left" timestamp="1577523479668">
-      <screen x="0" y="23" width="1680" height="941" />
+    <state width="1899" height="338" key="GridCell.Tab.1.left" timestamp="1578571772115">
+      <screen x="-128" y="-1080" width="1920" height="1080" />
     </state>
-    <state width="1659" height="280" key="GridCell.Tab.1.left/0.23.1680.941@0.23.1680.941" timestamp="1577523479668" />
+    <state width="1899" height="338" key="GridCell.Tab.1.left/0.0.1680.1050/-128.-1080.1920.1080@-128.-1080.1920.1080" timestamp="1578571654175" />
+    <state width="1899" height="338" key="GridCell.Tab.1.left/0.23.1680.1027/-128.-1080.1920.1080@-128.-1080.1920.1080" timestamp="1578571772115" />
+    <state width="1899" height="338" key="GridCell.Tab.1.left/0.23.1680.941/-128.-1080.1920.1080@-128.-1080.1920.1080" timestamp="1578571426304" />
+    <state width="1659" height="280" key="GridCell.Tab.1.left/0.23.1680.941@0.23.1680.941" timestamp="1577524039515" />
     <state width="2173" height="409" key="GridCell.Tab.1.left/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576855010936" />
-    <state width="1659" height="280" key="GridCell.Tab.1.right" timestamp="1577523479669">
-      <screen x="0" y="23" width="1680" height="941" />
+    <state width="1899" height="338" key="GridCell.Tab.1.right" timestamp="1578571772116">
+      <screen x="-128" y="-1080" width="1920" height="1080" />
     </state>
-    <state width="1659" height="280" key="GridCell.Tab.1.right/0.23.1680.941@0.23.1680.941" timestamp="1577523479669" />
+    <state width="1899" height="338" key="GridCell.Tab.1.right/0.0.1680.1050/-128.-1080.1920.1080@-128.-1080.1920.1080" timestamp="1578571654177" />
+    <state width="1899" height="338" key="GridCell.Tab.1.right/0.23.1680.1027/-128.-1080.1920.1080@-128.-1080.1920.1080" timestamp="1578571772116" />
+    <state width="1899" height="338" key="GridCell.Tab.1.right/0.23.1680.941/-128.-1080.1920.1080@-128.-1080.1920.1080" timestamp="1578571426305" />
+    <state width="1659" height="280" key="GridCell.Tab.1.right/0.23.1680.941@0.23.1680.941" timestamp="1577524039516" />
     <state width="2173" height="409" key="GridCell.Tab.1.right/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576855010936" />
     <state x="620" y="269" key="MultipleFileMergeDialog" timestamp="1577472256188">
       <screen x="0" y="23" width="1680" height="941" />
     </state>
     <state x="620" y="269" key="MultipleFileMergeDialog/0.23.1680.941@0.23.1680.941" timestamp="1577472256188" />
     <state x="810" y="312" key="MultipleFileMergeDialog/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576469435919" />
-    <state x="630" y="211" key="RollbackChangesDialog" timestamp="1577523525962">
-      <screen x="0" y="23" width="1680" height="941" />
+    <state x="592" y="-864" key="RollbackChangesDialog" timestamp="1578572163521">
+      <screen x="-128" y="-1080" width="1920" height="1080" />
     </state>
+    <state x="592" y="-864" key="RollbackChangesDialog/0.0.1680.1050/-128.-1080.1920.1080@-128.-1080.1920.1080" timestamp="1578572163521" />
     <state x="630" y="211" key="RollbackChangesDialog/0.23.1680.941@0.23.1680.941" timestamp="1577523525962" />
-    <state x="606" y="239" key="SettingsEditor" timestamp="1576493041708">
-      <screen x="0" y="0" width="2194" height="1194" />
-    </state>
-    <state x="606" y="239" key="SettingsEditor/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576493041708" />
-    <state x="528" y="282" key="Vcs.Push.Dialog.v2" timestamp="1577473769840">
+    <state x="464" y="211" key="SettingsEditor" timestamp="1577549756302">
       <screen x="0" y="23" width="1680" height="941" />
     </state>
-    <state x="528" y="282" key="Vcs.Push.Dialog.v2/0.23.1680.941@0.23.1680.941" timestamp="1577473769840" />
-    <state x="690" y="329" key="Vcs.Push.Dialog.v2/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576851538888" />
-    <state x="793" y="420" key="com.intellij.ide.util.TipDialog" timestamp="1576824870457">
-      <screen x="0" y="0" width="2194" height="1194" />
+    <state x="464" y="211" key="SettingsEditor/0.23.1680.941@0.23.1680.941" timestamp="1577549756302" />
+    <state x="606" y="239" key="SettingsEditor/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576493041708" />
+    <state x="528" y="282" key="Vcs.Push.Dialog.v2" timestamp="1577523597768">
+      <screen x="0" y="23" width="1680" height="941" />
     </state>
+    <state x="528" y="282" key="Vcs.Push.Dialog.v2/0.23.1680.941@0.23.1680.941" timestamp="1577523597768" />
+    <state x="690" y="329" key="Vcs.Push.Dialog.v2/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576851538888" />
+    <state x="607" y="354" key="com.intellij.ide.util.TipDialog" timestamp="1578564857130">
+      <screen x="0" y="23" width="1680" height="941" />
+    </state>
+    <state x="607" y="354" key="com.intellij.ide.util.TipDialog/0.23.1680.941@0.23.1680.941" timestamp="1578564857130" />
     <state x="793" y="420" key="com.intellij.ide.util.TipDialog/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576824870457" />
     <state x="749" y="211" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1576470115459">
       <screen x="0" y="0" width="2194" height="1194" />
