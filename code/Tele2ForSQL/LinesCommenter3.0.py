@@ -16,8 +16,6 @@ SUBSTRS_TO_MATCH = (
 # Конфиг
 ENCODING = 'UTF-8'
 IGNORE_COMMENTED = False
-
-
 WHAT_TO_DO_DICT = {'commented': 'Комментим', 'deleted': 'Удаляем'}
 
 
@@ -62,26 +60,28 @@ def modify_files(file_paths: Tuple[str], substrs_to_match: Tuple[str],
     print('\nИЗМЕНЯЕМЫЕ СТРОКИ:')
 
     # Открываем файлы
-    # TODO: Засунуть проход по файлам в отдельную функцию
     files = [open(file_path, mode='r+', encoding=ENCODING) for file_path in file_paths]
 
     # Просматриваем каждый файл
-    files_code = dict()
+    files_code = {}
     for file in files:
+        # TODO: Засунуть проход по файлам в отдельную функцию
         print('\n\n' + file.name + '\n')
 
-        modified_lines = list()
-        just = len(str(len(file.readlines())))  # Вычисляем отступ для красивого форматирования вывода строк
+        # Ищем и собираем строки, которые будем заменять
+        modified_lines, lines_for_print = [], []
 
-        # DEBUG
-        file = open(r'/Users/skatromb/PycharmProjects/Python/code/allMyCats.py', mode='r+', encoding=ENCODING)
-        # Находим строки для изменений и показываем их пользователю
         for line_number, code_line in enumerate(file):
             if match(code_line):
-                print(str(line_number).rjust(just) + '.\t' + code_line, end='')
+                lines_for_print.append({'number': str(line_number + 1), 'code': code_line})
                 modified_lines.append(modify(code_line))
             else:
                 modified_lines.append(code_line)
+            just = len(str(line_number + 1)) + 1  # Вычисляем отступ для красивого форматирования вывода строк
+
+        # Выводим строки пользователю
+        for line_for_print in lines_for_print:
+            print(line_for_print['number'].rjust(just) + ': ' + line_for_print['code'], end='')
 
         files_code[file.name] = modified_lines
 
