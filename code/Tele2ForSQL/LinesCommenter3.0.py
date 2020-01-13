@@ -1,7 +1,6 @@
 import os
 import re
-from typing import Tuple
-
+from typing import Tuple, TextIO, List, Dict
 
 # Где искать
 FILE_PATHS = (
@@ -19,7 +18,8 @@ IGNORE_COMMENTED = False
 WHAT_TO_DO_DICT = {'commented': 'Комментим', 'deleted': 'Удаляем'}
 
 
-def modify_files(file_paths: Tuple[str], substrs_to_match: Tuple[str],
+# Главная функция, работает со списками файлов к изменению и списком искомых строк
+def remove_lines(file_paths: Tuple[str], substrs_to_match: Tuple[str],
                  lines_will_be='commented', ignore_commented=True):
     # lines_will_be: 'commented' or 'deleted'
 
@@ -29,9 +29,10 @@ def modify_files(file_paths: Tuple[str], substrs_to_match: Tuple[str],
             if not os.path.exists(file_path):
                 raise Exception('Пути к файлу не существует: "' + file_path + '"')
 
+    # Проверить, искомая ли строка
     def match(code_line: str) -> bool:
         # example = {code_line: 'CREATE TABLE COMMENT_ME', is_marked: True}
-        # Проверить, матчится ли строка
+        # Проверить, матчится ли строка с одним из паттернов
         def match_line_with_each(substr: str) -> bool:
             regexp = substr
             if ignore_commented:
@@ -54,22 +55,13 @@ def modify_files(file_paths: Tuple[str], substrs_to_match: Tuple[str],
             raise Exception('lines_will_be должен быть из ' + str(WHAT_TO_DO_DICT.keys()))
         return new_line
 
-    # Проверки
-    check_files_exists()
-
-    print('\nИЗМЕНЯЕМЫЕ СТРОКИ:')
-
-    # Открываем файлы
-    files = [open(file_path, mode='r+', encoding=ENCODING) for file_path in file_paths]
-
-    # Просматриваем каждый файл
-    files_code = {}
-    for file in files:
-        # TODO: Засунуть проход по файлам в отдельную функцию
+    # Просматриваем файл, формируем изменённую версию, показываем пользователю строки к изменению
+    def get_modified_version(file: TextIO) -> List[str]:
         print('\n\n' + file.name + '\n')
 
         # Ищем и собираем строки, которые будем заменять
-        modified_lines, lines_for_print = [], []
+        modified_lines: List[str] = []
+        lines_for_print: List[Dict[str, str]] = []
 
         for line_number, code_line in enumerate(file):
             if match(code_line):
@@ -79,18 +71,29 @@ def modify_files(file_paths: Tuple[str], substrs_to_match: Tuple[str],
                 modified_lines.append(code_line)
             just = len(str(line_number + 1)) + 1  # Вычисляем отступ для красивого форматирования вывода строк
 
-        # Выводим строки пользователю
+        # Выводим строки пользователю. Сделано здесь, т.к. до прохода по файлу неизвестно количество строк "\n"
         for line_for_print in lines_for_print:
             print(line_for_print['number'].rjust(just) + ': ' + line_for_print['code'], end='')
 
-        files_code[file.name] = modified_lines
+        return modified_lines
+
+    # Проверка существования файла
+    check_files_exists()
+
+    print('\nИЗМЕНЯЕМЫЕ СТРОКИ:')
+
+    # Открываем файлы
+    files = [open(file_path, mode='r+', encoding=ENCODING) for file_path in file_paths]
+
+    # Просматриваем каждый файл, формируем изменённую версию, показываем пользователю строки к изменению
+    files_code: Dict[str, List[str]] = {}
+    for file in files:
+        files_code[file.name] = get_modified_version(file)
 
     # Если пользователь согласен, прозводим изменения
     if input(WHAT_TO_DO_DICT[lines_will_be] + ' эти строки? (y/yes, n/no)\n').lower() not in ('y', 'yes'):
         exit()
     else:
-
-        # Собственно, меняем строки и закрываем файлы
         for file in files:
             file.seek(0)
             file.truncate()
@@ -98,4 +101,4 @@ def modify_files(file_paths: Tuple[str], substrs_to_match: Tuple[str],
             file.close()
 
 
-modify_files(FILE_PATHS, SUBSTRS_TO_MATCH, lines_will_be='deleted', ignore_commented=False)
+remove_lines(FILE_PATHS, SUBSTRS_TO_MATCH, lines_will_be='deleted', ignore_commented=False)
