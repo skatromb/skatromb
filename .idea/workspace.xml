@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="bfe8fd62-1fd3-4475-9bcd-7f160acb2e8d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/Tele2ForSQL/LinesCommenter3.0.py" beforeDir="false" afterPath="$PROJECT_DIR$/code/Tele2ForSQL/LinesCommenter3.0.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/Tele2ForSQL/LinesCommenter2.0.py" beforeDir="false" afterPath="$PROJECT_DIR$/code/Tele2ForSQL/LinesCommenter2.0.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +51,13 @@
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="Python" />
     <property name="last.edited.regexp" value="CREATE TABLE --" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/code/Tele2ForSQL" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="http.proxy" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -106,7 +112,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="LinesCommenter2.0" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="LinesCommenter2" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="PycharmProjects" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -119,7 +125,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/code/Tele2ForSQL/LinesCommenter2.0.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\ivan.livadnyy\Documents\GitHub\Python\code\Tele2ForSQL\LinesCommenter2.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -140,6 +146,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/code/Tele2ForSQL/LinesCommenter3.0.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
@@ -175,7 +182,6 @@
       <list>
         <item itemvalue="Python.LinesCommenter3.0" />
         <item itemvalue="Python.scratch_1" />
-        <item itemvalue="Python.LinesCommenter2.0" />
         <item itemvalue="Python.LinesCommenter" />
         <item itemvalue="Python.HistoricalDataScriptNEs (1)" />
       </list>
@@ -203,6 +209,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1575203627343</updated>
+      <workItem from="1579668870549" duration="3694000" />
+      <workItem from="1579698546418" duration="4000" />
     </task>
     <task id="LOCAL-00001" summary="Делаю какую-то херь, пытаюсь почистить папку">
       <created>1575204120805</created>
@@ -403,6 +411,9 @@
     <option name="localTasksCounter" value="29" />
     <servers />
   </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
@@ -555,32 +566,33 @@
     </state>
     <state x="620" y="269" key="MultipleFileMergeDialog/0.23.1680.941@0.23.1680.941" timestamp="1577472256188" />
     <state x="810" y="312" key="MultipleFileMergeDialog/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576469435919" />
-    <state x="592" y="-864" key="RollbackChangesDialog" timestamp="1578652061095">
-      <screen x="-128" y="-1080" width="1920" height="1080" />
+    <state x="823" y="239" key="RollbackChangesDialog" timestamp="1579670827795">
+      <screen x="0" y="0" width="2194" height="1194" />
     </state>
     <state x="592" y="-864" key="RollbackChangesDialog/0.0.1680.1050/-128.-1080.1920.1080@-128.-1080.1920.1080" timestamp="1578572163521" />
     <state x="592" y="-864" key="RollbackChangesDialog/0.23.1680.1027/-128.-1080.1920.1080@-128.-1080.1920.1080" timestamp="1578652061095" />
     <state x="630" y="211" key="RollbackChangesDialog/0.23.1680.941@0.23.1680.941" timestamp="1577523525962" />
-    <state x="402" y="-864" key="SettingsEditor" timestamp="1578902629394">
-      <screen x="-128" y="-1080" width="1920" height="1080" />
+    <state x="823" y="239" key="RollbackChangesDialog/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1579670827795" />
+    <state x="606" y="239" key="SettingsEditor" timestamp="1579668941451">
+      <screen x="0" y="0" width="2194" height="1194" />
     </state>
     <state x="402" y="-864" key="SettingsEditor/0.0.1680.1050/-128.-1080.1920.1080@-128.-1080.1920.1080" timestamp="1578644476161" />
     <state x="402" y="-864" key="SettingsEditor/0.23.1680.941/-128.-1080.1920.1080@-128.-1080.1920.1080" timestamp="1578902629394" />
     <state x="464" y="211" key="SettingsEditor/0.23.1680.941@0.23.1680.941" timestamp="1577549756302" />
-    <state x="606" y="239" key="SettingsEditor/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576493041708" />
+    <state x="606" y="239" key="SettingsEditor/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1579668941451" />
     <state x="475" y="-783" key="Vcs.Push.Dialog.v2" timestamp="1578653052018">
       <screen x="-128" y="-1080" width="1920" height="1080" />
     </state>
     <state x="475" y="-783" key="Vcs.Push.Dialog.v2/0.0.1680.1050/-128.-1080.1920.1080@-128.-1080.1920.1080" timestamp="1578653052018" />
     <state x="528" y="282" key="Vcs.Push.Dialog.v2/0.23.1680.941@0.23.1680.941" timestamp="1577523597768" />
     <state x="690" y="329" key="Vcs.Push.Dialog.v2/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576851538888" />
-    <state x="654" y="373" key="com.intellij.ide.util.TipDialog" timestamp="1578900501941">
-      <screen x="0" y="0" width="1680" height="1050" />
+    <state x="793" y="420" key="com.intellij.ide.util.TipDialog" timestamp="1579864748022">
+      <screen x="0" y="0" width="2194" height="1194" />
     </state>
     <state x="619" y="-696" key="com.intellij.ide.util.TipDialog/0.0.1680.1050/-128.-1080.1920.1080@-128.-1080.1920.1080" timestamp="1578897826967" />
     <state x="654" y="373" key="com.intellij.ide.util.TipDialog/0.0.1680.1050/-128.-1080.1920.1080@0.0.1680.1050" timestamp="1578900501941" />
     <state x="607" y="354" key="com.intellij.ide.util.TipDialog/0.23.1680.941@0.23.1680.941" timestamp="1578564857130" />
-    <state x="793" y="420" key="com.intellij.ide.util.TipDialog/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576824870457" />
+    <state x="793" y="420" key="com.intellij.ide.util.TipDialog/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1579864748022" />
     <state x="749" y="211" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1576470115459">
       <screen x="0" y="0" width="2194" height="1194" />
     </state>
