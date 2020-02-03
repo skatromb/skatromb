@@ -1,91 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bfe8fd62-1fd3-4475-9bcd-7f160acb2e8d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../_mac/laf.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../code/Assertion.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../code/CollatzSequence.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../code/Gauss.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../code/Tele2ForSQL/HistoricalDataScriptNEs.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../code/Tele2ForSQL/HistoricalDataScript_DMX_CHARGE.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../code/Tele2ForSQL/LinesCommenter.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../code/Tele2ForSQL/LinesCommenter2.0.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../code/Tele2ForSQL/LinesCommenter3.0.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../code/addInventory.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../code/allMyCats.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../code/backupToZip.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../code/birthdays.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../code/bulletPointAdder.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../code/catnapping.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../code/characterCount.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../code/characterPrictureGrid.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../code/commaCode.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../code/displayInventory.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../code/exitExample.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../code/fillingGapsInNumbering/fillingGapsInNumbering.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../code/fillingGapsInNumbering/spam002.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../code/fillingGapsInNumbering/spam00666.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../code/fillingGapsInNumbering/spam150.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../code/fillingGapsInNumbering/spam3.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../code/fillingGapsInNumbering/spam666.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../code/fiveTimes.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../code/guessTheNumber.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../code/hello.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../code/helloFunc.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../code/helloFunc2.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../code/importTry.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../code/infiniteLoop.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../code/largeFilesFinder.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../code/madlibs.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../code/magic8Ball.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../code/magic8Ball2.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../code/multiclipboard.pyw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../code/myCats.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../code/myPets.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../code/passingReference.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../code/patternforAliceBobCarol.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../code/patternforNakamoto.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../code/patternforNumbers.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../code/phoneAndEmail.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../code/picnicBroughtItems.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../code/picnicTable.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../code/pw.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../code/randomQuizGenerator.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../code/renameDates.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../code/sameName2.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../code/scopes.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../code/selectiveCopy.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../code/stripRegexVersion.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../code/swordfish.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../code/tablePrinter.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../code/tele2_test_task_analytics/input_table.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../code/tele2_test_task_analytics/tele2ExcelTransposeSum.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../code/ticTacToe.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../code/validateInput.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../code/vampire.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../code/weakPassDetection.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../code/work.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../code/yourName.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../code/zeroDivide.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../codestyles/Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../colors.scheme.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../customization.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../debugger.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../editor.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../find.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../github.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../inspection/Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../markdown.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../projectView.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../venv/Scripts/Activate.ps1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../venv/Scripts/activate" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../venv/Scripts/activate.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../venv/Scripts/deactivate.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../venv/Scripts/python.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../venv/Scripts/pythonw.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../venv/pyvenv.cfg" beforeDir="false" />
+    <list default="true" id="bfe8fd62-1fd3-4475-9bcd-7f160acb2e8d" name="Default Changelist" comment="Вернул">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,7 +26,7 @@
         <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RESET_MODE" value="MIXED" />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
@@ -142,7 +59,7 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -266,8 +183,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.scratch_2" />
-        <item itemvalue="Python.LinesCommenter3.0" />
         <item itemvalue="Python.scratch_1" />
+        <item itemvalue="Python.LinesCommenter3.0" />
         <item itemvalue="Python.LinesCommenter2.0" />
         <item itemvalue="Python.LinesCommenter" />
       </list>
@@ -286,7 +203,7 @@
     </option>
   </component>
   <component name="SvnConfiguration">
-    <configuration />
+    <configuration>$USER_HOME$/.subversion</configuration>
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -300,6 +217,8 @@
       <workItem from="1579347656131" duration="673000" />
       <workItem from="1580664658096" duration="4537000" />
       <workItem from="1580709694781" duration="43000" />
+      <workItem from="1580709776634" duration="570000" />
+      <workItem from="1580710625070" duration="40000" />
     </task>
     <task id="LOCAL-00001" summary="Делаю какую-то херь, пытаюсь почистить папку">
       <created>1575204120805</created>
@@ -518,7 +437,14 @@
       <option name="project" value="LOCAL" />
       <updated>1580709177483</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="Вернул">
+      <created>1580710002118</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1580710002118</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -539,6 +465,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="SHOW_UNVERSIONED_FILES_WHILE_COMMIT" value="false" />
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/.." />
+    </ignored-roots>
     <MESSAGE value="Опять делаю херь, уношу все в подпапку" />
     <MESSAGE value="Какие-то файлы конфигурации" />
     <MESSAGE value="Сделал кодогенерилку для процедур Витрины секторов" />
@@ -596,10 +525,10 @@
     </state>
     <state x="730" y="-810" key="#xdebugger.evaluate/0.0.1680.1050/-128.-1080.1920.1080@-128.-1080.1920.1080" timestamp="1578571130783" />
     <state x="981" y="299" width="889" height="595" key="#xdebugger.evaluate/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576476476735" />
-    <state x="-125" y="-1057" width="1920" height="1057" key="CommitChangelistDialog2" timestamp="1580709974897">
+    <state x="-125" y="-1057" width="1920" height="1057" key="CommitChangelistDialog2" timestamp="1580710641088">
       <screen x="-125" y="-1080" width="1920" height="1080" />
     </state>
-    <state x="-125" y="-1057" width="1920" height="1057" key="CommitChangelistDialog2/0.0.1680.1050/-125.-1080.1920.1080@-125.-1080.1920.1080" timestamp="1580709974897" />
+    <state x="-125" y="-1057" width="1920" height="1057" key="CommitChangelistDialog2/0.0.1680.1050/-125.-1080.1920.1080@-125.-1080.1920.1080" timestamp="1580710641088" />
     <state x="-128" y="-1080" width="1920" height="1080" key="CommitChangelistDialog2/0.0.1680.1050/-128.-1080.1920.1080@-128.-1080.1920.1080" timestamp="1578914673497" />
     <state x="-128" y="-1080" key="CommitChangelistDialog2/0.23.1680.1027/-128.-1080.1920.1080@-128.-1080.1920.1080" timestamp="1578652056077" />
     <state x="163" y="169" key="CommitChangelistDialog2/0.23.1680.941@0.23.1680.941" timestamp="1577523557294" />
@@ -697,19 +626,19 @@
     <state x="592" y="-864" key="RollbackChangesDialog/0.0.1680.1050/-128.-1080.1920.1080@-128.-1080.1920.1080" timestamp="1578572163521" />
     <state x="592" y="-864" key="RollbackChangesDialog/0.23.1680.1027/-128.-1080.1920.1080@-128.-1080.1920.1080" timestamp="1578652061095" />
     <state x="630" y="211" key="RollbackChangesDialog/0.23.1680.941@0.23.1680.941" timestamp="1577523525962" />
-    <state x="406" y="-864" key="SettingsEditor" timestamp="1580708967163">
+    <state x="406" y="-864" key="SettingsEditor" timestamp="1580710664697">
       <screen x="-125" y="-1080" width="1920" height="1080" />
     </state>
-    <state x="406" y="-864" key="SettingsEditor/0.0.1680.1050/-125.-1080.1920.1080@-125.-1080.1920.1080" timestamp="1580708967163" />
+    <state x="406" y="-864" key="SettingsEditor/0.0.1680.1050/-125.-1080.1920.1080@-125.-1080.1920.1080" timestamp="1580710664697" />
     <state x="402" y="-864" key="SettingsEditor/0.0.1680.1050/-128.-1080.1920.1080@-128.-1080.1920.1080" timestamp="1579063832925" />
     <state x="402" y="-864" key="SettingsEditor/0.23.1680.941/-128.-1080.1920.1080@-128.-1080.1920.1080" timestamp="1578902629394" />
     <state x="464" y="211" key="SettingsEditor/0.23.1680.941@0.23.1680.941" timestamp="1577549756302" />
     <state x="606" y="239" key="SettingsEditor/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576493041708" />
     <state x="512" y="228" key="SettingsEditor/66.23.1614.1027@66.23.1614.1027" timestamp="1580666421889" />
-    <state x="478" y="-783" key="Vcs.Push.Dialog.v2" timestamp="1580709983398">
+    <state x="478" y="-783" key="Vcs.Push.Dialog.v2" timestamp="1580710683251">
       <screen x="-125" y="-1080" width="1920" height="1080" />
     </state>
-    <state x="478" y="-783" key="Vcs.Push.Dialog.v2/0.0.1680.1050/-125.-1080.1920.1080@-125.-1080.1920.1080" timestamp="1580709983398" />
+    <state x="478" y="-783" key="Vcs.Push.Dialog.v2/0.0.1680.1050/-125.-1080.1920.1080@-125.-1080.1920.1080" timestamp="1580710683251" />
     <state x="475" y="-783" key="Vcs.Push.Dialog.v2/0.0.1680.1050/-128.-1080.1920.1080@-128.-1080.1920.1080" timestamp="1578914678671" />
     <state x="528" y="282" key="Vcs.Push.Dialog.v2/0.23.1680.941@0.23.1680.941" timestamp="1577523597768" />
     <state x="690" y="329" key="Vcs.Push.Dialog.v2/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576851538888" />
@@ -721,10 +650,10 @@
       <screen x="-125" y="-1080" width="1920" height="1080" />
     </state>
     <state x="598" y="-689" key="cloudConfig.SelfSettingsDialog/0.0.1680.1050/-125.-1080.1920.1080@-125.-1080.1920.1080" timestamp="1580709889318" />
-    <state x="670" y="-680" key="com.intellij.ide.util.TipDialog" timestamp="1580709787457">
+    <state x="670" y="-680" key="com.intellij.ide.util.TipDialog" timestamp="1580710625467">
       <screen x="-125" y="-1080" width="1920" height="1080" />
     </state>
-    <state x="670" y="-680" key="com.intellij.ide.util.TipDialog/0.0.1680.1050/-125.-1080.1920.1080@-125.-1080.1920.1080" timestamp="1580709787457" />
+    <state x="670" y="-680" key="com.intellij.ide.util.TipDialog/0.0.1680.1050/-125.-1080.1920.1080@-125.-1080.1920.1080" timestamp="1580710625467" />
     <state x="619" y="-696" key="com.intellij.ide.util.TipDialog/0.0.1680.1050/-128.-1080.1920.1080@-128.-1080.1920.1080" timestamp="1579063876749" />
     <state x="654" y="373" key="com.intellij.ide.util.TipDialog/0.0.1680.1050/-128.-1080.1920.1080@0.0.1680.1050" timestamp="1578900501941" />
     <state x="696" y="388" key="com.intellij.ide.util.TipDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1580664657904" />
