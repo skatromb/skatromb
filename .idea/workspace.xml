@@ -1,7 +1,92 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bfe8fd62-1fd3-4475-9bcd-7f160acb2e8d" name="Default Changelist" comment="" />
+    <list default="true" id="bfe8fd62-1fd3-4475-9bcd-7f160acb2e8d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../_mac/laf.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../code/Assertion.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../code/CollatzSequence.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../code/Gauss.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../code/Tele2ForSQL/HistoricalDataScriptNEs.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../code/Tele2ForSQL/HistoricalDataScript_DMX_CHARGE.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../code/Tele2ForSQL/LinesCommenter.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../code/Tele2ForSQL/LinesCommenter2.0.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../code/Tele2ForSQL/LinesCommenter3.0.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../code/addInventory.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../code/allMyCats.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../code/backupToZip.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../code/birthdays.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../code/bulletPointAdder.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../code/catnapping.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../code/characterCount.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../code/characterPrictureGrid.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../code/commaCode.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../code/displayInventory.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../code/exitExample.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../code/fillingGapsInNumbering/fillingGapsInNumbering.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../code/fillingGapsInNumbering/spam002.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../code/fillingGapsInNumbering/spam00666.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../code/fillingGapsInNumbering/spam150.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../code/fillingGapsInNumbering/spam3.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../code/fillingGapsInNumbering/spam666.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../code/fiveTimes.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../code/guessTheNumber.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../code/hello.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../code/helloFunc.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../code/helloFunc2.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../code/importTry.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../code/infiniteLoop.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../code/largeFilesFinder.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../code/madlibs.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../code/magic8Ball.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../code/magic8Ball2.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../code/multiclipboard.pyw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../code/myCats.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../code/myPets.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../code/passingReference.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../code/patternforAliceBobCarol.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../code/patternforNakamoto.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../code/patternforNumbers.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../code/phoneAndEmail.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../code/picnicBroughtItems.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../code/picnicTable.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../code/pw.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../code/randomQuizGenerator.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../code/renameDates.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../code/sameName2.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../code/scopes.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../code/selectiveCopy.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../code/stripRegexVersion.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../code/swordfish.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../code/tablePrinter.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../code/tele2_test_task_analytics/input_table.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../code/tele2_test_task_analytics/tele2ExcelTransposeSum.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../code/ticTacToe.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../code/validateInput.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../code/vampire.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../code/weakPassDetection.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../code/work.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../code/yourName.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../code/zeroDivide.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../codestyles/Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../colors.scheme.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../customization.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../debugger.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../editor.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../find.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../github.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../inspection/Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../markdown.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../projectView.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../venv/Scripts/Activate.ps1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../venv/Scripts/activate" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../venv/Scripts/activate.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../venv/Scripts/deactivate.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../venv/Scripts/python.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../venv/Scripts/pythonw.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../venv/pyvenv.cfg" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -214,6 +299,7 @@
       <workItem from="1579063867981" duration="323000" />
       <workItem from="1579347656131" duration="673000" />
       <workItem from="1580664658096" duration="4537000" />
+      <workItem from="1580709694781" duration="43000" />
     </task>
     <task id="LOCAL-00001" summary="Делаю какую-то херь, пытаюсь почистить папку">
       <created>1575204120805</created>
@@ -510,10 +596,10 @@
     </state>
     <state x="730" y="-810" key="#xdebugger.evaluate/0.0.1680.1050/-128.-1080.1920.1080@-128.-1080.1920.1080" timestamp="1578571130783" />
     <state x="981" y="299" width="889" height="595" key="#xdebugger.evaluate/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576476476735" />
-    <state x="-125" y="-1057" width="1920" height="1057" key="CommitChangelistDialog2" timestamp="1580709239275">
+    <state x="-125" y="-1057" width="1920" height="1057" key="CommitChangelistDialog2" timestamp="1580709974897">
       <screen x="-125" y="-1080" width="1920" height="1080" />
     </state>
-    <state x="-125" y="-1057" width="1920" height="1057" key="CommitChangelistDialog2/0.0.1680.1050/-125.-1080.1920.1080@-125.-1080.1920.1080" timestamp="1580709239275" />
+    <state x="-125" y="-1057" width="1920" height="1057" key="CommitChangelistDialog2/0.0.1680.1050/-125.-1080.1920.1080@-125.-1080.1920.1080" timestamp="1580709974897" />
     <state x="-128" y="-1080" width="1920" height="1080" key="CommitChangelistDialog2/0.0.1680.1050/-128.-1080.1920.1080@-128.-1080.1920.1080" timestamp="1578914673497" />
     <state x="-128" y="-1080" key="CommitChangelistDialog2/0.23.1680.1027/-128.-1080.1920.1080@-128.-1080.1920.1080" timestamp="1578652056077" />
     <state x="163" y="169" key="CommitChangelistDialog2/0.23.1680.941@0.23.1680.941" timestamp="1577523557294" />
@@ -604,10 +690,10 @@
     <state x="584" y="-798" key="MultipleFileMergeDialog/0.0.1680.1050/-125.-1080.1920.1080@-125.-1080.1920.1080" timestamp="1580709189925" />
     <state x="620" y="269" key="MultipleFileMergeDialog/0.23.1680.941@0.23.1680.941" timestamp="1577472256188" />
     <state x="810" y="312" key="MultipleFileMergeDialog/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576469435919" />
-    <state x="595" y="-864" key="RollbackChangesDialog" timestamp="1580708828411">
+    <state x="595" y="-864" key="RollbackChangesDialog" timestamp="1580709852294">
       <screen x="-125" y="-1080" width="1920" height="1080" />
     </state>
-    <state x="595" y="-864" key="RollbackChangesDialog/0.0.1680.1050/-125.-1080.1920.1080@-125.-1080.1920.1080" timestamp="1580708828411" />
+    <state x="595" y="-864" key="RollbackChangesDialog/0.0.1680.1050/-125.-1080.1920.1080@-125.-1080.1920.1080" timestamp="1580709852294" />
     <state x="592" y="-864" key="RollbackChangesDialog/0.0.1680.1050/-128.-1080.1920.1080@-128.-1080.1920.1080" timestamp="1578572163521" />
     <state x="592" y="-864" key="RollbackChangesDialog/0.23.1680.1027/-128.-1080.1920.1080@-128.-1080.1920.1080" timestamp="1578652061095" />
     <state x="630" y="211" key="RollbackChangesDialog/0.23.1680.941@0.23.1680.941" timestamp="1577523525962" />
@@ -620,17 +706,25 @@
     <state x="464" y="211" key="SettingsEditor/0.23.1680.941@0.23.1680.941" timestamp="1577549756302" />
     <state x="606" y="239" key="SettingsEditor/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576493041708" />
     <state x="512" y="228" key="SettingsEditor/66.23.1614.1027@66.23.1614.1027" timestamp="1580666421889" />
-    <state x="478" y="-783" key="Vcs.Push.Dialog.v2" timestamp="1580709271150">
+    <state x="478" y="-783" key="Vcs.Push.Dialog.v2" timestamp="1580709983398">
       <screen x="-125" y="-1080" width="1920" height="1080" />
     </state>
-    <state x="478" y="-783" key="Vcs.Push.Dialog.v2/0.0.1680.1050/-125.-1080.1920.1080@-125.-1080.1920.1080" timestamp="1580709271150" />
+    <state x="478" y="-783" key="Vcs.Push.Dialog.v2/0.0.1680.1050/-125.-1080.1920.1080@-125.-1080.1920.1080" timestamp="1580709983398" />
     <state x="475" y="-783" key="Vcs.Push.Dialog.v2/0.0.1680.1050/-128.-1080.1920.1080@-128.-1080.1920.1080" timestamp="1578914678671" />
     <state x="528" y="282" key="Vcs.Push.Dialog.v2/0.23.1680.941@0.23.1680.941" timestamp="1577523597768" />
     <state x="690" y="329" key="Vcs.Push.Dialog.v2/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576851538888" />
-    <state x="670" y="-666" key="com.intellij.ide.util.TipDialog" timestamp="1580708229825">
-      <screen x="-125" y="-1057" width="1920" height="1057" />
+    <state x="577" y="-689" key="cloudConfig.PluginsDialog" timestamp="1580709880294">
+      <screen x="-125" y="-1080" width="1920" height="1080" />
     </state>
-    <state x="622" y="-696" key="com.intellij.ide.util.TipDialog/0.0.1680.1050/-125.-1080.1920.1080@-125.-1080.1920.1080" timestamp="1579156042639" />
+    <state x="577" y="-689" key="cloudConfig.PluginsDialog/0.0.1680.1050/-125.-1080.1920.1080@-125.-1080.1920.1080" timestamp="1580709880294" />
+    <state x="598" y="-689" key="cloudConfig.SelfSettingsDialog" timestamp="1580709889318">
+      <screen x="-125" y="-1080" width="1920" height="1080" />
+    </state>
+    <state x="598" y="-689" key="cloudConfig.SelfSettingsDialog/0.0.1680.1050/-125.-1080.1920.1080@-125.-1080.1920.1080" timestamp="1580709889318" />
+    <state x="670" y="-680" key="com.intellij.ide.util.TipDialog" timestamp="1580709787457">
+      <screen x="-125" y="-1080" width="1920" height="1080" />
+    </state>
+    <state x="670" y="-680" key="com.intellij.ide.util.TipDialog/0.0.1680.1050/-125.-1080.1920.1080@-125.-1080.1920.1080" timestamp="1580709787457" />
     <state x="619" y="-696" key="com.intellij.ide.util.TipDialog/0.0.1680.1050/-128.-1080.1920.1080@-128.-1080.1920.1080" timestamp="1579063876749" />
     <state x="654" y="373" key="com.intellij.ide.util.TipDialog/0.0.1680.1050/-128.-1080.1920.1080@0.0.1680.1050" timestamp="1578900501941" />
     <state x="696" y="388" key="com.intellij.ide.util.TipDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1580664657904" />
