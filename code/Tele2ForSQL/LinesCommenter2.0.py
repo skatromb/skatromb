@@ -8,7 +8,6 @@ from functools import reduce
 FILE_PATHS = [
     # r'C:\Users\ivan.livadnyy\Documents\GitLab\teradata\MDS\Tables\DMX_CHARGE.sql',
     # r'C:\Users\ivan.livadnyy\Documents\GitLab\teradata\MDS\Tables\DMX_CHARGE_ARCHIVE.sql',
-    # r'C:\Users\ivan.livadnyy\Documents\GitLab\teradata\SQL\TFS-60980. DMX_CHARGES\3. REPLACE PROCEDURE LOAD_DMX_CHARGE_DATE.sql',
     r'/Users/skatromb/PycharmProjects/Python/code/allMyCats.py'
 ]
 
@@ -103,8 +102,9 @@ class CodeWithMark(TypedDict):
 LINES_WILL_BE_DICT = {'commented': 'Комментим', 'deleted': 'Удаляем'}
 
 
-def check_and_modify(file_paths: List[str], substrs_to_match: List[str], lines_will_be='commented', ignore_commented_lines=True):
-    # lines_will_be: 'commented' or 'deleted'
+def check_and_modify(file_paths: List[str], substrs_to_match: List[str],
+                     lines_will_be='commented', ignore_commented_lines=True):
+    """ lines_will_be: 'commented' or 'deleted' """
 
     # Проверка на существование всех путей
     def check_files_exists():
@@ -113,8 +113,9 @@ def check_and_modify(file_paths: List[str], substrs_to_match: List[str], lines_w
                 raise Exception('Пути к файлу не существует: "' + file_path + '"')
 
     def mark_line(code_line: str) -> CodeWithMark:
-        # example = {'CREATE TABLE COMMENT_ME': True}
-        # Проверить, матчится ли строка
+        """ CodeWithMark() = {'CREATE TABLE COMMENT_ME': True}"""
+
+        # Проверка, матчится ли строка
         def match_code_line(substr: str, ignore_commented=ignore_commented_lines) -> bool:
             regexp = substr
             if ignore_commented:
@@ -138,6 +139,8 @@ def check_and_modify(file_paths: List[str], substrs_to_match: List[str], lines_w
                 raise Exception('lines_will_be должен быть из ' + str(LINES_WILL_BE_DICT.keys()))
         return new_line
 
+    # Тело check_and_modify
+    #
     # Проверки
     check_files_exists()
 
