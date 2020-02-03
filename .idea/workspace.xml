@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bfe8fd62-1fd3-4475-9bcd-7f160acb2e8d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/PycharmProjects.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/PycharmProjects.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+    <list default="true" id="bfe8fd62-1fd3-4475-9bcd-7f160acb2e8d" name="Default Changelist" comment="Херь">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -29,6 +26,7 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RESET_MODE" value="MIXED" />
   </component>
   <component name="IgnoredFileRootStore">
     <option name="generatedRoots">
@@ -441,7 +439,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="SHOW_UNVERSIONED_FILES_WHILE_COMMIT" value="false" />
-    <MESSAGE value="Перенёс весь код в подпапку" />
     <MESSAGE value="Ещё немного кода в подпапку" />
     <MESSAGE value="Опять делаю херь, уношу все в подпапку" />
     <MESSAGE value="Какие-то файлы конфигурации" />
@@ -466,7 +463,8 @@
     <MESSAGE value="Версия 3.0 работает" />
     <MESSAGE value="Переделал вывод и сделал программу действительно рабочей" />
     <MESSAGE value="Дорефакторил, добавил комментов" />
-    <option name="LAST_COMMIT_MESSAGE" value="Дорефакторил, добавил комментов" />
+    <MESSAGE value="Херь" />
+    <option name="LAST_COMMIT_MESSAGE" value="Херь" />
   </component>
   <component name="WindowStateProjectService">
     <state x="778" y="317" key="#Docker" timestamp="1580666236273">
@@ -498,10 +496,10 @@
     </state>
     <state x="730" y="-810" key="#xdebugger.evaluate/0.0.1680.1050/-128.-1080.1920.1080@-128.-1080.1920.1080" timestamp="1578571130783" />
     <state x="981" y="299" width="889" height="595" key="#xdebugger.evaluate/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576476476735" />
-    <state x="-125" y="-1057" width="1920" height="1057" key="CommitChangelistDialog2" timestamp="1580708439587">
+    <state x="-125" y="-1057" width="1920" height="1057" key="CommitChangelistDialog2" timestamp="1580708687152">
       <screen x="-125" y="-1080" width="1920" height="1080" />
     </state>
-    <state x="-125" y="-1057" width="1920" height="1057" key="CommitChangelistDialog2/0.0.1680.1050/-125.-1080.1920.1080@-125.-1080.1920.1080" timestamp="1580708439587" />
+    <state x="-125" y="-1057" width="1920" height="1057" key="CommitChangelistDialog2/0.0.1680.1050/-125.-1080.1920.1080@-125.-1080.1920.1080" timestamp="1580708687152" />
     <state x="-128" y="-1080" width="1920" height="1080" key="CommitChangelistDialog2/0.0.1680.1050/-128.-1080.1920.1080@-128.-1080.1920.1080" timestamp="1578914673497" />
     <state x="-128" y="-1080" key="CommitChangelistDialog2/0.23.1680.1027/-128.-1080.1920.1080@-128.-1080.1920.1080" timestamp="1578652056077" />
     <state x="163" y="169" key="CommitChangelistDialog2/0.23.1680.941@0.23.1680.941" timestamp="1577523557294" />
@@ -586,28 +584,32 @@
     <state width="1899" height="338" key="GridCell.Tab.1.right/0.23.1680.941/-128.-1080.1920.1080@-128.-1080.1920.1080" timestamp="1578571426305" />
     <state width="1899" height="338" key="GridCell.Tab.1.right/0.23.1680.941@0.23.1680.941" timestamp="1578678524333" />
     <state width="2173" height="409" key="GridCell.Tab.1.right/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576855010936" />
-    <state x="620" y="269" key="MultipleFileMergeDialog" timestamp="1577472256188">
-      <screen x="0" y="23" width="1680" height="941" />
+    <state x="584" y="-798" key="MultipleFileMergeDialog" timestamp="1580708695100">
+      <screen x="-125" y="-1080" width="1920" height="1080" />
     </state>
+    <state x="584" y="-798" key="MultipleFileMergeDialog/0.0.1680.1050/-125.-1080.1920.1080@-125.-1080.1920.1080" timestamp="1580708695100" />
     <state x="620" y="269" key="MultipleFileMergeDialog/0.23.1680.941@0.23.1680.941" timestamp="1577472256188" />
     <state x="810" y="312" key="MultipleFileMergeDialog/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576469435919" />
-    <state x="592" y="-864" key="RollbackChangesDialog" timestamp="1578652061095">
-      <screen x="-128" y="-1080" width="1920" height="1080" />
+    <state x="595" y="-864" key="RollbackChangesDialog" timestamp="1580708828411">
+      <screen x="-125" y="-1080" width="1920" height="1080" />
     </state>
+    <state x="595" y="-864" key="RollbackChangesDialog/0.0.1680.1050/-125.-1080.1920.1080@-125.-1080.1920.1080" timestamp="1580708828411" />
     <state x="592" y="-864" key="RollbackChangesDialog/0.0.1680.1050/-128.-1080.1920.1080@-128.-1080.1920.1080" timestamp="1578572163521" />
     <state x="592" y="-864" key="RollbackChangesDialog/0.23.1680.1027/-128.-1080.1920.1080@-128.-1080.1920.1080" timestamp="1578652061095" />
     <state x="630" y="211" key="RollbackChangesDialog/0.23.1680.941@0.23.1680.941" timestamp="1577523525962" />
-    <state x="512" y="228" key="SettingsEditor" timestamp="1580666421889">
-      <screen x="66" y="23" width="1614" height="1027" />
+    <state x="406" y="-864" key="SettingsEditor" timestamp="1580708967163">
+      <screen x="-125" y="-1080" width="1920" height="1080" />
     </state>
+    <state x="406" y="-864" key="SettingsEditor/0.0.1680.1050/-125.-1080.1920.1080@-125.-1080.1920.1080" timestamp="1580708967163" />
     <state x="402" y="-864" key="SettingsEditor/0.0.1680.1050/-128.-1080.1920.1080@-128.-1080.1920.1080" timestamp="1579063832925" />
     <state x="402" y="-864" key="SettingsEditor/0.23.1680.941/-128.-1080.1920.1080@-128.-1080.1920.1080" timestamp="1578902629394" />
     <state x="464" y="211" key="SettingsEditor/0.23.1680.941@0.23.1680.941" timestamp="1577549756302" />
     <state x="606" y="239" key="SettingsEditor/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576493041708" />
     <state x="512" y="228" key="SettingsEditor/66.23.1614.1027@66.23.1614.1027" timestamp="1580666421889" />
-    <state x="475" y="-783" key="Vcs.Push.Dialog.v2" timestamp="1578914678671">
-      <screen x="-128" y="-1080" width="1920" height="1080" />
+    <state x="478" y="-783" key="Vcs.Push.Dialog.v2" timestamp="1580708785075">
+      <screen x="-125" y="-1080" width="1920" height="1080" />
     </state>
+    <state x="478" y="-783" key="Vcs.Push.Dialog.v2/0.0.1680.1050/-125.-1080.1920.1080@-125.-1080.1920.1080" timestamp="1580708785075" />
     <state x="475" y="-783" key="Vcs.Push.Dialog.v2/0.0.1680.1050/-128.-1080.1920.1080@-128.-1080.1920.1080" timestamp="1578914678671" />
     <state x="528" y="282" key="Vcs.Push.Dialog.v2/0.23.1680.941@0.23.1680.941" timestamp="1577523597768" />
     <state x="690" y="329" key="Vcs.Push.Dialog.v2/3840.958.1920.1010/0.0.2194.1194@0.0.2194.1194" timestamp="1576851538888" />
