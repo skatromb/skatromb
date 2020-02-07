@@ -1,5 +1,8 @@
 import random
+from datetime import datetime
 
+
+start = datetime.now()
 
 # Порог функции активации
 BIAS = 7
@@ -173,3 +176,6 @@ print()
 # Прогон по тестовой выборке
 for i in range(6):
     print(f"Узнал 5.{i}?  {proceed(NUM_5[i])}")
+
+end = datetime.now()
+print(f'Программа выполнялась {str(end - start)}')
