@@ -4,7 +4,7 @@ from typing import Tuple, TextIO, List, Dict
 
 # Где искать
 FILE_PATHS = (
-    r'/Users/skatromb/PycharmProjects/Python/code/allMyCats.py',
+    r'/Users/skatromb/PycharmProjects/Python/src/allMyCats.py',
 )
 
 # Что искать
@@ -65,7 +65,7 @@ def remove_lines(file_paths: Tuple[str], substrs_to_match: Tuple[str],
 
         for line_number, code_line in enumerate(file):
             if match(code_line):
-                lines_for_print.append({'number': str(line_number + 1), 'code': code_line})
+                lines_for_print.append({'number': str(line_number + 1), 'src': code_line})
                 modified_lines.append(modify(code_line))
             else:
                 modified_lines.append(code_line)
@@ -73,7 +73,7 @@ def remove_lines(file_paths: Tuple[str], substrs_to_match: Tuple[str],
 
         # Выводим строки пользователю. Сделано здесь, т.к. до прохода по файлу неизвестно количество строк "\n"
         for line_for_print in lines_for_print:
-            print(line_for_print['number'].rjust(just) + ': ' + line_for_print['code'], end='')
+            print(line_for_print['number'].rjust(just) + ': ' + line_for_print['src'], end='')
 
         return modified_lines
 

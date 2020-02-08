@@ -8,7 +8,7 @@ FIRST_3_DIGITS = 3
 LAST_4_DIGITS = 5
 EXTENSION = 8
 phoneRegex = re.compile(r'''(
-    (\(?\d{3}\)?)?                      #1! maybe area code
+    (\(?\d{3}\)?)?                      #1! maybe area src
     (\s|-|\.)?                          #2 maybe separator
     (\d{3})                             #3! first 3 digits
     (\s|-|\.)?                          #4 separator

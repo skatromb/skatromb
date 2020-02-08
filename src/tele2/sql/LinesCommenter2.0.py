@@ -8,7 +8,7 @@ from functools import reduce
 FILE_PATHS = [
     # r'C:\Users\ivan.livadnyy\Documents\GitLab\teradata\MDS\Tables\DMX_CHARGE.sql',
     # r'C:\Users\ivan.livadnyy\Documents\GitLab\teradata\MDS\Tables\DMX_CHARGE_ARCHIVE.sql',
-    r'/Users/skatromb/PycharmProjects/Python/code/allMyCats.py'
+    r'/Users/skatromb/PycharmProjects/Python/src/allMyCats.py'
 ]
 
 # Что искать
