@@ -8,8 +8,7 @@
       <excludeFolder url="file://$MODULE_DIR$/codestyles" />
       <excludeFolder url="file://$MODULE_DIR$/inspection" />
     </content>
-    <orderEntry type="jdk" jdkName="Remote Python 3.8.0 Docker (python:latest)" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="Python 3.8" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module" module-name="docker" />
   </component>
 </module>
