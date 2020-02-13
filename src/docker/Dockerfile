@@ -1,5 +1,5 @@
 FROM ubuntu:19.10
-WORKDIR config
+WORKDIR app
 COPY config .
 RUN apt-get update && \
     apt-get install python3.8 -y && \
