@@ -1,15 +1,17 @@
+#!/usr/bin/env python3
+import concurrent.futures
 import time
 import logging
 
 
 def cpu_bound(number):
+    logger.info(str(number))
     return sum(i * i for i in range(number))
 
 
 def find_sums(numbers):
-    for number in numbers:
-        logger.info(str(number))
-        cpu_bound(number)
+    with concurrent.futures.ThreadPoolExecutor(max_workers=5) as executor:
+        executor.map(cpu_bound, numbers)
 
 
 logging.basicConfig(format='%(asctime)s (UTC): %(levelname)s - %(message)s', level=logging.INFO)
