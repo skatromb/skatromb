@@ -6,6 +6,8 @@ RUN apt-get update && \
     apt-get install python3-pip -y && \
     apt-get clean && \
     \
-    pip3 install -r requirements.txt
+    update-alternatives --install /bin/python python /bin/python3 0
+    update-alternatives --install /bin/pip3 pip /bin/pip 0
+    pip install -r requirements.txt
 
 # docker run -it python
