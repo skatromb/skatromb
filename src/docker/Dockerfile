@@ -1,7 +1,7 @@
-FROM ubuntu:19:10
+FROM ubuntu:19.10
 
 WORKDIR app
-COPY config /app
+COPY requirements.txt /app
 
 RUN apt-get update && \
     apt-get upgrade -y && \
@@ -11,7 +11,6 @@ RUN apt-get update && \
         python3-pip \
         python3.8 \
         build-essential \
-    && \
     apt-get clean && \
     \
     # Делаем питону алиасы
@@ -20,6 +19,6 @@ RUN apt-get update && \
     update-alternatives --install /usr/bin/pip pip /usr/bin/pip3 0 && \
     \
     # Ставим зависимости
-    pip install -r requirements.txt
+    pip install -U -r requirements.txt
 
 # docker run -it python
