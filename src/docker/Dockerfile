@@ -1,4 +1,4 @@
-FROM ubuntu:rolling
+FROM ubuntu:19:10
 
 WORKDIR app
 COPY config /app
