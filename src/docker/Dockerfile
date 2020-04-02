@@ -1,13 +1,24 @@
 FROM ubuntu:19.10
+
 WORKDIR app
-COPY config .
+COPY requirements.txt /app
+
 RUN apt-get update && \
-    apt-get install python3.8 -y && \
-    apt-get install python3-pip -y && \
+    apt-get upgrade -y && \
+    \
+    # Ставим питон и ессеншлзы
+    apt-get install -y \
+        python3-pip \
+        python3.8 \
+        build-essential \
     apt-get clean && \
     \
-    update-alternatives --install /bin/python python /bin/python3 0
-    update-alternatives --install /bin/pip3 pip /bin/pip 0
-    pip install -r requirements.txt
+    # Делаем питону алиасы
+    update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.8 0 && \
+    update-alternatives --install /usr/bin/python python /usr/bin/python3.8 0 && \
+    update-alternatives --install /usr/bin/pip pip /usr/bin/pip3 0 && \
+    \
+    # Ставим зависимости
+    pip install -U -r requirements.txt
 
 # docker run -it python
