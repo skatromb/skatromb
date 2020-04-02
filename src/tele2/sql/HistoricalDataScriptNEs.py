@@ -5,13 +5,15 @@ from calendar import Calendar
 NE_SUBS_LAYER = 'DM'
 LOAD_ID = '7273889'
 
-ENV = 'PRD'  # 'PRD'
+ENV = 'PRD2'  # 'PRD'
 if ENV == 'DEV':
     Layer = 'DDS'
     Postfix = '_LIVADNYY'
+    NE_SUBS_ENV = 'DEV'
 else:
     Layer = 'MDS'
     Postfix = ''
+    NE_SUBS_ENV = 'PRD'
 
 
 def generate_sql_for_month(year: date.year, month: date.month):
@@ -25,10 +27,10 @@ def generate_sql_for_month(year: date.year, month: date.month):
     # Блок генерации кода на каждый день месяца
     dates = Calendar()
     for day in [i for i in dates.itermonthdates(year, month) if i.month == month]:
-        print(call_procedure_without_params('LOAD_NE_SUBS_REVENUE_DATE', env='PRD', layer=NE_SUBS_LAYER) +
+        print(call_procedure_without_params('LOAD_NE_SUBS_REVENUE_DATE', env=NE_SUBS_ENV, layer=NE_SUBS_LAYER) +
               "(" + LOAD_ID + ", date'" + day.isoformat() + "');")
 
-    print('COLLECT STATS ON ' + ENV + '_' + NE_SUBS_LAYER + '.NE_SUBS_REVENUE_DATE' + Postfix + ';')
+    print('COLLECT STATS ON ' + NE_SUBS_ENV + '_' + NE_SUBS_LAYER + '.NE_SUBS_REVENUE_DATE' + Postfix + ';')
 
     # Блок месячных расчётов
     print()
@@ -40,14 +42,14 @@ def generate_sql_for_month(year: date.year, month: date.month):
     # Удаляем информацию за рассчитанный месяц
     print()
     date_str = "'" + date(year, month, 1).isoformat() + "'"
-    print("DELETE " + ENV + "_DDS.NE_SUBS_REVENUE_DATE" + Postfix + " WHERE REPORT_DATE BETWEEN "
-          "date" + date_str + " AND ADD_MONTHS(date" + date_str + ", 1) - 1;")
+    print("DELETE " + NE_SUBS_ENV + "_" + NE_SUBS_LAYER + ".NE_SUBS_REVENUE_DATE" + Postfix +
+          " WHERE REPORT_DATE BETWEEN date" + date_str + " AND ADD_MONTHS(date" + date_str + ", 1) - 1;")
 
 
-# 2019 с декабря
-for Month in range(3, 2, -1):
+# 2020 с декабря
+for Month in range(3, 0, -1):
+    generate_sql_for_month(year=2020, month=Month)
+
+# 2019 до февраля
+for Month in range(12, 2, -1):
     generate_sql_for_month(year=2019, month=Month)
-
-# 2018 до февраля
-# for Month in range(12, 1, -1):
-#     generate_sql_for_month(year=2018, month=Month)
