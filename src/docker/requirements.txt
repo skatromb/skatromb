@@ -1,2 +1,5 @@
-py2app
-rumps
+NumPy
+Pandas
+Matplotlib
+SciKit-Learn
+SciPy

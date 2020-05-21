@@ -11,14 +11,15 @@ RUN apt-get update && \
         python3-pip \
         python3.8 \
         build-essential \
+        && \
     apt-get clean && \
     \
     # Делаем питону алиасы
     update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.8 0 && \
     update-alternatives --install /usr/bin/python python /usr/bin/python3.8 0 && \
-    update-alternatives --install /usr/bin/pip pip /usr/bin/pip3 0 && \
-    \
+    update-alternatives --install /usr/bin/pip pip /usr/bin/pip3 0
+
     # Ставим зависимости
-    pip install -U -r requirements.txt
+RUN pip install -U -r requirements.txt
 
 # docker run -it python
