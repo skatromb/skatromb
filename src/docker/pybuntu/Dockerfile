@@ -12,8 +12,7 @@ RUN apt-get update && \
         python3.8 \
         build-essential \
         && \
-    apt-get clean && \
-    \
+
     # Делаем питону алиасы
     update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.8 0 && \
     update-alternatives --install /usr/bin/python python /usr/bin/python3.8 0 && \
