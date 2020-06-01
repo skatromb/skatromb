@@ -1,2 +1,2 @@
-docker build -t pybuntu:ML .
-# docker system prune --force
+docker build -t python:ubuntu .
+docker system prune --force
