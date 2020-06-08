@@ -1,5 +1,6 @@
 /venv/
 /_mac/
+/.devcontainer/
 /.idea/
 /.vscode/
 /src/skatromb/Coursera_ML/Answers/
