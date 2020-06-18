@@ -13,7 +13,7 @@ datePattern = re.compile(r'''^(.*?)# 1 - all text before the date
 ''', re.VERBOSE)
 
 # Loop over the files in the working directory.
-for amerFilename in os.listdir('../..'):
+for amerFilename in os.listdir('..'):
     mo = datePattern.search(amerFilename)
 
     # Skip files without a date.
@@ -31,7 +31,7 @@ for amerFilename in os.listdir('../..'):
     euroFilename = beforePart + dayPart + '-' + monthPart + '-' + yearPart + afterPart
 
     # Get the full, absolute file paths.
-    absWorkingDir = os.path.abspath('../..')
+    absWorkingDir = os.path.abspath('..')
     amerFilename = os.path.join(absWorkingDir, amerFilename)
     euroFilename = os.path.join(absWorkingDir, euroFilename)
 
