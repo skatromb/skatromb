@@ -1,5 +1,4 @@
-from sklearn.ensemble import RandomForestClassifier, RandomForestRegressor
-from sklearn.metrics import r2_score
+from sklearn.ensemble import RandomForestRegressor
 from sklearn.model_selection import cross_val_score, KFold
 import pandas as pd
 
