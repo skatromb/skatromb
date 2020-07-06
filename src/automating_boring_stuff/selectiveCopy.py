@@ -30,4 +30,4 @@ def extension_copy(folder: str, destination_folder=NEW_FOLDER, extension=None):
                 shutil.copy(os.path.join(root, filename), destination_folder)
 
 
-extension_copy('.', '/Users/skatromb/Documents/Учеба/Python/PycharmProjects/skatromb/Python/Python files', '.py')
+extension_copy('.', '/Users/python_skatromb/Documents/Учеба/Python/PycharmProjects/python_skatromb/Python/Python files', '.py')

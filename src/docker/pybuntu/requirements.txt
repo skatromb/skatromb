@@ -1,5 +1,0 @@
-NumPy
-Pandas
-Matplotlib
-SciKit-Learn
-SciPy

@@ -4,7 +4,7 @@ from typing import Tuple, TextIO, List, Dict
 
 # Где искать
 FILE_PATHS = (
-    r'/Users/skatromb/PycharmProjects/Python/src/allMyCats.py',
+    r'/Users/python_skatromb/PycharmProjects/Python/src/allMyCats.py',
 )
 
 # Что искать
