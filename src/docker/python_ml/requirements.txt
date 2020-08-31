@@ -2,5 +2,6 @@ NumPy
 Pandas
 Matplotlib
 pyspark
+pyspark-stubs
 SciKit-Learn
 SciPy
