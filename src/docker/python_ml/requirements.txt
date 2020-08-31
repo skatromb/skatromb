@@ -1,5 +1,6 @@
 NumPy
 Pandas
 Matplotlib
+pyspark
 SciKit-Learn
 SciPy
