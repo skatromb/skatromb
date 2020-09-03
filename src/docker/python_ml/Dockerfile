@@ -1,4 +1,4 @@
-FROM python:slim
+FROM godatadriven/pyspark:latest
 
 WORKDIR app
 COPY requirements.txt /app

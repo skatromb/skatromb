@@ -1,7 +1,8 @@
-NumPy
-Pandas
-Matplotlib
-pyspark
+### ML
+# NumPy
+# Pandas
+# Matplotlib
+# pyspark
 pyspark-stubs
-SciKit-Learn
-SciPy
+# SciKit-Learn
+# SciPy
