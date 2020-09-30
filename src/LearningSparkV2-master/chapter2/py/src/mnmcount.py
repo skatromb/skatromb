@@ -47,4 +47,4 @@ ca_count_mnm_df = (mnm_df.select("*")
                    )
 
 # show the resulting aggregation for California
-ca_count_mnm_df.show()
+ca_count_mnm_df.explain(extended=True)

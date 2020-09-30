@@ -2,7 +2,7 @@
 # NumPy
 # Pandas
 # Matplotlib
-# pyspark
-pyspark-stubs
+pyspark
+pyspar-stubs
 # SciKit-Learn
 # SciPy
