@@ -3,6 +3,7 @@
 # Pandas
 # Matplotlib
 pyspark
-pyspar-stubs
+pyspark-stubs
+DBUtils
 # SciKit-Learn
 # SciPy
