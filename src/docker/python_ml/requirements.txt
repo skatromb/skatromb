@@ -1,9 +1,9 @@
 ### ML
-# NumPy
-# Pandas
-# Matplotlib
+NumPy
+Pandas
+Matplotlib
 pyspark
 pyspark-stubs
 DBUtils
-# SciKit-Learn
-# SciPy
+SciKit-Learn
+SciPy
