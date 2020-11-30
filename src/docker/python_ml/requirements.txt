@@ -2,6 +2,7 @@
 NumPy
 Pandas
 Matplotlib
+jupyter
 pyspark
 pyspark-stubs
 DBUtils
