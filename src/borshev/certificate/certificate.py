@@ -17,7 +17,7 @@ def fill_svg(name: str, gender: str) -> ET:
     if len(name_tags) == 1:
         name_tags[0].text = name
 
-    tree.write(name + '.svg')
+    tree.write(Path('output') / (name + '.svg'))
 
 
 # Преобразовать `svg` в `pdf` или `png`
