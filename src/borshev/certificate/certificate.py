@@ -1,22 +1,42 @@
 import subprocess
-import os
-import xml.etree.ElementTree as ET
+from csv import reader
+from xml.etree import ElementTree
 from pathlib import Path
+from typing import Iterator
 
 CERT_TEMPLATE = {'Мужской': Path('templates/delegate_muzh.svg'),
                  'Женский': Path('templates/delegate_zhen.svg')}
 NAME_TAG_ID = 'NAME_TAG'
 NAMESPACE = {'NAME_TAG': 'http://www.w3.org/2000/svg'}
 
-GOOGLE_CHROME_PATH = '"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"'
+GOOGLE_CHROME_PATH = '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'
 SCREENSHOT_PARAMS = '--headless --window-size=1480,1048 --screenshot'
 
+INPUT_NAMES_FILE = 'input/delegate_FI_gender - Sheet1.csv'
 OUTPUT_FOLDER = 'output'
 
 
-def fill_svg(name: str, gender: str) -> ET:
+class Student:
+    name: str
+    gender: str
+
+    def __init__(self, name: str, gender: str):
+        self.name = name
+        self.gender = gender
+
+
+def make_list(csv_path: Path) -> Iterator[Student]:
+    """Считывает список студентов из csv, кому делать сертификаты"""
+    with open(csv_path) as file:
+        csv_reader = reader(file)
+        next(csv_reader)  # Пропускаем заголовок
+        for row in csv_reader:
+            yield Student(row[0], row[1])
+
+
+def fill_svg(name: str, gender: str):
     """Читаем svg и ищем место для имени по id"""
-    tree = ET.parse(CERT_TEMPLATE[gender])
+    tree = ElementTree.parse(CERT_TEMPLATE[gender])
 
     name_search_pattern = f'.//*[@id="{NAME_TAG_ID}"]/NAME_TAG:tspan'
     name_tags = tree.findall(name_search_pattern, NAMESPACE)
@@ -31,12 +51,14 @@ def fill_svg(name: str, gender: str) -> ET:
 
 def svg2png(name: str):
     """Преобразовывает `svg` в `png`"""
-    cmd = [f'{GOOGLE_CHROME_PATH} {SCREENSHOT_PARAMS}='
+    cmd = [f'"{GOOGLE_CHROME_PATH}" {SCREENSHOT_PARAMS}='
            f'"{OUTPUT_FOLDER}/{name}.png" '
            f'"{OUTPUT_FOLDER}/{name}.svg"']
-    print(cmd[0])
     subprocess.call(cmd, shell=True)
 
+
+def generate_certificate(list:str, gender: str):
+    ...
 # Обернуть циклом по всем ФИО/полу
 # Сохранить
 
