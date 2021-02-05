@@ -2,7 +2,8 @@ import subprocess
 from csv import reader
 from xml.etree import ElementTree
 from pathlib import Path
-from typing import Iterator, Iterable
+from os import remove
+from typing import Iterator
 
 CERT_TEMPLATE = {'Мужской': Path('templates/delegate_muzh.svg'),
                  'Женский': Path('templates/delegate_zhen.svg')}
@@ -55,6 +56,7 @@ def svg2png(name: str):
            f'"{OUTPUT_FOLDER}/{name}.png" '
            f'"{OUTPUT_FOLDER}/{name}.svg"']
     subprocess.call(cmd, shell=True)
+    remove(f'{OUTPUT_FOLDER}/{name}.svg')
 
 
 def generate_certificates():
