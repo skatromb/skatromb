@@ -2,7 +2,7 @@ import subprocess
 from csv import reader
 from xml.etree import ElementTree
 from pathlib import Path
-from typing import Iterator
+from typing import Iterator, Iterable
 
 CERT_TEMPLATE = {'Мужской': Path('templates/delegate_muzh.svg'),
                  'Женский': Path('templates/delegate_zhen.svg')}
@@ -12,7 +12,7 @@ NAMESPACE = {'NAME_TAG': 'http://www.w3.org/2000/svg'}
 GOOGLE_CHROME_PATH = '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'
 SCREENSHOT_PARAMS = '--headless --window-size=1480,1048 --screenshot'
 
-INPUT_NAMES_FILE = 'input/delegate_FI_gender - Sheet1.csv'
+INPUT_NAMES_PATH = Path('input/delegate_FI_gender - Sheet1.csv')
 OUTPUT_FOLDER = 'output'
 
 
@@ -57,12 +57,12 @@ def svg2png(name: str):
     subprocess.call(cmd, shell=True)
 
 
-def generate_certificate(list:str, gender: str):
-    ...
-# Обернуть циклом по всем ФИО/полу
-# Сохранить
+def generate_certificates():
+    """Забирает список студентов, модифицирует svg, генерит png"""
+    for student in make_list(INPUT_NAMES_PATH):
+        fill_svg(student.name, student.gender)
+        svg2png(student.name)
 
 
 if __name__ == '__main__':
-    fill_svg('Марьяна Онысько', 'Женский')
-    svg2png('Марьяна Онысько')
+    generate_certificates()
