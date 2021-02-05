@@ -12,7 +12,7 @@ NAMESPACE = {'NAME_TAG': 'http://www.w3.org/2000/svg'}
 GOOGLE_CHROME_PATH = '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'
 SCREENSHOT_PARAMS = '--headless --window-size=1480,1048 --screenshot'
 
-INPUT_NAMES_PATH = Path('input/delegate_FI_gender - Sheet1.csv')
+INPUT_NAMES_PATH = Path('input/FI_gender.csv')
 OUTPUT_FOLDER = 'output'
 
 
