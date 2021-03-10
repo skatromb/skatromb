@@ -1,9 +1,7 @@
 FROM python:latest
 
-WORKDIR app
-COPY requirements.txt /app
+WORKDIR config
+COPY requirements.txt /config
 
 # Ставим зависимости
 RUN pip install -U -r requirements.txt
-
-# docker run -it python

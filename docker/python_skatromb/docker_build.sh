@@ -1,2 +1,2 @@
-docker build -t python:skatromb .
+docker build -t python:latest .
 docker system prune --force
