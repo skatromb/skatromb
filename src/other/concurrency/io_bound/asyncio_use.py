@@ -1,4 +1,4 @@
-# FIXME: Не работает, виснет на строке print()
+# Не работает, виснет на строке print()
 import asyncio
 import time
 import aiohttp
