@@ -7,8 +7,7 @@
 * It contains only 5k fulfilled rows, others are an empty dataset `;;;;;;;;;;;;;;;;;`.
 
 Don't know if it's a bug or feature of test task, but think it is important to inform you. 
-I think they meant to be deleted.
-I worked with them as they are intended to exist (although useless).
+I think they meant to be deleted, but I worked with them as they are intended to exist (although useless).
 
 2. While joining tables I've noticed another problem:
 `cycles.loan_id` matches `loan.id` only partially.
@@ -53,7 +52,7 @@ WHERE dpd > 10;
 
 ```postgresql
 SELECT 
-    id as first_application_id,
+    id AS first_application_id,
     customer_id
 FROM 
     (
@@ -98,7 +97,7 @@ WHERE customer_id NOT IN
 ```postgresql
 SELECT customer_id,
        (COUNT(status) FILTER (WHERE status = 'overdue'))::NUMERIC /
-        COUNT(*) AS all_count
+       COUNT(*) AS all_count
 FROM cycles
 GROUP BY 1
 ORDER BY 2 DESC;
@@ -107,7 +106,7 @@ ORDER BY 2 DESC;
 ## 3. Datasets
 
 I don't like the code's length, in production I will think about decomposing it to be more modular and readable.
-But it works, I hope.
+But it works for the test purpose, I hope.
 
 Also, I've found that in task description was duplicate column of `number of paid cycles`. So I dropped the duplicate 
 ```postgresql
