@@ -184,3 +184,26 @@ FROM
 
 WHERE app_loan.application_id IS NOT NULL;
 ```
+
+## 4. Load the dataset daily in DAG
+
+I've created [daily DAG](docker-airflow/dags/dataset_load.py) for that purpose. 
+It fills the [`dataset` table](instructions/dataset.ddl)
+
+## 5. Encryption
+
+I've [created a new table](instructions/encrypted_emails.ddl) with the encrypted customer's emails: `customer_email_encrypted`.
+
+I've used a postgres extension `CREATE EXTENSION pgcrypto;` for encryption
+and used the key `supersecurekey` which is passed as parameter from DAG
+
+Emails encrypted by the function `pgp_sym_encrypt(email::bytea, supersecurekey)`. 
+To decrypt the column you need to select column with reversing function 
+`pgp_sym_decrypt(encrypted_email, supersecurekey)`:
+
+[DAG](docker-airflow/dags/customer_email_encrypt.py) that inserts the encrypted data to the table
+
+SQL script which can help to read the encrypted data:
+```postgresql
+SELECT PGP_SYM_DECRYPT(email::bytea, 'supersecurekey') FROM customer_email_encrypted;
+```
