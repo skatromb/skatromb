@@ -190,6 +190,11 @@ WHERE app_loan.application_id IS NOT NULL;
 I've created [daily DAG](docker-airflow/dags/dataset_load.py) for that purpose. 
 It fills the [`dataset` table](instructions/dataset.ddl)
 
+You can query it after the DAG completion by SQL:
+```postgresql
+SELECT * FROM dataset;
+```
+
 ## 5. Encryption
 
 I've [created a new table](instructions/encrypted_emails.ddl) with the encrypted customer's emails: `customer_email_encrypted`.
