@@ -26,6 +26,7 @@ def choose_template(folder: str, student: dict) -> Path:
         full_name: str
         gender: 'male', 'female'
         homework: True, False"""
+    # TODO: Стоит для каждого продукта сделать отдельный маппинг
     lang = 'eng' if student['full_name'].isascii() else None
     gender = None if lang == 'eng' else student['gender']
     homework = 'homework' if student['homework'] == 'да' else None
