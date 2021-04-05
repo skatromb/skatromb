@@ -40,7 +40,6 @@ def choose_template(folder: str, student: dict) -> Path:
 
 def fill_template(product: str, student: dict, name_tag_id='NAME_TAG', output_folder='output'):
     """Читаем svg и ищем место для имени по id"""
-    # TODO: Получать сертификат из функции. Оставить только подстановку ФИ
     template = choose_template(product, student)
     tree = ElementTree.parse(template)
 
