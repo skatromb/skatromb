@@ -174,7 +174,7 @@ FROM
                 AVG(dpd) AS avg_dpd,
                 MAX(dpd) AS max_dpd
         FROM app_cycle
-        WHERE cycle_created_at > app_created_at - INTERVAL '30 DAY'
+        WHERE cycle_created_at > app_created_at - INTERVAL '60 DAY'
         GROUP BY application_id, customer_id
         ) AS cycle_60
             ON cycle_60.application_id = app_loan.application_id
