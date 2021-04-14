@@ -50,7 +50,7 @@ def fill_template(product: str, student: dict, name_tag_id='NAME_TAG', output_fo
     if len(name_tags) == 1:
         name_tags[0].text = student['full_name']
     else:
-        raise BaseException('В шаблоне svg оказалось больше одного места для подстановки ФИ')
+        raise Exception('В шаблоне svg оказалось больше одного места для подстановки ФИ')
 
     tree.write(f'{Path(output_folder) / student["full_name"]}.svg')
 
