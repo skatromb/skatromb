@@ -1,5 +1,3 @@
-[comment]: <> (TODO)
-
 ## 0. Setup environment 
    
 1. I've noticed, that [applications.csv](SQL-data/applications.csv) has two problems:
