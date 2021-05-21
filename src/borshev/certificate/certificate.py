@@ -73,7 +73,4 @@ def generate_certificates(product: str, input_path: Path):
 
 
 if __name__ == '__main__':
-    generate_certificates('architecture', Path('input/students.csv'))
-
-
-# "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless --window-size=1480,1048 --screenshot="output/English Person.png" "output/English Person.svg"
+    generate_certificates('teamlead', Path('input/students.csv'))
