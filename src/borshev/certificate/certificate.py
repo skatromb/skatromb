@@ -1,9 +1,11 @@
+import logging
+import os
 import subprocess
 from csv import DictReader
 from xml.etree import ElementTree
 from pathlib import Path
 from os import remove
-import logging
+
 
 CHROME_PARAMS = {'google_chrome_path': '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
                  'screenshot_params': '--headless --window-size=1480,1048 --screenshot'}
@@ -39,7 +41,7 @@ def choose_template(folder: str, student: dict) -> Path:
 #     print(f'{params}: {choose_template("architecture", params)}')
 
 
-def fill_template(product: str, student: dict, name_tag_id='NAME_TAG', output_folder='output'):
+def fill_template(product: str, student: dict, output_folder: Path, name_tag_id='NAME_TAG', ):
     """Читаем svg и ищем место для имени по id"""
     template = choose_template(product, student)
     tree = ElementTree.parse(template)
@@ -52,10 +54,11 @@ def fill_template(product: str, student: dict, name_tag_id='NAME_TAG', output_fo
     else:
         raise Exception('В шаблоне svg оказалось больше одного места для подстановки ФИ')
 
-    tree.write(f'{Path(output_folder) / student["full_name"]}.svg')
+    os.makedirs(output_folder, exist_ok=True)
+    tree.write(output_folder / f'{student["full_name"]}.svg')
 
 
-def template2png(filename: str, chrome_params: dict, output_folder='output'):
+def template2png(filename: str, output_folder: Path, chrome_params: dict,):
     """Делает из `svg` скриншот в `png`"""
     cmd = [f'"{chrome_params["google_chrome_path"]}" {chrome_params["screenshot_params"]}='
            f'"{output_folder}/{filename}.png" '
@@ -68,8 +71,9 @@ def template2png(filename: str, chrome_params: dict, output_folder='output'):
 def generate_certificates(product: str, input_path: Path):
     """Итерируется по списку студентов, модифицирует svg, генерит png"""
     for student in student_list(input_path):
-        fill_template(product, student)
-        template2png(student['full_name'], CHROME_PARAMS)
+        output_folder = Path("output") / student["course_id"] / student["user_id"]
+        fill_template(product, student, output_folder)
+        template2png(student['full_name'], output_folder, CHROME_PARAMS)
 
 
 if __name__ == '__main__':
