@@ -10,9 +10,11 @@
 
 3. Поместить файлы в отдельную подпапку внутри [templates](templates)
    
-4. Скачать `csv`-файл с данными студентов из [typeform.com](https://typeform.com),
-   обогатить нужной информацией (о домашке, поле) в [input/students.csv](input). 
-      - `full_name: str`
+4. Скачать `csv`-файл с данными студентов из [metabase](https://edu-dashboard.borshev.com/question/20),
+   обогатить информацией о поле студента и положить в [input/students.csv](input).
+      - `course_id`
+      - `user_id`
+      - `full_name`
       - `gender: {'male', 'female'}`,
       - `homework: {'да', ''}` — опциональное.
 
