@@ -1,9 +1,5 @@
 /venv/
-/_mac/
-/.devcontainer/
 /.idea/
-/.vscode/
 /src/Coursera_ML/Answers/
-/spark-warehouse/
 /src/borshev/certificate/output/
 /src/borshev/certificate/input/
