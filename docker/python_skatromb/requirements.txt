@@ -1,3 +1,5 @@
 typing
 httpx
 tqdm
+google-cloud-storage
+google-cloud-compute
