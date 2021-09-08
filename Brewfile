@@ -10,7 +10,6 @@ brew spotify
 brew sublime-text
 brew outline-manager
 brew hiddenbar
-brew adblock
 brew webtorrent
 
 ## Games
