@@ -2,6 +2,7 @@
 
 ## Common
 brew mas
+mas "AdblockPro", id:1018301773
 brew telegram
 brew deepl
 brew spotify
