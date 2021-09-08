@@ -1,4 +1,5 @@
-# 1. install brew: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" && brew bundle
+# install and run brew:
+# /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" && brew bundle
 
 ## Common
 brew mas
@@ -9,6 +10,8 @@ brew spotify
 brew sublime-text
 brew outline-manager
 brew hiddenbar
+brew adblock
+brew webtorrent
 
 ## Games
 brew steam
