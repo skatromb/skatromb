@@ -3,3 +3,5 @@ httpx
 tqdm
 google-cloud-storage
 google-cloud-compute
+pandas
+pyspark
