@@ -6,4 +6,4 @@ WORKDIR /config
 COPY config .
 
 # Ставим зависимости
-RUN pip install -U -r requirements.txt
+RUN pip install -r requirements.txt
