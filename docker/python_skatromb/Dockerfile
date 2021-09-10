@@ -1,5 +1,7 @@
 FROM python:latest
 
+RUN apt update --quiet && \
+    apt install --quiet --yes --no-install-recommends default-jdk
 WORKDIR /config
 COPY config .
 
