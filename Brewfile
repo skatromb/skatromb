@@ -26,6 +26,7 @@ brew "docker"
 brew "google-chrome"
 
 ## Fishbrain
+brew "1Password"
 brew "awscli"
 brew "google-cloud-sdk"
 brew "slack"
