@@ -28,6 +28,7 @@ brew "google-chrome"
 ## Fishbrain
 brew "awscli"
 brew "google-cloud-sdk"
+brew "tfenv"
 brew "slack"
 brew "zoom"
 
