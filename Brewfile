@@ -12,8 +12,8 @@ brew "telegram"
 brew "deepl"
 brew "spotify"
 brew "sublime-text"
-brew "outline-manager"
 brew "hiddenbar"
+brew "cloudflare-warp"
 brew "webtorrent"
 
 ## Games
