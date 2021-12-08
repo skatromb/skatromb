@@ -8,12 +8,13 @@ mas "AdblockPro", id: 1018301773
 mas "Keynote", id: 409183694
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
-brew "telegram"
+brew "browserosaurus"
+brew "cloudflare-warp"
 brew "deepl"
+brew "hiddenbar"
+brew "telegram"
 brew "spotify"
 brew "sublime-text"
-brew "hiddenbar"
-brew "cloudflare-warp"
 brew "webtorrent"
 
 ## Games
@@ -21,16 +22,16 @@ brew "steam"
 
 ## Develop
 mas "Xcode", id: 497799835
-brew "pycharm"
 brew "docker"
 brew "google-chrome"
+brew "pycharm"
 
 ## Fishbrain
 brew "1Password"
 brew "awscli"
 brew "google-cloud-sdk"
-brew "tfenv"
 brew "slack"
+brew "tfenv"
 brew "zoom"
 
 # doc on Brewfile: https://github.com/Homebrew/homebrew-bundle
