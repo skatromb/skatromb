@@ -27,6 +27,7 @@ brew "google-chrome"
 brew "pycharm"
 
 ## Fishbrain
+brew "aws-vpn-client"
 brew "1Password"
 brew "awscli"
 brew "google-cloud-sdk"
