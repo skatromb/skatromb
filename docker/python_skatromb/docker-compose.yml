@@ -1,0 +1,9 @@
+services:
+  python:
+    container_name: python_console
+    image: python
+    build:
+      context: .
+    volumes:
+      - ~/Documents/Work/Fishbrain/Tasks:/opt/tasks
+      - ~/Library/Application Support/JetBrains/PyCharm2021.3/scratches:/opt/scratches

@@ -1,7 +1,5 @@
-typing
-httpx
-tqdm
-google-cloud-storage
-google-cloud-compute
-pandas
-pyspark
+google-cloud-compute==1.2.0
+google-cloud-storage==2.2.1
+pandas==1.4.2
+pyspark==3.2.1
+pyspark-stubs
