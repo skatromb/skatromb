@@ -5,5 +5,5 @@ services:
     build:
       context: .
     volumes:
-      - ~/Documents/Work/Fishbrain/Tasks:/opt/tasks
-      - ~/Library/Application Support/JetBrains/PyCharm2021.3/scratches:/opt/scratches
+      - /Users/skatromb/Documents/Work/Fishbrain/Tasks:/Users/skatromb/Documents/Work/Fishbrain/Tasks
+      - /Users/skatromb/Library/Application Support/JetBrains/PyCharm2021.3/scratches:/Users/skatromb/Library/Application Support/JetBrains/PyCharm2021.3/scratches
