@@ -30,10 +30,10 @@ cask "google-chrome"
 cask "pycharm"
 
 ## Fishbrain
-cask "aws-vpn-client"
-cask "1Password"
 brew "awscli"
 brew "google-cloud-sdk"
+cask "1Password"
+cask "aws-vpn-client"
 cask "slack"
 
 # doc on Brewfile: https://github.com/Homebrew/homebrew-bundle
