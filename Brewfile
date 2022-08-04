@@ -32,7 +32,7 @@ cask "pycharm"
 
 ## Fishbrain
 brew "awscli"
-brew "google-cloud-sdk"
+cask "google-cloud-sdk"
 cask "1Password"
 cask "aws-vpn-client"
 cask "slack"
