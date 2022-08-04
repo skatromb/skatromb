@@ -11,7 +11,6 @@ mas "Keynote", id: 409183694
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
 cask "browserosaurus"
-cask "cloudflare-warp"
 cask "deepl"
 cask "hiddenbar"
 cask "monitorcontrol"
