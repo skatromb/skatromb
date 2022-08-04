@@ -10,6 +10,7 @@ mas "AdblockPro", id: 1018301773
 mas "Keynote", id: 409183694
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
+cask "avira-antivirus"
 cask "browserosaurus"
 cask "deepl"
 cask "hiddenbar"
