@@ -2,6 +2,7 @@
 # /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 # echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/skatromb/.zprofile && eval "$(/opt/homebrew/bin/brew shellenv)"
 # git clone https://github.com/skatromb/skatromb ~/code/skatromb && git restore --source=HEAD :/
+# sudo softwareupdate --install-rosetta  # for Avira antivirus
 # brew bundle --file=~/code/skatromb/Brewfile
 
 ## Common
@@ -31,7 +32,7 @@ cask "pycharm"
 
 ## Fishbrain
 brew "awscli"
-brew "google-cloud-sdk"
+cask "google-cloud-sdk"
 cask "1Password"
 cask "aws-vpn-client"
 cask "slack"
