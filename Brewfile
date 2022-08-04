@@ -1,7 +1,7 @@
 # install and run brew:
 # /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-# echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/skatromb/.zprofile
-# eval "$(/opt/homebrew/bin/brew shellenv)"
+# echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/skatromb/.zprofile && eval "$(/opt/homebrew/bin/brew shellenv)"
+# git clone https://github.com/skatromb/skatromb ~/code/ && git restore --source=HEAD :/
 # brew bundle --file=~/code/skatromb/Brewfile
 
 ## Common
