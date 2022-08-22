@@ -8,7 +8,8 @@ RUN apt update --quiet && \
 WORKDIR /usr/app/
 COPY * .
 
-RUN pip install -r requirements.txt
+RUN python -m pip install --upgrade pip && \
+    pip install -r requirements.txt
 
 # install MySQL jdbc
 WORKDIR $SPARK_HOME

@@ -1,7 +1,7 @@
 services:
   python:
     container_name: python_console
-    image: python
+    image: python_skatromb
     build:
       context: .
     volumes:

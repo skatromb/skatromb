@@ -1,2 +1,2 @@
-docker build --platform=arm64 --tag=python_skatromb:latest .
+docker-compose build
 docker system prune --force

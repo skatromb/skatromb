@@ -1,5 +1,5 @@
-google-cloud-compute==1.2.0
-google-cloud-storage==2.2.1
-pandas==1.4.2
-pyspark==3.2.1
+google-cloud-compute
+google-cloud-storage
+pandas==1.4.3
+pyspark==3.3.0
 pyspark-stubs
