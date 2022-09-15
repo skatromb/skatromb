@@ -1,0 +1,7 @@
+---
+  dependencies:
+    - name: Install apps from App Store
+    - role: geerlingguy.mac.mas
+      vars:
+        mas_installed_apps:
+          - { name: AdblockPro, id: 1018301773}
