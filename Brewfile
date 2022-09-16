@@ -1,6 +1,6 @@
 # install and run brew:
-# /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-# echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/skatromb/.zprofile && eval "$(/opt/homebrew/bin/brew shellenv)"
+# /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+# echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile && eval "$(/opt/homebrew/bin/brew shellenv)"
 # git clone https://github.com/skatromb/skatromb ~/code/skatromb && git restore --source=HEAD :/
 # sudo softwareupdate --install-rosetta  # for Avira antivirus
 # brew bundle --file=~/code/skatromb/Brewfile
