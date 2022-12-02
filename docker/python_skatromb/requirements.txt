@@ -1,5 +1,5 @@
 google-cloud-compute
 google-cloud-storage
-pandas==1.4.3
-pyspark==3.3.0
-pyspark-stubs
+pandas==1.5.2
+pyspark==3.3.1
+sqlalchemy==1.4.44
