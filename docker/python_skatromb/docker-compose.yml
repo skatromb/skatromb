@@ -6,4 +6,5 @@ services:
       context: .
     volumes:
       - /Users/skatromb/Documents/Work/Fishbrain/Tasks:/Users/skatromb/Documents/Work/Fishbrain/Tasks
-      - /Users/skatromb/Library/Application Support/JetBrains/PyCharm2021.3/scratches:/Users/skatromb/Library/Application Support/JetBrains/PyCharm2021.3/scratches
+      - /Users/skatromb/Library/Application Support/JetBrains/PyCharm2022.2/scratches:/Users/skatromb/Library/Application Support/JetBrains/PyCharm2022.2/scratches
+      - /Users/skatromb/code:/Users/skatromb/code
