@@ -4,6 +4,12 @@ services:
     image: python_skatromb
     build:
       context: .
+#    env_file:
+#      - .env
+    environment:
+      DB_URL: ${DB_URL}
+      DB_USER: ${DB_USER}
+      DB_PASSWORD: ${DB_PASSWORD}
     volumes:
       - /Users/skatromb/Documents/Work/Fishbrain/Tasks:/Users/skatromb/Documents/Work/Fishbrain/Tasks
       - /Users/skatromb/Library/Application Support/JetBrains/PyCharm2022.2/scratches:/Users/skatromb/Library/Application Support/JetBrains/PyCharm2022.2/scratches
