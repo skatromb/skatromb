@@ -17,7 +17,6 @@ df = (spark
       .option("password", environ["DB_PASSWORD"])
       .option("dbtable", f"{environ['DB_TABLE']}")
       # .option("fetchsize", f"{10_000}")
-      # .option("queryTimeout", 4*60*60)
       # partitioning try
       # .option("partitionColumn", "ID")
       # .option("lowerBound", "0")
