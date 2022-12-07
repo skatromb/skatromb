@@ -12,6 +12,8 @@ services:
       DB_USER: ${DB_USER}
       DB_PASSWORD: ${DB_PASSWORD}
       DB_TABLE: ${DB_TABLE}
+      EXECUTOR_MEMORY: 8g
+      DRIVER_MEMORY: 512m
     volumes:
       - /Users/skatromb/Documents/Work/Fishbrain/Tasks:/Users/skatromb/Documents/Work/Fishbrain/Tasks
       - /Users/skatromb/Library/Application Support/JetBrains/PyCharm2022.2/scratches:/Users/skatromb/Library/Application Support/JetBrains/PyCharm2022.2/scratches
