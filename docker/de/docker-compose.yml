@@ -1,6 +1,6 @@
 services:
   python:
-    container_name: python_console
+    container_name: python_skatromb
     image: python_skatromb
     build:
       context: .
@@ -14,3 +14,5 @@ services:
       - /Users/skatromb/Documents/Work/Fishbrain/Tasks:/Users/skatromb/Documents/Work/Fishbrain/Tasks
       - /Users/skatromb/Library/Application Support/JetBrains/PyCharm2022.2/scratches:/Users/skatromb/Library/Application Support/JetBrains/PyCharm2022.2/scratches
       - /Users/skatromb/code:/Users/skatromb/code
+    ports:
+      - 4040:4040
