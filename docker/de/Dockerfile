@@ -16,9 +16,9 @@ RUN wget "https://dev.mysql.com/get/Downloads/Connector-J/$mysql_jdbc" && \
     rm $mysql_jdbc
 ENV MYSQL_JDBC_PATH=/usr/share/java/mysql-connector-j-8.0.31.jar
 
+COPY . .
+
 CMD pyspark \
     --driver-class-path ${MYSQL_JDBC_PATH} --jars ${MYSQL_JDBC_PATH} \
-    --conf "spark.executor.memory=10g" \
-    --conf "spark.driver.memory=4g"
-
-COPY . .
+    --conf "spark.executor.memory=${EXECUTOR_MEMORY}" \
+    --conf "spark.driver.memory=${DRIVER_MEMORY}"
