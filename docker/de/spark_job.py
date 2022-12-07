@@ -7,14 +7,19 @@ from zoneinfo import ZoneInfo
 tz = ZoneInfo("CET")
 print(started_at := datetime.now(tz))
 
+db_url = environ['DB_URL']
+db_schema = environ['DB_SCHEMA']
+db_table = environ['DB_TABLE']
+db_user = environ['DB_USER']
+db_password = environ['DB_PASSWORD']
+
 # Profiles = 15m rows
 df = (
     spark.read.format("jdbc")
-    .option("url", environ["DB_URL"])
-    .option("user", environ["DB_USER"])
-    .option("password", environ["DB_PASSWORD"])
-    .option("dbtable", f"{environ['DB_TABLE']}")
-    # .option("fetchsize", f"{10_000}")
+    .option("url", f"jdbc:mysql://{db_url}/{db_schema}")
+    .option("user", db_user)
+    .option("password", db_password)
+    .option("dbtable", f"{db_schema}.{db_table}")
     # partitioning try
     # .option("partitionColumn", "ID")
     # .option("lowerBound", "0")
@@ -23,7 +28,7 @@ df = (
     .load()
 )
 
-(df.write.parquet("/Users/skatromb/code/skatromb/jdbc_test", mode="overwrite"))
+(df.write.parquet(f"/Users/skatromb/code/skatromb/spark_test/pyspark_to_parquet_{db_table}", mode="overwrite"))
 
 print(ended_at := datetime.now(tz))
 
