@@ -11,9 +11,7 @@ db_password = environ["DB_PASSWORD"]
 db_host = environ["DB_URL"]
 db_schema = environ["DB_SCHEMA"]
 db_table = environ["DB_TABLE"]
-output_file = (
-    f"/Users/skatromb/code/skatromb/spark_test/sqlaclhemy_to_csv_{db_table}.csv"
-)
+output_file = f"/Users/skatromb/code/skatromb/outputs/sql_alchemy/to_csv_{db_table}.csv"
 
 engine = sqlalchemy.create_engine(
     f"mysql+pymysql://{db_user}:{db_password}@{db_host}/{db_schema}", echo=True
@@ -26,7 +24,6 @@ with engine.connect() as connection:
         f"{db_table}", metadata, autoload=True, autoload_with=engine
     )
     query = sqlalchemy.select([table])
-    print(f"query done {datetime.now(tz)}")
     # execute query
     i = 1
     cursor = connection.execute(query)
