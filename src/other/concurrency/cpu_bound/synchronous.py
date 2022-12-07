@@ -1,5 +1,5 @@
-import time
 import logging
+import time
 
 
 def cpu_bound(number):
@@ -12,7 +12,9 @@ def find_sums(numbers):
         cpu_bound(number)
 
 
-logging.basicConfig(format='%(asctime)s (UTC): %(levelname)s - %(message)s', level=logging.INFO)
+logging.basicConfig(
+    format="%(asctime)s (UTC): %(levelname)s - %(message)s", level=logging.INFO
+)
 logger = logging.getLogger(__name__)
 
 if __name__ == "__main__":

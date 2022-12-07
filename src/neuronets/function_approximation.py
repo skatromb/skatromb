@@ -1,7 +1,6 @@
 import random
 from datetime import datetime
 
-
 # Задаем коэффициенты цравнения прямой y = kx + c
 k = random.uniform(-5, 5)
 c = random.uniform(-5, 5)
@@ -13,7 +12,7 @@ def f(x):
 
 
 # Вывод данных начальной прямой
-print(f'Начальная прямая: y = {k}x + {c}')
+print(f"Начальная прямая: y = {k}x + {c}")
 
 # Набор точек X:Y
 data = {
@@ -26,7 +25,7 @@ data = {
     6.6: 13,
     7.2: 15.3,
     8: 17.1,
-    8.5: 19.5
+    8.5: 19.5,
 }
 
 # Скорость обучения
@@ -59,5 +58,5 @@ for i in range(repeats):
 end = datetime.now()
 time = str(end - start)
 # Вывод данных готовой прямой
-print(f'Готовая прямая: y = {k}x + {c}')
-print(f'Обучение заняло {time}')
+print(f"Готовая прямая: y = {k}x + {c}")
+print(f"Обучение заняло {time}")

@@ -1,4 +1,5 @@
-from typing import List, Dict
+from typing import Dict, List
+
 # 7     # n — количество городов
 # 0 0   # 1 город
 # 0 2   # 2 город
@@ -12,6 +13,7 @@ from typing import List, Dict
 
 # есть запас хода k и расстояние между городами |x2 - x1| + |y2 - y1|
 
+
 class Town:
     x: int
     y: int
@@ -23,11 +25,11 @@ class Town:
         self.connections = []
 
     def __str__(self):
-        return f'x={self.x}, y={self.y}, connections={self.connections}'
+        return f"x={self.x}, y={self.y}, connections={self.connections}"
 
 
 # Считать input
-def take_input(filename) -> (List[dict], int, int, int):
+def take_input(filename) -> (list[dict], int, int, int):
     """towns = [{Town: []}, ...]"""
     with open(filename) as in_file:
         n = int(in_file.readline().strip())
@@ -36,14 +38,14 @@ def take_input(filename) -> (List[dict], int, int, int):
 
         # Добавляем новые города в список
         for _ in range(n):
-            coordinates = in_file.readline().strip().split(' ')
+            coordinates = in_file.readline().strip().split(" ")
             town = Town(*coordinates)
             towns.append(town)
 
         k = int(in_file.readline().strip())
 
-        start_dest = in_file.readline().strip().split(' ')
-        start, destination = [int(num) for num in start_dest]
+        start_dest = in_file.readline().strip().split(" ")
+        start, destination = (int(num) for num in start_dest)
 
         return towns, k, start - 1, destination - 1
 
@@ -57,7 +59,7 @@ def is_connected(town_1: Town, town_2: Town, hops: int) -> bool:
 
 
 # Ищем, между какими городами можно доехать
-def connected(towns: List[Town]) -> list:
+def connected(towns: list[Town]) -> list:
     # Ищем связи каждого города с другими
     for town in towns:
         # Смотрим на связность с каждым другим городом
@@ -68,14 +70,16 @@ def connected(towns: List[Town]) -> list:
 
 
 def do_step(cur_path: list, next_steps: list) -> (list, list):
-    return new_path, new_steps
+    # return new_path, new_steps
+    ...
+
 
 # TODO: Найти путь
-def find_shortest_path(towns: List[Town], start: int):
+def find_shortest_path(towns: list[Town], start: int):
     path = [[Town]]
     while True:
         new_paths = []
-        for ...
+        # for ...
 
     # План таков: найти связанные города — те, между которыми чуваку хватит топлива доехать.
     #       1. Получим циклический граф переходов. Ещё у него есть начало и желаемый конец.
@@ -97,9 +101,8 @@ def find_shortest_path(towns: List[Town], start: int):
     #       6. Возвращаем len(path), если пришли
 
 
-
-if __name__ == '__main__':
-    towns, hops, start_town, dest_town = take_input('input.txt')
+if __name__ == "__main__":
+    towns, hops, start_town, dest_town = take_input("input.txt")
     towns = connected(towns)
 
     print(towns)

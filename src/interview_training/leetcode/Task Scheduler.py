@@ -46,19 +46,25 @@ def count_dict(dic: dict) -> int:
 
 def unspent_letters(initial: dict, spent: dict) -> list:
     # Нужно вернуть отсортированный список от наиболее частых букв к наименее частым
-    current_count = {letter: initial[letter] - spent[letter] for letter in initial
-                     if initial[letter] - spent[letter] > 0}
-    return [letter[0] for letter in reversed(sorted(current_count.items(), key=lambda item: item[1]))]
+    current_count = {
+        letter: initial[letter] - spent[letter]
+        for letter in initial
+        if initial[letter] - spent[letter] > 0
+    }
+    return [
+        letter[0]
+        for letter in reversed(sorted(current_count.items(), key=lambda item: item[1]))
+    ]
 
 
-def least_interval(tasks: List[str], n: int) -> int:
+def least_interval(tasks: list[str], n: int) -> int:
     schedule = []
     # Разбить все буквы на группы с количеством initial_letters {'A': 6, 'B': 1, ...}
     letters_set = set(tasks)
     initial_letters = {letter: tasks.count(letter) for letter in letters_set}
     spent_letters = {letter: 0 for letter in letters_set}
     # Пока буквы остались, идём по буквам initial_letters с самой большой и делаем проверку
-    while (unused_letters := unspent_letters(initial_letters, spent_letters)):
+    while unused_letters := unspent_letters(initial_letters, spent_letters):
         for letter in unspent_letters(initial_letters, spent_letters):
             #  Если очередной буквы нет в schedule[-n:], дополняем ей schedul и записываем, что потратили её
             if n == 0 or letter not in schedule[-n:]:
@@ -67,7 +73,7 @@ def least_interval(tasks: List[str], n: int) -> int:
                 break
             #   Если дошли до конца и не нашли подходящей буквы, добавляем idle
             elif letter == unused_letters[-1]:
-                schedule.append('idle')
+                schedule.append("idle")
 
     # После исчерпания букв считаем len(schedule) и отдаём
     print(schedule)
@@ -75,6 +81,6 @@ def least_interval(tasks: List[str], n: int) -> int:
     return len(schedule)
 
 
-least_interval(["A","A","A","B","B","B"], n=2)
+least_interval(["A", "A", "A", "B", "B", "B"], n=2)
 ["A", "A", "A", "B", "B", "B", "C", "C", "C", "D", "D", "E"]
-['B', 'A', 'C', 'B', 'A', 'C', 'B', 'A', 'C', 'D', 'E', 'idle', 'D']
+["B", "A", "C", "B", "A", "C", "B", "A", "C", "D", "E", "idle", "D"]

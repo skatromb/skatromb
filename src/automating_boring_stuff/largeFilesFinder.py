@@ -2,8 +2,7 @@
 
 import os
 
-
-for root, dirs, files in os.walk('/'):
+for root, dirs, files in os.walk("/"):
     for file in files:
         path = os.path.join(root, file)
         try:

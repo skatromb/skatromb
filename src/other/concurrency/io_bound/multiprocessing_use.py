@@ -1,6 +1,7 @@
-import requests
 import multiprocessing
 import time
+
+import requests
 
 session = None
 

@@ -1,13 +1,14 @@
-from sklearn.preprocessing import StandardScaler
-from sklearn.linear_model import Perceptron
 from pandas import read_csv
-
+from sklearn.linear_model import Perceptron
+from sklearn.preprocessing import StandardScaler
 
 scaler = StandardScaler()
 clf = Perceptron()
 
 # Загружаем данные
-test_data, train_data = read_csv('perceptron-test.csv', header=None), read_csv('perceptron-train.csv', header=None)
+test_data, train_data = read_csv("perceptron-test.csv", header=None), read_csv(
+    "perceptron-train.csv", header=None
+)
 
 test_target, train_target = test_data[0], train_data[0]
 test_attrs, train_attrs = test_data.iloc[:, 1:], train_data.iloc[:, 1:]

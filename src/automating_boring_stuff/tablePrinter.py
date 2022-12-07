@@ -1,6 +1,8 @@
-tableData = [['apples', 'oranges', 'cherries', 'banana'],
-             ['Alice', 'Bob', 'Carol', 'David'],
-             ['dogs', 'cats', 'moose', 'goose']]
+tableData = [
+    ["apples", "oranges", "cherries", "banana"],
+    ["Alice", "Bob", "Carol", "David"],
+    ["dogs", "cats", "moose", "goose"],
+]
 
 
 def printTable(tableData):
@@ -15,7 +17,8 @@ def printTable(tableData):
     # Собственно, выводим табличку
     for rows in range(0, len(tableData[0])):
         for cols in range(0, len(tableData)):
-            print(tableData[cols][rows].rjust(colWidths[cols] + 1), end='')
+            print(tableData[cols][rows].rjust(colWidths[cols] + 1), end="")
         print()
+
 
 printTable(tableData)

@@ -1,14 +1,16 @@
 # Не работает, виснет на строке print()
 import asyncio
-import time
-import aiohttp
 import logging
+import time
+
+import aiohttp
+
 logging.basicConfig(level=logging.DEBUG)
 
 
 async def download_site(session, url):
     async with session.get(url) as response:
-        print("Read {0} from {1}".format(response.content_length, url))
+        print(f"Read {response.content_length} from {url}")
 
 
 async def download_all_sites(urls):

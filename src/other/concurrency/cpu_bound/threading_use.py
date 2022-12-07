@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import concurrent.futures
-import time
 import logging
+import time
 
 
 def cpu_bound(number):
@@ -14,7 +14,9 @@ def find_sums(numbers):
         executor.map(cpu_bound, numbers)
 
 
-logging.basicConfig(format='%(asctime)s (UTC): %(levelname)s - %(message)s', level=logging.INFO)
+logging.basicConfig(
+    format="%(asctime)s (UTC): %(levelname)s - %(message)s", level=logging.INFO
+)
 logger = logging.getLogger(__name__)
 
 if __name__ == "__main__":

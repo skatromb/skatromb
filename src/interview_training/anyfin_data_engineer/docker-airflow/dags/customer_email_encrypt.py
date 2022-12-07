@@ -1,7 +1,7 @@
-from airflow import DAG
-from airflow.operators.postgres_operator import PostgresOperator
 from datetime import datetime
 
+from airflow import DAG
+from airflow.operators.postgres_operator import PostgresOperator
 
 default_args = {"owner": "airflow"}
 
@@ -22,8 +22,7 @@ with DAG(
         task_id="encrypt_email",
         postgres_conn_id="postgres_default",
         sql="sql/customer_email_encrypt.sql",
-        params={'supersecurekey': 'supersecurekey'}
+        params={"supersecurekey": "supersecurekey"},
     )
 
     clean_table >> load_encrypted_email
-

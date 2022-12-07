@@ -1,8 +1,8 @@
 import concurrent.futures
-import requests
 import threading
 import time
 
+import requests
 
 thread_local = threading.local()
 
@@ -10,9 +10,9 @@ thread_local = threading.local()
 def get_session():
     if not hasattr(thread_local, "session"):
         thread_local.session = requests.Session()
-        print('New session')
+        print("New session")
     else:
-        print('Used session')
+        print("Used session")
     return thread_local.session
 
 

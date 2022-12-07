@@ -1,5 +1,5 @@
 # считываем файл построчно, пропускаем первую строку
-with open('input.txt') as in_file:
+with open("input.txt") as in_file:
     in_file.readline()
     unique = [in_file.readline().strip()]
     for line in in_file:

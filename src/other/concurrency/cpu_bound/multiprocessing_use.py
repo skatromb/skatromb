@@ -13,7 +13,9 @@ def find_sums(numbers):
         pool.map(cpu_bound, numbers)
 
 
-logging.basicConfig(format='%(asctime)s (UTC): %(levelname)s - %(message)s', level=logging.INFO)
+logging.basicConfig(
+    format="%(asctime)s (UTC): %(levelname)s - %(message)s", level=logging.INFO
+)
 logger = logging.getLogger(__name__)
 
 

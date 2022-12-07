@@ -10,8 +10,8 @@ def collatz(number):
 inputNumber = None
 while not inputNumber:
     try:
-        inputNumber = int(input('Введите число: '))
+        inputNumber = int(input("Введите число: "))
     except ValueError:
-        print('Вы ввели не число. Постарайтесь всё же ввести число.')
+        print("Вы ввели не число. Постарайтесь всё же ввести число.")
 while inputNumber != 1:
     inputNumber = collatz(inputNumber)
