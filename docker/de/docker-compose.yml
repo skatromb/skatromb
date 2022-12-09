@@ -4,8 +4,6 @@ services:
     image: python_skatromb
     build:
       context: .
-    env_file:
-      - .env
     environment:
       DB_URL: ${DB_URL}
       DB_SCHEMA: ${DB_SCHEMA}
@@ -13,9 +11,19 @@ services:
       DB_PASSWORD: ${DB_PASSWORD}
       DB_TABLE: ${DB_TABLE}
       DB_INDEXED_COLUMN: ${DB_INDEXED_COLUMN}
-      EXECUTOR_MEMORY: 2g
-      DRIVER_MEMORY: 512m
+      EXECUTOR_MEMORY: 4g
+      DRIVER_MEMORY: 1g
       EXECUTORS_NUMBER: "*"
+    command: |
+      spark-submit
+      --driver-class-path "/usr/share/java/mysql-connector-j-8.0.31.jar"
+      --jars "/usr/share/java/mysql-connector-j-8.0.31.jar"
+      --driver-memory ${DRIVER_MEMORY}
+      --executor-memory ${EXECUTOR_MEMORY}
+      --master local[${EXECUTORS_NUMBER:-*}]
+      spark_job.py
+      tail -F anything
+    # tail is for waiting after failure to access Spark UI
     volumes:
       - /Users/skatromb/Documents/Work/Fishbrain/Tasks:/Users/skatromb/Documents/Work/Fishbrain/Tasks
       - /Users/skatromb/Library/Application Support/JetBrains/PyCharm2022.2/scratches:/Users/skatromb/Library/Application Support/JetBrains/PyCharm2022.2/scratches
