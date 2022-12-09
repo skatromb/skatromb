@@ -12,11 +12,14 @@ services:
       DB_USER: ${DB_USER}
       DB_PASSWORD: ${DB_PASSWORD}
       DB_TABLE: ${DB_TABLE}
-      EXECUTOR_MEMORY: 8g
+      DB_INDEXED_COLUMN: ${DB_INDEXED_COLUMN}
+      EXECUTOR_MEMORY: 2g
       DRIVER_MEMORY: 512m
+      EXECUTORS_NUMBER: "*"
     volumes:
       - /Users/skatromb/Documents/Work/Fishbrain/Tasks:/Users/skatromb/Documents/Work/Fishbrain/Tasks
       - /Users/skatromb/Library/Application Support/JetBrains/PyCharm2022.2/scratches:/Users/skatromb/Library/Application Support/JetBrains/PyCharm2022.2/scratches
       - /Users/skatromb/code:/Users/skatromb/code
+      - .:/usr/app
     ports:
       - 4040:4040
