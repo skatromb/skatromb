@@ -67,6 +67,9 @@ df = (
         mode="overwrite",
     )
 )
+
+spark.stop()  # Just to have logging more close to tail
+
 ended_at = datetime.now(tz)
 logger.info(f"Job ended")
 
