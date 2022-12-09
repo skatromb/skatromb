@@ -5,8 +5,14 @@ from zoneinfo import ZoneInfo
 
 from pyspark.sql.session import SparkSession
 
+logging.basicConfig(
+    format="%(asctime)s %(levelname)s %(filename)s %(lineno)s: %(message)s",
+    level=logging.INFO,
+)
+logger = logging.getLogger(__name__)
+
 tz = ZoneInfo("CET")
-logging.info(started_at := datetime.now(tz))
+logger.warning(f"Job started at")
 
 db_url = environ["DB_URL"]
 db_schema = environ["DB_SCHEMA"]
@@ -37,12 +43,10 @@ min_indexed_col, max_indexed_col = (
     .collect()[0]
 )
 
-logging.info(
-    f"MIN value in {db_indexed_column} = {min_indexed_col}\n"
-    f"MAX value = {max_indexed_col}"
-)
+logger.info(f"MIN value in {db_indexed_column} = {min_indexed_col}")
+logger.info(f"MAX value in {db_indexed_column} = {max_indexed_col}")
 
-# Profiles = 15m rows
+started_at = datetime.now(tz)
 df = (
     spark.read.format("jdbc")
     .option("url", f"jdbc:mysql://{db_url}/{db_schema}")
@@ -53,7 +57,7 @@ df = (
     .option("partitionColumn", db_indexed_column)
     .option("lowerBound", min_indexed_col)
     .option("upperBound", max_indexed_col)
-    .option("numPartitions", 100)
+    .option("numPartitions", 1_000)
     .load()
 )
 
@@ -63,7 +67,7 @@ df = (
         mode="overwrite",
     )
 )
+ended_at = datetime.now(tz)
+logger.info(f"Job ended")
 
-logging.info(ended_at := datetime.now(tz))
-
-logging.info(f"TIME PASSED: {ended_at - started_at}")
+logger.info(f"TIME PASSED: {ended_at - started_at}")
