@@ -1,3 +1,4 @@
+import logging
 from datetime import datetime
 from os import environ
 from zoneinfo import ZoneInfo
@@ -5,7 +6,7 @@ from zoneinfo import ZoneInfo
 from pyspark.sql.session import SparkSession
 
 tz = ZoneInfo("CET")
-print(started_at := datetime.now(tz))
+logging.info(started_at := datetime.now(tz))
 
 db_url = environ["DB_URL"]
 db_schema = environ["DB_SCHEMA"]
@@ -36,6 +37,11 @@ min_indexed_col, max_indexed_col = (
     .collect()[0]
 )
 
+logging.info(
+    f"MIN value in {db_indexed_column} = {min_indexed_col}\n"
+    f"MAX value = {max_indexed_col}"
+)
+
 # Profiles = 15m rows
 df = (
     spark.read.format("jdbc")
@@ -58,6 +64,6 @@ df = (
     )
 )
 
-print(ended_at := datetime.now(tz))
+logging.info(ended_at := datetime.now(tz))
 
-print(f"TIME PASSED: {ended_at - started_at}")
+logging.info(f"TIME PASSED: {ended_at - started_at}")
