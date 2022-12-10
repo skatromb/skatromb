@@ -1,6 +1,7 @@
 <code_scheme name="skatromb" version="173">
   <SqlCodeStyleSettings version="6">
     <option name="KEYWORD_CASE" value="2" />
+    <option name="IDENTIFIER_CASE" value="1" />
     <option name="TYPE_CASE" value="3" />
     <option name="ALIAS_CASE" value="4" />
     <option name="QUOTE_IDENTIFIER" value="1" />

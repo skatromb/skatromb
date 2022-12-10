@@ -73,4 +73,4 @@ spark.stop()  # Just to have logging more close to tail
 ended_at = datetime.now(tz)
 logger.info(f"Job ended")
 
-logger.info(f"TIME PASSED: {ended_at - started_at}")
+logger.info(f"TIME PASSED: {ended_at - started_at} for `{db_table}`")
