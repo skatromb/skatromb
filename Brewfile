@@ -21,12 +21,14 @@ cask "steam"
 
 ## Develop
 mas "Xcode", id: 497799835
+brew "pre-commit"
 cask "docker"
 cask "google-chrome"
 cask "pycharm"
 
 ## Fishbrain
 brew "awscli"
+brew "chamber"
 cask "google-cloud-sdk"
 cask "1Password"
 cask "aws-vpn-client"
