@@ -15,9 +15,8 @@ ENV PATH=${PATH}:/${USER_NAME}/google-cloud-sdk/bin
 RUN gcloud components install kubectl
 
 # `awscli`
-RUN pip install awscli --no-cache-dir && pip cache purge
+RUN pip install awscli --no-cache-dir
 ENV PATH=${PATH}:~/.local/bin
 RUN echo "source aws_bash_completer" >> .bashrc
-
 
 # TODO: `chamber`
