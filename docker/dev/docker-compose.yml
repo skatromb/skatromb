@@ -4,5 +4,5 @@ services:
     build:
       context: .
     volumes:
-      - ~/.config/gcloud/application_default_credentials.json:/app/.config/gcloud/application_default_credentials.json:ro
-      - ~/.aws:/usr/local/airflow/.aws:ro
+      - ~/.config/gcloud/:/app/.config/gcloud/
+      - ~/.aws:/usr/local/airflow/.aws
