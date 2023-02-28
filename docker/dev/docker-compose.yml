@@ -1,0 +1,8 @@
+services:
+  dev:
+    image: dev
+    build:
+      context: .
+    volumes:
+      - ~/.config/gcloud/application_default_credentials.json:/app/.config/gcloud/application_default_credentials.json:ro
+      - ~/.aws:/usr/local/airflow/.aws:ro
