@@ -1,18 +1,51 @@
 # Look docs here https://github.com/asottile/pyupgrade/blob/main/README.md
 repos:
-- repo: https://github.com/psf/black
-  rev: 22.10.0
-  hooks:
-    - id: black
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.4.0
+    hooks:
+      - id: check-yaml
+      - id: detect-private-key
+      - id: end-of-file-fixer
+      - id: pretty-format-json
+      - id: trailing-whitespace
 
-- repo: https://github.com/pycqa/isort
-  rev: 5.10.1
-  hooks:
-    - id: isort
-      args: ["--profile", "black", "--filter-files"]
+  # Black is the uncompromising Python code formatter. "Any color you like"
+  - repo: https://github.com/psf/black
+    rev: 23.1.0
+    hooks:
+      - id: black
 
-- repo: https://github.com/asottile/pyupgrade
-  rev: v3.1.0
-  hooks:
-    - id: pyupgrade
-      args: [--py310-plus]
+  # Pyupgrade is a tool (and pre-commit hook) to automatically upgrade syntax for newer versions of the language
+  - repo: https://github.com/asottile/pyupgrade
+    rev: v3.3.1
+    hooks:
+      - id: pyupgrade
+        args: [--py311-plus]
+
+  # isort your imports, so you don't have to.
+  - repo: https://github.com/pycqa/isort
+    rev: 5.12.0
+    hooks:
+      - id: isort
+        args: ["--profile", "black", "--filter-files"]
+
+  # Mypy is a static type checker for Python
+  - repo: https://github.com/pre-commit/mirrors-mypy
+    rev: v1.0.1
+    hooks:
+      - id: mypy
+        additional_dependencies: [types-requests, types-python-dateutil]
+
+  # Flake8 is a wrapper around these tools:
+  #  PyFlakes
+  #  pycodestyle
+  #  Ned Batchelder's McCabe script
+  - repo: https://github.com/pycqa/flake8
+    rev: 6.0.0
+    hooks:
+      - id: flake8
+        args:
+          # ignore
+          #  E501 "line too long > 79 characters",
+          #  W503"Line break occurred before a binary operator"
+          - "--ignore=E501,W503"
