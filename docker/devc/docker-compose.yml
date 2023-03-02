@@ -7,6 +7,6 @@ services:
       AWS_PROFILE: ${AWS_PROFILE}
       AWS_DEFAULT_REGION: ${AWS_DEFAULT_REGION}
     volumes:
+      - ${CODE_DIR}:/app/code:ro
       - ~/.config/gcloud/:/app/.config/gcloud/
       - ~/.aws:/app/.aws
-      - ${CODE_DIR}:/app/code:ro

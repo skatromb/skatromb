@@ -1,10 +1,10 @@
 FROM python:latest
 ENTRYPOINT bash
 
-# `tflint`
+# `tflint`, needs to be installed by superuser
 RUN curl -s https://raw.githubusercontent.com/terraform-linters/tflint/master/install_linux.sh | bash
 
-# environment
+# Set user
 ARG USER_NAME=app
 RUN useradd --home-dir /${USER_NAME} ${USER_NAME} --groups sudo
 USER app
