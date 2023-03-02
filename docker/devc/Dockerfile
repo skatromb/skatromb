@@ -2,7 +2,7 @@ FROM python:latest
 ENTRYPOINT bash
 
 # `tflint`, needs to be installed by superuser
-RUN curl -s https://raw.githubusercontent.com/terraform-linters/tflint/master/install_linux.sh | bash
+RUN curl --silent https://raw.githubusercontent.com/terraform-linters/tflint/master/install_linux.sh | bash
 
 # Set user
 ARG USER_NAME=app
@@ -11,7 +11,7 @@ USER app
 WORKDIR /${USER_NAME}
 
 # `gcloud`
-RUN curl -sSL https://sdk.cloud.google.com | bash
+RUN curl --silent https://sdk.cloud.google.com | bash
 ENV PATH=${PATH}:/${USER_NAME}/google-cloud-sdk/bin
 RUN echo "source ~/google-cloud-sdk/completion.bash.inc" >> .bashrc
 
@@ -20,7 +20,8 @@ RUN gcloud components install kubectl
 
 # `awscli`
 ARG AWS_CLI_DIR=/${USER_NAME}/aws-cli
-RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-aarch64.zip" -o "awscliv2.zip" && \
+RUN curl --silent "https://awscli.amazonaws.com/awscli-exe-linux-aarch64.zip"  \
+    --output "awscliv2.zip" && \
     unzip awscliv2.zip && \
     ./aws/install --bin-dir ${AWS_CLI_DIR}/bin --install-dir ${AWS_CLI_DIR} && \
     rm -rf awscliv2.zip aws
