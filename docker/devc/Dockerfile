@@ -20,8 +20,7 @@ RUN gcloud components install kubectl
 
 # `awscli`
 ARG AWS_CLI_DIR=/${USER_NAME}/aws-cli
-RUN USER_NAME=app && \
-    curl "https://awscli.amazonaws.com/awscli-exe-linux-aarch64.zip" -o "awscliv2.zip" && \
+RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-aarch64.zip" -o "awscliv2.zip" && \
     unzip awscliv2.zip && \
     ./aws/install --bin-dir ${AWS_CLI_DIR}/bin --install-dir ${AWS_CLI_DIR} && \
     rm -rf awscliv2.zip aws
