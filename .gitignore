@@ -1,5 +1,6 @@
 .DS_Store
 .idea/
+**/.env
 
 src/Coursera_ML/Answers/
 src/borshev/certificate/output/

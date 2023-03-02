@@ -3,6 +3,8 @@ services:
     image: devc
     build:
       context: .
+    env_file:
+      - .env
     environment:
       AWS_PROFILE: ${AWS_PROFILE}
       AWS_DEFAULT_REGION: ${AWS_DEFAULT_REGION}
