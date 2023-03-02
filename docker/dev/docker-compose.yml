@@ -1,8 +1,0 @@
-services:
-  dev:
-    image: dev
-    build:
-      context: .
-    volumes:
-      - ~/.config/gcloud/:/app/.config/gcloud/
-      - ~/.aws:/usr/local/airflow/.aws
