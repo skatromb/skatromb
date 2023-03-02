@@ -12,7 +12,7 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 tz = ZoneInfo("CET")
-logger.warning(f"Job started at")
+logger.warning("Job started")
 
 db_url = environ["DB_URL"]
 db_schema = environ["DB_SCHEMA"]
@@ -71,6 +71,6 @@ df = (
 spark.stop()  # Just to have logging more close to tail
 
 ended_at = datetime.now(tz)
-logger.info(f"Job ended")
+logger.info("Job ended")
 
 logger.info(f"TIME PASSED: {ended_at - started_at} for `{db_table}`")
