@@ -14,7 +14,7 @@ USER app
 WORKDIR /${USER_NAME}
 
 # `gcloud`
-RUN curl --silent https://sdk.cloud.google.com | bash
+RUN curl https://sdk.cloud.google.com | bash > /dev/null
 ENV PATH=${PATH}:/${USER_NAME}/google-cloud-sdk/bin
 RUN echo "source ~/google-cloud-sdk/completion.bash.inc" >> .bashrc
 
@@ -23,9 +23,9 @@ RUN gcloud components install kubectl
 
 # `awscli`
 ARG AWS_CLI_DIR=/${USER_NAME}/aws-cli
-RUN curl --silent "https://awscli.amazonaws.com/awscli-exe-linux-aarch64.zip"  \
+RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-aarch64.zip"  \
     --output "awscliv2.zip" && \
-    unzip awscliv2.zip && \
+    unzip -q awscliv2.zip && \
     ./aws/install --bin-dir ${AWS_CLI_DIR}/bin --install-dir ${AWS_CLI_DIR} && \
     rm -rf awscliv2.zip aws
 ENV PATH=${PATH}:${AWS_CLI_DIR}/bin
