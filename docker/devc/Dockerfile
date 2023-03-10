@@ -1,6 +1,9 @@
 FROM python:latest
 ENTRYPOINT bash
 
+RUN apt update --quiet && \
+    apt install less --no-install-recommends && \
+    apt clean
 # `tflint`, needs to be installed by superuser
 RUN curl --silent https://raw.githubusercontent.com/terraform-linters/tflint/master/install_linux.sh | bash
 
