@@ -1,0 +1,8 @@
+services:
+  flask:
+    image: flask
+    container_name: flask
+    build:
+      context: .
+    ports:
+      - 8000:8000
