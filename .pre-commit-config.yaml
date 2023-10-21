@@ -9,43 +9,45 @@ repos:
       - id: pretty-format-json
       - id: trailing-whitespace
 
-  # Black is the uncompromising Python code formatter. "Any color you like"
-  - repo: https://github.com/psf/black
-    rev: 23.1.0
+  # Markdown linter
+  - repo: https://github.com/igorshubovych/markdownlint-cli
+    rev: v0.37.0
     hooks:
-      - id: black
+    - id: markdownlint
+
+  # Dockerfile linter
+  - repo: https://github.com/hadolint/hadolint
+    rev: v2.12.0
+    hooks:
+      - id: hadolint
 
   # Pyupgrade is a tool (and pre-commit hook) to automatically upgrade syntax for newer versions of the language
   - repo: https://github.com/asottile/pyupgrade
     rev: v3.3.1
     hooks:
       - id: pyupgrade
-        args: [--py311-plus]
+        args: [--py312-plus]
 
   # isort your imports, so you don't have to.
   - repo: https://github.com/pycqa/isort
     rev: 5.12.0
     hooks:
       - id: isort
-        args: ["--profile", "black", "--filter-files"]
+
+  # Black is the uncompromising Python code formatter. "Any color you like"
+  - repo: https://github.com/psf/black
+    rev: 23.1.0
+    hooks:
+      - id: black
 
   # Mypy is a static type checker for Python
   - repo: https://github.com/pre-commit/mirrors-mypy
     rev: v1.0.1
     hooks:
       - id: mypy
-        additional_dependencies: [types-requests, types-python-dateutil]
 
   # Flake8 is a wrapper around these tools:
-  #  PyFlakes
-  #  pycodestyle
-  #  Ned Batchelder's McCabe script
   - repo: https://github.com/pycqa/flake8
-    rev: 6.0.0
+    rev: 6.1.0
     hooks:
       - id: flake8
-        args:
-          # ignore
-          #  E501 "line too long > 79 characters",
-          #  W503"Line break occurred before a binary operator"
-          - "--ignore=E501,W503"
