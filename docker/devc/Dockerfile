@@ -1,9 +1,9 @@
-FROM python:latest
-ENTRYPOINT bash
+FROM python:3.12
+ENTRYPOINT ["bash"]
 
-RUN apt update --quiet && \
-    apt install less --no-install-recommends && \
-    apt clean
+RUN apt-get update --quiet -y && \
+    apt-get install less --no-install-recommends --no-cache && \
+    apt-get clean
 # `tflint`, needs to be installed by superuser
 RUN curl --silent https://raw.githubusercontent.com/terraform-linters/tflint/master/install_linux.sh | bash
 

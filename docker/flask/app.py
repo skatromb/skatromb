@@ -1,8 +1,11 @@
+"""Try Flask for markdown."""
+
 from flask import Flask
 
 app = Flask(__name__)
 
 
-@app.route("/")
+@app.route('/')
 def root():
-    return "<h1>Hello, World!</h1>"
+    """Root endpoint."""
+    return '<h1>Hello, World!</h1>'

@@ -1,5 +1,6 @@
 .DS_Store
 .idea/
+.mypy_cache/
 **/.env
 
 src/Coursera_ML/Answers/

@@ -12,12 +12,15 @@ TOKEN = ""
 def detect_diploma_language(filename):
     filename = os.path.splitext(filename)[0].strip()
 
-    return "EN" if any(letter in filename for letter in string.ascii_letters) else "RU"
+    return (
+        "EN"
+        if any(letter in filename for letter in string.ascii_letters)
+        else "RU"
+    )
 
 
 def main():
     for dirpath, _, filenames in tqdm(os.walk(DIPLOMA_FOLDER)):
-
         dirpath = dirpath.split("/")
         if len(dirpath) != 3:
             continue

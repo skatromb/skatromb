@@ -11,7 +11,9 @@ db_password = environ["DB_PASSWORD"]
 db_host = environ["DB_URL"]
 db_schema = environ["DB_SCHEMA"]
 db_table = environ["DB_TABLE"]
-output_file = f"/Users/skatromb/code/skatromb/outputs/sql_alchemy/to_csv_{db_table}.csv"
+output_file = (
+    f"/Users/skatromb/code/skatromb/outputs/sql_alchemy/to_csv_{db_table}.csv"
+)
 
 engine = sqlalchemy.create_engine(
     f"mysql+pymysql://{db_user}:{db_password}@{db_host}/{db_schema}", echo=True

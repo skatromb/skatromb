@@ -1,10 +1,9 @@
-FROM godatadriven/pyspark:latest
+FROM godatadriven/pyspark:3.4
 
-WORKDIR app
+WORKDIR /app
 COPY requirements.txt /app
 
 RUN apt-get update && \
     apt-get upgrade -y && \
-    pip install -U -r requirements.txt
-
-# docker run -it python
+    apt-get clean && \
+    pip install --upgrade --no-cache-dir -r requirements.txt

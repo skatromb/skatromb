@@ -1,6 +1,7 @@
 import logging
 import os
 import subprocess
+from collections.abc import Generator
 from csv import DictReader
 from os import remove
 from pathlib import Path
@@ -14,7 +15,7 @@ logger = logging.getLogger(__name__)
 logging.getLogger().setLevel(logging.INFO)
 
 
-def student_list(csv_path: Path) -> dict:
+def student_list(csv_path: Path) -> Generator[dict, None, None]:
     """Считывает список студентов из csv, кому делать сертификаты"""
     with open(csv_path) as file:
         reader = DictReader(file)
@@ -88,7 +89,9 @@ def template2png(
 def generate_certificates(product: str, input_path: Path):
     """Итерируется по списку студентов, модифицирует svg, генерит png"""
     for student in student_list(input_path):
-        output_folder = Path("output") / student["course_id"] / student["user_id"]
+        output_folder = (
+            Path("output") / student["course_id"] / student["user_id"]
+        )
         fill_template(product, student, output_folder)
         template2png(student["full_name"], output_folder, CHROME_PARAMS)
 
