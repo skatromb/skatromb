@@ -4,5 +4,8 @@ services:
     container_name: flask
     build:
       context: .
+    environment:
+      FLASK_RUN_HOST: 0.0.0.0
+      FLASK_RUN_PORT: 8000
     ports:
       - 8000:8000
