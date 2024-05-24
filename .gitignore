@@ -6,4 +6,4 @@
 src/Coursera_ML/Answers/
 src/borshev/certificate/output/
 src/borshev/certificate/input/
-/outputs/
+src/rust/**/main
