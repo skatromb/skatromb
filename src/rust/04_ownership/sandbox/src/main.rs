@@ -1,12 +1,5 @@
 fn main() {
-    let s1 = String::from("Hello");
-
-    let (s2, len) = calculate_length(s1);
-
-    println!("The length of '{}' is {}.", s2, len);
-}
-
-fn calculate_length(s: String) -> (String, usize) {
-    let length = s.len(); // len() returns the length of a String
-    (s, length)
+    let a = [1, 2, 3, 4, 5];
+    let slice = &a[1..3];
+    assert!(slice == &[2, 3]);
 }
