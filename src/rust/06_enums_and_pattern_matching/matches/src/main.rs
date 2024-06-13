@@ -1,8 +1,14 @@
+#[derive(Debug)]
+enum UsState {
+    Alabama,
+    Alaska,
+}
+
 enum Coin {
     Penny,
     Nickel,
     Dime,
-    Quarter,
+    Quarter(UsState),
 }
 
 impl Coin {
@@ -14,11 +20,14 @@ impl Coin {
             },
             Coin::Nickel => 5,
             Coin::Dime => 10,
-            Coin::Quarter => 25,
+            Coin::Quarter(us_state) => {
+                println!("Coin from {:?}" , us_state);
+                25
+            },
         }
     }
 }
 
 fn main() {
-    println!("{}", Coin::Penny.value_in_cents());
+    println!("{}", Coin::Quarter(UsState::Alabama).value_in_cents());
 }
