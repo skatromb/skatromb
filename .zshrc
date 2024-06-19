@@ -1,8 +1,5 @@
 export CODE_DIR=~/code
 
-# Dosbox
-alias heretic="dosbox ~/Applications/heretic/HERETIC.EXE -fullscreen"
-
 # Brew
 eval "$(/opt/homebrew/bin/brew shellenv)"
 export HOMEBREW_PREFIX="/opt/homebrew";
@@ -31,6 +28,8 @@ alias dc="docker compose"
 
 alias wps="flake8"
 
+# Dosbox
+alias heretic="dosbox ~/Applications/heretic/HERETIC.EXE -fullscreen"
 
 
 
