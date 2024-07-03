@@ -6,8 +6,6 @@ use std::collections::HashMap;
 /// or all people in the company by department, sorted alphabetically.
 use std::io;
 
-
-
 fn add_user(deps_emps: &mut HashMap<String, Vec<String>>) {
     println!("Enter department to add an employee:");
     let mut input = String::new();
@@ -19,8 +17,7 @@ fn add_user(deps_emps: &mut HashMap<String, Vec<String>>) {
     io::stdin().read_line(&mut input).unwrap();
     let employee = input.trim().to_string();
 
-    deps_emps.entry(department)
-        .or_default().push(employee)
+    deps_emps.entry(department).or_default().push(employee)
 }
 
 fn list_department(deps_emps: &HashMap<String, Vec<String>>) {
@@ -28,10 +25,16 @@ fn list_department(deps_emps: &HashMap<String, Vec<String>>) {
     let mut input = String::new();
     io::stdin().read_line(&mut input).unwrap();
     match input.trim() {
-        "" => println!("Here is the list of whole company employees: {:?}", deps_emps),
+        "" => println!(
+            "Here is the list of whole company employees: {:?}",
+            deps_emps
+        ),
         dep => {
-            println!("Here is the list of employees for {} department: {:?}", dep, deps_emps)
-        },
+            println!(
+                "Here is the list of employees for {} department: {:?}",
+                dep, deps_emps
+            )
+        }
     }
 }
 
