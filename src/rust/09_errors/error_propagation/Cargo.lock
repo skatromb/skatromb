@@ -3,5 +3,5 @@
 version = 3
 
 [[package]]
-name = "error_handle"
+name = "error_propagation"
 version = "0.1.0"
