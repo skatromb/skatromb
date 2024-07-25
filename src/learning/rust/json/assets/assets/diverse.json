@@ -1,0 +1,29 @@
+{
+  "string": "Hello, World!",
+  "number": 42,
+  "float": 3.14159,
+  "boolean": true,
+  "null": null,
+  "array": [1, "two", false, null, 4.5],
+  "object": {
+    "nested": {
+      "deeper": {
+        "value": "3 levels deep",
+        "second_value": "with 2 key-values"
+      }
+    }
+  },
+  
+  "escape_chars": "\"Quote\", \\Backslash\n, \tTab",
+  "unicode": "\u00A9 Copyright",
+  "mixed_array": [
+    {"name": "Alice", "age": 30},
+    [1, 2, 3],
+    "string in array"
+  ],
+  
+  "empty": {
+    "array": [],
+    "object": {}
+  }
+}
