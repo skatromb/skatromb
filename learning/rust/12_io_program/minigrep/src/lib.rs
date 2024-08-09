@@ -26,14 +26,17 @@ pub struct Config {
 
 impl Config {
     pub fn build() -> Result<Self, &'static str> {
-        let args: Vec<String> = env::args().collect();
+        let mut args = env::args().skip(1);
         
-        if args.len() < 3 {
-            return Err("not enough arguments")
-        }
-        
-        let query = args[1].clone();
-        let file_path = args[2].clone();
+        let Some(query) = args.next()
+            else {
+                return Err("Didn't get a query string")
+            };
+
+        let Some(file_path) = args.next()
+            else {
+                return Err("Didn't get a file path")
+            };
         
         let ignore_case = env::var("MINIGREP_IGNORE_CASE").is_ok();
 
