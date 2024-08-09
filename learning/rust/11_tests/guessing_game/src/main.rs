@@ -20,5 +20,5 @@ mod tests {
     #[should_panic(expected = "between 1 and 100")]
     fn greater_than_100() {
         Guess::new(200);
-    }c
+    }
 }
