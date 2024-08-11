@@ -1,8 +1,8 @@
 services:
-    rust:
-        image: rust
-        container_name: rust
-        build:
-            context: .
-        volumes:
-            - ./:/usr/app/
+  rust:
+    image: rust
+    container_name: rust
+    build:
+      context: .
+    volumes:
+      - ./:/usr/app/
