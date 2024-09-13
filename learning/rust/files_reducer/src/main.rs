@@ -3,7 +3,21 @@ use std::fs::File;
 use std::io::Write;
 use std::path::PathBuf;
 use std::sync::{Arc, Mutex};
+use std::time::Instant;
 use std::thread;
+
+/// Generate random file name
+use rand::{thread_rng, Rng};
+use rand::distributions::Alphanumeric;
+
+/// Random string generator
+fn _get_random_string(length: usize) -> String {
+    thread_rng()
+        .sample_iter(&Alphanumeric)
+        .take(length)
+        .map(char::from)
+        .collect()
+}
 
 /// Get all file paths
 fn get_file_paths(directory: &str) -> impl Iterator<Item = PathBuf> {
@@ -48,20 +62,35 @@ fn reduce_in_threads(file_paths: impl Iterator<Item = PathBuf>, to_file: Arc<Mut
 }
 
 fn main() {
-    let paths = get_file_paths("files");
+    const FROM_DIRECTORY: &str = "files_heavy";
+    const FILE_NAME: &str = "combined.json";
 
-    let to_file = make_mutex_file("combined.json");
+    let paths = get_file_paths(FROM_DIRECTORY);
 
-    reduce_in_threads(paths, to_file);
+    let time = Instant::now();
+    
+    {
+        let file_to = make_mutex_file(FILE_NAME);
+    
+        reduce_in_threads(paths, file_to);
+    }
 
     // Alternative simple version
-    // for entry in entries {
-    //     let entry = entry?;
-    //     let path = entry.path();
-    //
-    //     if path.is_file() {
-    //         let content = fs::read_to_string(&path)?;
-    //         file.write_all(content.as_bytes())?;
+    // {
+    //     let mut file_to = fs::File::options()
+    //         .create(true)
+    //         .write(true)
+    //         .truncate(true)
+    //         .open(FILE_NAME)
+    //         .unwrap();
+    // 
+    //     for path in paths {
+    //         if path.is_file() {
+    //             let content = fs::read_to_string(&path).unwrap();
+    //             file_to.write_all(content.as_bytes()).unwrap();
+    //         }
     //     }
     // }
+    
+    println!("Time: {}ms", time.elapsed().as_millis());
 }
