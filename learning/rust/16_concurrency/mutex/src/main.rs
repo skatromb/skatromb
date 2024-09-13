@@ -8,6 +8,7 @@ fn main() {
     let handles: Vec<_> =
         (0..n_threads).map(|_| {
             let counter = Arc::clone(&counter);
+            
             thread::spawn(move || {
                 let mut num = counter.lock().unwrap();
 

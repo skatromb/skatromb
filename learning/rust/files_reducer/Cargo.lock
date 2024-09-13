@@ -3,5 +3,5 @@
 version = 3
 
 [[package]]
-name = "threaded_file_reducer"
+name = "file_reducer"
 version = "0.1.0"

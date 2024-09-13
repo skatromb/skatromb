@@ -1,15 +1,18 @@
 use std::io::{Write};
 use std::thread;
 use std::fs;
+use std::path::PathBuf;
 
-fn main() {
-    let entries = fs::read_dir("files").unwrap();
+fn get_file_paths(directory: &str) -> impl Iterator<Item = PathBuf> {
+    let entries = fs::read_dir(directory).unwrap();
 
-    let paths = entries
+    entries
         .map(|entry| entry.unwrap().path())
-        .filter(|path| path.is_file());
+        .filter(|path| path.is_file())
+}
 
-    let threaded_contents = paths
+fn read_in_threads(file_paths: impl Iterator<Item = PathBuf>) -> impl Iterator<Item = String> {
+    let threaded_contents = file_paths
         .map(|path|
             thread::spawn(||
                 fs::read_to_string(path).unwrap()
@@ -20,16 +23,28 @@ fn main() {
         .into_iter()
         .map(|handler| handler.join().unwrap());
 
+    contents
+}
+
+fn write_file(contents: impl Iterator<Item = String>) {
     let mut file = fs::File::options()
-        .write(true)
-        .truncate(true)
-        .create(true)
+        .create(true).write(true).truncate(true)
         .open("combined.jsonl")
         .unwrap();
-
+    
     contents.for_each(|content| {
         file.write_all(content.as_bytes()).unwrap();
     });
+    
+}
+
+fn main() {
+    let paths = get_file_paths("files");
+    
+    let contents = read_in_threads(paths);
+    
+    write_file(contents);
+    
 
     // Alternative simple version
     // for entry in entries {
