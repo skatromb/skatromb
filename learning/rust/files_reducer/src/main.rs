@@ -3,15 +3,14 @@ use std::fs::File;
 use std::io::Write;
 use std::path::PathBuf;
 use std::sync::{Arc, Mutex};
-use std::time::Instant;
 use std::thread;
-
-/// Generate random file name
-use rand::{thread_rng, Rng};
-use rand::distributions::Alphanumeric;
+use std::time::Instant;
 
 /// Random string generator
 fn _get_random_string(length: usize) -> String {
+    use rand::distributions::Alphanumeric;
+    use rand::{thread_rng, Rng};
+
     thread_rng()
         .sample_iter(&Alphanumeric)
         .take(length)
@@ -30,7 +29,7 @@ fn get_file_paths(directory: &str) -> impl Iterator<Item = PathBuf> {
 
 /// Make file to write as multithreaded version
 fn make_mutex_file(file_name: &str) -> Arc<Mutex<File>> {
-    let file = fs::File::options()
+    let file = File::options()
         .create(true)
         .write(true)
         .truncate(true)
@@ -68,10 +67,10 @@ fn main() {
     let paths = get_file_paths(FROM_DIRECTORY);
 
     let time = Instant::now();
-    
+
     {
         let file_to = make_mutex_file(FILE_NAME);
-    
+
         reduce_in_threads(paths, file_to);
     }
 
@@ -83,7 +82,7 @@ fn main() {
     //         .truncate(true)
     //         .open(FILE_NAME)
     //         .unwrap();
-    // 
+    //
     //     for path in paths {
     //         if path.is_file() {
     //             let content = fs::read_to_string(&path).unwrap();
@@ -91,6 +90,6 @@ fn main() {
     //         }
     //     }
     // }
-    
+
     println!("Time: {}ms", time.elapsed().as_millis());
 }
