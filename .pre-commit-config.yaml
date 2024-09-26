@@ -11,7 +11,7 @@ repos:
 
   # Markdown linter
   - repo: https://github.com/igorshubovych/markdownlint-cli
-    rev: v0.40.0
+    rev: v0.42.0
     hooks:
     - id: markdownlint
 
@@ -23,34 +23,28 @@ repos:
 
   # Pyupgrade is a tool (and pre-commit hook) to automatically upgrade syntax for newer versions of the language
   - repo: https://github.com/asottile/pyupgrade
-    rev: v3.15.2
+    rev: v3.17.0
     hooks:
       - id: pyupgrade
         args: [--py312-plus]
 
-  # isort your imports, so you don't have to.
-  - repo: https://github.com/pycqa/isort
-    rev: 5.13.2
+  # Ruff linter and formatter
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.6.7
     hooks:
-      - id: isort
-
-  # Black is the uncompromising Python code formatter. "Any color you like"
-  - repo: https://github.com/psf/black
-    rev: 24.4.2
-    hooks:
-      - id: black
-        args: ["--skip-string-normalization", "--line-length", "79"]
+      - id: ruff
+      - id: ruff-format
 
   # Mypy is a static type checker for Python
   - repo: https://github.com/pre-commit/mirrors-mypy
-    rev: v1.10.0
+    rev: v1.11.2
     hooks:
       - id: mypy
         exclude: src/learning|test-tasks
 
   # Flake8 is a wrapper around these tools:
   - repo: https://github.com/pycqa/flake8
-    rev: 7.0.0
+    rev: 7.1.1
     hooks:
       - id: flake8
         additional_dependencies:
