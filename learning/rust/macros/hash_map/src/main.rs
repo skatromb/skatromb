@@ -20,4 +20,8 @@ fn main() {
     };
 
     println!("{:#?}", my_map);
+
+    let empty_map: HashMap<String, String> = hash_map!{};
+
+    println!("Empty map: {:#?}", empty_map)
 }
