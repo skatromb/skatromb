@@ -1,8 +1,6 @@
 .DS_Store
 .idea/
 .mypy_cache/
-**/.env
-**/target/
 
 src/Coursera_ML/Answers/
 src/borshev/certificate/output/

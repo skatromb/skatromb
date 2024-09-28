@@ -40,6 +40,9 @@ alias heretic="dosbox ~/Applications/heretic/HERETIC.EXE -fullscreen"
 plugins=(git)
 
 
+# Rust
+. "$HOME/.cargo/env"
+
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
