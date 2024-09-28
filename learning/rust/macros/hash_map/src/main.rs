@@ -3,9 +3,7 @@ use std::collections::HashMap;
 #[macro_export]
 macro_rules! hash_map {
     ( $( $key:expr => $value:expr ),* $(,)? ) => {{
-        let capacity = 0 $( + { let _ = $key; 1 } )*;
-
-        let mut hash_map = std::collections::HashMap::with_capacity(capacity);
+        let mut hash_map = HashMap::new();
 
         $(
             hash_map.insert($key, $value);
@@ -23,7 +21,14 @@ fn main() {
 
     println!("{:#?}", my_map);
 
+<<<<<<< HEAD
     let empty_map: HashMap<&str, &str> = hash_map![];
 
     println!("Empty map: {empty_map:?}");
 }
+=======
+    let empty_map: HashMap<String, String> = hash_map!{};
+
+    println!("Empty map: {:#?}", empty_map)
+}
+>>>>>>> c45d04be416118e35431b2b89aef11ef93eb8c12
