@@ -10,6 +10,6 @@ services:
       # - ~/.ssh/:/root/.ssh/:ro
       # - ~/.config/zed:/root/.config/zed:ro
       
-    ports:
-      # for zed remote
+    # for zed remote
+    # ports:
       # - "2222:22"
