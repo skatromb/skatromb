@@ -6,3 +6,10 @@ services:
       context: .
     volumes:
       - ./:/usr/app/
+      # both for zed remote
+      # - ~/.ssh/:/root/.ssh/:ro
+      # - ~/.config/zed:/root/.config/zed:ro
+      
+    ports:
+      # for zed remote
+      # - "2222:22"
