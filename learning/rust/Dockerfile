@@ -26,4 +26,3 @@ RUN cargo install cargo-clean-all
 # CMD ["/usr/sbin/sshd", "-D"]
 
 COPY ./ ./
-
