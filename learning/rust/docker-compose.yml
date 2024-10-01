@@ -7,11 +7,11 @@ services:
     volumes:
       - ./:/usr/app/
       # both are for zed remote
-      - ~/.ssh/:/root/.ssh/:ro
-      - ~/.config/zed:/root/.config/zed:ro
+      #      - ~/.ssh/:/root/.ssh/:ro
+      #      - ~/.config/zed:/root/.config/zed:ro
       
-    # for zed remote
-    # ports:
+      # for zed remote
+      # ports:
       # - "2222:22"
 
-# docker compose build && docker compose up rust
+# fof zed `docker compose build && docker compose up rust`
