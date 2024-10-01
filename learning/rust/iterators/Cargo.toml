@@ -1,7 +1,6 @@
 [package]
-name = "builders"
+name = "iterators"
 version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-derive_builder = "0.20.1"
