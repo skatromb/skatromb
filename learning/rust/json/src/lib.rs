@@ -1,34 +1,20 @@
-use std::collections::HashMap;
-use std::ops::Index;
+mod display;
 
-#[derive(Clone, Debug)]
-pub enum Obj {
+use std::collections::HashMap;
+
+#[derive(Clone, Debug, PartialEq)]
+pub enum JSON {
     Null,
     Bool(bool),
     Int(i64),
     Float(f64),
     String(String),
-    Object(HashMap<String, Obj>),
-    Array(Vec<Obj>),
+    Object(HashMap<String, JSON>),
+    Array(Vec<JSON>),
 }
-
-pub struct JSON {
-    pub json: Obj,
-}
-
-// impl Index<Object> for JSON {
-//     type Output = Object;
-// 
-//     fn index(&self, index: Object) -> &Self::Output {
-//         
-//     }
-//     fn 
-// }
 
 impl JSON {
-    pub fn parse(string: String) -> Obj {
-        for line in string.lines() {
-        }
+    pub fn from_string(string: &str) -> Self {
         todo!()
     }
 }
@@ -37,36 +23,36 @@ impl JSON {
 mod tests {
     use super::*;
 
-
-    fn make_json() -> Obj {
+    fn diverse_json() -> JSON {
         let mut map = HashMap::new();
 
-        map.insert("null".to_string(), Obj::Null);
-        map.insert("boolean".to_string(), Obj::Bool(true));
-        map.insert("integer".to_string(), Obj::Int(1));
-        map.insert("float".to_string(), Obj::Float(std::f64::consts::PI));
-        map.insert("string".to_string(), Obj::String("Hello, world!".to_string()));
+        map.insert("null".to_string(), JSON::Null);
+        map.insert("boolean".to_string(), JSON::Bool(true));
+        map.insert("integer".to_string(), JSON::Int(123));
+        map.insert("float".to_string(), JSON::Float(std::f64::consts::PI));
+        map.insert(
+            "string".to_string(),
+            JSON::String("Hello, world!".to_string()),
+        );
 
-        let nested_map = HashMap::from([
-            ("nested_object".to_string(), Obj::Object(map.clone()))
-        ]);
-        map.insert("map".to_string(), Obj::Object(nested_map));
+        let nested_map = HashMap::from([("nested_object".to_string(), JSON::Object(map.clone()))]);
+        map.insert("object".to_string(), JSON::Object(nested_map));
 
-        let array= map.clone().into_values().collect();
-        map.insert("array".to_string(), Obj::Array(array));
-        
+        let array = map.clone().into_values().collect();
+        map.insert("array".to_string(), JSON::Array(array));
+
         println!("{:?}", map);
-        Obj::Object(map)
+        JSON::Object(map)
     }
-    
+
     #[test]
     fn smoke_test() {
-        let json = make_json();
+        let json = diverse_json();
+
         match json {
-            Obj::Object(json) => {
+            JSON::Object(json) => {
                 assert_eq!(json.len(), 7);
-                assert_eq!(Obj::Null, json);
-            } 
+            }
             _ => panic!("Test JSON should be JSON Object at the top level!"),
         }
     }
