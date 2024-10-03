@@ -12,25 +12,23 @@ impl Display for JSON {
             JSON::String(s) => write!(f, r#""{}""#, s),
 
             JSON::Object(map) => {
-                let mut strings = Vec::with_capacity(map.len());
-
-                for (key, value) in map {
-                    strings.push(format!(r#""{key}": {value}"#));
-                }
-                let formatted = format!("{{{}}}", strings.join(", "));
-
-                write!(f, "{formatted}")
+                
+                let comma_separated = map.iter()
+                    .map(|(key, value)| format!(r#""{key}": {value}"#))
+                    .collect::<Vec<_>>()
+                    .join(", ");
+                
+                write!(f, "{{{comma_separated}}}")
             }
 
-            JSON::Array(vector) => {
-                let mut strings = Vec::with_capacity(vector.len());
+            JSON::Array(jsons) => {
 
-                for json in vector {
-                    strings.push(json.to_string());
-                }
-                let formatted = format!("[{}]", strings.join(", "));
-
-                write!(f, "{formatted}")
+                let comma_separated = jsons.iter()
+                    .map(|json| json.to_string())
+                    .collect::<Vec<_>>()
+                    .join(", ");
+                
+                write!(f, "[{comma_separated}]")
             }
         }
     }
