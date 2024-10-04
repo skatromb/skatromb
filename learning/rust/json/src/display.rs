@@ -73,18 +73,32 @@ mod tests {
 
     #[test]
     fn json_object_to_string() {
+        // string: int
         let mut map = HashMap::new();
         map.insert("int key".to_string(), JSON::Int(123));
 
         let json_obj = JSON::Object(map);
 
         assert_eq!(json_obj.to_string(), r#"{"int key": 123}"#);
-
+        
+        // string: string
         let mut map = HashMap::new();
         map.insert("string key".to_string(), JSON::String("value".to_string()));
 
         let json_obj = JSON::Object(map);
 
         assert_eq!(json_obj.to_string(), r#"{"string key": "value"}"#);
+        
+        // nested
+        let mut map = HashMap::new();
+        map.insert("string key".to_string(), JSON::String("value".to_string()));
+
+        let mut nested_map = HashMap::new();
+        nested_map.insert("nested".to_string(), JSON::Object(map));
+        
+        let json_obj = JSON::Object(nested_map);
+        
+        assert_eq!(json_obj.to_string(), r#"{"nested": {"string key": "value"}}"#);
+
     }
 }
