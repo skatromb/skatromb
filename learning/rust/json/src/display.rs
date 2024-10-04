@@ -41,62 +41,47 @@ mod tests {
 
     #[test]
     fn json_null_to_string() {
-        let json = JSON::Null;
-
-        assert_eq!(json.to_string(), "null");
+        assert_eq!(JSON::Null.to_string(), "null");
     }
 
     #[test]
     fn json_bool_to_string() {
-        let json_true = JSON::Bool(true);
-        let json_false = JSON::Bool(false);
-
-        assert_eq!(json_true.to_string(), "true");
-        assert_eq!(json_false.to_string(), "false");
+        assert_eq!(JSON::Bool(true).to_string(), "true");
+        assert_eq!(JSON::Bool(false).to_string(), "false");
     }
 
     #[test]
     fn json_int_to_string() {
-        let json_int = JSON::Int(123);
-        let json_neg_int = JSON::Int(-321);
-
-        assert_eq!(json_int.to_string(), "123");
-        assert_eq!(json_neg_int.to_string(), "-321");
+        assert_eq!(JSON::Int(123).to_string(), "123");
+        assert_eq!(JSON::Int(-321).to_string(), "-321");
     }
 
     #[test]
     fn json_float_to_string() {
-        let json_float = JSON::Float(-123.45);
-
-        assert_eq!(json_float.to_string(), "-123.45");
+        assert_eq!(JSON::Float(123.45).to_string(), "123.45");
+        assert_eq!(JSON::Float(-54.321).to_string(), "-54.321");
     }
 
     #[test]
     fn json_object_to_string() {
         // string: int
-        let mut map = HashMap::new();
-        map.insert("int key".to_string(), JSON::Int(123));
-
-        let json_obj = JSON::Object(map);
-
+        let json_obj = JSON::Object(HashMap::from(
+            [("int key".to_string(), JSON::Int(123))]
+        ));
         assert_eq!(json_obj.to_string(), r#"{"int key": 123}"#);
         
         // string: string
-        let mut map = HashMap::new();
-        map.insert("string key".to_string(), JSON::String("value".to_string()));
-
-        let json_obj = JSON::Object(map);
-
+        let json_obj = JSON::Object(HashMap::from(
+            [("string key".to_string(), JSON::String("value".to_string()))]
+        ));
         assert_eq!(json_obj.to_string(), r#"{"string key": "value"}"#);
         
         // nested
-        let mut map = HashMap::new();
-        map.insert("string key".to_string(), JSON::String("value".to_string()));
-
-        let mut nested_map = HashMap::new();
-        nested_map.insert("nested".to_string(), JSON::Object(map));
-        
-        let json_obj = JSON::Object(nested_map);
+        let json_obj = JSON::Object(HashMap::from(
+            [("nested".to_string(), JSON::Object(HashMap::from(
+                [("string key".to_string(), JSON::String("value".to_string()))]
+            )))]
+        ));
         
         assert_eq!(json_obj.to_string(), r#"{"nested": {"string key": "value"}}"#);
 
