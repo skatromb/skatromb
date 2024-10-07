@@ -15,6 +15,7 @@ pub enum JSON {
 
 impl JSON {
     pub fn from_string(string: &str) -> Self {
+        println!("{string}");
         todo!()
     }
 }
