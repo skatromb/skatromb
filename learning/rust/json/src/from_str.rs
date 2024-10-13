@@ -16,15 +16,11 @@ mod keychars {
 
 use keychars::*;
 
-struct Parser<'a> {
-    chars: Chars<'a>,
-}
-
 #[derive(Debug)]
 pub struct ParseError;
 
     
-fn parse<'a>(string: &'a str) -> Result<JSON, &'static str> {
+fn parse(string: & str) -> Result<JSON, &'static str> {
     let mut chars = string.chars();
     
     match chars.find(|ch| !ch.is_whitespace())
@@ -64,14 +60,12 @@ fn parse_float(chars: &mut Chars) -> f64 {
 
 fn parse_object(chars: &mut Chars) -> Result<HashMap<String, JSON>, ParseError> {
     unimplemented!();
-    'parsing: loop {
-        let char = chars.next();
-        let mut string = String::new();
-        
-        match char {
-            None => return Err(ParseError),
-            _ => {},
-        }
+    let char = chars.next();
+    let mut string = String::new();
+    
+    match char {
+        None => return Err(ParseError),
+        _ => {unimplemented!()},
     }
 }
 
@@ -99,8 +93,11 @@ mod tests {
     }
     
     #[test]
+    #[allow(clippy::unit_cmp)]
     fn parse_null() {
         let mut chars = "ull".chars();
+        
+        #[allow(clippy::let_unit_value)]
         let parsed = super::parse_null(&mut chars).unwrap();
         
         assert_eq!((), parsed)
