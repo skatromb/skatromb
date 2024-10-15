@@ -1,5 +1,6 @@
 use crate::JSON;
 use std::collections::HashMap;
+use std::fmt::Display;
 use std::str::FromStr;
 use std::str::Chars;
 
@@ -16,17 +17,32 @@ mod keychars {
 
 use keychars::*;
 
-#[derive(Debug)]
-pub struct ParseError;
+const GENERIC_ERROR: &str = "JSON couldn't be parsed";
 
+#[derive(Debug)]
+pub struct ParseError(&'static str);
+
+impl Display for ParseError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "{GENERIC_ERROR}: {}", self.0)
+    }
+}
+
+impl FromStr for JSON {
+    type Err = ParseError;
     
-fn parse(string: & str) -> Result<JSON, &'static str> {
+    fn from_str(s: &str) -> Result<Self, Self::Err> {
+        parse(s)
+    }
+}
+   
+fn parse(string: & str) -> Result<JSON, ParseError> {
     let mut chars = string.chars();
     
     match chars.find(|ch| !ch.is_whitespace())
     {
         Some(NULL_STARTS) => {
-            parse_null(&mut chars).expect("Expected `null`, `true` or `false`");
+            parse_null(&mut chars)?;
             Ok(JSON::Null)
         },
         
@@ -35,14 +51,19 @@ fn parse(string: & str) -> Result<JSON, &'static str> {
             Ok(JSON::String(string))
         },
         
-        _ => Err("String does not contain JSON"),
+        Some(OBJECT_STARTS) => {
+            let object = parse_object(&mut chars)?;
+            Ok(JSON::Object(object))
+        }
+        
+        _ => Err(ParseError(GENERIC_ERROR)),
     }
 }
 
 fn parse_null(chars: &mut Chars) -> Result<(), ParseError> {
     if chars.take(3).eq(NULL_REST) {
         Ok(())
-    } else { Err(ParseError) }
+    } else { Err(ParseError(GENERIC_ERROR)) }
 }
 
 fn parse_string(chars: &mut Chars) -> String {
@@ -64,16 +85,8 @@ fn parse_object(chars: &mut Chars) -> Result<HashMap<String, JSON>, ParseError> 
     let mut string = String::new();
     
     match char {
-        None => return Err(ParseError),
+        None => return Err(ParseError(GENERIC_ERROR)),
         _ => {unimplemented!()},
-    }
-}
-
-impl FromStr for JSON {
-    type Err = ParseError;
-    
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
-        parse(s).map_err(|_| ParseError)
     }
 }
 
@@ -94,13 +107,20 @@ mod tests {
     
     #[test]
     #[allow(clippy::unit_cmp)]
-    fn parse_null() {
+    fn parse_null_happy() {
         let mut chars = "ull".chars();
         
         #[allow(clippy::let_unit_value)]
-        let parsed = super::parse_null(&mut chars).unwrap();
+        let parsed = parse_null(&mut chars).unwrap();
         
         assert_eq!((), parsed)
         
+    }
+    
+    #[test]
+    fn parse_null_unhappy() {
+        let mut chars = "NOT A NULL".chars();
+        
+        let parsed = parse_null(&mut chars).expect_err(GENERIC_ERROR);
     }
 }
