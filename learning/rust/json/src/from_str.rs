@@ -20,11 +20,14 @@ use keychars::*;
 const GENERIC_ERROR: &str = "JSON couldn't be parsed";
 
 #[derive(Debug)]
-pub struct ParseError(&'static str);
+pub enum ParseError {
+    InvalidJSON(&'static str),
+    
+}
 
 impl Display for ParseError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "{GENERIC_ERROR}: {}", self.0)
+        write!(f, "{self:?}")
     }
 }
 
@@ -56,14 +59,14 @@ fn parse(string: & str) -> Result<JSON, ParseError> {
             Ok(JSON::Object(object))
         }
         
-        _ => Err(ParseError(GENERIC_ERROR)),
+        _ => Err(ParseError::InvalidJSON("Incorrect symbol in JSON")),
     }
 }
 
 fn parse_null(chars: &mut Chars) -> Result<(), ParseError> {
     if chars.take(3).eq(NULL_REST) {
         Ok(())
-    } else { Err(ParseError(GENERIC_ERROR)) }
+    } else { Err(ParseError::InvalidJSON("Error while parsing `null`")) }
 }
 
 fn parse_string(chars: &mut Chars) -> String {
@@ -85,7 +88,7 @@ fn parse_object(chars: &mut Chars) -> Result<HashMap<String, JSON>, ParseError> 
     let mut string = String::new();
     
     match char {
-        None => return Err(ParseError(GENERIC_ERROR)),
+        None => return Err(ParseError::InvalidJSON("Error while parsing object")),
         _ => {unimplemented!()},
     }
 }
