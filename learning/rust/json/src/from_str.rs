@@ -163,4 +163,20 @@ mod tests {
 
         assert_eq!(parsed, "something".to_string())
     }
+
+    #[test]
+    fn parse_string_quotes() {
+        let mut chars = r#"something\" ""#.chars();
+        let parsed = parse_string(chars.by_ref());
+
+        assert_eq!(parsed, r#"something\" "#.to_string())
+    }
+
+    #[test]
+    fn parse_string_escapes() {
+        let mut chars = r#"\\something\\ ""#.chars();
+        let parsed = parse_string(chars.by_ref());
+
+        assert_eq!(parsed, r#"\\something\\ "#.to_string())
+    }
 }
