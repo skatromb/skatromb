@@ -12,22 +12,22 @@ impl Display for JSON {
             JSON::String(s) => write!(f, r#""{}""#, s),
 
             JSON::Object(map) => {
-                
-                let comma_separated = map.iter()
+                let comma_separated = map
+                    .iter()
                     .map(|(key, value)| format!(r#""{key}": {value}"#))
                     .collect::<Vec<_>>()
                     .join(", ");
-                
+
                 write!(f, "{{{comma_separated}}}")
             }
 
             JSON::Array(jsons) => {
-
-                let comma_separated = jsons.iter()
+                let comma_separated = jsons
+                    .iter()
                     .map(|json| json.to_string())
                     .collect::<Vec<_>>()
                     .join(", ");
-                
+
                 write!(f, "[{comma_separated}]")
             }
         }
@@ -65,25 +65,28 @@ mod tests {
     #[test]
     fn json_object_to_string() {
         // string: int
-        let json_obj = JSON::Object(HashMap::from(
-            [("int key".to_string(), JSON::Int(123))]
-        ));
+        let json_obj = JSON::Object(HashMap::from([("int key".to_string(), JSON::Int(123))]));
         assert_eq!(json_obj.to_string(), r#"{"int key": 123}"#);
-        
-        // string: string
-        let json_obj = JSON::Object(HashMap::from(
-            [("string key".to_string(), JSON::String("value".to_string()))]
-        ));
-        assert_eq!(json_obj.to_string(), r#"{"string key": "value"}"#);
-        
-        // nested
-        let json_obj = JSON::Object(HashMap::from(
-            [("nested".to_string(), JSON::Object(HashMap::from(
-                [("string key".to_string(), JSON::String("value".to_string()))]
-            )))]
-        ));
-        
-        assert_eq!(json_obj.to_string(), r#"{"nested": {"string key": "value"}}"#);
 
+        // string: string
+        let json_obj = JSON::Object(HashMap::from([(
+            "string key".to_string(),
+            JSON::String("value".to_string()),
+        )]));
+        assert_eq!(json_obj.to_string(), r#"{"string key": "value"}"#);
+
+        // nested
+        let json_obj = JSON::Object(HashMap::from([(
+            "nested".to_string(),
+            JSON::Object(HashMap::from([(
+                "string key".to_string(),
+                JSON::String("value".to_string()),
+            )])),
+        )]));
+
+        assert_eq!(
+            json_obj.to_string(),
+            r#"{"nested": {"string key": "value"}}"#
+        );
     }
 }
