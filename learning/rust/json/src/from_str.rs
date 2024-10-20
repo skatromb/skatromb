@@ -14,14 +14,15 @@ mod keychars {
 
 use keychars::*;
 
-#[derive(Debug)]
+#[derive(Debug, PartialEq)]
 pub enum ParseError {
     InvalidJSON(&'static str),
     InvalidControlCharacter(&'static str),
 }
 
-const NULL_PARSING_ERROR: &str = "Error while parsing `null`";
-const NEWLINE_CHARACTER_ERROR: &str = "Newline character is not allowed";
+const NULL_PARSING_ERROR: ParseError = ParseError::InvalidJSON("Error while parsing `null`");
+const NEWLINE_CHARACTER_ERROR: ParseError =
+    ParseError::InvalidJSON("Newline character is not allowed");
 
 impl Display for ParseError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -65,7 +66,7 @@ fn parse_null(chars: &mut Chars) -> Result<(), ParseError> {
     if chars.take(3).eq(NULL_REST) {
         Ok(())
     } else {
-        Err(ParseError::InvalidJSON(NULL_PARSING_ERROR))
+        Err(NULL_PARSING_ERROR)
     }
 }
 
@@ -86,7 +87,7 @@ fn parse_string(chars: &mut Chars) -> Result<String, ParseError> {
                 }
                 'n' => {
                     if escape_char {
-                        error = Some(ParseError::InvalidControlCharacter(NEWLINE_CHARACTER_ERROR));
+                        error = Some(NEWLINE_CHARACTER_ERROR);
                         STOP_TAKING
                     } else {
                         CONTINUE_TAKE
@@ -157,8 +158,10 @@ mod tests {
     #[test]
     fn parse_null_unhappy() {
         let mut chars = "NOT A NULL".chars();
+        let err = parse_null(&mut chars).err().unwrap();
+        let expect_err = NULL_PARSING_ERROR;
 
-        parse_null(&mut chars).expect_err(NULL_PARSING_ERROR);
+        assert_eq!(expect_err, err);
     }
 
     #[test]
