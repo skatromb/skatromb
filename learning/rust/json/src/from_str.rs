@@ -9,10 +9,7 @@ mod keychars {
     pub(super) const NULL_REST: [char; 3] = ['u', 'l', 'l'];
 
     pub(super) const STRING_STARTS: char = '"';
-    pub(super) const STRING_ENDS: char = STRING_STARTS;
-
     pub(super) const OBJECT_STARTS: char = '{';
-    pub(super) const OBJECT_ENDS: char = '}';
 }
 
 use keychars::*;
@@ -20,9 +17,11 @@ use keychars::*;
 #[derive(Debug)]
 pub enum ParseError {
     InvalidJSON(&'static str),
+    InvalidControlCharacter(&'static str),
 }
 
 const NULL_PARSING_ERROR: &str = "Error while parsing `null`";
+const NEWLINE_CHARACTER_ERROR: &str = "Newline character is not allowed";
 
 impl Display for ParseError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -48,7 +47,7 @@ fn parse(string: &str) -> Result<JSON, ParseError> {
         }
 
         Some(STRING_STARTS) => {
-            let string = parse_string(chars.by_ref());
+            let string = parse_string(chars.by_ref())?;
             Ok(JSON::String(string))
         }
 
@@ -71,18 +70,27 @@ fn parse_null(chars: &mut Chars) -> Result<(), ParseError> {
 }
 
 /// Take symbols until '"' appears
-fn parse_string(chars: &mut Chars) -> String {
+fn parse_string(chars: &mut Chars) -> Result<String, ParseError> {
     const STOP_TAKING: bool = false;
     const CONTINUE_TAKE: bool = true;
 
     let mut escape_char = false;
+    let mut error: Option<ParseError> = None;
 
-    chars
+    let string = chars
         .take_while(|ch| {
             match ch {
                 '\\' => {
                     escape_char = !escape_char;
                     CONTINUE_TAKE
+                }
+                'n' => {
+                    if escape_char {
+                        error = Some(ParseError::InvalidControlCharacter(NEWLINE_CHARACTER_ERROR));
+                        STOP_TAKING
+                    } else {
+                        CONTINUE_TAKE
+                    }
                 }
                 '"' => {
                     if escape_char {
@@ -98,20 +106,17 @@ fn parse_string(chars: &mut Chars) -> String {
                 }
             }
         })
-        .collect()
+        .collect();
+
+    if let Some(err) = error {
+        Err(err)
+    } else {
+        Ok(string)
+    }
 }
 
 fn parse_object(chars: &mut Chars) -> Result<HashMap<String, JSON>, ParseError> {
     unimplemented!();
-    let char = chars.next();
-    let mut string = String::new();
-
-    match char {
-        None => return Err(ParseError::InvalidJSON("Error while parsing object")),
-        _ => {
-            unimplemented!()
-        }
-    }
 }
 
 fn parse_integer(chars: &mut Chars) -> i64 {
@@ -153,13 +158,13 @@ mod tests {
     fn parse_null_unhappy() {
         let mut chars = "NOT A NULL".chars();
 
-        let parsed = parse_null(&mut chars).expect_err(NULL_PARSING_ERROR);
+        parse_null(&mut chars).expect_err(NULL_PARSING_ERROR);
     }
 
     #[test]
     fn parse_string_happy() {
         let mut chars = r#"something""#.chars();
-        let parsed = parse_string(chars.by_ref());
+        let parsed = parse_string(chars.by_ref()).unwrap();
 
         assert_eq!(parsed, "something".to_string())
     }
@@ -167,7 +172,7 @@ mod tests {
     #[test]
     fn parse_string_quotes() {
         let mut chars = r#"something\" ""#.chars();
-        let parsed = parse_string(chars.by_ref());
+        let parsed = parse_string(chars.by_ref()).unwrap();
 
         assert_eq!(parsed, r#"something\" "#.to_string())
     }
@@ -175,7 +180,7 @@ mod tests {
     #[test]
     fn parse_string_escapes() {
         let mut chars = r#"\\something\\ ""#.chars();
-        let parsed = parse_string(chars.by_ref());
+        let parsed = parse_string(chars.by_ref()).unwrap();
 
         assert_eq!(parsed, r#"\\something\\ "#.to_string())
     }
