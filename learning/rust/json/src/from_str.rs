@@ -34,13 +34,11 @@ impl FromStr for JSON {
     type Err = ParseError;
 
     fn from_str(s: &str) -> Result<Self, Self::Err> {
-        parse(s)
+        parse(&mut s.chars())
     }
 }
 
-fn parse(string: &str) -> Result<JSON, ParseError> {
-    let mut chars = string.chars();
-
+fn parse(chars: &mut Chars) -> Result<JSON, ParseError> {
     match chars.find(|ch| !ch.is_whitespace()) {
         Some(NULL_STARTS) => {
             parse_null(chars.by_ref())?;
@@ -139,7 +137,7 @@ mod tests {
             "key".to_string(),
             JSON::String("value".to_string()),
         )]));
-        let parsed = parse(r#"{"key": "value"}"#).unwrap();
+        let parsed = parse(&mut r#"{"key": "value"}"#.chars()).unwrap();
 
         assert_eq!(json, parsed)
     }
