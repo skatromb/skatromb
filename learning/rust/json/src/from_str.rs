@@ -107,11 +107,7 @@ fn parse_string(chars: &mut Chars) -> Result<String, ParseError> {
         })
         .collect();
 
-    if let Some(err) = error {
-        Err(err)
-    } else {
-        Ok(string)
-    }
+    error.map_or(Ok(string), Err)
 }
 
 fn parse_object(chars: &mut Chars) -> Result<HashMap<String, JSON>, ParseError> {
