@@ -1,16 +1,16 @@
-FROM rust:1.81-bookworm
+FROM rust:1.82-bookworm
 WORKDIR /usr/app/
 
 # pyo3
-RUN apt-get update && \
-    apt-get install -yq \
-        python3 \
-        python3-pip \
-        python3-dev \
-        openssh-server \
-    --no-install-recommends && \
-    apt-get clean
-RUN pip3 install maturin --no-cache-dir --break-system-packages
+# RUN apt-get update && \
+#     apt-get install -yq \
+#     python3 \
+#     python3-pip \
+#     python3-dev \
+#     openssh-server \
+#     --no-install-recommends && \
+#     apt-get clean
+# RUN pip3 install maturin --no-cache-dir --break-system-packages
 
 # rust
 RUN rustup component add clippy rustfmt
