@@ -6,10 +6,10 @@ impl Display for JSON {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         match self {
             JSON::Null => write!(f, "null"),
-            JSON::Bool(bool) => write!(f, "{}", bool),
-            JSON::Int(int) => write!(f, "{}", int),
-            JSON::Float(float) => write!(f, "{}", float),
-            JSON::String(s) => write!(f, r#""{}""#, s),
+            JSON::Bool(bool) => write!(f, "{bool}"),
+            JSON::Int(int) => write!(f, "{int}"),
+            JSON::Float(float) => write!(f, "{float}"),
+            JSON::String(s) => write!(f, r#""{s}""#),
 
             JSON::Object(map) => {
                 let comma_separated = map
