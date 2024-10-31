@@ -6,16 +6,13 @@ use std::str::FromStr;
 
 #[derive(Debug, PartialEq)]
 pub enum ParseError {
-    InvalidJSON(&'static str),
-    InvalidControlCharacter(&'static str),
-    InvalidEscapeCharacter(&'static str),
+    InvalidJSON,
+    InvalidControlCharacter,
+    InvalidEscapeCharacter,
+    UnclosedStringLiteral,
 }
 
-const NULL_PARSING_ERROR: ParseError = ParseError::InvalidJSON("Error while parsing `null`");
-const NEWLINE_CHARACTER_ERROR: ParseError =
-    ParseError::InvalidJSON("Newline character is not allowed");
-const INVALID_ESCAPE_CHARACTER: ParseError =
-    ParseError::InvalidEscapeCharacter("Invalid escape character sequence");
+use ParseError::*;
 
 impl Display for ParseError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -48,7 +45,7 @@ fn parse(chars: &mut Chars) -> Result<JSON, ParseError> {
             Ok(JSON::Object(object))
         }
 
-        _ => Err(ParseError::InvalidJSON("Incorrect symbol in JSON")),
+        _ => Err(InvalidJSON),
     }
 }
 
@@ -59,46 +56,38 @@ fn parse_null(chars: &mut Chars) -> Result<(), ParseError> {
     if chars.take(3).eq(NULL_REST) {
         Ok(())
     } else {
-        Err(NULL_PARSING_ERROR)
+        Err(InvalidJSON)
     }
 }
 
-/// Take symbols until '"' appears
 fn parse_string(chars: &mut Chars) -> Result<String, ParseError> {
-    let mut error: Option<ParseError> = None;
-    let mut escape_char = false;
     let mut string = String::new();
 
-    for char in chars {
-        if escape_char {
-            let escaped_char = match char {
-                '\\' => '\\',
-                '/' => '/',
-                '"' => '"',
-                'n' => '\n',
-                'r' => '\r',
-                't' => '\t',
-                _ => {
-                    error = Some(INVALID_ESCAPE_CHARACTER);
-                    break;
-                }
-            };
+    loop {
+        let char = chars.next().ok_or(UnclosedStringLiteral)?;
 
-            string.push(escaped_char);
-            escape_char = false;
-        } else {
-            match char {
-                '\\' => escape_char = true,
-                '"' => break,
-                '\n' => {
-                    error = Some(NEWLINE_CHARACTER_ERROR);
-                    break;
-                }
-                _ => string.push(char),
+        match char {
+            '"' => break,
+            '\n' => return Err(InvalidEscapeCharacter),
+            '\\' => {
+                let next_symbol = chars.next().ok_or(UnclosedStringLiteral)?;
+                let escaped_char = match next_symbol {
+                    '\\' => '\\',
+                    '/' => '/',
+                    '"' => '"',
+                    'n' => '\n',
+                    'r' => '\r',
+                    't' => '\t',
+                    _ => {
+                        return Err(InvalidEscapeCharacter);
+                    }
+                };
+                string.push(escaped_char);
             }
+            _ => string.push(char),
         }
     }
-    error.map_or(Ok(string), Err)
+    Ok(string)
 }
 
 fn parse_object(chars: &mut Chars) -> Result<HashMap<String, JSON>, ParseError> {
@@ -144,7 +133,7 @@ mod tests {
     fn parse_null_unhappy() {
         let mut chars = "NOT A NULL".chars();
         let err = parse_null(&mut chars).err().unwrap();
-        let expect_err = NULL_PARSING_ERROR;
+        let expect_err = InvalidJSON;
 
         assert_eq!(expect_err, err);
     }
@@ -178,7 +167,7 @@ mod tests {
         let mut chars = r#" `\` ""#.chars();
         let parsed = parse_string(&mut chars).err().unwrap();
 
-        assert_eq!(parsed, INVALID_ESCAPE_CHARACTER)
+        assert_eq!(parsed, InvalidEscapeCharacter)
     }
 
     #[test]
@@ -196,6 +185,6 @@ mod tests {
             .chars();
         let parsed = parse_string(&mut chars).err().unwrap();
 
-        assert_eq!(parsed, NEWLINE_CHARACTER_ERROR)
+        assert_eq!(parsed, InvalidEscapeCharacter)
     }
 }
