@@ -1,7 +1,8 @@
+#![allow(unused)]
 use crate::JSON;
 use std::collections::HashMap;
 use std::fmt::Display;
-use std::str::Chars;
+use std::iter::Peekable;
 use std::str::FromStr;
 
 #[derive(Debug, PartialEq)]
@@ -10,6 +11,7 @@ pub enum ParseError {
     InvalidControlCharacter,
     InvalidEscapeCharacter,
     UnclosedStringLiteral,
+    UnclosedObjectLiteral,
 }
 
 use ParseError::*;
@@ -24,44 +26,67 @@ impl FromStr for JSON {
     type Err = ParseError;
 
     fn from_str(s: &str) -> Result<Self, Self::Err> {
-        parse(&mut s.chars())
+        let mut chars = s.chars().peekable();
+        let json = parse(&mut chars)?;
+
+        skip_whitespaces(&mut chars);
+        assert!(chars.peek().is_none());
+
+        Ok(json)
     }
 }
 
-fn parse(chars: &mut Chars) -> Result<JSON, ParseError> {
-    match chars.find(|ch| !ch.is_whitespace()) {
+/// Skips whitespaces but doesn't consume first non-whitespace character unlike `.skip_while()`
+fn skip_whitespaces(chars: &mut Peekable<impl Iterator<Item = char>>) -> Result<(), ParseError> {
+    while chars.peek().ok_or(InvalidJSON)?.is_whitespace() {
+        let _ = chars.next();
+    }
+    Ok(())
+}
+// todo write tests
+
+fn parse(chars: &mut Peekable<impl Iterator<Item = char>>) -> Result<JSON, ParseError> {
+    skip_whitespaces(chars)?;
+
+    let result = match chars.peek() {
         Some('n') => {
             parse_null(chars)?;
             Ok(JSON::Null)
         }
 
         Some('"') => {
+            dbg!();
             let string = parse_string(chars)?;
             Ok(JSON::String(string))
         }
 
         Some('{') => {
+            dbg!();
             let object = parse_object(chars)?;
             Ok(JSON::Object(object))
         }
 
         _ => Err(InvalidJSON),
-    }
+    };
+
+    result
 }
 
-/// Take 3 symbols after 'n' and expect them to be "ull"
-fn parse_null(chars: &mut Chars) -> Result<(), ParseError> {
-    const NULL_REST: [char; 3] = ['u', 'l', 'l'];
-
-    if chars.take(3).eq(NULL_REST) {
+fn parse_null(chars: &mut impl Iterator<Item = char>) -> Result<(), ParseError> {
+    if chars.take(4).collect::<String>() == "null" {
         Ok(())
     } else {
         Err(InvalidJSON)
     }
 }
 
-fn parse_string(chars: &mut Chars) -> Result<String, ParseError> {
+fn parse_string(chars: &mut impl Iterator<Item = char>) -> Result<String, ParseError> {
     let mut string = String::new();
+
+    if chars.next() != Some('"') {
+        return Err(InvalidJSON);
+    };
+    dbg!();
 
     loop {
         let char = chars.next().ok_or(UnclosedStringLiteral)?;
@@ -87,18 +112,38 @@ fn parse_string(chars: &mut Chars) -> Result<String, ParseError> {
             _ => string.push(char),
         }
     }
+    dbg!("string: {}", &string);
     Ok(string)
 }
 
-fn parse_object(chars: &mut Chars) -> Result<HashMap<String, JSON>, ParseError> {
-    unimplemented!();
+fn parse_object(
+    chars: &mut Peekable<impl Iterator<Item = char>>,
+) -> Result<HashMap<String, JSON>, ParseError> {
+    if chars.next() != Some('{') {
+        return Err(InvalidJSON);
+    }
+
+    let key = parse_string(chars)?;
+    dbg!(&key);
+
+    if chars.find(|char| !char.is_whitespace()) != Some(':') {
+        return Err(InvalidJSON);
+    }
+    let value = parse(chars)?;
+    dbg!(&value);
+
+    if let Some('}') = chars.next() {
+        Ok(HashMap::from([(key, value)]))
+    } else {
+        Err(UnclosedObjectLiteral)
+    }
 }
 
-fn parse_integer(chars: &mut Chars) -> i64 {
+fn parse_integer(chars: &mut impl Iterator<Item = char>) -> i64 {
     unimplemented!()
 }
 
-fn parse_float(chars: &mut Chars) -> f64 {
+fn parse_float(chars: &mut impl Iterator<Item = char>) -> f64 {
     unimplemented!()
 }
 
@@ -113,7 +158,7 @@ mod tests {
             "key".to_string(),
             JSON::String("value".to_string()),
         )]));
-        let parsed = parse(&mut r#"{"key": "value"}"#.chars()).unwrap();
+        let parsed: JSON = r#" {"key": "value"} "#.parse().unwrap();
 
         assert_eq!(json, parsed)
     }
@@ -121,7 +166,7 @@ mod tests {
     #[test]
     #[allow(clippy::unit_cmp)]
     fn parse_null_happy() {
-        let mut chars = "ull".chars();
+        let mut chars = "null".chars().peekable();
 
         #[allow(clippy::let_unit_value)]
         let parsed = parse_null(&mut chars).unwrap();
@@ -131,7 +176,7 @@ mod tests {
 
     #[test]
     fn parse_null_unhappy() {
-        let mut chars = "NOT A NULL".chars();
+        let mut chars = "NOT A NULL".chars().peekable();
         let err = parse_null(&mut chars).err().unwrap();
         let expect_err = InvalidJSON;
 
@@ -140,7 +185,7 @@ mod tests {
 
     #[test]
     fn parse_string_happy() {
-        let mut chars = r#"string""#.chars();
+        let mut chars = r#""string""#.chars().peekable();
         let parsed = parse_string(&mut chars).unwrap();
 
         assert_eq!(parsed, "string")
@@ -148,7 +193,7 @@ mod tests {
 
     #[test]
     fn parse_string_quotes() {
-        let mut chars = r#" `\"` ""#.chars();
+        let mut chars = r#"" `\"` ""#.chars().peekable();
         let parsed = parse_string(&mut chars).unwrap();
 
         assert_eq!(parsed, " `\"` ")
@@ -156,7 +201,7 @@ mod tests {
 
     #[test]
     fn parse_string_escapes_happy() {
-        let mut chars = r#" `\\` ""#.chars();
+        let mut chars = r#"" `\\` ""#.chars().peekable();
         let parsed = parse_string(&mut chars).unwrap();
 
         assert_eq!(parsed, " `\\` ")
@@ -164,7 +209,7 @@ mod tests {
 
     #[test]
     fn parse_string_escapes_fail() {
-        let mut chars = r#" `\` ""#.chars();
+        let mut chars = r#"" `\` ""#.chars().peekable();
         let parsed = parse_string(&mut chars).err().unwrap();
 
         assert_eq!(parsed, InvalidEscapeCharacter)
@@ -172,19 +217,20 @@ mod tests {
 
     #[test]
     fn parse_string_newline_happy() {
-        let mut chars = r#"newline! \n another line""#.chars();
+        let mut chars = r#"" newline! \n another line ""#.chars().peekable();
         let parsed = parse_string(&mut chars).unwrap();
 
-        assert_eq!(parsed, "newline! \n another line")
+        assert_eq!(parsed, " newline! \n another line ")
     }
 
     #[test]
     fn parse_string_newline_fail() {
         let mut chars = r"newline!
             another line"
-            .chars();
+            .chars()
+            .peekable();
         let parsed = parse_string(&mut chars).err().unwrap();
 
-        assert_eq!(parsed, InvalidEscapeCharacter)
+        assert_eq!(parsed, InvalidJSON)
     }
 }
