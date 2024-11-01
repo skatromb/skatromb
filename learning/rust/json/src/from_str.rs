@@ -43,7 +43,6 @@ fn skip_whitespaces(chars: &mut Peekable<impl Iterator<Item = char>>) -> Result<
     }
     Ok(())
 }
-// todo write tests
 
 fn parse(chars: &mut Peekable<impl Iterator<Item = char>>) -> Result<JSON, ParseError> {
     skip_whitespaces(chars)?;
@@ -160,6 +159,20 @@ fn parse_float(chars: &mut impl Iterator<Item = char>) -> f64 {
 mod tests {
     use super::*;
     use std::collections::HashMap;
+
+    #[test]
+    fn skip_whitespaces_dont_consume_char() {
+        let chars = &mut " 1  2   321".chars().peekable();
+        skip_whitespaces(chars);
+        assert_eq!(chars.next().unwrap(), '1');
+
+        skip_whitespaces(chars);
+        assert_eq!(chars.next().unwrap(), '2');
+
+        skip_whitespaces(chars);
+        let string: String = chars.collect();
+        assert_eq!("321", string);
+    }
 
     #[test]
     fn parse_happy() {
