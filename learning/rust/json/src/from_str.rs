@@ -78,12 +78,12 @@ fn parse(chars: &mut Peekable<impl Iterator<Item = char>>) -> Result<JSON, Parse
 fn parse_bool(chars: &mut Peekable<impl Iterator<Item = char>>) -> Result<bool, ParseError> {
     match chars.peek().ok_or(BooleanParsingError)? {
         't' => {
-            if let "true" = chars.take(4).collect::<String>().as_str() {
+            if "true" == chars.take(4).collect::<String>() {
                 return Ok(true);
             }
         }
         'f' => {
-            if let "false" = chars.take(5).collect::<String>().as_str() {
+            if "false" == chars.take(5).collect::<String>() {
                 return Ok(false);
             }
         }
