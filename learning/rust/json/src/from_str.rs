@@ -3,7 +3,7 @@ use crate::JSON;
 use std::collections::HashMap;
 use std::fmt::Display;
 use std::iter::Peekable;
-use std::str::FromStr;
+use std::str::{FromStr, ParseBoolError};
 
 #[derive(Debug, PartialEq)]
 pub enum ParseError {
@@ -12,6 +12,7 @@ pub enum ParseError {
     InvalidEscapeCharacter,
     UnclosedStringLiteral,
     UnclosedObjectLiteral,
+    BooleanParsingError,
 }
 
 use ParseError::*;
@@ -48,6 +49,11 @@ fn parse(chars: &mut Peekable<impl Iterator<Item = char>>) -> Result<JSON, Parse
     skip_whitespaces(chars)?;
 
     let result = match chars.peek() {
+        Some('f') | Some('t') => {
+            let boolean = parse_bool(chars)?;
+            Ok(JSON::Bool(boolean))
+        }
+
         Some('n') => {
             parse_null(chars)?;
             Ok(JSON::Null)
@@ -69,12 +75,37 @@ fn parse(chars: &mut Peekable<impl Iterator<Item = char>>) -> Result<JSON, Parse
     result
 }
 
+fn parse_bool(chars: &mut Peekable<impl Iterator<Item = char>>) -> Result<bool, ParseError> {
+    match chars.peek().ok_or(BooleanParsingError)? {
+        't' => {
+            if let "true" = chars.take(4).collect::<String>().as_str() {
+                return Ok(true);
+            }
+        }
+        'f' => {
+            if let "false" = chars.take(5).collect::<String>().as_str() {
+                return Ok(false);
+            }
+        }
+        _ => {}
+    }
+    Err(BooleanParsingError)
+}
+
 fn parse_null(chars: &mut impl Iterator<Item = char>) -> Result<(), ParseError> {
     if chars.take(4).collect::<String>() == "null" {
         Ok(())
     } else {
         Err(InvalidJSON)
     }
+}
+
+fn parse_integer(chars: &mut impl Iterator<Item = char>) -> i64 {
+    unimplemented!()
+}
+
+fn parse_float(chars: &mut impl Iterator<Item = char>) -> f64 {
+    unimplemented!()
 }
 
 fn parse_string(chars: &mut impl Iterator<Item = char>) -> Result<String, ParseError> {
@@ -147,14 +178,6 @@ fn parse_object(
     }
 }
 
-fn parse_integer(chars: &mut impl Iterator<Item = char>) -> i64 {
-    unimplemented!()
-}
-
-fn parse_float(chars: &mut impl Iterator<Item = char>) -> f64 {
-    unimplemented!()
-}
-
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -191,6 +214,25 @@ mod tests {
     }
 
     #[test]
+    fn parse_bool_happy() {
+        let mut chars = "true".chars().peekable();
+        let parsed = parse_bool(&mut chars).unwrap();
+        assert!(parsed);
+
+        let mut chars = "false".chars().peekable();
+        let parsed = parse_bool(&mut chars).unwrap();
+        assert!(!parsed);
+    }
+
+    #[test]
+    fn parse_bool_fail() {
+        let mut chars = "fAAA!!!".chars().peekable();
+        let parsed = parse_bool(&mut chars).err().unwrap();
+
+        assert_eq!(parsed, BooleanParsingError);
+    }
+
+    #[test]
     #[allow(clippy::unit_cmp)]
     fn parse_null_happy() {
         let mut chars = "null".chars().peekable();
@@ -202,12 +244,11 @@ mod tests {
     }
 
     #[test]
-    fn parse_null_unhappy() {
+    fn parse_null_fail() {
         let mut chars = "NOT A NULL".chars().peekable();
         let err = parse_null(&mut chars).err().unwrap();
-        let expect_err = InvalidJSON;
 
-        assert_eq!(expect_err, err);
+        assert_eq!(InvalidJSON, err);
     }
 
     #[test]
