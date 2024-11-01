@@ -55,13 +55,11 @@ fn parse(chars: &mut Peekable<impl Iterator<Item = char>>) -> Result<JSON, Parse
         }
 
         Some('"') => {
-            dbg!();
             let string = parse_string(chars)?;
             Ok(JSON::String(string))
         }
 
         Some('{') => {
-            dbg!();
             let object = parse_object(chars)?;
             Ok(JSON::Object(object))
         }
@@ -86,7 +84,6 @@ fn parse_string(chars: &mut impl Iterator<Item = char>) -> Result<String, ParseE
     if chars.next() != Some('"') {
         return Err(InvalidJSON);
     };
-    dbg!();
 
     loop {
         let char = chars.next().ok_or(UnclosedStringLiteral)?;
@@ -112,7 +109,7 @@ fn parse_string(chars: &mut impl Iterator<Item = char>) -> Result<String, ParseE
             _ => string.push(char),
         }
     }
-    dbg!("string: {}", &string);
+
     Ok(string)
 }
 
@@ -124,13 +121,12 @@ fn parse_object(
     }
 
     let key = parse_string(chars)?;
-    dbg!(&key);
 
     if chars.find(|char| !char.is_whitespace()) != Some(':') {
         return Err(InvalidJSON);
     }
+
     let value = parse(chars)?;
-    dbg!(&value);
 
     if let Some('}') = chars.next() {
         Ok(HashMap::from([(key, value)]))
@@ -154,11 +150,16 @@ mod tests {
 
     #[test]
     fn parse_happy() {
-        let json = JSON::Object(HashMap::from([(
-            "key".to_string(),
-            JSON::String("value".to_string()),
-        )]));
-        let parsed: JSON = r#" {"key": "value"} "#.parse().unwrap();
+        let json = JSON::Object(HashMap::from([
+            ("key".to_string(), JSON::String("value".to_string())),
+            (
+                "another_key".to_string(),
+                JSON::String("another_value".to_string()),
+            ),
+        ]));
+        let parsed: JSON = r#" {"key": "value", "another_key", "another_value"} "#
+            .parse()
+            .unwrap();
 
         assert_eq!(json, parsed)
     }
