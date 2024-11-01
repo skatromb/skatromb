@@ -119,19 +119,32 @@ fn parse_object(
     if chars.next() != Some('{') {
         return Err(InvalidJSON);
     }
+    let mut hash_map = HashMap::new();
 
-    let key = parse_string(chars)?;
+    loop {
+        skip_whitespaces(chars);
+        let key = parse_string(chars)?;
 
-    if chars.find(|char| !char.is_whitespace()) != Some(':') {
-        return Err(InvalidJSON);
-    }
+        if chars.find(|char| !char.is_whitespace()) != Some(':') {
+            return Err(InvalidJSON);
+        }
 
-    let value = parse(chars)?;
+        let value = parse(chars)?;
 
-    if let Some('}') = chars.next() {
-        Ok(HashMap::from([(key, value)]))
-    } else {
-        Err(UnclosedObjectLiteral)
+        hash_map.insert(key, value);
+
+        skip_whitespaces(chars);
+        match chars.peek() {
+            Some(',') => {
+                chars.next();
+                continue;
+            }
+            Some('}') => {
+                chars.next();
+                return Ok(hash_map);
+            }
+            _ => return Err(UnclosedObjectLiteral),
+        }
     }
 }
 
@@ -157,7 +170,7 @@ mod tests {
                 JSON::String("another_value".to_string()),
             ),
         ]));
-        let parsed: JSON = r#" {"key": "value", "another_key", "another_value"} "#
+        let parsed: JSON = r#" {"key": "value", "another_key": "another_value"} "#
             .parse()
             .unwrap();
 
