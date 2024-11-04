@@ -1,9 +1,8 @@
-#![allow(unused)]
 use crate::JSON;
 use std::collections::HashMap;
 use std::fmt::Display;
 use std::iter::Peekable;
-use std::str::{FromStr, ParseBoolError};
+use std::str::FromStr;
 
 #[derive(Debug, PartialEq)]
 pub enum ParseError {
@@ -13,6 +12,7 @@ pub enum ParseError {
     UnclosedStringLiteral,
     UnclosedObjectLiteral,
     BooleanParsingError,
+    NumericParsingError,
 }
 
 use ParseError::*;
@@ -38,15 +38,18 @@ impl FromStr for JSON {
 }
 
 /// Skips whitespaces but doesn't consume first non-whitespace character unlike `.skip_while()`
-fn skip_whitespaces(chars: &mut Peekable<impl Iterator<Item = char>>) -> Result<(), ParseError> {
-    while chars.peek().ok_or(InvalidJSON)?.is_whitespace() {
-        let _ = chars.next();
+fn skip_whitespaces(chars: &mut Peekable<impl Iterator<Item = char>>) {
+    while let Some(char) = chars.peek() {
+        if char.is_whitespace() {
+            let _ = chars.next();
+        } else {
+            break;
+        }
     }
-    Ok(())
 }
 
 fn parse(chars: &mut Peekable<impl Iterator<Item = char>>) -> Result<JSON, ParseError> {
-    skip_whitespaces(chars)?;
+    skip_whitespaces(chars);
 
     let result = match chars.peek() {
         Some('f') | Some('t') => {
@@ -61,8 +64,11 @@ fn parse(chars: &mut Peekable<impl Iterator<Item = char>>) -> Result<JSON, Parse
 
         Some('"') => {
             let string = parse_string(chars)?;
+
             Ok(JSON::String(string))
         }
+
+        Some('0'..='9') | Some('-') => parse_numeric(chars),
 
         Some('{') => {
             let object = parse_object(chars)?;
@@ -100,12 +106,53 @@ fn parse_null(chars: &mut impl Iterator<Item = char>) -> Result<(), ParseError> 
     }
 }
 
-fn parse_integer(chars: &mut impl Iterator<Item = char>) -> i64 {
-    unimplemented!()
-}
+fn parse_numeric(chars: &mut Peekable<impl Iterator<Item = char>>) -> Result<JSON, ParseError> {
+    let mut num_str = String::new();
+    let mut dot_found = false;
 
-fn parse_float(chars: &mut impl Iterator<Item = char>) -> f64 {
-    unimplemented!()
+    // consume '-' if exists
+    if let Some('-') = chars.peek() {
+        let char = chars.next().expect("Peeked so should exist");
+        num_str.push(char);
+    }
+
+    // parse other chars, rely on `.parse()` errors for double '.' and other errors
+    loop {
+        let char = chars.peek();
+
+        match char {
+            Some('0'..='9') => {
+                let char = chars.next().expect("Peeked so should exist");
+                num_str.push(char);
+            }
+            Some('.') => {
+                if dot_found {
+                    return Err(NumericParsingError);
+                } else {
+                    dot_found = true;
+
+                    let char = chars.next().expect("Peeked so should exist");
+                    num_str.push(char);
+                }
+            }
+            Some(char) => {
+                if char.is_whitespace() || *char == ',' {
+                    break;
+                }
+            }
+            _ => break,
+        }
+    }
+
+    if dot_found {
+        if let Ok(float) = num_str.parse() {
+            return Ok(JSON::Float(float));
+        }
+    } else if let Ok(int) = num_str.parse() {
+        return Ok(JSON::Int(int));
+    }
+
+    Err(NumericParsingError)
 }
 
 fn parse_string(chars: &mut impl Iterator<Item = char>) -> Result<String, ParseError> {
@@ -117,6 +164,7 @@ fn parse_string(chars: &mut impl Iterator<Item = char>) -> Result<String, ParseE
 
     loop {
         let char = chars.next().ok_or(UnclosedStringLiteral)?;
+        dbg!(char);
 
         match char {
             '"' => break,
@@ -139,6 +187,7 @@ fn parse_string(chars: &mut impl Iterator<Item = char>) -> Result<String, ParseE
             _ => string.push(char),
         }
     }
+    dbg!(&string);
 
     Ok(string)
 }
@@ -155,6 +204,7 @@ fn parse_object(
         skip_whitespaces(chars);
         let key = parse_string(chars)?;
 
+        skip_whitespaces(chars);
         if chars.find(|char| !char.is_whitespace()) != Some(':') {
             return Err(InvalidJSON);
         }
@@ -173,7 +223,9 @@ fn parse_object(
                 chars.next();
                 return Ok(hash_map);
             }
-            _ => return Err(UnclosedObjectLiteral),
+            _ => {
+                return Err(UnclosedObjectLiteral);
+            }
         }
     }
 }
@@ -195,6 +247,14 @@ mod tests {
         skip_whitespaces(chars);
         let string: String = chars.collect();
         assert_eq!("321", string);
+    }
+
+    #[test]
+    fn skip_whitespaces_stops_on_iterator_end() {
+        let chars = &mut " ".chars().peekable();
+        skip_whitespaces(chars);
+
+        assert!(chars.next().is_none());
     }
 
     #[test]
@@ -249,6 +309,54 @@ mod tests {
         let err = parse_null(&mut chars).err().unwrap();
 
         assert_eq!(InvalidJSON, err);
+    }
+
+    #[test]
+    fn parse_int_positive_happy() {
+        let mut chars = "1".chars().peekable();
+        let parsed = parse_numeric(&mut chars).unwrap();
+
+        assert_eq!(parsed, JSON::Int(1))
+    }
+
+    #[test]
+    fn parse_int_0_happy() {
+        let mut chars = "0".chars().peekable();
+        let parsed = parse_numeric(&mut chars).unwrap();
+
+        assert_eq!(parsed, JSON::Int(0))
+    }
+
+    #[test]
+    fn parse_int_negative_happy() {
+        let mut chars = "-123".chars().peekable();
+        let parsed = parse_numeric(&mut chars).unwrap();
+
+        assert_eq!(parsed, JSON::Int(-123))
+    }
+
+    #[test]
+    fn parse_float_positive_happy() {
+        let mut chars = "1.2".chars().peekable();
+        let parsed = parse_numeric(&mut chars).unwrap();
+
+        assert_eq!(parsed, JSON::Float(1.2))
+    }
+
+    #[test]
+    fn parse_float_starting_zero_happy() {
+        let mut chars = "0.010".chars().peekable();
+        let parsed = parse_numeric(&mut chars).unwrap();
+
+        assert_eq!(parsed, JSON::Float(0.01))
+    }
+
+    #[test]
+    fn parse_float_negative_happy() {
+        let mut chars = "-123.456".chars().peekable();
+        let parsed = parse_numeric(&mut chars).unwrap();
+
+        assert_eq!(parsed, JSON::Float(-123.456))
     }
 
     #[test]
