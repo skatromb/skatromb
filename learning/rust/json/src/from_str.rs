@@ -383,6 +383,30 @@ mod tests {
     }
 
     #[test]
+    fn parse_float_zero_zero_fail() {
+        let mut chars = "00.1".chars().peekable();
+        let parsed = parse_numeric(&mut chars).err().unwrap();
+
+        assert_eq!(parsed, NumericParsingError)
+    }
+
+    #[test]
+    fn parse_float_zero_number_fail() {
+        let mut chars = "01.0".chars().peekable();
+        let parsed = parse_numeric(&mut chars).err().unwrap();
+
+        assert_eq!(parsed, NumericParsingError)
+    }
+
+    #[test]
+    fn parse_float_multiple_dots_fail() {
+        let mut chars = "0.0.0".chars().peekable();
+        let parsed = parse_numeric(&mut chars).err().unwrap();
+
+        assert_eq!(parsed, NumericParsingError)
+    }
+
+    #[test]
     fn parse_string_happy() {
         let mut chars = r#""string""#.chars().peekable();
         let parsed = parse_string(&mut chars).unwrap();
