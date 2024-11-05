@@ -38,18 +38,27 @@ impl FromStr for JSON {
 }
 
 /// Skips whitespaces but doesn't consume first non-whitespace character unlike `.skip_while()`
-fn skip_whitespaces(chars: &mut Peekable<impl Iterator<Item = char>>) {
-    while let Some(char) = chars.peek() {
-        if char.is_whitespace() {
-            let _ = chars.next();
-        } else {
-            break;
+trait SkipWhitespaces: Iterator<Item = char> {
+    fn skip_whitespaces(&mut self);
+}
+
+impl<I> SkipWhitespaces for Peekable<I>
+where
+    I: Iterator<Item = char>,
+{
+    fn skip_whitespaces(&mut self) {
+        while let Some(char) = self.peek() {
+            if char.is_whitespace() {
+                self.next().expect("Already peeked so should exist");
+            } else {
+                break;
+            }
         }
     }
 }
 
 fn parse(chars: &mut Peekable<impl Iterator<Item = char>>) -> Result<JSON, ParseError> {
-    skip_whitespaces(chars);
+    chars.skip_whitespaces();
 
     let result = match chars.peek() {
         Some('f') | Some('t') => {
@@ -105,6 +114,12 @@ fn parse_null(chars: &mut impl Iterator<Item = char>) -> Result<(), ParseError> 
         Err(InvalidJSON)
     }
 }
+
+// todo: write trait 'number terminated' -> bool
+// todo: write trait process '-'
+// todo: write trait process '0'
+// todo: write trait process '.'
+// todo: write trait process rest
 
 fn parse_numeric(chars: &mut Peekable<impl Iterator<Item = char>>) -> Result<JSON, ParseError> {
     let mut num_str = String::new();
@@ -201,10 +216,10 @@ fn parse_object(
     let mut hash_map = HashMap::new();
 
     loop {
-        skip_whitespaces(chars);
+        chars.skip_whitespaces();
         let key = parse_string(chars)?;
 
-        skip_whitespaces(chars);
+        chars.skip_whitespaces();
         if chars.find(|char| !char.is_whitespace()) != Some(':') {
             return Err(InvalidJSON);
         }
@@ -213,7 +228,7 @@ fn parse_object(
 
         hash_map.insert(key, value);
 
-        skip_whitespaces(chars);
+        chars.skip_whitespaces();
         match chars.peek() {
             Some(',') => {
                 chars.next();
@@ -238,13 +253,13 @@ mod tests {
     #[test]
     fn skip_whitespaces_dont_consume_char() {
         let chars = &mut " 1  2   321".chars().peekable();
-        skip_whitespaces(chars);
+        chars.skip_whitespaces();
         assert_eq!(chars.next().unwrap(), '1');
 
-        skip_whitespaces(chars);
+        chars.skip_whitespaces();
         assert_eq!(chars.next().unwrap(), '2');
 
-        skip_whitespaces(chars);
+        chars.skip_whitespaces();
         let string: String = chars.collect();
         assert_eq!("321", string);
     }
@@ -252,7 +267,7 @@ mod tests {
     #[test]
     fn skip_whitespaces_stops_on_iterator_end() {
         let chars = &mut " ".chars().peekable();
-        skip_whitespaces(chars);
+        chars.skip_whitespaces();
 
         assert!(chars.next().is_none());
     }
@@ -333,6 +348,14 @@ mod tests {
         let parsed = parse_numeric(&mut chars).unwrap();
 
         assert_eq!(parsed, JSON::Int(-123))
+    }
+
+    #[test]
+    fn parse_int_starting_zero_fail() {
+        let mut chars = "01".chars().peekable();
+        let parsed = parse_numeric(&mut chars).err().unwrap();
+
+        assert_eq!(parsed, NumericParsingError)
     }
 
     #[test]
