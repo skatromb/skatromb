@@ -23,20 +23,6 @@ impl Display for ParseError {
     }
 }
 
-impl FromStr for JSON {
-    type Err = ParseError;
-
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
-        let mut chars = s.chars().peekable();
-        let json = parse(&mut chars)?;
-
-        skip_whitespaces(&mut chars);
-        assert!(chars.peek().is_none());
-
-        Ok(json)
-    }
-}
-
 /// Skips whitespaces but doesn't consume first non-whitespace character unlike `.skip_while()`
 trait SkipWhitespaces: Iterator<Item = char> {
     fn skip_whitespaces(&mut self);
@@ -54,6 +40,20 @@ where
                 break;
             }
         }
+    }
+}
+
+impl FromStr for JSON {
+    type Err = ParseError;
+
+    fn from_str(s: &str) -> Result<Self, Self::Err> {
+        let mut chars = s.chars().peekable();
+        let json = parse(&mut chars)?;
+
+        chars.skip_whitespaces();
+        assert!(chars.peek().is_none());
+
+        Ok(json)
     }
 }
 
