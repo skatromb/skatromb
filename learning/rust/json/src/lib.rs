@@ -14,13 +14,6 @@ pub enum JSON {
     Array(Vec<JSON>),
 }
 
-impl JSON {
-    pub fn from_string(string: &str) -> Self {
-        println!("{string}");
-        todo!()
-    }
-}
-
 #[cfg(test)]
 mod tests {
     use super::*;
