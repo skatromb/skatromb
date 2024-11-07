@@ -1,8 +1,11 @@
+mod numeric;
+
+use crate::from_str::numeric::parse_numeric;
 use crate::JSON;
 use std::collections::HashMap;
 use std::fmt::Display;
 use std::iter::Peekable;
-use std::str::FromStr;
+use std::str::{Chars, FromStr};
 
 #[derive(Debug, PartialEq)]
 pub enum ParseError {
@@ -23,7 +26,7 @@ impl Display for ParseError {
     }
 }
 
-/// Skips whitespaces but doesn't consume first non-whitespace character unlike `.skip_while()`
+/// Skips whitespaces, but doesn't consume first non-whitespace character, unlike `.skip_while()`
 trait SkipWhitespaces: Iterator<Item = char> {
     fn skip_whitespaces(&mut self);
 }
@@ -57,7 +60,7 @@ impl FromStr for JSON {
     }
 }
 
-fn parse(chars: &mut Peekable<impl Iterator<Item = char>>) -> Result<JSON, ParseError> {
+fn parse(chars: &mut Peekable<Chars>) -> Result<JSON, ParseError> {
     chars.skip_whitespaces();
 
     let result = match chars.peek() {
@@ -90,7 +93,7 @@ fn parse(chars: &mut Peekable<impl Iterator<Item = char>>) -> Result<JSON, Parse
     result
 }
 
-fn parse_bool(chars: &mut Peekable<impl Iterator<Item = char>>) -> Result<bool, ParseError> {
+fn parse_bool(chars: &mut Peekable<Chars>) -> Result<bool, ParseError> {
     match chars.peek().ok_or(BooleanParsingError)? {
         't' => {
             if "true" == chars.take(4).collect::<String>() {
@@ -115,62 +118,7 @@ fn parse_null(chars: &mut impl Iterator<Item = char>) -> Result<(), ParseError> 
     }
 }
 
-// todo: write trait 'number terminated' -> bool
-// todo: write trait process '-'
-// todo: write trait process '0'
-// todo: write trait process '.'
-// todo: write trait process rest
-
-fn parse_numeric(chars: &mut Peekable<impl Iterator<Item = char>>) -> Result<JSON, ParseError> {
-    let mut num_str = String::new();
-    let mut dot_found = false;
-
-    // consume '-' if exists
-    if let Some('-') = chars.peek() {
-        let char = chars.next().expect("Peeked so should exist");
-        num_str.push(char);
-    }
-
-    // parse other chars, rely on `.parse()` errors for double '.' and other errors
-    loop {
-        let char = chars.peek();
-
-        match char {
-            Some('0'..='9') => {
-                let char = chars.next().expect("Peeked so should exist");
-                num_str.push(char);
-            }
-            Some('.') => {
-                if dot_found {
-                    return Err(NumericParsingError);
-                } else {
-                    dot_found = true;
-
-                    let char = chars.next().expect("Peeked so should exist");
-                    num_str.push(char);
-                }
-            }
-            Some(char) => {
-                if char.is_whitespace() || *char == ',' {
-                    break;
-                }
-            }
-            _ => break,
-        }
-    }
-
-    if dot_found {
-        if let Ok(float) = num_str.parse() {
-            return Ok(JSON::Float(float));
-        }
-    } else if let Ok(int) = num_str.parse() {
-        return Ok(JSON::Int(int));
-    }
-
-    Err(NumericParsingError)
-}
-
-fn parse_string(chars: &mut impl Iterator<Item = char>) -> Result<String, ParseError> {
+fn parse_string(chars: &mut Peekable<Chars>) -> Result<String, ParseError> {
     let mut string = String::new();
 
     if chars.next() != Some('"') {
@@ -207,9 +155,7 @@ fn parse_string(chars: &mut impl Iterator<Item = char>) -> Result<String, ParseE
     Ok(string)
 }
 
-fn parse_object(
-    chars: &mut Peekable<impl Iterator<Item = char>>,
-) -> Result<HashMap<String, JSON>, ParseError> {
+fn parse_object(chars: &mut Peekable<Chars>) -> Result<HashMap<String, JSON>, ParseError> {
     if chars.next() != Some('{') {
         return Err(InvalidJSON);
     }
@@ -324,86 +270,6 @@ mod tests {
         let err = parse_null(&mut chars).err().unwrap();
 
         assert_eq!(InvalidJSON, err);
-    }
-
-    #[test]
-    fn parse_int_positive_happy() {
-        let mut chars = "1".chars().peekable();
-        let parsed = parse_numeric(&mut chars).unwrap();
-
-        assert_eq!(parsed, JSON::Int(1))
-    }
-
-    #[test]
-    fn parse_int_0_happy() {
-        let mut chars = "0".chars().peekable();
-        let parsed = parse_numeric(&mut chars).unwrap();
-
-        assert_eq!(parsed, JSON::Int(0))
-    }
-
-    #[test]
-    fn parse_int_negative_happy() {
-        let mut chars = "-123".chars().peekable();
-        let parsed = parse_numeric(&mut chars).unwrap();
-
-        assert_eq!(parsed, JSON::Int(-123))
-    }
-
-    #[test]
-    fn parse_int_starting_zero_fail() {
-        let mut chars = "01".chars().peekable();
-        let parsed = parse_numeric(&mut chars).err().unwrap();
-
-        assert_eq!(parsed, NumericParsingError)
-    }
-
-    #[test]
-    fn parse_float_positive_happy() {
-        let mut chars = "1.2".chars().peekable();
-        let parsed = parse_numeric(&mut chars).unwrap();
-
-        assert_eq!(parsed, JSON::Float(1.2))
-    }
-
-    #[test]
-    fn parse_float_starting_zero_happy() {
-        let mut chars = "0.010".chars().peekable();
-        let parsed = parse_numeric(&mut chars).unwrap();
-
-        assert_eq!(parsed, JSON::Float(0.01))
-    }
-
-    #[test]
-    fn parse_float_negative_happy() {
-        let mut chars = "-123.456".chars().peekable();
-        let parsed = parse_numeric(&mut chars).unwrap();
-
-        assert_eq!(parsed, JSON::Float(-123.456))
-    }
-
-    #[test]
-    fn parse_float_zero_zero_fail() {
-        let mut chars = "00.1".chars().peekable();
-        let parsed = parse_numeric(&mut chars).err().unwrap();
-
-        assert_eq!(parsed, NumericParsingError)
-    }
-
-    #[test]
-    fn parse_float_zero_number_fail() {
-        let mut chars = "01.0".chars().peekable();
-        let parsed = parse_numeric(&mut chars).err().unwrap();
-
-        assert_eq!(parsed, NumericParsingError)
-    }
-
-    #[test]
-    fn parse_float_multiple_dots_fail() {
-        let mut chars = "0.0.0".chars().peekable();
-        let parsed = parse_numeric(&mut chars).err().unwrap();
-
-        assert_eq!(parsed, NumericParsingError)
     }
 
     #[test]
