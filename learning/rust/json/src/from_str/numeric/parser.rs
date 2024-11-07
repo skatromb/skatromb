@@ -60,7 +60,15 @@ impl<'a, 'b> NumericParser<'a, 'b> {
     }
 
     /// process '-'
-    fn process_minus(&mut self) {}
+    fn process_minus(&mut self) -> Result<(), ParseError> {
+        if let Some('-') = self.chars.peek() {
+            let char = self.chars.next().expect("Peeked so should exist");
+            self.parsed.push(char);
+            Ok(())
+        } else {
+            Err(NumericParsingError)
+        }
+    }
 }
 
 // todo: write trait process zero integer
@@ -186,5 +194,26 @@ mod tests {
         let result = parser.process_dot();
 
         assert_eq!(result.unwrap_err(), NumericParsingError);
+    }
+
+    #[test]
+    fn process_minus_happy() {
+        let mut chars = peekable("-");
+        let mut parser = NumericParser::new(&mut chars);
+
+        parser.process_minus().unwrap();
+
+        assert_eq!(parser.parsed, "-");
+        assert!(parser.chars.next().is_none());
+    }
+
+    #[test]
+    fn process_minus_fail() {
+        let mut chars = peekable("+");
+        let mut parser = NumericParser::new(&mut chars);
+
+        let error = parser.process_minus().unwrap_err();
+
+        assert_eq!(error, NumericParsingError);
     }
 }
