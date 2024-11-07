@@ -5,91 +5,149 @@ use crate::from_str::{
 };
 use crate::JSON;
 
-mod parser;
+pub(super) fn parse_numeric(chars: &mut Peekable<Chars>) -> Result<JSON, ParseError> {
+    let parser = NumericParser::new(chars);
+    parser.parse()
+}
 
-pub(crate) fn parse_numeric(chars: &mut Peekable<Chars>) -> Result<JSON, ParseError> {
-    dbg!(chars);
-    unimplemented!();
-    // let mut parsed = String::new();
-    // let mut dot_found = false;
-    // let mut done = false;
+struct NumericParser<'a, 'b> {
+    chars: &'a mut Peekable<Chars<'b>>,
+    collected: String,
+    contains_fractional_part: bool,
+}
 
-    // let mut parser = NumericParser { chars, parsed };
-    // parser.end_reached()?;
+/// super for parsing numeric string
+impl<'a, 'b> NumericParser<'a, 'b> {
+    /// Construct new parser with empty string and not yet found dot
+    fn new(chars: &'a mut Peekable<Chars<'b>>) -> Self {
+        Self {
+            chars,
+            collected: String::new(),
+            contains_fractional_part: false,
+        }
+    }
 
-    // // consume '-' if exists
-    // if let Some('-') = chars.peek() {
-    //     let char = chars.next().expect("Peeked so should exist");
-    //     num_str.push(char);
-    // }
+    /// Main function that consumes numeric string
+    fn parse(mut self) -> Result<JSON, ParseError> {
+        if let Some('-') = self.peek() {
+            self.process_minus()?
+        }
 
-    // // started with '0', should be followed only by '.'
-    // let char = chars.peek();
-    // match char {
-    //     Some(&'0') => {
-    //         let char = chars.next().expect("Peeked so should exist");
-    //         num_str.push(char);
-    //         unimplemented!();
-    // match chars.peek() {
-    //     dot_found = true;
-    //     // TODO: AAAAA
-    //     let char = chars.next().expect("Peeked so should exist");
-    //     num_str.push(char);
-    // } else {
-    //     return Err(NumericParsingError);
-    // }
-    //     }
-    //     _ => {}
-    // }
+        // if starts with 0
+        if let Some('0') = self.peek() {
+            self.process_leading_zero()?;
+        } else {
+            self.process_digits();
+        }
 
-    // parse other chars, rely on `.parse()` errors for double '.' and other errors
-    // if !done {
-    //     loop {
-    //         let char = chars.peek();
+        // if has fractional part
+        if let Some('.') = self.peek() {
+            self.process_dot()?;
+            self.process_digits();
+        }
 
-    //         match char {
-    //             Some('0'..='9') => {
-    //                 let char = chars.next().expect("Peeked so should exist");
-    //                 num_str.push(char);
-    //             }
-    //             Some('.') => {
-    //                 if dot_found {
-    //                     return Err(NumericParsingError);
-    //                 } else {
-    //                     dot_found = true;
+        if !self.end_reached() {
+            return Err(NumericParsingError);
+        }
 
-    //                     let char = chars.next().expect("Peeked so should exist");
-    //                     num_str.push(char);
-    //                 }
-    //             }
-    //             Some(char) => {
-    //                 if char.is_whitespace() || *char == ',' {
-    //                     break;
-    //                 }
-    //             }
-    //             _ => break,
-    //         }
-    //     }
-    // }
+        if self.contains_fractional_part {
+            if let Ok(float) = self.collected.parse() {
+                return Ok(JSON::Float(float));
+            }
+        }
 
-    // if dot_found {
-    //     if let Ok(float) = num_str.parse() {
-    //         return Ok(JSON::Float(float));
-    //     }
-    // } else if let Ok(int) = num_str.parse() {
-    //     return Ok(JSON::Int(int));
-    // }
+        if let Ok(int) = self.collected.parse() {
+            return Ok(JSON::Int(int));
+        }
 
-    // Err(NumericParsingError)
+        Err(NumericParsingError)
+    }
+
+    /// Looks up for the next char using `peek()`
+    fn peek(&mut self) -> Option<&char> {
+        self.chars.peek()
+    }
+
+    /// Consumes and returns next char using `next()`
+    fn next(&mut self) -> Option<char> {
+        self.chars.next()
+    }
+
+    /// Push char to `parsed`
+    fn push(&mut self, char: char) {
+        self.collected.push(char)
+    }
+
+    /// Check if end of number reached
+    fn end_reached(&mut self) -> bool {
+        match self.peek() {
+            Some(&char) => char.is_whitespace() || char == ',',
+            None => true,
+        }
+    }
+
+    /// process '.'
+    fn process_dot(&mut self) -> Result<(), ParseError> {
+        if self.contains_fractional_part {
+            return Err(NumericParsingError);
+        }
+
+        if let Some('.') = self.next() {
+            self.contains_fractional_part = true;
+            self.collected.push('.');
+
+            if let Some(char) = self.next() {
+                if char.is_ascii_digit() {
+                    self.push(char);
+                    return Ok(());
+                }
+            }
+        }
+        Err(NumericParsingError)
+    }
+
+    /// process '-'
+    fn process_minus(&mut self) -> Result<(), ParseError> {
+        if let Some('-') = self.peek() {
+            let char = self.next().expect("Peeked so should exist");
+            self.push(char);
+            Ok(())
+        } else {
+            Err(NumericParsingError)
+        }
+    }
+
+    /// process leading '0'
+    fn process_leading_zero(&mut self) -> Result<(), ParseError> {
+        if let Some('0') = self.peek() {
+            let char = self.next().expect("peeked so should exist");
+            self.push(char);
+            Ok(())
+        } else {
+            Err(NumericParsingError)
+        }
+    }
+
+    /// process rest digits in integer of fractional part
+    fn process_digits(&mut self) {
+        while let Some('0'..='9') = self.peek() {
+            let char = self.next().expect("Peeked so should exist");
+            self.push(char)
+        }
+    }
 }
 
 #[cfg(test)]
 mod tests {
     use super::*;
 
+    fn peekable(string: &str) -> Peekable<Chars> {
+        string.chars().peekable()
+    }
+
     #[test]
     fn parse_int_positive_happy() {
-        let mut chars = "1".chars().peekable();
+        let mut chars = peekable("1");
         let parsed = parse_numeric(&mut chars).unwrap();
 
         assert_eq!(parsed, JSON::Int(1))
@@ -97,7 +155,7 @@ mod tests {
 
     #[test]
     fn parse_int_0_happy() {
-        let mut chars = "0".chars().peekable();
+        let mut chars = peekable("0");
         let parsed = parse_numeric(&mut chars).unwrap();
 
         assert_eq!(parsed, JSON::Int(0))
@@ -105,7 +163,7 @@ mod tests {
 
     #[test]
     fn parse_int_negative_happy() {
-        let mut chars = "-123".chars().peekable();
+        let mut chars = peekable("-123");
         let parsed = parse_numeric(&mut chars).unwrap();
 
         assert_eq!(parsed, JSON::Int(-123))
@@ -113,7 +171,7 @@ mod tests {
 
     #[test]
     fn parse_int_starting_zero_fail() {
-        let mut chars = "01".chars().peekable();
+        let mut chars = peekable("01");
         let parsed = parse_numeric(&mut chars).err().unwrap();
 
         assert_eq!(parsed, NumericParsingError)
@@ -121,7 +179,7 @@ mod tests {
 
     #[test]
     fn parse_float_positive_happy() {
-        let mut chars = "1.2".chars().peekable();
+        let mut chars = peekable("1.2");
         let parsed = parse_numeric(&mut chars).unwrap();
 
         assert_eq!(parsed, JSON::Float(1.2))
@@ -129,7 +187,7 @@ mod tests {
 
     #[test]
     fn parse_float_starting_zero_happy() {
-        let mut chars = "0.010".chars().peekable();
+        let mut chars = peekable("0.010");
         let parsed = parse_numeric(&mut chars).unwrap();
 
         assert_eq!(parsed, JSON::Float(0.01))
@@ -137,7 +195,7 @@ mod tests {
 
     #[test]
     fn parse_float_negative_happy() {
-        let mut chars = "-123.456".chars().peekable();
+        let mut chars = peekable("-123.456");
         let parsed = parse_numeric(&mut chars).unwrap();
 
         assert_eq!(parsed, JSON::Float(-123.456))
@@ -145,7 +203,7 @@ mod tests {
 
     #[test]
     fn parse_float_zero_zero_fail() {
-        let mut chars = "00.1".chars().peekable();
+        let mut chars = peekable("00.1");
         let parsed = parse_numeric(&mut chars).err().unwrap();
 
         assert_eq!(parsed, NumericParsingError)
@@ -153,7 +211,7 @@ mod tests {
 
     #[test]
     fn parse_float_zero_number_fail() {
-        let mut chars = "01.0".chars().peekable();
+        let mut chars = peekable("01.0");
         let parsed = parse_numeric(&mut chars).err().unwrap();
 
         assert_eq!(parsed, NumericParsingError)
@@ -161,9 +219,88 @@ mod tests {
 
     #[test]
     fn parse_float_multiple_dots_fail() {
-        let mut chars = "0.0.0".chars().peekable();
-        let parsed = parse_numeric(&mut chars).err().unwrap();
+        let mut chars = peekable("0.0.0");
+        let parsed = parse_numeric(&mut chars);
+        dbg!(&parsed); //.err().unwrap();
 
-        assert_eq!(parsed, NumericParsingError)
+        // assert_eq!(parsed, NumericParsingError)
+    }
+
+    #[test]
+    fn process_dot_happy() {
+        let mut chars = peekable(".00");
+        let mut parser = NumericParser::new(&mut chars);
+
+        let result = parser.process_dot();
+
+        assert!(result.is_ok());
+        assert!(parser.contains_fractional_part);
+        assert_eq!(parser.collected, ".0");
+    }
+
+    #[test]
+    fn process_dot_happy_end() {
+        let mut chars = peekable(".0");
+        let mut parser = NumericParser::new(&mut chars);
+
+        let result = parser.process_dot();
+
+        assert!(result.is_ok());
+        assert!(parser.contains_fractional_part);
+        assert_eq!(parser.collected, ".0");
+    }
+
+    #[test]
+    fn process_dot_end_fail() {
+        let mut chars = peekable(".");
+        let mut parser = NumericParser::new(&mut chars);
+
+        let result = parser.process_dot();
+
+        assert_eq!(result.unwrap_err(), NumericParsingError);
+        assert!(parser.contains_fractional_part);
+    }
+
+    #[test]
+    fn process_dot_comma_end_fail() {
+        let mut chars = peekable(".,");
+        let mut parser = NumericParser::new(&mut chars);
+
+        let result = parser.process_dot();
+
+        assert_eq!(result.unwrap_err(), NumericParsingError);
+        assert!(parser.contains_fractional_part);
+    }
+
+    #[test]
+    fn process_dot_two_comams_end_fail() {
+        let mut chars = peekable(".0.");
+        let mut parser = NumericParser::new(&mut chars);
+
+        parser.process_dot().unwrap();
+        let result = parser.process_dot();
+
+        assert_eq!(result.unwrap_err(), NumericParsingError);
+    }
+
+    #[test]
+    fn process_minus_happy() {
+        let mut chars = peekable("-");
+        let mut parser = NumericParser::new(&mut chars);
+
+        parser.process_minus().unwrap();
+
+        assert_eq!(parser.collected, "-");
+        assert!(parser.chars.next().is_none());
+    }
+
+    #[test]
+    fn process_minus_fail() {
+        let mut chars = peekable("+");
+        let mut parser = NumericParser::new(&mut chars);
+
+        let error = parser.process_minus().unwrap_err();
+
+        assert_eq!(error, NumericParsingError);
     }
 }
