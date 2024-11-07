@@ -10,13 +10,13 @@ pub(super) fn parse_numeric(chars: &mut Peekable<Chars>) -> Result<JSON, ParseEr
     parser.parse()
 }
 
+/// struct for parsing numeric string
 struct NumericParser<'a, 'b> {
     chars: &'a mut Peekable<Chars<'b>>,
     collected: String,
     contains_fractional_part: bool,
 }
 
-/// super for parsing numeric string
 impl<'a, 'b> NumericParser<'a, 'b> {
     /// Construct new parser with empty string and not yet found dot
     fn new(chars: &'a mut Peekable<Chars<'b>>) -> Self {
@@ -221,9 +221,8 @@ mod tests {
     fn parse_float_multiple_dots_fail() {
         let mut chars = peekable("0.0.0");
         let parsed = parse_numeric(&mut chars);
-        dbg!(&parsed); //.err().unwrap();
 
-        // assert_eq!(parsed, NumericParsingError)
+        assert_eq!(parsed, Err(NumericParsingError))
     }
 
     #[test]
