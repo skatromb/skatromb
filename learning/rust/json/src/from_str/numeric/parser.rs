@@ -46,6 +46,7 @@ impl<'a, 'b> NumericParser<'a, 'b> {
         }
 
         if let Some('.') = self.chars.next() {
+            self.dot_found = true;
             self.parsed.push('.');
 
             if let Some(char) = self.chars.next() {
@@ -70,9 +71,13 @@ impl<'a, 'b> NumericParser<'a, 'b> {
 mod tests {
     use super::*;
 
+    fn peekable(string: &str) -> Peekable<Chars> {
+        string.chars().peekable()
+    }
+
     #[test]
     fn end_reached_fail() {
-        let mut chars = "a".chars().peekable();
+        let mut chars = peekable("a");
         let error = NumericParser::end_reached(chars.peek()).unwrap_err();
 
         assert_eq!(error, NumericParsingError);
@@ -80,7 +85,7 @@ mod tests {
 
     #[test]
     fn end_reached_eof() {
-        let mut chars = "".chars().peekable();
+        let mut chars = peekable("");
         let is_end = NumericParser::end_reached(chars.peek()).unwrap();
 
         assert!(is_end);
@@ -88,7 +93,7 @@ mod tests {
 
     #[test]
     fn end_reached_symbols_left() {
-        let mut chars = "1".chars().peekable();
+        let mut chars = peekable("1");
         let is_end = NumericParser::end_reached(chars.peek()).unwrap();
 
         assert!(!is_end);
@@ -96,7 +101,7 @@ mod tests {
 
     #[test]
     fn end_reached_whitespace() {
-        let mut chars = " ".chars().peekable();
+        let mut chars = peekable(" ");
         let is_end = NumericParser::end_reached(chars.peek()).unwrap();
 
         assert!(is_end);
@@ -104,7 +109,7 @@ mod tests {
 
     #[test]
     fn end_reached_comma() {
-        let mut chars = ",".chars().peekable();
+        let mut chars = peekable(",");
         let is_end = NumericParser::end_reached(chars.peek()).unwrap();
 
         assert!(is_end);
@@ -112,7 +117,7 @@ mod tests {
 
     #[test]
     fn end_reached_dot() {
-        let mut chars = ".".chars().peekable();
+        let mut chars = peekable(".");
         let is_end = NumericParser::end_reached(chars.peek()).unwrap();
 
         assert!(!is_end);
@@ -120,9 +125,66 @@ mod tests {
 
     #[test]
     fn end_reached_digit() {
-        let mut chars = "0".chars().peekable();
+        let mut chars = peekable("0");
         let is_end = NumericParser::end_reached(chars.peek()).unwrap();
 
         assert!(!is_end);
+    }
+
+    #[test]
+    fn process_dot_happy() {
+        let mut chars = peekable(".00");
+        let mut parser = NumericParser::new(&mut chars);
+
+        let result = parser.process_dot();
+
+        assert!(result.is_ok());
+        assert!(parser.dot_found);
+        assert_eq!(parser.parsed, ".0");
+    }
+
+    #[test]
+    fn process_dot_happy_end() {
+        let mut chars = peekable(".0");
+        let mut parser = NumericParser::new(&mut chars);
+
+        let result = parser.process_dot();
+
+        assert!(result.is_ok());
+        assert!(parser.dot_found);
+        assert_eq!(parser.parsed, ".0");
+    }
+
+    #[test]
+    fn process_dot_end_fail() {
+        let mut chars = peekable(".");
+        let mut parser = NumericParser::new(&mut chars);
+
+        let result = parser.process_dot();
+
+        assert_eq!(result.unwrap_err(), NumericParsingError);
+        assert!(parser.dot_found);
+    }
+
+    #[test]
+    fn process_dot_comma_end_fail() {
+        let mut chars = peekable(".,");
+        let mut parser = NumericParser::new(&mut chars);
+
+        let result = parser.process_dot();
+
+        assert_eq!(result.unwrap_err(), NumericParsingError);
+        assert!(parser.dot_found);
+    }
+
+    #[test]
+    fn process_dot_two_comams_end_fail() {
+        let mut chars = peekable(".0.");
+        let mut parser = NumericParser::new(&mut chars);
+
+        parser.process_dot().unwrap();
+        let result = parser.process_dot();
+
+        assert_eq!(result.unwrap_err(), NumericParsingError);
     }
 }
