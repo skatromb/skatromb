@@ -54,16 +54,18 @@ impl FromStr for JSON {
         let json = parse(&mut chars)?;
 
         chars.skip_whitespaces();
-        assert!(chars.peek().is_none());
+        if chars.peek().is_none() {
+            return Ok(json);
+        }
 
-        Ok(json)
+        Err(InvalidJSON)
     }
 }
 
 fn parse(chars: &mut Peekable<Chars>) -> Result<JSON, ParseError> {
     chars.skip_whitespaces();
 
-    let result = match chars.peek() {
+    match chars.peek() {
         Some('f') | Some('t') => {
             let boolean = parse_bool(chars)?;
             Ok(JSON::Bool(boolean))
@@ -76,7 +78,6 @@ fn parse(chars: &mut Peekable<Chars>) -> Result<JSON, ParseError> {
 
         Some('"') => {
             let string = parse_string(chars)?;
-
             Ok(JSON::String(string))
         }
 
@@ -87,10 +88,13 @@ fn parse(chars: &mut Peekable<Chars>) -> Result<JSON, ParseError> {
             Ok(JSON::Object(object))
         }
 
-        _ => Err(InvalidJSON),
-    };
+        Some('[') => {
+            let arr = parse_array(chars)?;
+            Ok(JSON::Array(arr))
+        }
 
-    result
+        _ => Err(InvalidJSON),
+    }
 }
 
 fn parse_bool(chars: &mut Peekable<Chars>) -> Result<bool, ParseError> {
@@ -127,7 +131,6 @@ fn parse_string(chars: &mut Peekable<Chars>) -> Result<String, ParseError> {
 
     loop {
         let char = chars.next().ok_or(UnclosedStringLiteral)?;
-        dbg!(char);
 
         match char {
             '"' => break,
@@ -150,7 +153,6 @@ fn parse_string(chars: &mut Peekable<Chars>) -> Result<String, ParseError> {
             _ => string.push(char),
         }
     }
-    dbg!(&string);
 
     Ok(string)
 }
@@ -189,6 +191,10 @@ fn parse_object(chars: &mut Peekable<Chars>) -> Result<HashMap<String, JSON>, Pa
             }
         }
     }
+}
+
+fn parse_array(chars: &mut Peekable<Chars>) -> Result<Vec<JSON>, ParseError> {
+    unimplemented!()
 }
 
 #[cfg(test)]
