@@ -204,24 +204,20 @@ fn parse_array(chars: &mut Peekable<Chars>) -> Result<Vec<JSON>, ParseError> {
 
     loop {
         chars.skip_whitespaces();
-
-        let value = parse(chars)?;
-
-        array.push(value);
-
-        chars.skip_whitespaces();
-        match chars.peek() {
-            Some(',') => {
-                chars.next();
-                continue;
-            }
+        let value = match chars.peek() {
             Some(']') => {
                 chars.next();
                 return Ok(array);
             }
-            _ => {
-                return Err(UnclosedArrayLiteral);
-            }
+            _ => parse(chars)?,
+        };
+
+        array.push(value);
+
+        chars.skip_whitespaces();
+        if let Some(',') = chars.peek() {
+            chars.next();
+            continue;
         }
     }
 }
@@ -254,6 +250,98 @@ mod tests {
         chars.skip_whitespaces();
 
         assert!(chars.next().is_none());
+    }
+
+    /// Returns `JSON::Object`, corresponding to JSON
+    /// `{"null": null, "boolean": true, "integer": 123, "float": 1234.56789,
+    /// "string": "Hello, world!"}`
+    fn diverse_hash_map() -> HashMap<String, JSON> {
+        let mut map = HashMap::new();
+
+        map.insert("null".to_string(), JSON::Null);
+        map.insert("boolean".to_string(), JSON::Bool(true));
+        map.insert("integer".to_string(), JSON::Int(123));
+        map.insert("float".to_string(), JSON::Float(1234.56789));
+        map.insert(
+            "string".to_string(),
+            JSON::String("Hello, world!".to_string()),
+        );
+
+        map
+    }
+
+    /// Creates `JSON::Array` corresponding to JSON
+    /// `[null, true, 123, 1234.56789, "Hello, world!"]`
+    fn diverse_array() -> Vec<JSON> {
+        vec![
+            JSON::Null,
+            JSON::Bool(true),
+            JSON::Int(123),
+            JSON::Float(1234.56789),
+            JSON::String("Hello, world!".to_string()),
+        ]
+    }
+
+    /// Creates JSON::Objct that combines `diverse_hash_map` and `diverse_array`
+    ///
+    /// `{"null": null, "boolean": true, "integer": 123, "float": 1234.56789,
+    /// "string": "Hello, world!",
+    /// "array": [null, true, 123, 1234.56789, "Hello, world!"],
+    /// "nested_object": {"null": null, "boolean": true, "integer": 123, "float": 1234.56789,
+    /// "string": "Hello, world!"}
+    /// }`
+    fn diverse_json() -> JSON {
+        let mut map = diverse_hash_map();
+
+        map.insert("array".to_string(), JSON::Array(diverse_array()));
+        map.insert(
+            "nested_object".to_string(),
+            JSON::Object(diverse_hash_map()),
+        );
+
+        JSON::Object(map)
+    }
+
+    #[test]
+    fn parse_diverse_json() {
+        let json = diverse_json();
+
+        match &json {
+            JSON::Object(json) => {
+                assert_eq!(json.len(), 7);
+            }
+            _ => panic!("Test JSON should be JSON Object at the top level!"),
+        }
+
+        let mut json_string = peekable(
+            r#"
+            {
+                "null": null,
+                "boolean": true,
+                "integer": 123,
+                "float": 1234.56789,
+                "string": "Hello, world!",
+                "nested_object": {
+                    "null": null,
+                    "boolean": true,
+                    "integer": 123,
+                    "float": 1234.56789,
+                    "string": "Hello, world!"
+                },
+                "array": [
+                    null,
+                    true,
+                    123,
+                    1234.56789,
+                    "Hello, world!"
+                ]
+            }
+            "#,
+        );
+
+        let parsed = parse(&mut json_string).unwrap();
+
+        assert_eq!(parsed, json);
     }
 
     #[test]
@@ -370,9 +458,30 @@ mod tests {
     }
 
     #[test]
-    fn parse_array_happy() {
-        let mut chars = peekable(r#"[1, "a", {"key": "value"}]"#);
+    fn parse_array_diverse() {
+        let array = diverse_array();
+        let mut chars = peekable(
+            r#"[
+                null,
+                true,
+                123,
+                1234.56789,
+                "Hello, world!"
+            ]"#,
+        );
 
-        let parsed = parse_array(&mut chars);
+        let parsed = parse_array(&mut chars).unwrap();
+
+        assert_eq!(parsed, array);
+    }
+
+    #[test]
+    fn parse_array_empty_happy() {
+        let mut chars = peekable("[]");
+        let array = vec![];
+
+        let parsed = parse_array(&mut chars).unwrap();
+
+        assert_eq!(parsed, array);
     }
 }
