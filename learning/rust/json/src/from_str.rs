@@ -161,11 +161,21 @@ fn parse_object(chars: &mut Peekable<Chars>) -> Result<HashMap<String, JSON>, Pa
     if chars.next() != Some('{') {
         return Err(InvalidJSON);
     }
+
     let mut hash_map = HashMap::new();
 
     loop {
         chars.skip_whitespaces();
-        let key = parse_string(chars)?;
+        let key = match chars.peek() {
+            Some('"') => parse_string(chars)?,
+            Some('}') => {
+                chars.next();
+                return Ok(hash_map);
+            }
+            _ => {
+                return Err(UnclosedObjectLiteral);
+            }
+        };
 
         chars.skip_whitespaces();
         if chars.find(|char| !char.is_whitespace()) != Some(':') {
