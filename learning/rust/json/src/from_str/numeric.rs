@@ -140,10 +140,7 @@ impl<'a, 'b> NumericParser<'a, 'b> {
 #[cfg(test)]
 mod tests {
     use super::*;
-
-    fn peekable(string: &str) -> Peekable<Chars> {
-        string.chars().peekable()
-    }
+    use crate::from_str::tests::peekable;
 
     #[test]
     fn parse_int_positive_happy() {
