@@ -96,9 +96,8 @@ impl<'a, 'b> NumericParser<'a, 'b> {
             self.contains_fractional_part = true;
             self.collected.push('.');
 
-            if let Some(char) = self.next() {
+            if let Some(&char) = self.peek() {
                 if char.is_ascii_digit() {
-                    self.push(char);
                     return Ok(());
                 }
             }
@@ -231,19 +230,20 @@ mod tests {
 
         assert!(result.is_ok());
         assert!(parser.contains_fractional_part);
-        assert_eq!(parser.collected, ".0");
+        assert_eq!(parser.collected, ".");
     }
 
     #[test]
     fn process_dot_happy_end() {
-        let mut chars = peekable(".0");
+        let mut chars = peekable(".00");
         let mut parser = NumericParser::new(&mut chars);
 
-        let result = parser.process_dot();
+        let dot_process_result = parser.process_dot();
+        parser.process_digits();
 
-        assert!(result.is_ok());
+        assert!(dot_process_result.is_ok());
         assert!(parser.contains_fractional_part);
-        assert_eq!(parser.collected, ".0");
+        assert_eq!(parser.collected, ".00");
     }
 
     #[test]
