@@ -67,14 +67,14 @@ fn parse(chars: &mut Peekable<Chars>) -> Result<JSON, ParseError> {
     chars.skip_whitespaces();
 
     match chars.peek() {
-        Some('f') | Some('t') => {
-            let boolean = parse_bool(chars)?;
-            Ok(JSON::Bool(boolean))
-        }
-
         Some('n') => {
             parse_null(chars)?;
             Ok(JSON::Null)
+        }
+
+        Some('f') | Some('t') => {
+            let boolean = parse_bool(chars)?;
+            Ok(JSON::Bool(boolean))
         }
 
         Some('"') => {
@@ -211,6 +211,7 @@ fn parse_array(chars: &mut Peekable<Chars>) -> Result<Vec<JSON>, ParseError> {
             }
             _ => parse(chars)?,
         };
+        // todo: check that Err will be returned in case of unclosed array
 
         array.push(value);
 
@@ -412,6 +413,14 @@ mod tests {
         let parsed = parse_string(&mut chars).unwrap();
 
         assert_eq!(parsed, "string")
+    }
+
+    #[test]
+    fn parse_string_empty() {
+        let mut chars = peekable(r#""""#);
+        let parsed = parse_string(&mut chars).unwrap();
+
+        assert_eq!(parsed, "")
     }
 
     #[test]
