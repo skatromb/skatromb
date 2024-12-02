@@ -1,15 +1,16 @@
+install avira manually
+
 ## Common
 brew "mas"
 mas "AdblockPro", id: 1018301773
-mas "Disk Space Analyzer: Inspector" id: 446243721
+mas "Disk Space Analyzer: Inspector", id: 446243721
 mas "Keynote", id: 409183694
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
-mas "Unarchiver" id: 425424353
-cask "avira-antivirus"
+mas "Unarchiver", id: 425424353
+mas "Perplexity: Ask Anything", id: 6714467650
 cask "browserosaurus"
 cask "deepl"
-cask "hiddenbar"
 cask "iina"
 cask "keyboardcleantool"
 cask "monitorcontrol"
@@ -19,22 +20,17 @@ cask "spotify"
 cask "sublime-text"
 cask "webtorrent"
 
-## Games
-cask "steam"
-
 ## Develop
 mas "Xcode", id: 497799835
 brew "pre-commit"
-cask "docker"
+cask "orbstack"
 cask "google-chrome"
 cask "pycharm"
+cask "zed"
 
-## Fishbrain
-brew "awscli"
-brew "chamber"
+## Work
 cask "google-cloud-sdk"
 cask "1Password"
-cask "aws-vpn-client"
 cask "slack"
 
 # doc on Brewfile: https://github.com/Homebrew/homebrew-bundle
