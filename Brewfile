@@ -32,5 +32,6 @@ cask "zed"
 cask "google-cloud-sdk"
 cask "1Password"
 cask "slack"
+cask "awscli"
 
 # doc on Brewfile: https://github.com/Homebrew/homebrew-bundle
