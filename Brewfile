@@ -1,6 +1,6 @@
 install avira manually
 
-## Common
+# Common
 brew "mas"
 mas "AdblockPro", id: 1018301773
 mas "Disk Space Analyzer: Inspector", id: 446243721
@@ -21,7 +21,7 @@ cask "spotify"
 cask "sublime-text"
 cask "webtorrent"
 
-## Develop
+# Develop
 mas "Xcode", id: 497799835
 brew "pre-commit"
 cask "orbstack"
@@ -29,7 +29,8 @@ cask "google-chrome"
 cask "pycharm"
 cask "zed"
 
-## Work
+# Work
+brew "asdf"
 cask "google-cloud-sdk"
 cask "1Password"
 cask "slack"
