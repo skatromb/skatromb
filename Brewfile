@@ -9,6 +9,7 @@ mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
 mas "Unarchiver", id: 425424353
 mas "Perplexity: Ask Anything", id: 6714467650
+cask "bankid"
 cask "browserosaurus"
 cask "deepl"
 cask "iina"
