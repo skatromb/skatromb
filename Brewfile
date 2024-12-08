@@ -15,10 +15,11 @@ cask "deepl"
 cask "iina"
 cask "keyboardcleantool"
 cask "monitorcontrol"
-cask "telegram"
+cask "openvpn-connect"
 cask "signal"
 cask "spotify"
 cask "sublime-text"
+cask "telegram"
 cask "webtorrent"
 
 # Develop
