@@ -1,4 +1,4 @@
-install avira manually
+open -a Safari https://www.avira.com/en/start-download/product/1765
 
 # Common
 brew "mas"
