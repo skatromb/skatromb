@@ -24,11 +24,13 @@ cask "webtorrent"
 
 # Develop
 mas "Xcode", id: 497799835
-brew "pre-commit"
-cask "orbstack"
 cask "google-chrome"
-cask "pycharm"
 cask "zed"
+# Docker
+brew "docker"
+brew "docker-completion"
+brew "docker-compose"
+brew "colima"
 
 # Work
 brew "asdf"
