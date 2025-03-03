@@ -2,7 +2,7 @@ open -a Safari https://www.avira.com/en/start-download/product/1765
 
 # Common
 brew "mas"
-mas "AdblockPro", id: 1018301773
+mas "AdBlock", id: 1402042596
 mas "Disk Space Analyzer: Inspector", id: 446243721
 mas "Keynote", id: 409183694
 mas "Numbers", id: 409203825
