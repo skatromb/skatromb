@@ -1,0 +1,198 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  //
+  // Few random convenient settings
+  //
+  "icon_theme": "Material Icon Theme",
+  "base_keymap": "VSCode",
+  "autosave": { "after_delay": { "milliseconds": 200 } },
+  "git": {
+    // Disable inline git blame on click on code line
+    "inline_blame": {
+      "enabled": false
+    }
+  },
+  "auto_signature_help": true,
+  "inline_code_actions": false,
+  "auto_install_extensions": {
+    "Catpuccin Icons": true
+  },
+
+  //
+  // Appearance
+  //
+  "hover_popover_delay": 1000, // don't spam with function signature pop-up
+  "theme": {
+    "mode": "system",
+    "light": "One Light",
+    "dark": "One Dark"
+  },
+  "buffer_font_size": 13,
+  "buffer_font_family": "JetBrains Mono NL",
+  "inlay_hints": { "toggle_on_modifiers_press": { "control": true } }, // convenient to highlight types
+
+  //
+  // Bars
+  //
+  "title_bar": {
+    "show_branch_name": true,
+    "show_project_items": true,
+    "show_onboarding_banner": false,
+    "show_user_picture": false,
+    "show_sign_in": false,
+    "show_menus": false
+  },
+
+  "toolbar": {
+    "breadcrumbs": false,
+    "quick_actions": false,
+    "selections_menu": true,
+    "agent_review": true,
+    "code_actions": false
+  },
+
+  "outline_panel": {
+    "button": false,
+    "dock": "right"
+  },
+  "git_panel": {
+    "button": false,
+    "dock": "right"
+  },
+
+  "tab_bar": {
+    "show": true,
+    "show_nav_history_buttons": false,
+    "show_tab_bar_buttons": false
+  },
+  "status_bar": {
+    "active_language_button": false
+  },
+  "collaboration_panel": { "button": false },
+  "project_panel": {
+    "button": false,
+    "dock": "right"
+  },
+  "diagnostics": { "button": true },
+  "search": { "button": false },
+  "terminal": {
+    "button": false
+  },
+  "debugger": { "button": false },
+  "notification_panel": { "button": false },
+  "global_lsp_settings": { "button": false },
+
+  "gutter": {
+    "line_numbers": true,
+    "runnables": false,
+    "breakpoints": false,
+    "folds": false,
+    "min_line_number_digits": 3
+  },
+
+  //
+  // LSPs
+  //
+  "lsp": {
+    "pylsp": {
+      "settings": {
+        "plugins": {
+          "pylsp_mypy": {
+            "live_mode": true,
+            "enabled": true,
+            "exclude": "tests/"
+            // "strict": true
+          }
+        }
+      }
+    },
+    "rust-analyzer": {
+      "initialization_options": {
+        "check": {
+          "command": "clippy"
+        }
+      }
+    },
+    "pyright": {
+      "settings": {
+        "python.analysis": {
+          "diagnosticMode": "workspace"
+          // "typeCheckingMode": "strict"
+        }
+      }
+    }
+  },
+  "languages": {
+    "Markdown": {
+      "show_edit_predictions": false
+    },
+    "Python": {
+      "language_servers": ["pyright", "ruff", "pylsp"]
+    },
+    "TypeScript": {
+      "language_servers": ["deno"],
+      "formatter": "language_server"
+    },
+    "TSX": {
+      "language_servers": ["deno"]
+    },
+    "SQL": {
+      "tab_size": 2,
+      "format_on_save": "off"
+    },
+    "YAML": {
+      "show_edit_predictions": true,
+      "tab_size": 2
+    },
+    "Terraform": {
+      "tab_size": 2
+    }
+  },
+  "edit_predictions": {
+    "disabled_globs": ["**"],
+    "mode": "subtle",
+    "enabled_in_text_threads": false
+  },
+
+  //
+  // Agent
+  //
+  "agent": {
+    "profiles": {
+      "ask": {
+        "name": "Ask",
+        "tools": {
+          "contents": true,
+          "diagnostics": true,
+          "fetch": true,
+          "list_directory": true,
+          "project_notifications": false,
+          "now": true,
+          "find_path": true,
+          "read_file": true,
+          "open": true,
+          "grep": true,
+          "terminal": true,
+          "thinking": true,
+          "web_search": true
+        },
+        "enable_all_context_servers": false,
+        "context_servers": {}
+      }
+    },
+    "always_allow_tool_actions": false,
+    "button": false,
+    "default_profile": "ask",
+    "default_model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-latest"
+    }
+  }
+}
