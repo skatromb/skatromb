@@ -21,6 +21,16 @@
       "cmd-shift-b": "git::Blame"
     }
   },
+  {
+    "bindings": {
+      "cmd-alt-,": "zed::OpenProjectSettings"
+    }
+  },
+  {
+    "bindings": {
+      "cmd-?": "agent::ToggleFocus"
+    }
+  },
 
   // Next bindings add fast access to all Docks
   {

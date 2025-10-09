@@ -19,7 +19,7 @@
       "enabled": false
     }
   },
-  "auto_signature_help": true,
+  "auto_signature_help": false,
   "inline_code_actions": false,
   "auto_install_extensions": {
     "Catpuccin Icons": true
@@ -165,6 +165,10 @@
   // Agent
   //
   "agent": {
+    "inline_assistant_model": {
+      "provider": "google",
+      "model": "gemini-2.5-flash"
+    },
     "profiles": {
       "ask": {
         "name": "Ask",
@@ -191,8 +195,8 @@
     "button": false,
     "default_profile": "ask",
     "default_model": {
-      "provider": "anthropic",
-      "model": "claude-sonnet-4-latest"
+      "provider": "google",
+      "model": "gemini-2.5-pro"
     }
   }
 }
