@@ -10,32 +10,56 @@
   //
   // Few random convenient settings
   //
+  "tab_size": 4,
+  "agent_servers": {
+    "opencode": {
+      "default_model": "anthropic/claude-sonnet-4-6",
+      "default_mode": "plan",
+      "type": "extension",
+      "favorite_models": [
+        "anthropic/claude-sonnet-4-6",
+        "anthropic/claude-opus-4-6",
+        "google/gemini-3-flash-preview",
+        "google/gemini-3-pro-preview",
+      ],
+    },
+    "claude": {
+      "default_mode": "plan",
+    },
+    "gemini": {
+      "default_mode": "plan",
+    },
+  },
+  "confirm_quit": true,
+  "when_closing_with_no_tabs": "keep_window_open",
   "icon_theme": "Material Icon Theme",
   "base_keymap": "VSCode",
   "autosave": { "after_delay": { "milliseconds": 200 } },
   "git": {
     // Disable inline git blame on click on code line
     "inline_blame": {
-      "enabled": false
-    }
+      "enabled": false,
+    },
   },
   "auto_signature_help": false,
   "inline_code_actions": false,
   "auto_install_extensions": {
-    "Catpuccin Icons": true
+    "Catpuccin Icons": true,
   },
 
   //
   // Appearance
   //
-  "hover_popover_delay": 1000, // don't spam with function signature pop-up
+  "hover_popover_enabled": false, // show it on a hotkey instead
+  "hover_popover_delay": 1000,
   "theme": {
     "mode": "system",
     "light": "One Light",
-    "dark": "One Dark"
+    "dark": "One Dark",
   },
   "buffer_font_size": 13,
   "buffer_font_family": "JetBrains Mono NL",
+  "buffer_line_height": "standard",
   "inlay_hints": { "toggle_on_modifiers_press": { "control": true } }, // convenient to highlight types
 
   //
@@ -47,43 +71,44 @@
     "show_onboarding_banner": false,
     "show_user_picture": false,
     "show_sign_in": false,
-    "show_menus": false
+    "show_menus": false,
   },
 
   "toolbar": {
-    "breadcrumbs": false,
+    "breadcrumbs": true,
     "quick_actions": false,
     "selections_menu": true,
     "agent_review": true,
-    "code_actions": false
+    "code_actions": false,
   },
 
   "outline_panel": {
     "button": false,
-    "dock": "right"
+    "dock": "right",
   },
   "git_panel": {
+    "tree_view": true,
     "button": false,
-    "dock": "right"
+    "dock": "right",
   },
 
   "tab_bar": {
     "show": true,
     "show_nav_history_buttons": false,
-    "show_tab_bar_buttons": false
+    "show_tab_bar_buttons": false,
   },
   "status_bar": {
-    "active_language_button": false
+    "active_language_button": false,
   },
   "collaboration_panel": { "button": false },
   "project_panel": {
     "button": false,
-    "dock": "right"
+    "dock": "right",
   },
   "diagnostics": { "button": true },
   "search": { "button": false },
   "terminal": {
-    "button": false
+    "button": false,
   },
   "debugger": { "button": false },
   "notification_panel": { "button": false },
@@ -94,7 +119,7 @@
     "runnables": false,
     "breakpoints": false,
     "folds": false,
-    "min_line_number_digits": 3
+    "min_line_number_digits": 3,
   },
 
   //
@@ -107,67 +132,105 @@
           "pylsp_mypy": {
             "live_mode": true,
             "enabled": true,
-            "exclude": "tests/"
+            "exclude": "tests/",
             // "strict": true
-          }
-        }
-      }
+          },
+        },
+      },
     },
     "rust-analyzer": {
       "initialization_options": {
+        "rustc": {
+          "source": "discover",
+        },
         "check": {
-          "command": "clippy"
-        }
-      }
+          "command": "clippy",
+        },
+      },
     },
     "pyright": {
       "settings": {
         "python.analysis": {
-          "diagnosticMode": "workspace"
+          "diagnosticMode": "workspace",
           // "typeCheckingMode": "strict"
-        }
-      }
-    }
+        },
+      },
+    },
   },
   "languages": {
-    "Markdown": {
-      "show_edit_predictions": false
-    },
     "Python": {
-      "language_servers": ["pyright", "ruff", "pylsp"]
-    },
-    "TypeScript": {
-      "language_servers": ["deno"],
-      "formatter": "language_server"
-    },
-    "TSX": {
-      "language_servers": ["deno"]
+      "language_servers": ["pyright", "ruff", "pylsp"],
     },
     "SQL": {
       "tab_size": 2,
-      "format_on_save": "off"
+      "format_on_save": "off",
     },
+    "JSON": {
+      "tab_size": 2,
+    },
+    "JSONC": { "tab_size": 2 },
     "YAML": {
-      "show_edit_predictions": true,
-      "tab_size": 2
+      "tab_size": 2,
     },
     "Terraform": {
-      "tab_size": 2
-    }
+      "tab_size": 2,
+    },
   },
   "edit_predictions": {
     "disabled_globs": ["**"],
     "mode": "subtle",
-    "enabled_in_text_threads": false
+    "enabled_in_text_threads": false,
   },
 
   //
   // Agent
   //
   "agent": {
+    "favorite_models": [
+      {
+        "provider": "anthropic",
+        "model": "claude-opus-4-6-latest",
+        "enable_thinking": false,
+      },
+      {
+        "provider": "anthropic",
+        "model": "claude-sonnet-4-6-latest",
+        "enable_thinking": false,
+      },
+      {
+        "provider": "google",
+        "model": "gemini-3.1-pro-preview",
+        "enable_thinking": false,
+      },
+      {
+        "provider": "google",
+        "model": "gemini-3-flash-preview",
+        "enable_thinking": false,
+      },
+    ],
+    "tool_permissions": {
+      "tools": {
+        "create_directory": {
+          "default": "allow",
+        },
+        "terminal": {
+          "always_allow": [
+            {
+              "pattern": "^find\\b",
+            },
+            {
+              "pattern": "^rg\\b",
+            },
+            {
+              "pattern": "^echo\\b",
+            },
+          ],
+        },
+      },
+    },
     "inline_assistant_model": {
-      "provider": "google",
-      "model": "gemini-2.5-flash"
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6-latest",
     },
     "profiles": {
       "ask": {
@@ -185,18 +248,17 @@
           "grep": true,
           "terminal": true,
           "thinking": true,
-          "web_search": true
+          "web_search": true,
         },
         "enable_all_context_servers": false,
-        "context_servers": {}
-      }
+        "context_servers": {},
+      },
     },
-    "always_allow_tool_actions": false,
     "button": false,
     "default_profile": "ask",
     "default_model": {
       "provider": "google",
-      "model": "gemini-2.5-pro"
-    }
-  }
+      "model": "gemini-3.1-pro-preview",
+    },
+  },
 }

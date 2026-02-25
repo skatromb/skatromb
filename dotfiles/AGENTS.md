@@ -15,3 +15,4 @@
 - Be critical, tell about any bad pattern or non-ideomatical code and suggest improvements
 - Use comments in code only when it's absolutely necessary
 - Write down any notes to AGENTS.md files local to project
+- Don't commit to git without my approval

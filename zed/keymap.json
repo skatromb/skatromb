@@ -12,22 +12,14 @@
     "bindings": {
       "cmd-shift-backspace": "editor::DeleteLine",
       "cmd-shift-k": "editor::ConvertToUpperCase",
-      "cmd-shift-l": "editor::ConvertToLowerCase"
-    }
-  },
-  {
-    "context": "Editor",
-    "bindings": {
-      "cmd-shift-b": "git::Blame"
+      "cmd-shift-l": "editor::ConvertToLowerCase",
+      "cmd-shift-b": "git::Blame",
+      "alt": "editor::Hover"
     }
   },
   {
     "bindings": {
-      "cmd-alt-,": "zed::OpenProjectSettings"
-    }
-  },
-  {
-    "bindings": {
+      "cmd-alt-,": "zed::OpenProjectSettings",
       "cmd-?": "agent::ToggleFocus"
     }
   },
@@ -35,16 +27,8 @@
   // Next bindings add fast access to all Docks
   {
     "bindings": {
-      "cmd-l": "workspace::ToggleLeftDock"
-    }
-  },
-  {
-    "bindings": {
-      "cmd-r": "workspace::ToggleRightDock"
-    }
-  },
-  {
-    "bindings": {
+      "cmd-l": "workspace::ToggleLeftDock",
+      "cmd-r": "workspace::ToggleRightDock",
       "cmd-b": "workspace::ToggleBottomDock"
     }
   },
@@ -52,29 +36,9 @@
   // Open necessary docks on hotkeys with good mnemonics
   {
     "bindings": {
-      "cmd-shift-e": "project_panel::ToggleFocus"
-    }
-  },
-  {
-    "bindings": {
-      "cmd-shift-g": "git_panel::ToggleFocus"
-    }
-  },
-  {
-    "bindings": {
+      "cmd-shift-e": "project_panel::ToggleFocus",
+      "cmd-shift-g": "git_panel::ToggleFocus",
       "cmd-shift-o": "outline_panel::ToggleFocus"
-    }
-  },
-  // Turn off hotkey that closes current project, that's a bug
-  // reassign it to close only Dock Panels
-  {
-    "bindings": {
-      "cmd-shift-w": null
-    }
-  },
-  {
-    "bindings": {
-      "cmd-shift-w": "workspace::CloseAllDocks"
     }
   }
 ]
