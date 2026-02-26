@@ -16,12 +16,6 @@
       "default_model": "anthropic/claude-sonnet-4-6",
       "default_mode": "plan",
       "type": "extension",
-      "favorite_models": [
-        "anthropic/claude-sonnet-4-6",
-        "anthropic/claude-opus-4-6",
-        "google/gemini-3-flash-preview",
-        "google/gemini-3-pro-preview",
-      ],
     },
     "claude": {
       "default_mode": "plan",
@@ -177,8 +171,8 @@
     },
   },
   "edit_predictions": {
+    "provider": "none",
     "disabled_globs": ["**"],
-    "mode": "subtle",
     "enabled_in_text_threads": false,
   },
 
@@ -207,6 +201,26 @@
         "model": "gemini-3-flash-preview",
         "enable_thinking": false,
       },
+      {
+        "provider": "copilot_chat",
+        "model": "claude-opus-4.5",
+        "enable_thinking": false,
+      },
+      {
+        "provider": "copilot_chat",
+        "model": "claude-sonnet-4.5",
+        "enable_thinking": false,
+      },
+      {
+        "provider": "copilot_chat",
+        "model": "claude-sonnet-4.6",
+        "enable_thinking": false,
+      },
+      {
+        "provider": "copilot_chat",
+        "model": "claude-opus-4.6",
+        "enable_thinking": false,
+      },
     ],
     "tool_permissions": {
       "tools": {
@@ -223,6 +237,15 @@
             },
             {
               "pattern": "^echo\\b",
+            },
+            {
+              "pattern": "^grep\\b",
+            },
+            {
+              "pattern": "^cat\\b",
+            },
+            {
+              "pattern": "^env\\b",
             },
           ],
         },
@@ -258,7 +281,7 @@
     "default_profile": "ask",
     "default_model": {
       "provider": "google",
-      "model": "gemini-3.1-pro-preview",
+      "model": "gemini-3-flash-preview",
     },
   },
 }
