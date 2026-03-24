@@ -12,15 +12,17 @@
   //
   "tab_size": 4,
   "agent_servers": {
+    "claude-acp": {
+      "type": "registry",
+      "default_mode": "plan"
+    },
     "opencode": {
       "default_model": "anthropic/claude-sonnet-4-6",
       "default_mode": "plan",
       "type": "extension",
     },
-    "claude": {
-      "default_mode": "plan",
-    },
     "gemini": {
+      "type": "registry",
       "default_mode": "plan",
     },
   },
@@ -120,18 +122,6 @@
   // LSPs
   //
   "lsp": {
-    "pylsp": {
-      "settings": {
-        "plugins": {
-          "pylsp_mypy": {
-            "live_mode": true,
-            "enabled": true,
-            "exclude": "tests/",
-            // "strict": true
-          },
-        },
-      },
-    },
     "rust-analyzer": {
       "initialization_options": {
         "rustc": {
@@ -142,22 +132,13 @@
         },
       },
     },
-    "pyright": {
-      "settings": {
-        "python.analysis": {
-          "diagnosticMode": "workspace",
-          // "typeCheckingMode": "strict"
-        },
-      },
-    },
   },
   "languages": {
     "Python": {
-      "language_servers": ["pyright", "ruff", "pylsp"],
+      "language_servers": ["ruff", "ty"],
     },
     "SQL": {
       "tab_size": 2,
-      "format_on_save": "off",
     },
     "JSON": {
       "tab_size": 2,
@@ -189,26 +170,6 @@
       {
         "provider": "anthropic",
         "model": "claude-sonnet-4-6-latest",
-        "enable_thinking": false,
-      },
-      {
-        "provider": "google",
-        "model": "gemini-3.1-pro-preview",
-        "enable_thinking": false,
-      },
-      {
-        "provider": "google",
-        "model": "gemini-3-flash-preview",
-        "enable_thinking": false,
-      },
-      {
-        "provider": "copilot_chat",
-        "model": "claude-opus-4.5",
-        "enable_thinking": false,
-      },
-      {
-        "provider": "copilot_chat",
-        "model": "claude-sonnet-4.5",
         "enable_thinking": false,
       },
       {
@@ -280,8 +241,8 @@
     "button": false,
     "default_profile": "ask",
     "default_model": {
-      "provider": "google",
-      "model": "gemini-3-flash-preview",
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6-latest",
     },
   },
 }
