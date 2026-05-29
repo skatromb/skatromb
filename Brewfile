@@ -2,31 +2,40 @@ open -a Safari https://www.avira.com/en/start-download/product/1765
 
 # Common
 brew "mas"
-mas "AdBlock Pro for Safari", id: 1018301773
-mas "Disk Space Analyzer: Inspector", id: 446243721
-mas "Keynote", id: 409183694
-mas "Numbers", id: 409203825
-mas "Pages", id: 409201541
-mas "Unarchiver", id: 425424353
-mas "Perplexity: Ask Anything", id: 6714467650
+
+# Office
+mas "Keynote", id: 361285480
+mas "Numbers", id: 361304891
+mas "Pages", id: 361309726
+mas "Disk Space Analyzer", id: 446243721
+
+# Internet
+mas "Perplexity", id: 6714467650
+mas "uBlock Origin Lite", id: 6745342698
 cask "bankid"
-cask "browserosaurus"
 cask "deepl"
-cask "iina"
-cask "keyboardcleantool"
-cask "monitorcontrol"
+cask "firefox"
 cask "openvpn-connect"
-cask "outline-manager"
 cask "signal"
 cask "spotify"
 cask "sublime-text"
 cask "telegram"
-cask "webtorrent"
+# cask "webtorrent"
+
+# Tools
+mas "Unarchiver", id: 425424353
+cask "browserino"
+cask "hiddenbar"
+cask "iina"
+cask "keyboardcleantool"
+cask "monitorcontrol"
 
 # Develop
 mas "Xcode", id: 497799835
+cask "font-jetbrains-mono"
 cask "google-chrome"
 cask "zed"
+
 # Docker
 brew "docker"
 brew "docker-completion"
