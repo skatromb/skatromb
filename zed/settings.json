@@ -14,16 +14,12 @@
   "agent_servers": {
     "claude-acp": {
       "type": "registry",
-      "default_mode": "plan"
+      "default_mode": "plan",
     },
     "opencode": {
       "default_model": "anthropic/claude-sonnet-4-6",
       "default_mode": "plan",
       "type": "extension",
-    },
-    "gemini": {
-      "type": "registry",
-      "default_mode": "plan",
     },
   },
   "confirm_quit": true,
@@ -51,7 +47,7 @@
   "theme": {
     "mode": "system",
     "light": "One Light",
-    "dark": "One Dark",
+    "dark": "One Dark"
   },
   "buffer_font_size": 13,
   "buffer_font_family": "JetBrains Mono NL",
@@ -82,6 +78,7 @@
     "button": false,
     "dock": "right",
   },
+
   "git_panel": {
     "tree_view": true,
     "button": false,
@@ -96,7 +93,7 @@
   "status_bar": {
     "active_language_button": false,
   },
-  "collaboration_panel": { "button": false },
+  "collaboration_panel": { "dock": "right", "button": false },
   "project_panel": {
     "button": false,
     "dock": "right",
@@ -104,10 +101,10 @@
   "diagnostics": { "button": true },
   "search": { "button": false },
   "terminal": {
+    "detect_venv": "off",
     "button": false,
   },
   "debugger": { "button": false },
-  "notification_panel": { "button": false },
   "global_lsp_settings": { "button": false },
 
   "gutter": {
@@ -154,13 +151,16 @@
   "edit_predictions": {
     "provider": "none",
     "disabled_globs": ["**"],
-    "enabled_in_text_threads": false,
   },
 
   //
   // Agent
   //
   "agent": {
+    "sidebar_side": "right",
+    "enabled": false,
+    "enable_feedback": false,
+    "dock": "right",
     "favorite_models": [
       {
         "provider": "anthropic",
@@ -220,6 +220,7 @@
       "ask": {
         "name": "Ask",
         "tools": {
+          "search_web": true,
           "contents": true,
           "diagnostics": true,
           "fetch": true,
@@ -232,7 +233,6 @@
           "grep": true,
           "terminal": true,
           "thinking": true,
-          "web_search": true,
         },
         "enable_all_context_servers": false,
         "context_servers": {},
