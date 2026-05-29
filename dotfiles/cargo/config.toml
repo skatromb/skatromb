@@ -1,8 +1,0 @@
-[lints.clippy]
-pedantic = "warn"
-
-unwrap_used = "deny"
-expect_used = "deny"
-allow-unwrap-in-tests = true
-allow-expect-in-tests = true
-allow-panic-in-tests = true
