@@ -12,23 +12,44 @@
   //
   "tab_size": 4,
   "agent_servers": {
-    "claude-acp": {
+    "mistral-vibe": {
+      "default_config_options": {
+        "mode": "lean",
+        "thinking": "high",
+        "model": "mistral-large-latest",
+      },
       "type": "registry",
-      "default_mode": "plan",
+    },
+    "claude-acp": {
+      "default_config_options": {
+        "model": "claude-fable-5[1m]",
+        "mode": "default",
+      },
+      "type": "registry",
     },
     "opencode": {
-      "default_model": "anthropic/claude-sonnet-4-6",
-      "default_mode": "plan",
-      "type": "extension",
+      "favorite_config_option_values": {
+        "model": [
+          "mistral/mistral-medium-latest"
+        ],
+      },
+      "default_config_options": {
+        "mode": "build",
+        "model": "mistral/mistral-medium-latest",
+      },
+      "type": "registry",
     },
   },
   "confirm_quit": true,
   "when_closing_with_no_tabs": "keep_window_open",
-  "icon_theme": "Material Icon Theme",
+  "icon_theme": {
+    "mode": "light",
+    "light": "Material Icon Theme",
+    "dark": "Material Icon Theme",
+  },
   "base_keymap": "VSCode",
   "autosave": { "after_delay": { "milliseconds": 200 } },
   "git": {
-    // Disable inline git blame on click on code line
     "inline_blame": {
       "enabled": false,
     },
@@ -38,6 +59,12 @@
   "auto_install_extensions": {
     "Catpuccin Icons": true,
   },
+  "drag_and_drop_selection": {
+    "enabled": false,
+  },
+  "seed_search_query_from_cursor": "selection",
+  "current_line_highlight": "none",
+  "scroll_beyond_last_line": "vertical_scroll_margin",
 
   //
   // Appearance
@@ -53,21 +80,22 @@
   "buffer_font_family": "JetBrains Mono NL",
   "buffer_line_height": "standard",
   "inlay_hints": { "toggle_on_modifiers_press": { "control": true } }, // convenient to highlight types
-
   //
   // Bars
   //
   "title_bar": {
     "show_branch_name": true,
+    "show_branch_status_icon": false,
     "show_project_items": true,
     "show_onboarding_banner": false,
+    "show_user_menu": false,
     "show_user_picture": false,
     "show_sign_in": false,
     "show_menus": false,
   },
 
   "toolbar": {
-    "breadcrumbs": true,
+    "breadcrumbs": false,
     "quick_actions": false,
     "selections_menu": true,
     "agent_review": true,
@@ -77,6 +105,13 @@
   "outline_panel": {
     "button": false,
     "dock": "right",
+    "indent_guides": {
+      "show": "never",
+    },
+  },
+
+  "scrollbar": {
+    "show": "auto",
   },
 
   "git_panel": {
@@ -92,11 +127,19 @@
   },
   "status_bar": {
     "active_language_button": false,
+    // "experimental.show": false
   },
   "collaboration_panel": { "dock": "right", "button": false },
   "project_panel": {
     "button": false,
     "dock": "right",
+    "hide_root": true,
+    "scrollbar": {
+      "show": "never",
+    },
+    "indent_guides": {
+      "show": "never",
+    },
   },
   "diagnostics": { "button": true },
   "search": { "button": false },
@@ -112,7 +155,11 @@
     "runnables": false,
     "breakpoints": false,
     "folds": false,
-    "min_line_number_digits": 3,
+    "bookmarks": false,
+    "min_line_number_digits": 0,
+  },
+  "indent_guides": {
+    "enabled": false,
   },
 
   //
@@ -132,7 +179,11 @@
   },
   "languages": {
     "Python": {
-      "language_servers": ["ruff", "ty"],
+      "language_servers": [
+        "ruff",
+        "ty",
+        // "basedpyright"
+      ],
     },
     "SQL": {
       "tab_size": 2,
@@ -157,92 +208,23 @@
   // Agent
   //
   "agent": {
+    "thinking_display": "always_collapsed",
+    "default_model": {
+      "provider": "ollama",
+      "model": "devstral:latest",
+      "enable_thinking": false,
+    },
     "sidebar_side": "right",
-    "enabled": false,
+    // "enabled": true,
     "enable_feedback": false,
     "dock": "right",
-    "favorite_models": [
-      {
-        "provider": "anthropic",
-        "model": "claude-opus-4-6-latest",
-        "enable_thinking": false,
-      },
-      {
-        "provider": "anthropic",
-        "model": "claude-sonnet-4-6-latest",
-        "enable_thinking": false,
-      },
-      {
-        "provider": "copilot_chat",
-        "model": "claude-sonnet-4.6",
-        "enable_thinking": false,
-      },
-      {
-        "provider": "copilot_chat",
-        "model": "claude-opus-4.6",
-        "enable_thinking": false,
-      },
-    ],
     "tool_permissions": {
       "tools": {
         "create_directory": {
           "default": "allow",
         },
-        "terminal": {
-          "always_allow": [
-            {
-              "pattern": "^find\\b",
-            },
-            {
-              "pattern": "^rg\\b",
-            },
-            {
-              "pattern": "^echo\\b",
-            },
-            {
-              "pattern": "^grep\\b",
-            },
-            {
-              "pattern": "^cat\\b",
-            },
-            {
-              "pattern": "^env\\b",
-            },
-          ],
-        },
-      },
-    },
-    "inline_assistant_model": {
-      "provider": "anthropic",
-      "model": "claude-sonnet-4-6-latest",
-    },
-    "profiles": {
-      "ask": {
-        "name": "Ask",
-        "tools": {
-          "search_web": true,
-          "contents": true,
-          "diagnostics": true,
-          "fetch": true,
-          "list_directory": true,
-          "project_notifications": false,
-          "now": true,
-          "find_path": true,
-          "read_file": true,
-          "open": true,
-          "grep": true,
-          "terminal": true,
-          "thinking": true,
-        },
-        "enable_all_context_servers": false,
-        "context_servers": {},
       },
     },
     "button": false,
-    "default_profile": "ask",
-    "default_model": {
-      "provider": "anthropic",
-      "model": "claude-sonnet-4-6-latest",
-    },
   },
 }
