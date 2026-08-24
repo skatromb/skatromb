@@ -15,7 +15,7 @@
   "agent_servers": {
     "mistral-vibe": {
       "default_config_options": {
-        "mode": "lean",
+        "mode": "auto-approve",
         "thinking": "high",
         "model": "mistral-large-latest",
       },
@@ -183,6 +183,7 @@
     "Python": {
       "language_servers": [
         "ruff",
+        "flake8",
         "ty",
         // "basedpyright"
       ],
