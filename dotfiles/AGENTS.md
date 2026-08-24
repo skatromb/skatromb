@@ -18,3 +18,4 @@
 - Finish, run the gate, then stop. I read the diff before you commit, push or merge
 - Commits: one-line subject, no body, no `feat:`/`fix:` prefix, ≤50 chars. Keep the co-author trailer
 - Dependent PRs: drive with `gh stack`, never a hand-set base branch
+- No 🤖 attribution footer in PR bodies
