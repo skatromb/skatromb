@@ -23,8 +23,8 @@
     },
     "claude-acp": {
       "default_config_options": {
-        "effort": "high",
-        "model": "opus[1m]",
+        "effort": "default",
+        "model": "default",
         "mode": "auto",
       },
       "type": "registry",
@@ -204,30 +204,22 @@
   },
   "edit_predictions": {
     "provider": "none",
-    "disabled_globs": ["**"],
   },
 
   //
   // Agent
   //
   "agent": {
+    "expand_terminal_card": false,
+    "expand_edit_card": true,
     "thinking_display": "always_collapsed",
     "default_model": {
-      "provider": "ollama",
-      "model": "devstral:latest",
-      "enable_thinking": false,
+      "provider": "anthropic",
+      "model": "default",
     },
     "sidebar_side": "right",
-    // "enabled": true,
     "enable_feedback": false,
     "dock": "right",
-    "tool_permissions": {
-      "tools": {
-        "create_directory": {
-          "default": "allow",
-        },
-      },
-    },
     "button": false,
   },
 }
