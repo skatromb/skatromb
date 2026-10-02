@@ -22,7 +22,6 @@
     "inline_blame": {
       "enabled": false,
     },
-    "worktree_directory": "../worktrees",
   },
   "auto_signature_help": false,
   "inline_code_actions": false,
