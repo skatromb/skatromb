@@ -15,8 +15,8 @@
 - Ask to read the diff before commit, push or merge
 
 # Git
-- Start each conversation by checking out a git worktree in a `.claude/worktree/` sub-folder
+- Start each conversation by checking out a git worktree in `../worktrees/<repo>/<branch>`, outside the repo
 - Commits: one-line subject, no body, no `feat:`/`fix:` prefix, ≤50 chars. Keep the co-author trailer
-- PR/issue bodies: first describe why, then how it is implemented in bullet-points, short as possible. No file-by-file recap, no validation block unless manual checks required. 
+- PR/issue bodies: first describe why, then how it is implemented in bullet-points, SUPER concise. No file-by-file recap, no validation block unless manual checks required. 
 - Dependent PRs: drive with `gh stack`, never a hand-set base branch
 - No 🤖 attribution footer in PR bodies

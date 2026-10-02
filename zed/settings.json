@@ -10,8 +10,32 @@
   //
   // Few random convenient settings
   //
+  "colorize_brackets": true,
   "diff_view_style": "unified",
   "tab_size": 4,
+
+  "confirm_quit": true,
+  "when_closing_with_no_tabs": "keep_window_open",
+  "base_keymap": "VSCode",
+  "autosave": { "after_delay": { "milliseconds": 200 } },
+  "git": {
+    "inline_blame": {
+      "enabled": false,
+    },
+    "worktree_directory": "../worktrees",
+  },
+  "auto_signature_help": false,
+  "inline_code_actions": false,
+  "auto_install_extensions": {
+    "Catpuccin Icons": true,
+  },
+  "drag_and_drop_selection": {
+    "enabled": false,
+  },
+  "seed_search_query_from_cursor": "selection",
+  "current_line_highlight": "none",
+  "scroll_beyond_last_line": "vertical_scroll_margin",
+
   "agent_servers": {
     "mistral-vibe": {
       "default_config_options": {
@@ -24,7 +48,7 @@
     "claude-acp": {
       "default_config_options": {
         "effort": "default",
-        "model": "default",
+        "model": "opus",
         "mode": "auto",
       },
       "type": "registry",
@@ -42,31 +66,6 @@
       "type": "registry",
     },
   },
-  "confirm_quit": true,
-  "when_closing_with_no_tabs": "keep_window_open",
-  "icon_theme": {
-    "mode": "light",
-    "light": "Material Icon Theme",
-    "dark": "Material Icon Theme",
-  },
-  "base_keymap": "VSCode",
-  "autosave": { "after_delay": { "milliseconds": 200 } },
-  "git": {
-    "inline_blame": {
-      "enabled": false,
-    },
-  },
-  "auto_signature_help": false,
-  "inline_code_actions": false,
-  "auto_install_extensions": {
-    "Catpuccin Icons": true,
-  },
-  "drag_and_drop_selection": {
-    "enabled": false,
-  },
-  "seed_search_query_from_cursor": "selection",
-  "current_line_highlight": "none",
-  "scroll_beyond_last_line": "vertical_scroll_margin",
 
   //
   // Appearance
@@ -135,7 +134,6 @@
   "project_panel": {
     "button": false,
     "dock": "right",
-    "hide_root": true,
     "scrollbar": {
       "show": "never",
     },
@@ -210,6 +208,9 @@
   // Agent
   //
   "agent": {
+    "threads_sidebar": {
+      "position": "right"
+    },
     "expand_terminal_card": false,
     "expand_edit_card": true,
     "thinking_display": "always_collapsed",
@@ -217,7 +218,6 @@
       "provider": "anthropic",
       "model": "default",
     },
-    "sidebar_side": "right",
     "enable_feedback": false,
     "dock": "right",
     "button": false,
