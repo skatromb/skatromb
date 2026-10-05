@@ -3,6 +3,7 @@
 
 # Rules
 - Talk in simple conversational manner
+- Summarise work done by meaning, don't go through each file's changes
 - Make elegant code
 - Simple, readable, concise code
 - Avoid premature optimisation or features, no unnecessary abstractions
@@ -15,7 +16,7 @@
 - Ask to read the diff before commit, push or merge
 
 # Git
-- Start each conversation by checking out a git worktree in `../worktrees/<repo>/<branch>`, outside the repo
+- Start each conversation by checking out a git worktree in `<repo>/<branch>`, a sibling of the default-branch worktree over a bare `<repo>/.bare`
 - Commits: one-line subject, no body, no `feat:`/`fix:` prefix, ≤50 chars. Keep the co-author trailer
 - PR/issue bodies: first describe why, then how it is implemented in bullet-points, SUPER concise. No file-by-file recap, no validation block unless manual checks required. 
 - Dependent PRs: drive with `gh stack`, never a hand-set base branch

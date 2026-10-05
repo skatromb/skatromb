@@ -22,6 +22,7 @@
     "inline_blame": {
       "enabled": false,
     },
+    "worktree_directory": ".",
   },
   "auto_signature_help": false,
   "inline_code_actions": false,
@@ -46,7 +47,7 @@
     },
     "claude-acp": {
       "default_config_options": {
-        "effort": "default",
+        "effort": "high",
         "model": "opus",
         "mode": "auto",
       },
@@ -73,12 +74,13 @@
   "hover_popover_delay": 1000,
   "theme": {
     "mode": "system",
-    "light": "One Light",
-    "dark": "One Dark"
+    "light": "JetBrains Light",
+    "dark": "JetBrains Dark"
   },
-  "buffer_font_size": 13,
+  "icon_theme": "JetBrains New UI Icons (Dark)",
   "buffer_font_family": "JetBrains Mono NL",
-  "buffer_line_height": "standard",
+  "buffer_font_size": 13,
+  // "buffer_line_height": "standard",
   "inlay_hints": { "toggle_on_modifiers_press": { "control": true } }, // convenient to highlight types
   //
   // Bars
