@@ -8,219 +8,208 @@
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
   //
-  // Few random convenient settings
+  // General
   //
-  "colorize_brackets": true,
-  "diff_view_style": "unified",
-  "tab_size": 4,
-
+  "auto_install_extensions": {
+    "dbt": true,
+    "dockerfile": true,
+    "git-firefly": true,
+    "html": false,
+    "jetbrains-new-ui-icons": true,
+    "jetbrains-themes": true,
+    "make": true,
+    "sql": true,
+    "terraform": true,
+    "toml": true,
+  },
+  "base_keymap": "VSCode",
   "confirm_quit": true,
   "when_closing_with_no_tabs": "keep_window_open",
-  "base_keymap": "VSCode",
-  "autosave": { "after_delay": { "milliseconds": 200 } },
-  "git": {
-    "inline_blame": {
-      "enabled": false,
-    },
-    "worktree_directory": ".",
-  },
-  "auto_signature_help": false,
-  "inline_code_actions": false,
-  "auto_install_extensions": {
-    "Catpuccin Icons": true,
-  },
-  "drag_and_drop_selection": {
-    "enabled": false,
-  },
-  "seed_search_query_from_cursor": "selection",
-  "current_line_highlight": "none",
-  "scroll_beyond_last_line": "vertical_scroll_margin",
-
-  "agent_servers": {
-    "mistral-vibe": {
-      "default_config_options": {
-        "mode": "auto-approve",
-        "thinking": "high",
-        "model": "mistral-large-latest",
-      },
-      "type": "registry",
-    },
-    "claude-acp": {
-      "default_config_options": {
-        "effort": "high",
-        "model": "opus",
-        "mode": "auto",
-      },
-      "type": "registry",
-    },
-    "opencode": {
-      "favorite_config_option_values": {
-        "model": [
-          "mistral/mistral-medium-latest"
-        ],
-      },
-      "default_config_options": {
-        "mode": "build",
-        "model": "mistral/mistral-medium-latest",
-      },
-      "type": "registry",
-    },
-  },
 
   //
   // Appearance
   //
-  "hover_popover_enabled": false, // show it on a hotkey instead
-  "hover_popover_delay": 1000,
-  "theme": {
-    "mode": "system",
-    "light": "JetBrains Light",
-    "dark": "JetBrains Dark"
-  },
-  "icon_theme": "JetBrains New UI Icons (Dark)",
   "buffer_font_family": "JetBrains Mono NL",
   "buffer_font_size": 13,
-  // "buffer_line_height": "standard",
+  "colorize_brackets": true,
+  "current_line_highlight": "none",
+  "icon_theme": "JetBrains New UI Icons (Dark)",
+  "theme": {
+    "dark": "JetBrains Dark",
+    "light": "JetBrains Light",
+  },
+
+  //
+  // Editor
+  //
+  "drag_and_drop_selection": { "enabled": false },
+  "format_on_save": "on",
+  "gutter": {
+    "bookmarks": false,
+    "breakpoints": false,
+    "folds": false,
+    "min_line_number_digits": 0,
+    "runnables": false,
+  },
+  "hover_popover_delay": 1000,
+  "hover_popover_enabled": false, // show it on a hotkey instead
+  "indent_guides": { "enabled": false },
   "inlay_hints": { "toggle_on_modifiers_press": { "control": true } }, // convenient to highlight types
+  "inline_code_actions": false,
+  "scroll_beyond_last_line": "vertical_scroll_margin",
+  "seed_search_query_from_cursor": "selection",
+  "use_autoclose": false,
+
   //
   // Bars
   //
-  "title_bar": {
-    "show_branch_name": true,
-    "show_branch_status_icon": false,
-    "show_project_items": true,
-    "show_onboarding_banner": false,
-    "show_user_menu": false,
-    "show_user_picture": false,
-    "show_sign_in": false,
-    "show_menus": false,
-  },
-
-  "toolbar": {
-    "breadcrumbs": false,
-    "quick_actions": false,
-    "selections_menu": true,
-    "agent_review": true,
-    "code_actions": false,
-  },
-
-  "outline_panel": {
-    "button": false,
-    "dock": "right",
-    "indent_guides": {
-      "show": "never",
-    },
-  },
-
-  "scrollbar": {
-    "show": "auto",
-  },
-
-  "git_panel": {
-    "tree_view": true,
-    "button": false,
-    "dock": "right",
-  },
-
+  "status_bar": { "active_language_button": false },
   "tab_bar": {
-    "show": true,
     "show_nav_history_buttons": false,
     "show_tab_bar_buttons": false,
   },
-  "status_bar": {
-    "active_language_button": false,
-    // "experimental.show": false
+  "title_bar": {
+    "show_onboarding_banner": false,
+    "show_sign_in": false,
+    "show_user_menu": false,
+    "show_user_picture": false,
   },
-  "collaboration_panel": { "dock": "right", "button": false },
+  "toolbar": {
+    "breadcrumbs": false,
+    "quick_actions": false,
+  },
+
+  //
+  // Panels
+  //
+  "collaboration_panel": { "button": false },
+  "debugger": { "button": false },
+  "diagnostics": { "button": true },
+  "git_panel": {
+    "button": false,
+    "tree_view": true,
+  },
+  "global_lsp_settings": { "button": false },
+  "outline_panel": {
+    "button": false,
+    "indent_guides": { "show": "never" },
+  },
   "project_panel": {
     "button": false,
-    "dock": "right",
-    "scrollbar": {
-      "show": "never",
-    },
-    "indent_guides": {
-      "show": "never",
-    },
+    "indent_guides": { "show": "never" },
+    "scrollbar": { "show": "never" },
   },
-  "diagnostics": { "button": true },
   "search": { "button": false },
   "terminal": {
-    "detect_venv": "off",
     "button": false,
-  },
-  "debugger": { "button": false },
-  "global_lsp_settings": { "button": false },
-
-  "gutter": {
-    "line_numbers": true,
-    "runnables": false,
-    "breakpoints": false,
-    "folds": false,
-    "bookmarks": false,
-    "min_line_number_digits": 0,
-  },
-  "indent_guides": {
-    "enabled": false,
+    "detect_venv": "off",
   },
 
   //
-  // LSPs
+  // Git
+  //
+  "diff_view_style": "unified",
+  "git": {
+    "inline_blame": { "enabled": false },
+    "worktree_directory": ".",
+  },
+
+  //
+  // Languages
+  //
+  "languages": {
+    "JSON": { "tab_size": 2 },
+    "JSONC": { "tab_size": 2 },
+    "Python": { "language_servers": ["ruff", "ty", "pylsp"] },
+    "SQL": { "tab_size": 2 },
+    "Terraform": { "tab_size": 2 },
+    "YAML": { "tab_size": 2 },
+  },
+
+  //
+  // LSP
   //
   "lsp": {
-    "rust-analyzer": {
-      "initialization_options": {
-        "rustc": {
-          "source": "discover",
-        },
-        "check": {
-          "command": "clippy",
+    "dbt-language-server": {
+      "binary": {
+        "arguments": ["lsp"],
+        "path": "~/.local/bin/dbt",
+      },
+    },
+    "pylsp": {
+      "settings": {
+        "plugins": {
+          "autopep8": { "enabled": false },
+          "flake8": { "enabled": true, "executable": "~/.local/bin/flake8" },
+          "folding": { "enabled": false },
+          "jedi_completion": { "enabled": false },
+          "jedi_definition": { "enabled": false },
+          "jedi_highlight": { "enabled": false },
+          "jedi_hover": { "enabled": false },
+          "jedi_references": { "enabled": false },
+          "jedi_rename": { "enabled": false },
+          "jedi_signature_help": { "enabled": false },
+          "jedi_symbols": { "enabled": false },
+          "jedi_type_definition": { "enabled": false },
+          "mccabe": { "enabled": false },
+          "preload": { "enabled": false },
+          "pycodestyle": { "enabled": false },
+          "pyflakes": { "enabled": false },
+          "pylsp_mypy": { "enabled": false },
+          "yapf": { "enabled": false },
         },
       },
     },
-  },
-  "languages": {
-    "Python": {
-      "language_servers": [
-        "ruff",
-        "flake8",
-        "ty",
-        // "basedpyright"
-      ],
+    "rust-analyzer": {
+      "initialization_options": {
+        "check": { "command": "clippy" },
+        "rustc": { "source": "discover" },
+      },
     },
-    "SQL": {
-      "tab_size": 2,
-    },
-    "JSON": {
-      "tab_size": 2,
-    },
-    "JSONC": { "tab_size": 2 },
-    "YAML": {
-      "tab_size": 2,
-    },
-    "Terraform": {
-      "tab_size": 2,
-    },
-  },
-  "edit_predictions": {
-    "provider": "none",
   },
 
   //
-  // Agent
+  // AI
   //
   "agent": {
-    "threads_sidebar": {
-      "position": "right"
-    },
-    "expand_terminal_card": false,
-    "expand_edit_card": true,
-    "thinking_display": "always_collapsed",
-    "default_model": {
-      "provider": "anthropic",
-      "model": "default",
-    },
-    "enable_feedback": false,
-    "dock": "right",
     "button": false,
+    "default_model": {
+      "model": "default",
+      "provider": "anthropic",
+    },
+    "dock": "right",
+    "enable_feedback": false,
+    "expand_terminal_card": false,
+    "thinking_display": "always_collapsed",
+    "threads_sidebar": { "position": "right" },
   },
+  "agent_servers": {
+    "claude-acp": {
+      "default_config_options": {
+        "effort": "high",
+        "mode": "auto",
+        "model": "opus",
+      },
+      "type": "registry",
+    },
+    "mistral-vibe": {
+      "default_config_options": {
+        "mode": "auto-approve",
+        "model": "mistral-large-4",
+        "thinking": "high",
+      },
+      "type": "registry",
+    },
+    "opencode": {
+      "default_config_options": {
+        "mode": "build",
+        "model": "mistral/mistral-large-4-0",
+      },
+      "favorite_config_option_values": {
+        "model": ["mistral/mistral-large-4-0"],
+      },
+      "type": "registry",
+    },
+  },
+  "edit_predictions": { "provider": "none" },
 }
