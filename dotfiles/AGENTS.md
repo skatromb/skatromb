@@ -1,33 +1,40 @@
 # About me
-- Data engineer on MacBook. Google Cloud, AWS, Python, SQL, dbt, docker. Learning Rust
+- Not native English speaker. Keep language concise, simple
+- Data engineer on MacBook. Google Cloud, AWS, Python, SQL, dbt, docker, Rust
 
-# Rules
-- Talk in simple conversational manner
-- Summarise work done by meaning, don't go through each file's changes
-- Make elegant code
-- Simple, readable, concise code
-- Avoid premature optimisation or features, no unnecessary abstractions
-- Don't run disruptive commands without approval
-- Be critical. Flag bad patterns or non-idiomatic code, suggest fixes
-- No comments in the code
+# Conversation
+- Answer concise as possible.
+- Narrative strictly sequential, no convoluted sentences. "Here is this. It does that. This is bad because of this. Idea to fix is ... here is the code"
+- Summarise work by meaning, not per-file changes
+- Write all prose replies in ASD-STE100 STE-flavored mode: @~/.claude/skills/asd-ste100/references/writing-rules.md
+- Spawn autonomous agents via `claude ...` in shell when needed, keep sub-agent output out of current thread.
+
+# Coding
+- Focus on readability
+- Meaningful names, no 1-2 letter names
+- Prefer removing code over adding
+- No premature optimisation/features, no unnecessary abstractions
+- Flag bad patterns, non-idiomatic code
 - Edit files with Edit/Write, not scripts.
-- Prove a fix by reverting it and re-running, not by reasoning
-- During dev cycles, check the Makefile for lint/test/build commands
-- Ask to read the diff before commit, push or merge
-
-# Writing docs
-- Lead with what the reader runs, then explain only what the commands don't show
-- Several commands or options: one code block, a short comment per line, no prose repeating them
-- Comments and sentences in the reader's words, about the outcome: "apply without asking", not "take the preset's value on every conflict"
-- Be concrete: name the exact file and show the snippet instead of describing where it goes
-- One line when one line does it. A section can be a single sentence
-- Leave reasoning and internals in the source that holds them, and link to it
-- Cut what the reader doesn't need to use the thing: stats, mappings, edge cases
-- One line per paragraph, no hard wraps
+- No disruptive commands without approval
+- Dev cycles: check Makefile for lint/test/build commands
+- Never silence lint without asking user
+- Prove fix by reverting + re-running, not reasoning
+- When proposing changes, provide links including worktree to the files you refer to
+- No code comments
 
 # Git
-- Start each conversation by checking out a git worktree in `<repo>/<branch>`, a sibling of the default-branch worktree over a bare `<repo>/.bare`
-- Commits: one-line subject, no body, no `feat:`/`fix:` prefix, ≤50 chars. Keep the co-author trailer
-- PR/issue bodies: first describe why, then how it is implemented in bullet-points, SUPER concise. No file-by-file recap, no validation block unless manual checks required. 
-- Dependent PRs: drive with `gh stack`, never a hand-set base branch
-- No 🤖 attribution footer in PR bodies
+- Each branch in separate git worktree at `<repo>/<branch>`, sibling of default-branch clone: `git -C <repo>/<default-branch> worktree add ../<branch> -b <branch>`.
+  - After PR merged: cleanup worktree + branch, pull `main`.
+- Ask user to review the code before commit, push, merge
+- Commits: one-line subject, no body, no `feat:`/`fix:` prefix, ≤50 chars.
+- PR/issue bodies: think of draft PR body, then make it SUPER concise. No file-by-file recap, no validation block unless manual checks required.
+- Dependent PRs: use `gh stack`, never hand-set base branch
+- No 🤖 AI footer in PR bodies
+
+# Docs
+- Be concrete: name exact file, show snippet, don't describe location
+- One-liners where possible
+- Reasoning/internals stay in source; link to it
+- Cut what reader doesn't need: stats, mappings, edge cases
+- One line per paragraph, no hard wraps
