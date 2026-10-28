@@ -19,7 +19,6 @@
   "editor.occurrencesHighlight": "off",
   "editor.overviewRulerBorder": false,
   "editor.bracketPairColorization.enabled": false,
-  "editor.rulers": [80],
   "editor.scrollBeyondLastLine": false,
   "editor.snippetSuggestions": "none",
   "editor.cursorSurroundingLines": 3,
@@ -38,6 +37,7 @@
   "workbench.editor.tabActionCloseVisibility": false,
   "workbench.editor.useModal": "off",
   "workbench.hover.delay": 10000, // ms, TODO: find way to turn this off
+  "workbench.hover.reducedDelay": 10000,
   "editor.scrollbar.vertical": "auto",
   "editor.scrollbar.horizontal": "hidden",
   "workbench.experimental.modernUI": false,
@@ -77,7 +77,7 @@
   "editor.showUnused": false,
   "editor.pasteAs.showPasteSelector": "never",
   "editor.pasteAs.preferences": ["text.pylance.reindent"],
-  "chat.agent.enabled": false,
+  "chat.disableAIFeatures": true,
 
   // Search
   "search.quickAccess.preserveInput": true,
@@ -196,7 +196,6 @@
   "python.analysis.autoSearchPaths": false,
   "python.experiments.enabled": false,
 "python.testing.autoTestDiscoverOnSaveEnabled": false,
-  "workbench.iconTheme": "ayu",
 
   "workbench.colorCustomizations": {
     // I customize these two, because other people might
