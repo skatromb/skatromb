@@ -2,19 +2,14 @@
   // Editor:
   "editor.cursorBlinking": "solid",
   "editor.accessibilitySupport": "off",
-  "editor.codeLens": true,
   "editor.colorDecorators": false,
   "editor.dragAndDrop": false,
   "editor.folding": false, // change to `true` and use `cmd+alt` + `[` or `]`
-  "editor.showFoldingControls": "mouseover",
   "editor.fontFamily": "JetBrains Mono",
-  "editor.fontLigatures": false,
-  "editor.fontSize": 16,
+  "editor.fontSize": 14,
   "explorer.openEditors.visible": 1,
   "editor.minimap.enabled": false,
-  "editor.renderWhitespace": "selection",
   "editor.renderLineHighlight": "none",
-  "editor.hideCursorInOverviewRuler": false,
   "explorer.compactFolders": false,
   "editor.occurrencesHighlight": "off",
   "editor.overviewRulerBorder": false,
@@ -22,9 +17,7 @@
   "editor.scrollBeyondLastLine": false,
   "editor.snippetSuggestions": "none",
   "editor.cursorSurroundingLines": 3,
-  "editor.useTabStops": true,
   "editor.wordWrap": "on",
-  "editor.wordWrapColumn": 80,
   "editor.hover.enabled": "off",
   "editor.stickyScroll.enabled": false,
   "explorer.confirmDelete": false,
@@ -38,7 +31,6 @@
   "workbench.editor.useModal": "off",
   "workbench.hover.delay": 10000, // ms, TODO: find way to turn this off
   "workbench.hover.reducedDelay": 10000,
-  "editor.scrollbar.vertical": "auto",
   "editor.scrollbar.horizontal": "hidden",
   "workbench.experimental.modernUI": false,
 
@@ -53,10 +45,8 @@
   "editor.autoClosingBrackets": "never",
   "editor.autoClosingQuotes": "never",
   "editor.autoSurround": "never",
-  "editor.autoClosingOvertype": "never",
   "editor.suggestOnTriggerCharacters": false,
   "editor.acceptSuggestionOnCommitCharacter": false,
-  "editor.acceptSuggestionOnEnter": "on",
   "editor.parameterHints.enabled": false,
   "editor.tabCompletion": "on",
   "editor.suggestSelection": "recentlyUsed",
@@ -65,9 +55,6 @@
     "comments": false,
     "strings": false
   },
-  "editor.formatOnType": false,
-  "editor.formatOnPaste": false,
-  "editor.defaultFormatter": null,
   "editor.autoIndent": "keep",
   "editor.inlineSuggest.enabled": false,
   "editor.suggest.localityBonus": true,
@@ -96,15 +83,10 @@
 
   // Files:
   "files.associations": {
-    ".babelrc": "jsonc",
-    ".eslintrc": "jsonc",
-    "*.pyi": "python",
     "*.bats": "shellscript"
   },
   "files.autoSave": "onFocusChange",
   "files.exclude": {
-    "**/.DS_Store": true,
-
     "**/node_modules": true,
     "**/bower_components": true,
 
@@ -120,9 +102,6 @@
     "**/htmlcoverage": true,
     "**/docs/build": true
   },
-  "workbench.editorAssociations": {
-    "*.ipynb": "jupyter-notebook"
-  },
 
   // Stats and telemetry:
   "telemetry.telemetryLevel": "off",
@@ -131,30 +110,25 @@
   "terminal.integrated.defaultLocation": "editor",
   "terminal.integrated.shellIntegration.enabled": false,
   "terminal.integrated.enableKittyKeyboardProtocol": false,
-  "terminal.integrated.shellIntegration.decorationsEnabled": "never",
-  "terminal.integrated.stickyScroll.enabled": false,
-  "terminal.integrated.suggest.enabled": false,
   "terminal.integrated.enableMultiLinePasteWarning": "never",
-  "terminal.integrated.defaultProfile.osx": "zsh",
   "terminal.integrated.defaultProfile.linux": "bash",
   "accessibility.signals.terminalBell": {
     "sound": "off",
     "announcement": "off"
   },
   "terminal.integrated.enableVisualBell": true,
-  "terminal.integrated.fontLigatures.enabled": false,
-  "terminal.integrated.fontSize": 16,
+  "terminal.integrated.fontSize": 14,
 
   // Main editor:
   "window.clickThroughInactive": false,
   "window.newWindowDimensions": "maximized",
+  "window.confirmBeforeClose": "keyboardOnly",
   "workbench.editor.labelFormat": "medium",
   "workbench.startupEditor": "newUntitledFile",
   "workbench.statusBar.visible": false,
   "workbench.tips.enabled": false,
   "workbench.tree.renderIndentGuides": "none",
   "workbench.tree.enableStickyScroll": false,
-  "workbench.editor.highlightModifiedTabs": false,
   "workbench.editor.showIcons": false,
   "workbench.editor.showTabs": "single",
   "workbench.editor.decorations.badges": false,
@@ -163,8 +137,6 @@
   "workbench.sideBar.location": "right",
   "workbench.editor.empty.hint": "hidden",
   "workbench.layoutControl.enabled": false,
-
-  "merge-conflict.autoNavigateNextConflict.enabled": false,
 
   // Debug:
   "debug.allowBreakpointsEverywhere": true,
@@ -175,28 +147,17 @@
   // Tools, extensions, and languages:
   "problems.decorations.enabled": false,
 
-  "git.autofetch": false,
   "git.showInlineOpenFileAction": false,
-  "git.autorefresh": true,
-  "git.decorations.enabled": true,
   "git.openRepositoryInParentFolders": "never",
-  "git.blame.editorDecoration.enabled": false,
-  "git.blame.statusBarItem.enabled": false,
 
-  "python.analysis.completeFunctionParens": false,
   "python.createEnvironment.trigger": "off",
-  "python.terminal.activateEnvInCurrentTerminal": false,
   "python.terminal.activateEnvironment": false,
   "python.terminal.shellIntegration.enabled": false,
   "python.languageServer": "Pylance",
-  "python.analysis.reportExtraTelemetry": false,
-  "python.analysis.addHoverSummaries": false,
   "python.analysis.ignore": ["**/*.py"], // do not run typechecking
-  "python.analysis.typeCheckingMode": "off",
-  "python.analysis.autoImportCompletions": false,
   "python.analysis.autoSearchPaths": false,
   "python.experiments.enabled": false,
-"python.testing.autoTestDiscoverOnSaveEnabled": false,
+  "python.testing.autoTestDiscoverOnSaveEnabled": false,
 
   "workbench.colorCustomizations": {
     // I customize these two, because other people might
@@ -208,8 +169,6 @@
 
   // https://github.com/subframe7536/vscode-custom-ui-style extension:
   "custom-ui-style.electron": {
-    "frame": false, // removes the title bar
-    "transparent": true, // removes white line from the top
     "titleBarStyle": "hidden",
     "titleBarOverlay": {
       "height": 35 // icons and text has the same centring in the title bar
@@ -236,15 +195,12 @@
     ".floating-click-widget": {
       "visibility": "hidden !important",
       "display": "none !important"
-    },
-    ".explorer-folders-view .monaco-list-row": {
-      "font-size": "14px !important"
     }
-},
-"claudeCode.preferredLocation": "panel",
-"claudeCode.hideOnboarding": true,
-"rust-analyzer.lens.implementations.enable": false,
-"rust-analyzer.lens.debug.enable": false,
-"editor.inlayHints.enabled": "offUnlessPressed",
-"workbench.colorTheme": "Navigate Light"
+  },
+  "claudeCode.preferredLocation": "panel",
+  "claudeCode.hideOnboarding": true,
+  "rust-analyzer.lens.implementations.enable": false,
+  "rust-analyzer.lens.debug.enable": false,
+  "editor.inlayHints.enabled": "offUnlessPressed",
+  "workbench.colorTheme": "Navigate Dark"
 }
