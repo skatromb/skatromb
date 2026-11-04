@@ -330,10 +330,6 @@
     },
     {
         "key": "ctrl+f",
-        "command": "workbench.action.quickTextSearch"
-    },
-    {
-        "key": "ctrl+f",
         "command": "-cursorRight",
         "when": "textInputFocus"
     },
@@ -467,11 +463,8 @@
     },
     {
         "key": "shift+cmd+n",
-        "command": "-workbench.action.newWindow"
-    },
-    {
-        "key": "shift+cmd+n",
-        "command": "explorer.newFolder"
+        "command": "explorer.newFolder",
+        "when": "explorerViewletFocus"
     },
     {
         "key": "ctrl+shift+tab",
@@ -710,5 +703,17 @@
         "command": "workbench.action.terminal.sendSequence",
         "args": { "text": "\u001bf" },
         "when": "terminalFocus"
+    },
+    {
+        "key": "cmd+0",
+        "command": "workbench.action.zoomReset"
+    },
+    {
+        "key": "shift+cmd+r",
+        "command": "workbench.action.openRecent"
+    },
+    {
+        "key": "ctrl+r",
+        "command": "-workbench.action.openRecent"
     }
 ]

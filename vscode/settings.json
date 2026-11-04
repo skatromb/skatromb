@@ -6,7 +6,7 @@
   "editor.dragAndDrop": false,
   "editor.folding": false, // change to `true` and use `cmd+alt` + `[` or `]`
   "editor.fontFamily": "JetBrains Mono",
-  "editor.fontSize": 14,
+  "editor.fontSize": 16,
   "explorer.openEditors.visible": 1,
   "editor.minimap.enabled": false,
   "editor.renderLineHighlight": "none",
@@ -108,6 +108,7 @@
 
   // Terminal:
   "terminal.integrated.defaultLocation": "editor",
+  "terminal.integrated.commandsToSkipShell": ["workbench.action.openRecent"],
   "terminal.integrated.shellIntegration.enabled": false,
   "terminal.integrated.enableKittyKeyboardProtocol": false,
   "terminal.integrated.enableMultiLinePasteWarning": "never",
@@ -117,7 +118,7 @@
     "announcement": "off"
   },
   "terminal.integrated.enableVisualBell": true,
-  "terminal.integrated.fontSize": 14,
+  "terminal.integrated.fontSize": 16,
 
   // Main editor:
   "window.clickThroughInactive": false,

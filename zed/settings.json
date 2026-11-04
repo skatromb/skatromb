@@ -10,6 +10,7 @@
   //
   // General
   //
+  "cli_default_open_behavior": "existing_window",
   "auto_install_extensions": {
     "dbt": true,
     "dockerfile": true,
@@ -32,13 +33,14 @@
   //
   "buffer_font_family": "JetBrains Mono NL",
   "buffer_font_size": 13,
-  "colorize_brackets": true,
+  // "colorize_brackets": true,
   "current_line_highlight": "none",
   "icon_theme": "JetBrains New UI Icons (Dark)",
-  "theme": {
-    "light": "Pustota Light",
-    "dark": "Pustota",
-  },
+  "theme": "Navigate",
+  // {
+  //   "light": "JetBrains Light",
+  //   "dark": "pustota contrast",
+  // },
 
   //
   // Editor
@@ -58,9 +60,37 @@
   "inlay_hints": { "toggle_on_modifiers_press": { "control": true } }, // convenient to highlight types
   "inline_code_actions": false,
   "scroll_beyond_last_line": "vertical_scroll_margin",
-  "scrollbar": { "show": "never" },
+  "scrollbar": { "show": "system" },
   "seed_search_query_from_cursor": "selection",
   "use_autoclose": false,
+
+  //
+  // `Navigate` theme
+  //
+  "global_lsp_settings": {
+    "button": false,
+    "semantic_token_rules": [
+      {
+        "token_type": "keyword",
+        "token_modifiers": ["controlFlow"],
+        "style": ["keyword.control"],
+      },
+      {
+        "token_type": "operator",
+        "token_modifiers": ["controlFlow"],
+        "style": ["keyword.control"],
+      },
+      {
+        "token_type": "const",
+        "token_modifiers": ["declaration"],
+        "style": ["constant.definition"],
+      },
+      {
+        "token_modifiers": ["declaration", "library"],
+        "font_weight": "normal",
+      },
+    ],
+  },
 
   //
   // Bars
@@ -91,7 +121,6 @@
     "button": false,
     "tree_view": true,
   },
-  "global_lsp_settings": { "button": false },
   "outline_panel": {
     "button": false,
     "indent_guides": { "show": "never" },
@@ -122,6 +151,7 @@
     "JSON": { "tab_size": 2 },
     "JSONC": { "tab_size": 2 },
     "Python": { "language_servers": ["ruff", "ty", "pylsp"] },
+    "Rust": { "semantic_tokens": "combined" },
     "SQL": { "tab_size": 2 },
     "Terraform": { "tab_size": 2 },
     "YAML": { "tab_size": 2 },

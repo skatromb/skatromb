@@ -8,6 +8,7 @@
 - Summarise work by meaning, not per-file changes
 - Write all prose replies in ASD-STE100 STE-flavored mode: @~/.claude/skills/asd-ste100/references/writing-rules.md
 - Spawn autonomous agents via `claude ...` in shell when needed, keep sub-agent output out of current thread.
+- If you're unsure  why I ask to change or redo something, clarify my intention. When clarified, ask where should we store this knowledge: AGENTS.md or project-specific file.
 
 # Coding
 - Focus on readability
@@ -20,6 +21,7 @@
 - Dev cycles: check Makefile for lint/test/build commands
 - Never silence lint without asking user
 - Prove fix by reverting + re-running, not reasoning
+- Assess fixes by coherence: when it decreases number of edge cases — it's good, if it increases — bad.
 - When proposing changes, provide links including worktree to the files you refer to
 - No code comments
 
