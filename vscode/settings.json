@@ -80,6 +80,9 @@
     // for vscode theme editing
     "editor.colorDecorators": true
   },
+  "[jinja-sql]": {
+    "editor.codeLens": false
+  },
 
   // Files:
   "files.associations": {
