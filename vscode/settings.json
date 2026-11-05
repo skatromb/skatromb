@@ -25,8 +25,7 @@
   "explorer.decorations.badges": false,
   "extensions.ignoreRecommendations": true,
   "diffEditor.renderSideBySide": false,
-  "window.commandCenter": false,
-  "workbench.activityBar.location": "hidden",
+"window.commandCenter": false,
   "workbench.editor.tabActionCloseVisibility": false,
   "workbench.editor.useModal": "off",
   "workbench.hover.delay": 10000, // ms, TODO: find way to turn this off
@@ -178,8 +177,7 @@
       "height": 35 // icons and text has the same centring in the title bar
     }
   },
-  "window.titleBarStyle": "native",
-  "window.customTitleBarVisibility": "never",
+"window.titleBarStyle": "native",
   // Hide unwanted elements from the UI:
   "custom-ui-style.stylesheet": {
     // Hide extra items:
@@ -209,5 +207,7 @@
   "workbench.colorTheme": "Navigate Dark",
   "window.autoDetectColorScheme": true,
   "workbench.preferredDarkColorTheme": "Navigate Dark",
-  "workbench.preferredLightColorTheme": "Navigate Light"
+"workbench.preferredLightColorTheme": "Navigate Light",
+"window.customTitleBarVisibility": "never",
+"workbench.activityBar.location": "hidden"
 }
