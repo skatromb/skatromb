@@ -330,8 +330,7 @@
     },
     {
         "key": "ctrl+f",
-        "command": "-cursorRight",
-        "when": "textInputFocus"
+        "command": "-cursorRight"
     },
     {
         "key": "shift+cmd+t",
@@ -340,6 +339,11 @@
     {
         "key": "ctrl+shift+g",
         "command": "-workbench.view.scm",
+        "when": "workbench.scm.active"
+    },
+    {
+        "key": "shift+cmd+g",
+        "command": "workbench.view.scm",
         "when": "workbench.scm.active"
     },
     {
