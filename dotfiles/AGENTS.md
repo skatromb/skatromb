@@ -34,7 +34,7 @@
 - Ask user to review the code before commit, push, merge
 - Commits: one-line subject, no body, no `feat:`/`fix:` prefix, ≤50 chars
 - PR/issue bodies: think of draft PR body, then make it SUPER concise. No file-by-file recap, no validation block unless manual checks required
-- After PR is created or modified, run a reviewer subagent on it
+- After PR is created or modified, run a `ponytail:ponytail-review` subagent on it
 - Dependent PRs: use `gh stack`, never hand-set base branch
 - No 🤖 AI footer in PR bodies
 
