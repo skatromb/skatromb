@@ -32,6 +32,7 @@
   "workbench.hover.reducedDelay": 10000,
   "editor.scrollbar.horizontal": "hidden",
   "workbench.experimental.modernUI": false,
+  "workbench.activityBar.location": "hidden",
 
   // Use simple navigation:
   "editor.gotoLocation.multipleReferences": "goto",
@@ -127,7 +128,7 @@
   "window.newWindowDimensions": "maximized",
   "window.confirmBeforeClose": "keyboardOnly",
   "workbench.editor.labelFormat": "medium",
-  "workbench.startupEditor": "newUntitledFile",
+  "workbench.startupEditor": "none",
   "workbench.statusBar.visible": false,
   "workbench.tips.enabled": false,
   "workbench.tree.renderIndentGuides": "none",
@@ -208,6 +209,5 @@
   "window.autoDetectColorScheme": true,
   "workbench.preferredDarkColorTheme": "Navigate Dark",
   "workbench.preferredLightColorTheme": "Navigate Light",
-  "window.customTitleBarVisibility": "never",
-  "workbench.activityBar.location": "hidden"
+  "window.customTitleBarVisibility": "never"
 }
