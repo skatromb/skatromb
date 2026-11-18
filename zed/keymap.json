@@ -8,6 +8,13 @@
 [
   // Few general convenient hotkeys
   {
+    "bindings": {
+      "cmd-,": "zed::OpenSettingsFile",
+      "cmd-?": "agent::ToggleFocus",
+      "cmd-k cmd-s": "zed::OpenKeymapFile",
+    },
+  },
+  {
     "context": "Editor",
     "bindings": {
       "cmd-shift-backspace": "editor::DeleteLine",
@@ -15,12 +22,6 @@
       "cmd-shift-l": "editor::ConvertToLowerCase",
       "cmd-shift-b": "git::Blame",
       "alt": "editor::Hover",
-    },
-  },
-  {
-    "bindings": {
-      "cmd-alt-,": "zed::OpenProjectSettings",
-      "cmd-?": "agent::ToggleFocus",
     },
   },
 

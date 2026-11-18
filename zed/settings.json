@@ -32,21 +32,26 @@
   // Appearance
   //
   "buffer_font_family": "JetBrains Mono NL",
-  "buffer_font_size": 13,
+  "buffer_font_size": 16,
   // "colorize_brackets": true,
   "current_line_highlight": "none",
-  "icon_theme": "JetBrains New UI Icons (Dark)",
-  "theme": "Navigate",
-  // {
-  //   "light": "JetBrains Light",
-  //   "dark": "pustota contrast",
-  // },
+  "icon_theme": {
+    "mode": "system",
+    "light": "JetBrains New UI Icons (Dark)",
+    "dark": "JetBrains New UI Icons (Dark)"
+  },
+  "theme": {
+    "mode": "system",
+    "light": "Navigate",
+    "dark": "pustota contrast",
+  },
 
   //
   // Editor
   //
+  "autosave": { "after_delay": { "milliseconds": 100 } },
   "drag_and_drop_selection": { "enabled": false },
-  "format_on_save": "on",
+  "format_on_save": "off",
   "gutter": {
     "bookmarks": false,
     "breakpoints": false,

@@ -1,10 +1,12 @@
 {
   // Editor:
+  "editor.semanticHighlighting.enabled": true,
   "editor.cursorBlinking": "solid",
   "editor.accessibilitySupport": "off",
   "editor.colorDecorators": false,
   "editor.dragAndDrop": false,
   "editor.folding": false, // change to `true` and use `cmd+alt` + `[` or `]`
+  "editor.codeLens": false,
   "editor.fontFamily": "JetBrains Mono",
   "editor.fontSize": 16,
   "explorer.openEditors.visible": 1,
@@ -28,7 +30,6 @@
   "window.commandCenter": false,
   "workbench.editor.tabActionCloseVisibility": false,
   "workbench.editor.useModal": "off",
-  "workbench.hover.delay": 10000, // ms, TODO: find way to turn this off
   "workbench.hover.reducedDelay": 10000,
   "editor.scrollbar.horizontal": "hidden",
   "workbench.experimental.modernUI": false,
@@ -59,7 +60,7 @@
   "editor.inlineSuggest.enabled": false,
   "editor.suggest.localityBonus": true,
   "editor.lightbulb.enabled": "off",
-  "editor.detectIndentation": false,
+  "editor.detectIndentation": true,
   "editor.guides.indentation": false,
   "editor.showUnused": false,
   "editor.pasteAs.showPasteSelector": "never",
@@ -79,9 +80,6 @@
   "[jsonc]": {
     // for vscode theme editing
     "editor.colorDecorators": true
-  },
-  "[jinja-sql]": {
-    "editor.codeLens": false
   },
 
   // Files:
@@ -137,7 +135,7 @@
   "workbench.editor.showTabs": "single",
   "workbench.editor.decorations.badges": false,
   "workbench.editor.decorations.colors": false,
-  "workbench.editor.enablePreview": false,
+  "workbench.editor.enablePreview": true,
   "workbench.sideBar.location": "right",
   "workbench.editor.empty.hint": "hidden",
   "workbench.layoutControl.enabled": false,
@@ -202,12 +200,13 @@
   },
   "claudeCode.preferredLocation": "panel",
   "claudeCode.hideOnboarding": true,
-  "rust-analyzer.lens.implementations.enable": false,
-  "rust-analyzer.lens.debug.enable": false,
   "editor.inlayHints.enabled": "offUnlessPressed",
   "workbench.colorTheme": "Navigate Dark",
   "window.autoDetectColorScheme": true,
   "workbench.preferredDarkColorTheme": "Navigate Dark",
   "workbench.preferredLightColorTheme": "Navigate Light",
-  "window.customTitleBarVisibility": "never"
+  "window.customTitleBarVisibility": "never",
+  "git.blame.editorDecoration.enabled": false,
+  "git.blame.statusBarItem.enabled": true,
+  "window.confirmSaveUntitledWorkspace": false
 }
