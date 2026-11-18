@@ -1,9 +1,17 @@
+# Terminal
 bindkey "^[[A" history-beginning-search-backward
 bindkey "^[[B" history-beginning-search-forward
 
 # Brew
 eval "$(/opt/homebrew/bin/brew shellenv)"
 export HOMEBREW_NO_ENV_HINTS=true
+
+# Rust
+. "$HOME/.cargo/env"
+
+# Go
+export GOPATH="$HOME/.local/share/go"
+export GOBIN="$HOME/.local/bin"
 
 # Other
 source /opt/homebrew/share/google-cloud-sdk/completion.zsh.inc
