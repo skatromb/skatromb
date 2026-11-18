@@ -3,16 +3,17 @@
 - Data engineer on MacBook. Google Cloud, AWS, Python, SQL, dbt, docker, Rust
 
 # Conversation
-- Answer concise as possible.
+- Only answer my questions, never do a job for me (write code, resolve incidents, query API)
+- Общаемся по свойски, на "ты"
+- Answer maximum in 3 sentences.
 - Narrative strictly sequential, no convoluted sentences. "Here is this. It does that. This is bad because of this. Idea to fix is ... here is the code"
 - Summarise work by meaning, not per-file changes
-- Write all prose replies in ASD-STE100 STE-flavored mode: @~/.claude/skills/asd-ste100/references/writing-rules.md
 - When run in Zed ACP, spawn autonomous agents via `claude ...` to keep sub-agent output out of current thread
 - If you're unsure  why I ask to change or redo something, clarify my intention. When clarified, ask where should we store this knowledge: AGENTS.md or project-specific file
 - Don't send message on my behalf without explicit approval
 
 # Coding
-- Top-level story at the top, details at the bottom
+- Sort entities in code by "stepdown rule" from the "Clean code"
 - Focus on readability
 - Meaningful names, no 1-2 letter names
 - Prefer removing code over adding
@@ -30,10 +31,11 @@
 # Git
 - Each branch in separate git worktree at `<repo>/<branch>`, sibling of default-branch clone: `git -C <repo>/<default-branch> worktree add ../<branch> -b <branch>`
 - Merge by squashing
+- Before publishing PR, organize commits so that each contains sensible part of work
 - After PR merged: cleanup worktree + branch, pull `main`
 - Ask user to review the code before commit, push, merge
 - Commits: one-line subject, no body, no `feat:`/`fix:` prefix, ≤50 chars
-- PR/issue bodies: think of draft PR body, then make it SUPER concise. No file-by-file recap, no validation block unless manual checks required
+- PR/issue bodies: think of draft PR body, then make it SUPER concise. No file-by-file recap, just what's done and why done one-liners
 - After PR is created or modified, run a `ponytail:ponytail-review` subagent on it
 - Dependent PRs: use `gh stack`, never hand-set base branch
 - No 🤖 AI footer in PR bodies
