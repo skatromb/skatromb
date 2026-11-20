@@ -120,6 +120,7 @@
   },
   "terminal.integrated.enableVisualBell": true,
   "terminal.integrated.fontSize": 16,
+  "terminal.integrated.cwd": "${env:HOME}/code",
 
   // Main editor:
   "window.clickThroughInactive": false,
@@ -203,10 +204,11 @@
   "editor.inlayHints.enabled": "offUnlessPressed",
   "workbench.colorTheme": "Navigate Dark",
   "window.autoDetectColorScheme": true,
-  "workbench.preferredDarkColorTheme": "Navigate Dark",
   "workbench.preferredLightColorTheme": "Navigate Light",
   "window.customTitleBarVisibility": "never",
   "git.blame.editorDecoration.enabled": false,
   "git.blame.statusBarItem.enabled": true,
-  "window.confirmSaveUntitledWorkspace": false
+  "window.confirmSaveUntitledWorkspace": false,
+  "githubPullRequests.pullBranch": "never",
+  "workbench.preferredDarkColorTheme": "Navigate Dark"
 }
