@@ -11,6 +11,7 @@
 - When run in Zed ACP, spawn autonomous agents via `claude ...` to keep sub-agent output out of current thread
 - If you're unsure  why I ask to change or redo something, clarify my intention. When clarified, ask where should we store this knowledge: AGENTS.md or project-specific file
 - Don't send message on my behalf without explicit approval
+- When explaining some logic flow, leave links to the source code — I am very dumb understanding logic without the code
 
 # Coding
 - Sort entities in code by "stepdown rule" from the "Clean code"
@@ -38,7 +39,7 @@
 - PR/issue bodies: think of draft PR body, then make it SUPER concise. No file-by-file recap, just what's done and why done one-liners
 - After PR is created or modified, run a `ponytail:ponytail-review` subagent on it
 - Dependent PRs: use `gh stack`, never hand-set base branch
-- No 🤖 AI footer in PR bodies
+- No 🤖 AI footer in PR bodies, keep it in commits
 
 # Docs
 - Be concrete: name exact file, show snippet, don't describe location
