@@ -495,26 +495,6 @@
         "when": "editorHoverFocused"
     },
     {
-        "key": "cmd+down",
-        "command": "-cursorBottom",
-        "when": "textInputFocus"
-    },
-    {
-        "key": "alt+down",
-        "command": "cursorBottom",
-        "when": "textInputFocus"
-    },
-    {
-        "key": "alt+up",
-        "command": "cursorTop",
-        "when": "textInputFocus"
-    },
-    {
-        "key": "cmd+up",
-        "command": "-cursorTop",
-        "when": "textInputFocus"
-    },
-    {
         "key": "cmd+w",
         "command": "workbench.action.terminal.killEditor",
         "when": "terminalEditorFocus"
